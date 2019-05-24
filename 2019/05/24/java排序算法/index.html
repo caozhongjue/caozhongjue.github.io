@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="czj&#39;blog">
 <meta property="og:description" content="冒泡排序int[] a = {8,7,4,5,6,3,1,2,9,0}冒泡排序：依次比较相邻的元素。如果第一个比第二个大，就交换他们两个。针对所有的元素以上的步骤，除了最后一个。持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。上面那个数组的大小为10重复那么就循环重复比较9次，每趟相邻两个数比较为9次，下一趟相邻两个数比较为8次，逐级减1以下为输出结果  7,8,4,5,6,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-24T02:29:56.500Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/24/VixpGT.md.png">
+<meta property="og:updated_time" content="2019-05-24T08:12:15.881Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java排序算法">
 <meta name="twitter:description" content="冒泡排序int[] a = {8,7,4,5,6,3,1,2,9,0}冒泡排序：依次比较相邻的元素。如果第一个比第二个大，就交换他们两个。针对所有的元素以上的步骤，除了最后一个。持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。上面那个数组的大小为10重复那么就循环重复比较9次，每趟相邻两个数比较为9次，下一趟相邻两个数比较为8次，逐级减1以下为输出结果  7,8,4,5,6,">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/05/24/VixpGT.md.png">
 
 
 
@@ -428,6 +430,49 @@ public class BubbleSort {
 }
 </code></pre><p>结果如下</p>
 <p>排序前：<br>8745631290<br>排序后：<br>0123456789</p>
+<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>原理：选择一个关键值作为基准值。比基准值小的都在左边序列（一般是无序的），比基准值大的都在右边（一般是无序的）。<br><a href="https://imgchr.com/i/VixpGT" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/24/VixpGT.md.png" alt="VixpGT.md.png"></a><br>传入getIndex (int arr[], int start, int end)的为数组arr[]、数组最初的下标起点和下标终点，而数组通过数组名称定位到数组内存所在地址，所以不需要返回值即可实现数组的改变。</p>
+<p>在getIndex (int arr[], int start, int end)中首先定义三个变量start、end、key用于标识数组下标游走的起始位置、数组下标游走的最终位置、基准值。</p>
+<p>比较start和end，start &gt;= end时表明基于基准值key左右两边已摆好（左边值比基准值key小，右边值比基准值大）。</p>
+<p>start &lt; end则进入循环，因为选定的基准值key为原数组第一个值，所以先对原数组进行从右至左的遍历，当遇到比基准值key大或等时将标识end减少1再进行判断，直到从右至左遍历原数组中值小于基准值key时退出循环之后将此位置的值与数组之前的标识start的值arr[start]替换位置；然后再进行从左至右的遍历，当遇到比基准值key小或等时将标识start增加1再进行判断，直到从左至右遍历原数组中值大于基准值key时退出循环之后将此位置的值与数组之前的标识end的值arr[end]替换位置。</p>
+<p>最后通过递归将当前基准值两边的杂乱数据排序，直到标识start、end回归最初的初始标记也就是查询数组的下标起点low和下标终点high。<br>    package com.group.demo2019524;</p>
+<pre><code>public class QuitSort {
+    int sort(int []arr, int start, int end) {
+        int key=arr[start];
+        while(start&lt;end) {
+            //先从右到左找小于key
+            while(start&lt;end &amp;&amp; arr[end]&gt;key) {
+                end--;
+            }
+            arr[start]=arr[end];
+            //再从左到右找大于key
+            while(start&lt;end &amp;&amp; arr[start]&lt;key) {
+                start++;
+            }
+            arr[end]=arr[start];    
+        }
+        arr[start]=key;
+        return start;
+    }
+    void getIndex(int[] arr, int start, int end) {
+        if(start&lt;end) {
+            int index=sort(arr, start, end);
+            //递归重复排左边的
+            getIndex(arr, start, index-1);
+            //递归重复排右边的
+            getIndex(arr, index+1, end);
+        }
+    }
+    public static void main(String[] args) {
+        int arr[] = {12,20,5,16,15,1,30,45,23,9};
+        int start = 0;
+        int end = arr.length - 1;
+        new QuitSort().getIndex(arr, start, end);
+        for(int a : arr){
+             System.out.print(a + &quot; &quot;);
+         }
+    }
+}
+</code></pre><p>排序前：<br>12 20 5 16 15 1 30 45 23 9<br>排序后：<br>1 5 9 12 15 16 20 23 30 45 </p>
 
       
     </div>
@@ -600,7 +645,7 @@ public class BubbleSort {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">冒泡排序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序"><span class="nav-number">2.</span> <span class="nav-text">快速排序</span></a></li></ol></div>
             
 
           </div>
