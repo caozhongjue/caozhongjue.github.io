@@ -88,7 +88,7 @@
 <meta property="og:description" content="1、概念线程：比进程更小的执行单位。多线程是多任务的一种特别的形式进程：是程序的一次动态执行过程,一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束2、生命周期线程生命周期：  新建状态：使用new关键字和Thread类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/25/VkEm6I.md.jpg">
-<meta property="og:updated_time" content="2019-05-25T04:43:43.015Z">
+<meta property="og:updated_time" content="2019-05-25T16:14:34.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java多线程">
 <meta name="twitter:description" content="1、概念线程：比进程更小的执行单位。多线程是多任务的一种特别的形式进程：是程序的一次动态执行过程,一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束2、生命周期线程生命周期：  新建状态：使用new关键字和Thread类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态">
@@ -441,6 +441,38 @@ public class MyTest {
     }
 }
 </code></pre><p>5、Thread和Runnable的差别<br>实现Runable接口比继承Thread类所具有的优势：<br>1、适合多个同样的程序代码的线程去处理同一个资源<br>2、能够避免java中的单继承的限制<br>3、添加程序的健壮性，代码能够被多个线程共享，代码和数据独立<br>4、线程池仅仅能放入实现Runable或callable类线程，不能直接放入继承Thread的类</p>
+<p>6、多线程不安全例子</p>
+<pre><code>//吃苹果案例
+package com.group.demo2019525;
+
+public class ThreadProblem implements Runnable {
+    private int num = 10;
+    @Override
+    public void run() {
+        for (int i = 0; i &lt; 10; i++) {
+            if(num &gt; 0){
+                System.out.println(Thread.currentThread().getName()+&quot;吃了编号为&quot;+num+&quot;的苹果&quot;);
+                num--;
+            }
+        }
+
+    }
+
+}
+
+
+package com.group.demo2019525;
+
+public class MyTest {
+    public static void main(String[] args) {
+//        MyThread mythread1 = new MyThread(&quot;A&quot;);
+//        mythread1.start();
+//        new Thread(new MyThread2(&quot;B&quot;)).start();
+        new Thread(new ThreadProblem(),&quot;A&quot;).start();
+        new Thread(new ThreadProblem(),&quot;B&quot;).start();
+    }
+}
+</code></pre><p>B吃了编号为10的苹果<br>A吃了编号为10的苹果<br>B吃了编号为9的苹果<br>B吃了编号为8的苹果<br>B吃了编号为7的苹果<br>A吃了编号为9的苹果<br>A吃了编号为8的苹果<br>A吃了编号为7的苹果<br>A吃了编号为6的苹果<br>A吃了编号为5的苹果<br>A吃了编号为4的苹果<br>A吃了编号为3的苹果<br>A吃了编号为2的苹果<br>A吃了编号为1的苹果<br>B吃了编号为6的苹果<br>B吃了编号为5的苹果<br>B吃了编号为4的苹果<br>B吃了编号为3的苹果<br>B吃了编号为2的苹果<br>B吃了编号为1的苹果</p>
 
       
     </div>
