@@ -88,7 +88,7 @@
 <meta property="og:description" content="1、概念线程：比进程更小的执行单位。多线程是多任务的一种特别的形式进程：是程序的一次动态执行过程,一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束2、生命周期线程生命周期：  新建状态：使用new关键字和Thread类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/25/VkEm6I.md.jpg">
-<meta property="og:updated_time" content="2019-05-25T16:14:34.768Z">
+<meta property="og:updated_time" content="2019-05-25T16:32:04.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java多线程">
 <meta name="twitter:description" content="1、概念线程：比进程更小的执行单位。多线程是多任务的一种特别的形式进程：是程序的一次动态执行过程,一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束2、生命周期线程生命周期：  新建状态：使用new关键字和Thread类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态">
@@ -465,14 +465,12 @@ package com.group.demo2019525;
 
 public class MyTest {
     public static void main(String[] args) {
-//        MyThread mythread1 = new MyThread(&quot;A&quot;);
-//        mythread1.start();
-//        new Thread(new MyThread2(&quot;B&quot;)).start();
         new Thread(new ThreadProblem(),&quot;A&quot;).start();
         new Thread(new ThreadProblem(),&quot;B&quot;).start();
     }
 }
 </code></pre><p>B吃了编号为10的苹果<br>A吃了编号为10的苹果<br>B吃了编号为9的苹果<br>B吃了编号为8的苹果<br>B吃了编号为7的苹果<br>A吃了编号为9的苹果<br>A吃了编号为8的苹果<br>A吃了编号为7的苹果<br>A吃了编号为6的苹果<br>A吃了编号为5的苹果<br>A吃了编号为4的苹果<br>A吃了编号为3的苹果<br>A吃了编号为2的苹果<br>A吃了编号为1的苹果<br>B吃了编号为6的苹果<br>B吃了编号为5的苹果<br>B吃了编号为4的苹果<br>B吃了编号为3的苹果<br>B吃了编号为2的苹果<br>B吃了编号为1的苹果</p>
+<p>线程安全问题产生的原因：<br>1、多个线程在操作共享的数据。<br>2、操作共享数据的线程代码有多条。<br>3、当一个线程在执行操作共享数据的多条代码过程中，其他线程参与了运算。就会导致线程安全问题的产生。</p>
 
       
     </div>
