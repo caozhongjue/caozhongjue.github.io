@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="czj&#39;blog">
 <meta property="og:description" content="设计模式的分类设计模式分为三大类：创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。结构型模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、状态模式、访问模式、中介模式、解释器模式。其他类的有：并发型模式和线程池模式。 设计模式的六大原则设">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-26T03:22:33.935Z">
+<meta property="og:updated_time" content="2019-05-26T05:50:53.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java设计模式">
 <meta name="twitter:description" content="设计模式的分类设计模式分为三大类：创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。结构型模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、状态模式、访问模式、中介模式、解释器模式。其他类的有：并发型模式和线程池模式。 设计模式的六大原则设">
@@ -386,6 +386,54 @@
       
         <h2 id="设计模式的分类"><a href="#设计模式的分类" class="headerlink" title="设计模式的分类"></a>设计模式的分类</h2><p>设计模式分为三大类：<br>创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。<br>结构型模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。<br>行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、状态模式、访问模式、中介模式、解释器模式。<br>其他类的有：并发型模式和线程池模式。</p>
 <h2 id="设计模式的六大原则"><a href="#设计模式的六大原则" class="headerlink" title="设计模式的六大原则"></a>设计模式的六大原则</h2><p>设计模式的六大原则<br>总原则：开闭原则<br>开闭原则就是说对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，而是要扩展原有代码，实现一个热插拔的效果。所以一句话概括就是：为了使程序的扩展好，易于维护和升级。想要达到这样的效果，我们需要使用接口和抽象类等。<br>1、    单一职责原则<br>不要存在多于一个导致类变更的原因，也就是说每个类应该实现单一的职责，如若不然，就应该把类折分<br>2、里氏替换原则（Liskov Substitution Principle）<br>里氏代换原则(Liskov Substitution Principle LSP)面向对象设计的基本原则之一。 里氏代换原则中说，任何基类可以出现的地方，子类一定可以出现。 LSP是继承复用的基石，只有当衍生类可以替换掉基类，软件单位的功能不受到影响时，基类才能真正被复用，而衍生类也能够在基类的基础上增加新的行为。里氏代换原则是对“开-闭”原则的补充。实现“开-闭”原则的关键步骤就是抽象化。而基类与子类的继承关系就是抽象化的具体实现<br>3、依赖倒转原则（Dependence Inversion Principle）<br>这个是开闭原则的基础，具体内容：面向接口编程，依赖于抽象而不依赖于具体。写代码时用到具体类时，不与具体类交互，而与具体类的上层接口交互。<br>4、接口隔离原则（Interface Segregation Principle）<br>这个原则的意思是：每个接口中不存在子类用不到却必须实现的方法，如果不然，就要将接口拆分。使用多个隔离的接口，比使用单个接口（多个接口方法集合到一个的接口）要好。<br>5、迪米特法则（Demeter Principle）<br>就是说：一个类对自己依赖的类知道的越少越好。也就是说无论被依赖的类多么复杂，都应该将逻辑封装在方法的内部，通过public方法提供给外部。这样当被依赖的类变化时，才能最小的影响该类。<br>最少知道原则的另一个表达方式是：只与直接的朋友通信。类之间只要有耦合关系，就叫朋友关系。耦合分为依赖、关联、聚合、组合等。我们称出现为成员变量、方法参数、方法返回值中的类为直接朋友。局部变量、临时变量则不是直接的朋友。我们要求陌生的类不要作为局部变量出现在类中。<br>6、合成复用原则（Composite Reuse Principle）<br>原则是尽量首先使用合成/聚合的方式，而不是使用继承。</p>
+<h2 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式"></a>单例设计模式</h2><p>单例模式，是一种常用的软件设计模式。在它的核心结构中只包含一个被称为单例的特殊类。通过单例模式可以保证系统中，应用该模式的类一个类只有一个实例。即一个类只有一个对象实例。<br>具体实现：<br>1、    将构造方法私有化，使其不能在类的外部通过new关键字实例化该类对象。<br>2、    在该类内部产生一个唯一的实例化对象，并且将其封装为private static类型。<br>3、    定义一个静态方法返回这个唯一对象。</p>
+<h5 id="饿汉模式"><a href="#饿汉模式" class="headerlink" title="饿汉模式"></a>饿汉模式</h5><pre><code>package com.group.demo2019526;
+public class Singleton1 {
+    //将自身实例化对象设置为一个属性，用static final修饰
+    private static final Singleton1 singleton1=new Singleton1();
+    //构造方法私有化
+    private Singleton1() {}
+    //静态方返回该实例
+    private static Singleton1 getInstance() {
+        return singleton1;
+    }
+}
+</code></pre><h5 id="懒汉模式"><a href="#懒汉模式" class="headerlink" title="懒汉模式"></a>懒汉模式</h5><pre><code>package com.group.demo2019526;
+
+public class Singleton2 {
+    //将自身实例化对象设置为一个属性，用static修饰
+    private static Singleton2 singleton2;
+    //构造方法私有化
+    private Singleton2() {}
+    //静态方法返回该实例
+    public static Singleton2 getIntance() {
+        if(singleton2==null) {
+            singleton2=new Singleton2();
+        }
+        return singleton2;
+    }
+}
+</code></pre><p>这个是线程不安全的</p>
+<pre><code>package com.group.demo2019526;
+
+public class Singleton2 {
+    //将自身实例化对象设置为一个属性，用static修饰
+    private static Singleton2 singleton2;
+    //构造方法私有化
+    private Singleton2() {}
+    //静态方法返回该实例
+    public static Singleton2 getIntance() {
+        if(singleton2==null) {
+            synchronized (Singleton2.class) {
+                if(singleton2==null) {
+                    singleton2=new Singleton2();
+                }
+            }
+        }
+        return singleton2;
+    }
+}
+</code></pre><p>多线程情形下，synchronized方法通常效率低，上面使用DCL双检查锁机制</p>
 
       
     </div>
@@ -558,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式的分类"><span class="nav-number">1.</span> <span class="nav-text">设计模式的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式的六大原则"><span class="nav-number">2.</span> <span class="nav-text">设计模式的六大原则</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式的分类"><span class="nav-number">1.</span> <span class="nav-text">设计模式的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式的六大原则"><span class="nav-number">2.</span> <span class="nav-text">设计模式的六大原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例设计模式"><span class="nav-number">3.</span> <span class="nav-text">单例设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#饿汉模式"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">饿汉模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#懒汉模式"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">懒汉模式</span></a></li></ol></li></ol></div>
             
 
           </div>
