@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VVL92T.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VVXBUs.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VVXWb4.md.png">
-<meta property="og:updated_time" content="2019-05-27T04:21:02.770Z">
+<meta property="og:updated_time" content="2019-05-27T04:23:25.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="maven的认识">
 <meta name="twitter:description" content="普通项目存在的问题1、假如正在eclipse下开发两个java项目A、B,其中A项目中的一些功能依赖于B项目中的某些类，如何维系这种依赖关系呢？处理方法就是手动把B项目打包成jar包，然后在A项目中导入B的jar包，B项目有所改动，都得重新导2、假设正在开发一个web小demo，要用到ssm这几个框架，我们必须手动去官网下载这些jar包，然后导入 maven到底是什么maven是一种软件项目管理工">
@@ -394,7 +394,8 @@
 <p>通过groupId、artifactId、version三个属性就能定位一个jar包<br>groupId里面指的是这个jar的包名(文件夹)<br>artifactId里面指的是这个jar文件的名(项目名)<br>version指的是jar包的版本名</p>
 <h2 id="maven的安装"><a href="#maven的安装" class="headerlink" title="maven的安装"></a>maven的安装</h2><p>1、来到maven官方网站 <a href="http://maven.apache.org/download.cgi" target="_blank" rel="noopener">http://maven.apache.org/download.cgi</a>  下载对应的版本 如apache-maven-3.6.1-bin.zip这个<br><a href="https://imgchr.com/i/VVXBUs" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/27/VVXBUs.md.png" alt="VVXBUs.md.png"></a><br>2、把这个文件解压放到某个位置，目录结构如下<br><a href="https://imgchr.com/i/VVXWb4" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/27/VVXWb4.md.png" alt="VVXWb4.md.png"></a><br>bin文件夹下有maven的命令<br>conf文件夹下有配置文件,如settings.xml<br>3、配置环境变量，cmd命令窗口才能使用maven命令，和配jdk环境变量相似</p>
 <h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p>通过pom.xml中的配置，就能够获取到想要的jar包(还没讲解如何配置先需要了解一下仓库的概念)，但是这些jar是在哪里呢？<br>仓库分为：本地仓库、第三方仓库(私服)、中央仓库<br>1、本地仓库：<br>Maven会将工程中依赖的构件(Jar包)从远程下载到本机一个目录下管理，每个电脑默认的仓库是在C:/Users/Administrator/.m2/repository下<br>修改本地库位置：在maven安装目录下的conf/setting.xml文件中修改<br>如：</p>
-<p><localrepository>D:\tomcat\Repository</localrepository><br>D:\tomcat\Repository：就是我们自己创建的本地仓库，将网上下载的所有jar包，都丢到该目录下，我们就可以直接通过maven的pom.xml文件直接拿。<br>2、第三方仓库<br>第三方仓库，又称为内部中心仓库，也称为私服<br>私服：一般是由公司自己设立的，只为本公司内部共享使用。它既可以作为公司内部构件协作和存档，也可作为公用类库镜像缓存，减少在外部访问和下载的频率。（使用私服为了减少对中央仓库的访问<br>私服可以使用的是局域网，中央仓库必须使用外网<br>也就是一般公司都会创建这种第三方仓库，保证项目开发时，项目所需用的jar都从该仓库中拿，每个人的版本就都一样。<br>3、中央仓库<br>Maven内置了远程公用仓库：<a href="http://repo1.maven.org/maven2" target="_blank" rel="noopener">http://repo1.maven.org/maven2</a><br>这个公共仓库是由Maven自己维护，里面有大量的常用类库，并包含了世界上大部分流行的开源项目构件。<br>国内访问这个网站很慢，一般改为阿里云的，在maven安装目录下的conf/setting.xml文件中修改，添加下面这些内容保存<br>如：</p>
+<pre><code>&lt;localRepository&gt;D:\tomcat\Repository&lt;/localRepository&gt;
+</code></pre><p>D:\tomcat\Repository：就是我们自己创建的本地仓库，将网上下载的所有jar包，都丢到该目录下，我们就可以直接通过maven的pom.xml文件直接拿。<br>2、第三方仓库<br>第三方仓库，又称为内部中心仓库，也称为私服<br>私服：一般是由公司自己设立的，只为本公司内部共享使用。它既可以作为公司内部构件协作和存档，也可作为公用类库镜像缓存，减少在外部访问和下载的频率。（使用私服为了减少对中央仓库的访问<br>私服可以使用的是局域网，中央仓库必须使用外网<br>也就是一般公司都会创建这种第三方仓库，保证项目开发时，项目所需用的jar都从该仓库中拿，每个人的版本就都一样。<br>3、中央仓库<br>Maven内置了远程公用仓库：<a href="http://repo1.maven.org/maven2" target="_blank" rel="noopener">http://repo1.maven.org/maven2</a><br>这个公共仓库是由Maven自己维护，里面有大量的常用类库，并包含了世界上大部分流行的开源项目构件。<br>国内访问这个网站很慢，一般改为阿里云的，在maven安装目录下的conf/setting.xml文件中修改，添加下面这些内容保存<br>如：</p>
 <pre><code>&lt;mirror&gt;
       &lt;id&gt;alimaven&lt;/id&gt;
       &lt;name&gt;aliyun maven&lt;/name&gt;
