@@ -88,7 +88,7 @@
 <meta property="og:description" content="C++简介C++是一种静态类型的、编译式的、通用的、大小写敏感的、不规则的编程语言，支持过程化编程、面向对象编程和泛型编程。C++被认为是一种中级语言，它综合了高级语言和低级语言的特点。C++是由Bjarne Stroustrup于1979年在新泽西州美利山贝尔实验室开始设计开发的，扩充和完善了C语言，最初命名为带类的C，后来更改为C++。 C++完全支持面向对象的程序设计，包括面向对象开发的四大">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VZLhuD.png">
-<meta property="og:updated_time" content="2019-05-28T02:29:10.390Z">
+<meta property="og:updated_time" content="2019-05-28T03:04:24.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识c++">
 <meta name="twitter:description" content="C++简介C++是一种静态类型的、编译式的、通用的、大小写敏感的、不规则的编程语言，支持过程化编程、面向对象编程和泛型编程。C++被认为是一种中级语言，它综合了高级语言和低级语言的特点。C++是由Bjarne Stroustrup于1979年在新泽西州美利山贝尔实验室开始设计开发的，扩充和完善了C语言，最初命名为带类的C，后来更改为C++。 C++完全支持面向对象的程序设计，包括面向对象开发的四大">
@@ -596,7 +596,83 @@ char            &apos;\0&apos;
 float            0
 double            0
 pointer            NULL
-</code></pre>
+</code></pre><p>2.4、定义常量<br>在 C++ 中，有两种简单的定义常量的方式：</p>
+<p>使用 #define 预处理器。<br>使用 const 关键字。</p>
+<pre><code>#define 预处理器
+</code></pre><p>下面是使用 #define 预处理器定义常量的形式：</p>
+<pre><code>#define identifier value
+</code></pre><p>具体请看下面的实例：</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+#define LENGTH 10   
+#define WIDTH  5
+#define NEWLINE &apos;\n&apos;
+
+int main()
+{
+
+   int area;  
+
+   area = LENGTH * WIDTH;
+   cout &lt;&lt; area;
+   cout &lt;&lt; NEWLINE;
+   return 0;
+}
+</code></pre><p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<pre><code>50
+</code></pre><p>const 关键字<br>您可以使用 const 前缀声明指定类型的常量，如下所示：</p>
+<p>const type variable = value;<br>具体请看下面的实例：</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+   const int  LENGTH = 10;
+   const int  WIDTH  = 5;
+   const char NEWLINE = &apos;\n&apos;;
+   int area;  
+
+   area = LENGTH * WIDTH;
+   cout &lt;&lt; area;
+   cout &lt;&lt; NEWLINE;
+   return 0;
+} 
+</code></pre><p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<pre><code>50
+</code></pre><p>2.5、C++ 修饰符类型<br>C++ 允许在 char、int 和 double 数据类型前放置修饰符。修饰符用于改变基本类型的含义，所以它更能满足各种情境的需求。</p>
+<p>下面列出了数据类型修饰符：</p>
+<pre><code>signed
+unsigned
+long
+short
+</code></pre><p>修饰符 signed、unsigned、long 和 short 可应用于整型，signed 和 unsigned 可应用于字符型，long 可应用于双精度型。</p>
+<p>修饰符 signed 和 unsigned 也可以作为 long 或 short 修饰符的前缀。例如：unsigned long int。</p>
+<p>C++ 允许使用速记符号来声明无符号短整数或无符号长整数。您可以不写 int，只写单词 unsigned short 或 unsigned long，int 是隐含的。例如，下面的两个语句都声明了无符号整型变量。</p>
+<pre><code>unsigned x;
+unsigned int y;
+</code></pre><p>为了理解 C++ 解释有符号整数和无符号整数修饰符之间的差别，我们来运行一下下面这个短程序：</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+/* 
+ * 这个程序演示了有符号整数和无符号整数之间的差别
+*/
+int main()
+{
+   short int i;           // 有符号短整数
+   short unsigned int j;  // 无符号短整数
+
+   j = 50000;
+
+   i = j;
+   cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j;
+
+   return 0;
+} 
+</code></pre><p>当上面的程序运行时，会输出下列结果：</p>
+<p>-15536 50000<br>上述结果中，无符号短整数 50,000 的位模式被解释为有符号短整数 -15,536。</p>
+
       
     </div>
     
