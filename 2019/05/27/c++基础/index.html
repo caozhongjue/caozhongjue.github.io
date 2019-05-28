@@ -88,7 +88,7 @@
 <meta property="og:description" content="C++简介C++是一种静态类型的、编译式的、通用的、大小写敏感的、不规则的编程语言，支持过程化编程、面向对象编程和泛型编程。C++被认为是一种中级语言，它综合了高级语言和低级语言的特点。C++是由Bjarne Stroustrup于1979年在新泽西州美利山贝尔实验室开始设计开发的，扩充和完善了C语言，最初命名为带类的C，后来更改为C++。 C++完全支持面向对象的程序设计，包括面向对象开发的四大">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VZLhuD.png">
-<meta property="og:updated_time" content="2019-05-28T03:04:24.680Z">
+<meta property="og:updated_time" content="2019-05-28T03:11:34.485Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识c++">
 <meta name="twitter:description" content="C++简介C++是一种静态类型的、编译式的、通用的、大小写敏感的、不规则的编程语言，支持过程化编程、面向对象编程和泛型编程。C++被认为是一种中级语言，它综合了高级语言和低级语言的特点。C++是由Bjarne Stroustrup于1979年在新泽西州美利山贝尔实验室开始设计开发的，扩充和完善了C语言，最初命名为带类的C，后来更改为C++。 C++完全支持面向对象的程序设计，包括面向对象开发的四大">
@@ -672,7 +672,74 @@ int main()
 } 
 </code></pre><p>当上面的程序运行时，会输出下列结果：</p>
 <p>-15536 50000<br>上述结果中，无符号短整数 50,000 的位模式被解释为有符号短整数 -15,536。</p>
+<h2 id="C-函数"><a href="#C-函数" class="headerlink" title="C++ 函数"></a>C++ 函数</h2><p>C++ 函数<br>函数是一组一起执行一个任务的语句。每个 C++ 程序都至少有一个函数，即主函数 main() ，所有简单的程序都可以定义其他额外的函数。</p>
+<p>您可以把代码划分到不同的函数中。如何划分代码到不同的函数中是由您来决定的，但在逻辑上，划分通常是根据每个函数执行一个特定的任务来进行的。</p>
+<p>函数声明告诉编译器函数的名称、返回类型和参数。函数定义提供了函数的实际主体。</p>
+<p>C++ 标准库提供了大量的程序可以调用的内置函数。例如，函数 strcat() 用来连接两个字符串，函数 memcpy() 用来复制内存到另一个位置。</p>
+<p>函数还有很多叫法，比如方法、子例程或程序，等等。</p>
+<p>1、定义函数<br>C++ 中的函数定义的一般形式如下：</p>
+<pre><code>return_type function_name( parameter list )
+{
+   body of the function
+}
+</code></pre><p>在 C++ 中，函数由一个函数头和一个函数主体组成。下面列出一个函数的所有组成部分：</p>
+<p>返回类型：一个函数可以返回一个值。return_type 是函数返回的值的数据类型。有些函数执行所需的操作而不返回值，在这种情况下，return_type 是关键字 void。<br>函数名称：这是函数的实际名称。函数名和参数列表一起构成了函数签名。<br>参数：参数就像是占位符。当函数被调用时，您向参数传递一个值，这个值被称为实际参数。参数列表包括函数参数的类型、顺序、数量。参数是可选的，也就是说，函数可能不包含参数。<br>函数主体：函数主体包含一组定义函数执行任务的语句。</p>
+<p>实例<br>以下是 max() 函数的源代码。该函数有两个参数 num1 和 num2，会返回这两个数中较大的那个数：</p>
+<pre><code>// 函数返回两个数中较大的那个数
 
+int max(int num1, int num2) 
+{
+   // 局部变量声明
+   int result;
+
+   if (num1 &gt; num2)
+      result = num1;
+   else
+      result = num2;
+
+   return result; 
+}
+</code></pre><p>函数声明<br>函数声明会告诉编译器函数名称及如何调用函数。函数的实际主体可以单独定义。</p>
+<p>函数声明包括以下几个部分：</p>
+<pre><code>return_type function_name( parameter list );
+</code></pre><p>针对上面定义的函数 max()，以下是函数声明：</p>
+<pre><code>int max(int num1, int num2);
+</code></pre><p>在函数声明中，参数的名称并不重要，只有参数的类型是必需的，因此下面也是有效的声明：</p>
+<pre><code>int max(int, int);
+</code></pre><p>当您在一个源文件中定义函数且在另一个文件中调用函数时，函数声明是必需的。在这种情况下，您应该在调用函数的文件顶部声明函数。调用函数<br>创建 C++ 函数时，会定义函数做什么，然后通过调用函数来完成已定义的任务。</p>
+<p>当程序调用函数时，程序控制权会转移给被调用的函数。被调用的函数执行已定义的任务，当函数的返回语句被执行时，或到达函数的结束括号时，会把程序控制权交还给主程序。</p>
+<p>调用函数时，传递所需参数，如果函数返回一个值，则可以存储返回值。例如：</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+// 函数声明
+int max(int num1, int num2);
+
+int main ()
+{
+   // 局部变量声明
+   int a = 100;
+   int b = 200;
+   int ret;
+
+   // 调用函数来获取最大值
+   ret = max(a, b);
+
+   cout &lt;&lt; &quot;Max value is : &quot; &lt;&lt; ret &lt;&lt; endl;
+    return 0; 
+}   // 函数返回两个数中较大的那个数
+int max(int num1, int num2)  {    // 局部变量声明
+    int result;
+    if (num1 &gt; num2)
+      result = num1;
+   else
+      result = num2;
+
+   return result; 
+}
+</code></pre><p>把 max() 函数和 main() 函数放一块，编译源代码。当运行最后的可执行文件时，会产生下列结果：</p>
+<pre><code>Max value is : 200
+</code></pre>
       
     </div>
     
@@ -848,7 +915,7 @@ int main()
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-简介"><span class="nav-number">1.</span> <span class="nav-text">C++简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境设置"><span class="nav-number">2.</span> <span class="nav-text">环境设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-基本语法"><span class="nav-number">3.</span> <span class="nav-text">C++ 基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-简介"><span class="nav-number">1.</span> <span class="nav-text">C++简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境设置"><span class="nav-number">2.</span> <span class="nav-text">环境设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-基本语法"><span class="nav-number">3.</span> <span class="nav-text">C++ 基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#C-函数"><span class="nav-number"></span> <span class="nav-text">C++ 函数</span></a></li></div>
             
 
           </div>
