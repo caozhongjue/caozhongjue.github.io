@@ -88,7 +88,7 @@
 <meta property="og:description" content="C++简介C++是一种静态类型的、编译式的、通用的、大小写敏感的、不规则的编程语言，支持过程化编程、面向对象编程和泛型编程。C++被认为是一种中级语言，它综合了高级语言和低级语言的特点。C++是由Bjarne Stroustrup于1979年在新泽西州美利山贝尔实验室开始设计开发的，扩充和完善了C语言，最初命名为带类的C，后来更改为C++。 C++完全支持面向对象的程序设计，包括面向对象开发的四大">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VZLhuD.png">
-<meta property="og:updated_time" content="2019-05-28T03:22:34.601Z">
+<meta property="og:updated_time" content="2019-05-28T03:28:47.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识c++">
 <meta name="twitter:description" content="C++简介C++是一种静态类型的、编译式的、通用的、大小写敏感的、不规则的编程语言，支持过程化编程、面向对象编程和泛型编程。C++被认为是一种中级语言，它综合了高级语言和低级语言的特点。C++是由Bjarne Stroustrup于1979年在新泽西州美利山贝尔实验室开始设计开发的，扩充和完善了C语言，最初命名为带类的C，后来更改为C++。 C++完全支持面向对象的程序设计，包括面向对象开发的四大">
@@ -793,6 +793,50 @@ int main ()
       7          107
       8          108
       9          109
+</code></pre><h3 id="C-基本的输入输出"><a href="#C-基本的输入输出" class="headerlink" title="C++ 基本的输入输出"></a>C++ 基本的输入输出</h3><p>C++ 基本的输入输出<br>C++ 标准库提供了一组丰富的输入/输出功能，我们将在后续的章节进行介绍。本章将讨论 C++ 编程中最基本和最常见的 I/O 操作。</p>
+<p>C++ 的 I/O 发生在流中，流是字节序列。如果字节流是从设备（如键盘、磁盘驱动器、网络连接等）流向内存，这叫做输入操作。如果字节流是从内存流向设备（如显示屏、打印机、磁盘驱动器、网络连接等），这叫做输出操作。</p>
+<p>I/O 库头文件<br>下列的头文件在 C++ 编程中很重要。</p>
+<p>头文件        函数和描述</p>
+<p><iostream>    该文件定义了 cin、cout、cerr 和 clog 对象，分别对应于标准输入流、标准输出流、非缓冲标准错误流和缓冲标准错误流。</iostream></p>
+<p><iomanip>    该文件通过所谓的参数化的流操纵器（比如 setw 和 setprecision），来声明对执行标准化 I/O 有用的服务。</iomanip></p>
+<p><fstream>    该文件为用户控制的文件处理声明服务。我们将在文件和流的相关章节讨论它的细节。</fstream></p>
+<p>1、标准输出流（cout）<br>预定义的对象 cout 是 ostream 类的一个实例。cout 对象”连接”到标准输出设备，通常是显示屏。cout 是与流插入运算符 &lt;&lt; 结合使用的，如下所示：</p>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+int main( )
+{
+   char str[] = &quot;Hello C++&quot;;
+
+   cout &lt;&lt; &quot;Value of str is : &quot; &lt;&lt; str &lt;&lt; endl; 
+} 
+</code></pre><p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<pre><code>Value of str is : Hello C++
+</code></pre><p>C++ 编译器根据要输出变量的数据类型，选择合适的流插入运算符来显示值。&lt;&lt; 运算符被重载来输出内置类型（整型、浮点型、double 型、字符串和指针）的数据项。</p>
+<p>流插入运算符 &lt;&lt; 在一个语句中可以多次使用，如上面实例中所示，endl 用于在行末添加一个换行符。</p>
+<p>2、标准输入流（cin）<br>预定义的对象 cin 是 istream 类的一个实例。cin 对象附属到标准输入设备，通常是键盘。cin 是与流提取运算符 &gt;&gt; 结合使用的，如下所示：</p>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+int main( )
+{
+    char name[50];
+
+    cout &lt;&lt; &quot;请输入您的名称： &quot;;
+    cin &gt;&gt; name;
+    cout &lt;&lt; &quot;您的名称是： &quot; &lt;&lt; name &lt;&lt; endl;   
+} 
+</code></pre><p>当上面的代码被编译和执行时，它会提示用户输入名称。当用户输入一个值，并按回车键，就会看到下列结果：</p>
+<pre><code>请输入您的名称： cplusplus
+您的名称是： cplusplus
+</code></pre><p>C++ 编译器根据要输入值的数据类型，选择合适的流提取运算符来提取值，并把它存储在给定的变量中。</p>
+<p>流提取运算符 &gt;&gt; 在一个语句中可以多次使用，如果要求输入多个数据，可以使用如下语句：</p>
+<pre><code>cin &gt;&gt; name &gt;&gt; age;
+</code></pre><p>这相当于下面两个语句：</p>
+<pre><code>cin &gt;&gt; name;
+cin &gt;&gt; age;
 </code></pre>
       
     </div>
@@ -969,7 +1013,7 @@ int main ()
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-简介"><span class="nav-number">1.</span> <span class="nav-text">C++简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境设置"><span class="nav-number">2.</span> <span class="nav-text">环境设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-基本语法"><span class="nav-number">3.</span> <span class="nav-text">C++ 基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-函数"><span class="nav-number">5.</span> <span class="nav-text">C++函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-数组"><span class="nav-number">6.</span> <span class="nav-text">C++ 数组</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-简介"><span class="nav-number">1.</span> <span class="nav-text">C++简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境设置"><span class="nav-number">2.</span> <span class="nav-text">环境设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-基本语法"><span class="nav-number">3.</span> <span class="nav-text">C++ 基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-函数"><span class="nav-number">5.</span> <span class="nav-text">C++函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-数组"><span class="nav-number">6.</span> <span class="nav-text">C++ 数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-基本的输入输出"><span class="nav-number">7.</span> <span class="nav-text">C++ 基本的输入输出</span></a></li></ol></div>
             
 
           </div>
