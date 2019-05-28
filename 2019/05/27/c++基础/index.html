@@ -88,7 +88,7 @@
 <meta property="og:description" content="C++简介C++是一种静态类型的、编译式的、通用的、大小写敏感的、不规则的编程语言，支持过程化编程、面向对象编程和泛型编程。C++被认为是一种中级语言，它综合了高级语言和低级语言的特点。C++是由Bjarne Stroustrup于1979年在新泽西州美利山贝尔实验室开始设计开发的，扩充和完善了C语言，最初命名为带类的C，后来更改为C++。 C++完全支持面向对象的程序设计，包括面向对象开发的四大">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VZLhuD.png">
-<meta property="og:updated_time" content="2019-05-28T03:11:34.485Z">
+<meta property="og:updated_time" content="2019-05-28T03:22:34.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识c++">
 <meta name="twitter:description" content="C++简介C++是一种静态类型的、编译式的、通用的、大小写敏感的、不规则的编程语言，支持过程化编程、面向对象编程和泛型编程。C++被认为是一种中级语言，它综合了高级语言和低级语言的特点。C++是由Bjarne Stroustrup于1979年在新泽西州美利山贝尔实验室开始设计开发的，扩充和完善了C语言，最初命名为带类的C，后来更改为C++。 C++完全支持面向对象的程序设计，包括面向对象开发的四大">
@@ -672,7 +672,7 @@ int main()
 } 
 </code></pre><p>当上面的程序运行时，会输出下列结果：</p>
 <p>-15536 50000<br>上述结果中，无符号短整数 50,000 的位模式被解释为有符号短整数 -15,536。</p>
-<h2 id="C-函数"><a href="#C-函数" class="headerlink" title="C++ 函数"></a>C++ 函数</h2><p>C++ 函数<br>函数是一组一起执行一个任务的语句。每个 C++ 程序都至少有一个函数，即主函数 main() ，所有简单的程序都可以定义其他额外的函数。</p>
+<h3 id="C-函数"><a href="#C-函数" class="headerlink" title="C++函数"></a>C++函数</h3><p>C++ 函数<br>函数是一组一起执行一个任务的语句。每个 C++ 程序都至少有一个函数，即主函数 main() ，所有简单的程序都可以定义其他额外的函数。</p>
 <p>您可以把代码划分到不同的函数中。如何划分代码到不同的函数中是由您来决定的，但在逻辑上，划分通常是根据每个函数执行一个特定的任务来进行的。</p>
 <p>函数声明告诉编译器函数的名称、返回类型和参数。函数定义提供了函数的实际主体。</p>
 <p>C++ 标准库提供了大量的程序可以调用的内置函数。例如，函数 strcat() 用来连接两个字符串，函数 memcpy() 用来复制内存到另一个位置。</p>
@@ -739,6 +739,60 @@ int max(int num1, int num2)  {    // 局部变量声明
 }
 </code></pre><p>把 max() 函数和 main() 函数放一块，编译源代码。当运行最后的可执行文件时，会产生下列结果：</p>
 <pre><code>Max value is : 200
+</code></pre><h3 id="C-数组"><a href="#C-数组" class="headerlink" title="C++ 数组"></a>C++ 数组</h3><p>C++ 数组<br>C++ 支持数组数据结构，它可以存储一个固定大小的相同类型元素的顺序集合。数组是用来存储一系列数据，但它往往被认为是一系列相同类型的变量。</p>
+<p>数组的声明并不是声明一个个单独的变量，比如 number0、number1、…、number99，而是声明一个数组变量，比如 numbers，然后使用 numbers[0]、numbers[1]、…、numbers[99] 来代表一个个单独的变量。数组中的特定元素可以通过索引访问。</p>
+<p>所有的数组都是由连续的内存位置组成。最低的地址对应第一个元素，最高的地址对应最后一个元素。</p>
+<p>1、声明数组<br>在 C++ 中要声明一个数组，需要指定元素的类型和元素的数量，如下所示：<br>    type arrayName [ arraySize ];<br>这叫做一维数组。arraySize 必须是一个大于零的整数常量，type 可以是任意有效的 C++ 数据类型。例如，要声明一个类型为 double 的包含 10 个元素的数组 balance，声明语句如下：</p>
+<pre><code>double balance[10];
+</code></pre><p>现在 balance 是一个可用的数组，可以容纳 10 个类型为 double 的数字。<br>2、初始化数组<br>在 C++ 中，您可以逐个初始化数组，也可以使用一个初始化语句，如下所示：</p>
+<pre><code>double balance[5] = {1000.0, 2.0, 3.4, 17.0, 50.0};
+</code></pre><p>大括号 { } 之间的值的数目不能大于我们在数组声明时在方括号 [ ] 中指定的元素数目。</p>
+<p>如果您省略掉了数组的大小，数组的大小则为初始化时元素的个数。因此，如果：</p>
+<pre><code>double balance[] = {1000.0, 2.0, 3.4, 17.0, 50.0};
+</code></pre><p>您将创建一个数组，它与前一个实例中所创建的数组是完全相同的。下面是一个为数组中某个元素赋值的实例：</p>
+<pre><code>balance[4] = 50.0;
+</code></pre><p>上述的语句把数组中第五个元素的值赋为 50.0。所有的数组都是以 0 作为它们第一个元素的索引，也被称为基索引，数组的最后一个索引是数组的总大小减去 1。以下是上面所讨论的数组的的图形表示：</p>
+<p>数组表示</p>
+<p>3、访问数组元素<br>数组元素可以通过数组名称加索引进行访问。元素的索引是放在方括号内，跟在数组名称的后边。例如：</p>
+<pre><code>double salary = balance[9];
+</code></pre><p>上面的语句将把数组中第 10 个元素的值赋给 salary 变量。下面的实例使用了上述的三个概念，即，声明数组、数组赋值、访问数组：</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+#include &lt;iomanip&gt;
+using std::setw;
+
+int main ()
+{
+   int n[ 10 ]; // n 是一个包含 10 个整数的数组
+
+   // 初始化数组元素          
+   for ( int i = 0; i &lt; 10; i++ )
+   {
+      n[ i ] = i + 100; // 设置元素 i 为 i + 100
+   }
+   cout &lt;&lt; &quot;Element&quot; &lt;&lt; setw( 13 ) &lt;&lt; &quot;Value&quot; &lt;&lt; endl;
+
+   // 输出数组中每个元素的值                     
+   for ( int j = 0; j &lt; 10; j++ )
+   {
+      cout &lt;&lt; setw( 7 )&lt;&lt; j &lt;&lt; setw( 13 ) &lt;&lt; n[ j ] &lt;&lt; endl;
+   }
+
+   return 0;
+}
+</code></pre><p>上面的程序使用了 setw() 函数来格式化输出。当上面的代码被编译和执行时，它会产生下列结果：</p>
+<pre><code>Element        Value
+      0          100
+      1          101
+      2          102
+      3          103
+      4          104
+      5          105
+      6          106
+      7          107
+      8          108
+      9          109
 </code></pre>
       
     </div>
@@ -915,7 +969,7 @@ int max(int num1, int num2)  {    // 局部变量声明
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-简介"><span class="nav-number">1.</span> <span class="nav-text">C++简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境设置"><span class="nav-number">2.</span> <span class="nav-text">环境设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-基本语法"><span class="nav-number">3.</span> <span class="nav-text">C++ 基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#C-函数"><span class="nav-number"></span> <span class="nav-text">C++ 函数</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-简介"><span class="nav-number">1.</span> <span class="nav-text">C++简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境设置"><span class="nav-number">2.</span> <span class="nav-text">环境设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-基本语法"><span class="nav-number">3.</span> <span class="nav-text">C++ 基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-函数"><span class="nav-number">5.</span> <span class="nav-text">C++函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-数组"><span class="nav-number">6.</span> <span class="nav-text">C++ 数组</span></a></li></ol></div>
             
 
           </div>
