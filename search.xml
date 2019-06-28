@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[springboot初识]]></title>
+    <url>%2F2019%2F06%2F28%2Fspringboot%2F</url>
+    <content type="text"><![CDATA[1、什么是Spring Boot 随着动态语言的流行（Ruby、Groovy、Scala、Node.js），Java的开发显得格外的笨重：繁多的配置、低下的开发效率、复杂的部暑流程以及第三方技术集成难度大。 在这样的环境下，Spring Boot应运而生。它使用“习惯优于配置”（项目中存在大量的配置，此外还内置一个习惯性的配置，让你无须手动进行配置）的理念让你的项目快速运行起来。使用Spring Boot很容易创建一个独立（运行jar，内嵌Servlet容器）、准生产级别的基于Spring框架的项目，使用Spring Boot你可以不用或者只需要很少的Spring 配置。 2、Spring Boot优缺点优点（1）快速构建项目;（2）对主流开发框架的无配置集成;（3）项目可独立运行，无须外部依赖Servlet容器；（4）提供运行时的应用监控；（5）极大地提高了开发、部署效率；（6）与云计算的天然集成。缺点（1）书籍文档较少且不够深入（2）如果你不认同Spring框架，这也许是它的缺点]]></content>
+      <categories>
+        <category>spring boot</category>
+      </categories>
+      <tags>
+        <tag>spring boot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[认识vue]]></title>
+    <url>%2F2019%2F06%2F19%2Fvue%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[什么是vuevue是一套用于构建用户界面的渐进式框架。]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[maven的认识]]></title>
     <url>%2F2019%2F05%2F27%2Fmaven%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[普通项目存在的问题1、假如正在eclipse下开发两个java项目A、B,其中A项目中的一些功能依赖于B项目中的某些类，如何维系这种依赖关系呢？处理方法就是手动把B项目打包成jar包，然后在A项目中导入B的jar包，B项目有所改动，都得重新导2、假设正在开发一个web小demo，要用到ssm这几个框架，我们必须手动去官网下载这些jar包，然后导入 maven到底是什么maven是一种软件项目管理工具，是基于项目对象模型，可以通过一小段描述信息来管理项目的构建。Maven的核心功能便是合理叙述项目间的依赖关系，通俗点讲，就是通过pom.xml文件的配置获取jar包，而不用手动去添加jar包，而这里pom.xml文件对于学了一点maven的人来说，就有些熟悉了。 通过groupId、artifactId、version三个属性就能定位一个jar包groupId里面指的是这个jar的包名(文件夹)artifactId里面指的是这个jar文件的名(项目名)version指的是jar包的版本名 maven的安装1、来到maven官方网站 http://maven.apache.org/download.cgi 下载对应的版本 如apache-maven-3.6.1-bin.zip这个2、把这个文件解压放到某个位置，目录结构如下bin文件夹下有maven的命令conf文件夹下有配置文件,如settings.xml3、配置环境变量，cmd命令窗口才能使用maven命令，和配jdk环境变量相似 仓库通过pom.xml中的配置，就能够获取到想要的jar包(还没讲解如何配置先需要了解一下仓库的概念)，但是这些jar是在哪里呢？仓库分为：本地仓库、第三方仓库(私服)、中央仓库1、本地仓库：Maven会将工程中依赖的构件(Jar包)从远程下载到本机一个目录下管理，每个电脑默认的仓库是在C:/Users/Administrator/.m2/repository下修改本地库位置：在maven安装目录下的conf/setting.xml文件中修改如： &lt;localRepository&gt;D:\tomcat\Repository&lt;/localRepository&gt; D:\tomcat\Repository：就是我们自己创建的本地仓库，将网上下载的所有jar包，都丢到该目录下，我们就可以直接通过maven的pom.xml文件直接拿。2、第三方仓库第三方仓库，又称为内部中心仓库，也称为私服私服：一般是由公司自己设立的，只为本公司内部共享使用。它既可以作为公司内部构件协作和存档，也可作为公用类库镜像缓存，减少在外部访问和下载的频率。（使用私服为了减少对中央仓库的访问私服可以使用的是局域网，中央仓库必须使用外网也就是一般公司都会创建这种第三方仓库，保证项目开发时，项目所需用的jar都从该仓库中拿，每个人的版本就都一样。3、中央仓库Maven内置了远程公用仓库：http://repo1.maven.org/maven2这个公共仓库是由Maven自己维护，里面有大量的常用类库，并包含了世界上大部分流行的开源项目构件。国内访问这个网站很慢，一般改为阿里云的，在maven安装目录下的conf/setting.xml文件中修改，在标签里添加下面这些内容保存如： &lt;mirror&gt; &lt;id&gt;alimaven&lt;/id&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;/mirror&gt; maven命令1、maven web项目结构pom.xml 核心配置src/main/java java源码src/main/resources java配置src/main/webapp myeclipse web项目中 WebRoot目录 |– WEB-INF |– web.xmlsrc/test 测试target 输出目录2、命令操作maven java或web项目编译：mvn compile –src/main/java目录java源码编译生成class （target目录下）测试：mvn test –src/test/java 目录编译清理：mvn clean –删除target目录，也就是将class文件等删除打包：mvn package –生成压缩文件：java项目#jar包；web项目#war包，也是放在target目录下安装：mvn install –将压缩文件(jar或者war)上传到本地仓库部署|发布：mvn deploy –将压缩文件上传私服 eclipse中使用maven]]></content>
