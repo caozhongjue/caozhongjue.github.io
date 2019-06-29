@@ -90,9 +90,10 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQrLdg.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQsVY9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQBaOU.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQxwut.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQjcdS.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQxp1s.png">
-<meta property="og:updated_time" content="2019-06-29T08:33:10.212Z">
+<meta property="og:updated_time" content="2019-06-29T08:41:00.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux centos">
 <meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
@@ -396,7 +397,7 @@
 <p>查看firewall是否运行,下面两个命令都可以<br>systemctl status firewalld.service<br>firewall-cmd –state</p>
 <p>查看当前开了哪些端口<br>其实一个服务对应一个端口，每个服务对应/usr/lib/firewalld/services下面一个xml文件。<br>firewall-cmd –list-services</p>
 <p>查看所有打开的端口：<br>firewall-cmd –zone=public –list-ports</p>
-<p>添加开放端口<br>firewall-cmd –zone=public –add-port=80/tcp –permanent    （–permanent永久生效，没有此参数重启后失效）<br>重新载入<br>firewall-cmd –reload<br>查看<br>firewall-cmd –zone= public –query-port=80/tcp<br>删除<br>firewall-cmd –zone= public –remove-port=80/tcp –permanent</p>
+<p>添加开放端口<br>firewall-cmd –zone=public –add-port=80/tcp –permanent    （–permanent永久生效，没有此参数重启后失效）<br>重新载入<br>firewall-cmd –reload<br>查看<br>firewall-cmd –zone= public –query-port=80/tcp<br>删除<br>firewall-cmd –zone= public –remove-port=80/tcp –permanent<br>(命令如下图 注意是有两个-的)<br><img src="https://s2.ax1x.com/2019/06/29/ZQxwut.png" alt="ZQxwut.png"></p>
 <h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><p>1、linux文件目录<br>linux根目录 /<br>存放必要的命令 /bin<br>存放内核以及启动所需要的文件 /boot<br>存放硬件设备文件 /dev<br>存放系统配置文件 /etc<br>普通用户宿主目录 /home<br>存放必要的运行库 /lib<br>超级用户的主目录 /root<br>存放系统管理程序 /sbin<br>存放临时的映射文件系统,通常用来挂载使用 /mnt<br>2、命令<br>linux查看当前目录有哪些内容  ls<br>linux查看当前目录有哪些内容详情 ls -l<br><img src="https://s2.ax1x.com/2019/06/29/ZQjcdS.png" alt="ZQjcdS.png"><br>查看当前位置 pwd<br>去下一级目录 cd 下一级目录<br>返回上一级目录 cd ..<br><img src="https://s2.ax1x.com/2019/06/29/ZQxp1s.png" alt="ZQxp1s.png"></p>
 
       
