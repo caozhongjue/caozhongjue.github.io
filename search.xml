@@ -3,7 +3,13 @@
   <entry>
     <title><![CDATA[linux centos]]></title>
     <url>%2F2019%2F06%2F30%2Flinux%E5%AD%A6%E4%B9%A0%2F</url>
-    <content type="text"><![CDATA[1、linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris 2、redhat、centos下载地址 (1)redhat(2)centos选择dvd是比较全面的，centos minital iso是字符界面的，没图形界面的 3、配置网络目录路径 /etc/sysconfig/network-scripts查看ip的命令 ip addr 或 ifconfigcentos7没有ifconfig命令得安装 yum install net-tools -y]]></content>
+    <content type="text"><![CDATA[1、linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris 2、redhat、centos下载地址 (1)redhat(2)centos选择dvd是比较全面的，centos minital iso是字符界面的，没图形界面的 3、配置网络目录路径 /etc/sysconfig/network-scripts查看ip的命令 ip addr 或 ifconfigcentos7没有ifconfig命令得安装 yum install net-tools -y重启网卡命令 service network restart]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[springboot初识]]></title>
