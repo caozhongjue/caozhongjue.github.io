@@ -12,6 +12,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[vultr]]></title>
+    <url>%2F2019%2F06%2F30%2Fvultr%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[1、vultr的官网在vultr的官网注册自己的账号，充钱进入到自己的个人页面点那个蓝色+号2、创建好自己的实例，打开终端控制台如下图，输root账户,密码开放端口 80 22 88913、我这Secure crt工具连4、搭建vps服务器，命令如下wget –no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.shchmod +x shadowsocks.sh./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log在输入第3条命令后 会要你选择加密方式，我直接按7回车，再回车，（为什么选7呢）因为客户端也有对应的解密方式，两者要对应出现下图才下载成功5、命令查看服务有没有启动lsof -i:8891如果提示命令找不到，就安装一下lsof命令yum install lsof -y6、先把服务干掉kill -9 16375 （16375是进程id）启动服务命令ssserver -c /etc/shadowsocks.json &amp;（我用secure crt工具连服务器，每次断开后，vps服务就挂了，我添加自启动）先看看ssserver命令存放在用命令which ssserver我的存放在/usr/bin/ssserver下vi /etc/rc.local打rc.local文件在里面加这个内容/usr/bin/ssserver -c/etc/shadowsocks.json -d start执行下命令chmod 777 /etc/rc.local7、最后一步，使用代理客户端shadowsocks-win-2.3（自行百度）8、打开这个工具，输入自己的服务器的ip地址，刚刚设置的端口号和密码，如果不记得了，去打开/etc/shadowsocks.json文件，里面有端口和密码9、最后访问google官网看看]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>vultr</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[springboot初识]]></title>
     <url>%2F2019%2F06%2F28%2Fspringboot%2F</url>
     <content type="text"><![CDATA[1、什么是Spring Boot 随着动态语言的流行（Ruby、Groovy、Scala、Node.js），Java的开发显得格外的笨重：繁多的配置、低下的开发效率、复杂的部暑流程以及第三方技术集成难度大。 在这样的环境下，Spring Boot应运而生。它使用“习惯优于配置”（项目中存在大量的配置，此外还内置一个习惯性的配置，让你无须手动进行配置）的理念让你的项目快速运行起来。使用Spring Boot很容易创建一个独立（运行jar，内嵌Servlet容器）、准生产级别的基于Spring框架的项目，使用Spring Boot你可以不用或者只需要很少的Spring 配置。 2、Spring Boot优缺点优点（1）快速构建项目;（2）对主流开发框架的无配置集成;（3）项目可独立运行，无须外部依赖Servlet容器；（4）提供运行时的应用监控；（5）极大地提高了开发、部署效率；（6）与云计算的天然集成。缺点（1）书籍文档较少且不够深入（2）如果你不认同Spring框架，这也许是它的缺点]]></content>
@@ -87,11 +98,6 @@
       <tags>
         <tag>java</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[vultr]]></title>
-    <url>%2F2019%2F04%2F25%2Fvultr%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[1、vultr的官网在vultr的官网注册自己的账号，充钱进入到自己的个人页面点那个蓝色+号2、创建好自己的实例，打开终端控制台如下图，输root账户,密码开放端口 80 22 88913、我这Secure crt工具连4、搭建vps服务器，命令如下wget –no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.shchmod +x shadowsocks.sh./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log在输入第3条命令后 会要你选择加密方式，我直接按7回车，再回车，（为什么选7呢）因为客户端也有对应的解密方式，两者要对应出现下图才下载成功5、命令查看服务有没有启动lsof -i:8891如果提示命令找不到，就安装一下lsof命令yum install lsof -y6、先把服务干掉kill -9 16375 （16375是进程id）启动服务命令ssserver -c /etc/shadowsocks.json &amp;（我用secure crt工具连服务器，每次断开后，vps服务就挂了，我添加自启动）先看看ssserver命令存放在用命令which ssserver我的存放在/usr/bin/ssserver下vi /etc/rc.local打rc.local文件在里面加这个内容/usr/bin/ssserver -c/etc/shadowsocks.json -d start执行下命令chmod 777 /etc/rc.local7、最后一步，使用代理客户端shadowsocks-win-2.3（自行百度）8、打开这个工具，输入自己的服务器的ip地址，刚刚设置的端口号和密码，如果不记得了，去打开/etc/shadowsocks.json文件，里面有端口和密码9、最后访问google官网看看]]></content>
   </entry>
   <entry>
     <title><![CDATA[hexo搭建博客]]></title>
