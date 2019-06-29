@@ -92,10 +92,10 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/Zll2RJ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/Zllhs1.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZllodK.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/Zl1WtS.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/Zl8IZq.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZlUvOe.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZlaSwd.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/Zl8HiT.png">
-<meta property="og:updated_time" content="2019-06-29T14:50:44.204Z">
+<meta property="og:updated_time" content="2019-06-29T15:21:30.271Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vultr">
 <meta name="twitter:description" content="1、vultr的官网在vultr的官网注册自己的账号，充钱进入到自己的个人页面点那个蓝色+号,选择好自己的实例服务器地区，系统，每月扣标准，最后点 deploy now2、创建好自己的实例，打开终端控制台如下图，输root账户,密码开放端口 80 22 88913、我这Secure crt工具连4、搭建vps服务器，命令如下 wget --no-check-certificate https://">
@@ -397,7 +397,7 @@
 <pre><code>wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
 chmod +x shadowsocks.sh
 ./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log
-</code></pre><p>在输入第3条命令后 会要你选择加密方式，我直接按7回车，再回车，（为什么选7呢）因为客户端也有对应的解密方式，两者要对应<br>出现下图才下载成功<br><img src="https://s2.ax1x.com/2019/06/29/Zl1WtS.png" alt="Zl1WtS.png"><br>5、命令查看服务有没有启动</p>
+</code></pre><p>在输入第3条命令后 会要你选择加密方式，我直接按7回车，再回车，（为什么选7呢）因为客户端也有对应的解密方式，两者要对应<br>出现下图才下载成功<br><img src="https://s2.ax1x.com/2019/06/29/ZlUvOe.png" alt="ZlUvOe.png"><br>5、命令查看服务有没有启动</p>
 <pre><code>lsof -i:8891
 </code></pre><p>如果提示命令找不到，就安装一下lsof命令</p>
 <pre><code>yum install lsof -y
@@ -414,7 +414,7 @@ chmod +x shadowsocks.sh
 </code></pre><p>执行下命令</p>
 <pre><code>chmod 777 /etc/rc.local
 reboot
-</code></pre><p>7、最后一步，使用代理客户端<br>shadowsocks-win-2.3（自行百度）<br>8、打开这个工具，输入自己的服务器的ip地址，刚刚设置的端口号和密码，如果不记得了，去打开<br>/etc/shadowsocks.json文件，里面有端口和密码<br><img src="https://s2.ax1x.com/2019/06/29/Zl8IZq.png" alt="Zl8IZq.png"><br>9、最后访问google官网看看<br><img src="https://s2.ax1x.com/2019/06/29/Zl8HiT.png" alt="Zl8HiT.png"></p>
+</code></pre><p>7、最后一步，使用代理客户端<br>shadowsocks-win-2.3（自行百度）<br>8、打开这个工具，输入自己的服务器的ip地址，刚刚设置的端口号和密码，如果不记得了，去打开<br>/etc/shadowsocks.json文件，里面有端口和密码<br><img src="https://s2.ax1x.com/2019/06/29/ZlaSwd.png" alt="ZlaSwd.png"><br>9、最后访问google官网看看<br><img src="https://s2.ax1x.com/2019/06/29/Zl8HiT.png" alt="Zl8HiT.png"></p>
 
       
     </div>
