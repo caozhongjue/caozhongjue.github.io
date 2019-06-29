@@ -79,21 +79,22 @@
 
 
 
-<meta name="description" content="1、linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  2、redhat、centos下载地址 (1)redhat(2)cento">
+<meta name="description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
 <meta name="keywords" content="centos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux centos">
 <meta property="og:url" content="http://yoursite.com/2019/06/30/linux学习/index.html">
 <meta property="og:site_name" content="czj&#39;blog">
-<meta property="og:description" content="1、linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  2、redhat、centos下载地址 (1)redhat(2)cento">
+<meta property="og:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQrLdg.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQsVY9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQBaOU.png">
-<meta property="og:updated_time" content="2019-06-29T08:07:40.477Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQjcdS.png">
+<meta property="og:updated_time" content="2019-06-29T08:25:22.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux centos">
-<meta name="twitter:description" content="1、linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  2、redhat、centos下载地址 (1)redhat(2)cento">
+<meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/06/29/ZQrLdg.png">
 
 
@@ -388,14 +389,14 @@
       
 
       
-        <p>1、linux各个版本<br>根据用途不同可以做如下划分：<br>(1)家庭用途可选择版本有：Linux Mint、Ubuntu<br>(2)商业用途可选择版本有：Debian、RHEL、CentOS<br>(3)挑战用途可选择版本有：Gentoo、LFS<br>(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris </p>
-<p>2、redhat、centos下载地址</p>
-<p>(1)<a href="https://developers.redhat.com/rhel8/" target="_blank" rel="noopener">redhat</a><br>(2)<a href="https://www.centos.org/download/" target="_blank" rel="noopener">centos</a><br>选择dvd是比较全面的，centos minital iso是字符界面的，没图形界面的</p>
-<p>3、配置网络<br>目录路径 /etc/sysconfig/network-scripts<br><img src="https://s2.ax1x.com/2019/06/29/ZQrLdg.png" alt="ZQrLdg.png"><br>我的网卡是ifcfg-ens33<br>用命令 vi ifcfg-ens33打开这个文件<br><img src="https://s2.ax1x.com/2019/06/29/ZQsVY9.png" alt="ZQsVY9.png"><br>BOOTPROTO修改为dhcp<br>ONBOOT修改为yes<br>重启网卡命令 service network restart<br>查看ip的命令 ip addr 或 ifconfig<br><img src="https://s2.ax1x.com/2019/06/29/ZQBaOU.png" alt="ZQBaOU.png"><br>centos7没有ifconfig命令<br>得安装 yum install net-tools -y<br>配置DNS<br>路径 /etc/<br>vi resolv.conf<br>centos7 防火墙  firewalled<br>关闭防火墙 systemctl stop firewalld<br>开启防火墙 systemctl start firewalld<br>重启防火墙 systemctl restart firewalld<br>或<br>关闭防火墙 service firewalld stop<br>开启防火墙 service firewalld start<br>重启防火墙 service firewalld restart<br>centos6 防火墙  iptables<br>想直接执行最后一次命令直接!号加命令首写  如!ser  等于最后一次命令 service firewalld restart</p>
+        <h4 id="linux各个版本"><a href="#linux各个版本" class="headerlink" title="linux各个版本"></a>linux各个版本</h4><p>根据用途不同可以做如下划分：<br>(1)家庭用途可选择版本有：Linux Mint、Ubuntu<br>(2)商业用途可选择版本有：Debian、RHEL、CentOS<br>(3)挑战用途可选择版本有：Gentoo、LFS<br>(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris </p>
+<h4 id="redhat、centos下载地址"><a href="#redhat、centos下载地址" class="headerlink" title="redhat、centos下载地址"></a>redhat、centos下载地址</h4><p>(1)<a href="https://developers.redhat.com/rhel8/" target="_blank" rel="noopener">redhat</a><br>(2)<a href="https://www.centos.org/download/" target="_blank" rel="noopener">centos</a><br>选择dvd是比较全面的，centos minital iso是字符界面的，没图形界面的</p>
+<h4 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h4><p>目录路径 /etc/sysconfig/network-scripts<br><img src="https://s2.ax1x.com/2019/06/29/ZQrLdg.png" alt="ZQrLdg.png"><br>我的网卡是ifcfg-ens33<br>用命令 vi ifcfg-ens33打开这个文件<br><img src="https://s2.ax1x.com/2019/06/29/ZQsVY9.png" alt="ZQsVY9.png"><br>BOOTPROTO修改为dhcp<br>ONBOOT修改为yes<br>重启网卡命令 service network restart<br>查看ip的命令 ip addr 或 ifconfig<br><img src="https://s2.ax1x.com/2019/06/29/ZQBaOU.png" alt="ZQBaOU.png"><br>centos7没有ifconfig命令<br>得安装 yum install net-tools -y<br>配置DNS<br>路径 /etc/<br>vi resolv.conf<br>centos7 防火墙  firewalled<br>关闭防火墙 systemctl stop firewalld<br>开启防火墙 systemctl start firewalld<br>重启防火墙 systemctl restart firewalld<br>或<br>关闭防火墙 service firewalld stop<br>开启防火墙 service firewalld start<br>重启防火墙 service firewalld restart<br>centos6 防火墙  iptables<br>想直接执行最后一次命令直接!号加命令首写  如!ser  等于最后一次命令 service firewalld restart</p>
 <p>查看firewall是否运行,下面两个命令都可以<br>systemctl status firewalld.service<br>firewall-cmd –state</p>
 <p>查看当前开了哪些端口<br>其实一个服务对应一个端口，每个服务对应/usr/lib/firewalld/services下面一个xml文件。<br>firewall-cmd –list-services</p>
 <p>查看所有打开的端口：<br>firewall-cmd –zone=public –list-ports</p>
 <p>添加开放端口<br>firewall-cmd –zone=public –add-port=80/tcp –permanent    （–permanent永久生效，没有此参数重启后失效）<br>重新载入<br>firewall-cmd –reload<br>查看<br>firewall-cmd –zone= public –query-port=80/tcp<br>删除<br>firewall-cmd –zone= public –remove-port=80/tcp –permanent</p>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><p>1、linux文件目录<br>/  linux根目录<br>/bin 存放必要的命令<br>/boot 存放内核以及启动所需要的文件<br>/dev 存放硬件设备文件<br>/etc 存放系统配置文件<br>/home 普通用户宿主目录<br>/lib 存放必要的运行库<br>/root 超级用户的主目录<br>/sbin 存放系统管理程序<br>/mnt 存放临时的映射文件系统,通常用来挂载使用<br>2、命令<br>ls linux查看当前目录有哪些内容<br>ls -l linux查看当前目录有哪些内容详情<br><img src="https://s2.ax1x.com/2019/06/29/ZQjcdS.png" alt="ZQjcdS.png"></p>
 
       
     </div>
@@ -486,8 +487,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -549,6 +559,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#linux各个版本"><span class="nav-number">1.</span> <span class="nav-text">linux各个版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redhat、centos下载地址"><span class="nav-number">2.</span> <span class="nav-text">redhat、centos下载地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置网络"><span class="nav-number">3.</span> <span class="nav-text">配置网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
