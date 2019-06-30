@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[vultr]]></title>
-    <url>%2F2019%2F06%2F30%2Fvultr%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[1、vultr的官网在vultr的官网注册自己的账号，充钱进入到自己的个人页面点那个蓝色+号,选择好自己的实例服务器地区，系统，每月扣标准，最后点 deploy now2、创建好自己的实例，打开终端控制台如下图，输root账户,密码开放端口 80 22 88913、我这Secure crt工具连4、搭建vps服务器，命令如下 wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh chmod +x shadowsocks.sh ./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log 在输入第3条命令后 会要你选择加密方式，我直接按7回车，再回车，（为什么选7呢）因为客户端也有对应的解密方式，两者要对应出现下图才下载成功5、命令查看服务有没有启动 lsof -i:8891 如果提示命令找不到，就安装一下lsof命令 yum install lsof -y 6、先把服务干掉 kill -9 16375 （16375是进程id） 启动服务命令 ssserver -c /etc/shadowsocks.json &amp; （我用secure crt工具连服务器，每次断开后，vps服务就挂了，我添加自启动）先看看ssserver命令存放在用命令 which ssserver 我的存放在/usr/bin/ssserver下 vi /etc/rc.local 打rc.local文件在里面加这个内容 /usr/bin/ssserver -c/etc/shadowsocks.json -d start 执行下命令 chmod 777 /etc/rc.local reboot 7、最后一步，使用代理客户端shadowsocks-win-2.3（自行百度）8、打开这个工具，输入自己的服务器的ip地址，刚刚设置的端口号和密码，如果不记得了，去打开/etc/shadowsocks.json文件，里面有端口和密码9、最后访问google官网看看]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>vultr</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[认识vue]]></title>
     <url>%2F2019%2F06%2F10%2Fvue%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[什么是vuevue是一套用于构建用户界面的渐进式框架。]]></content>
@@ -23,8 +12,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[vultr]]></title>
+    <url>%2F2019%2F03%2F02%2Fvultr%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[1、vultr的官网在vultr的官网注册自己的账号，充钱进入到自己的个人页面点那个蓝色+号,选择好自己的实例服务器地区，系统，每月扣标准，最后点 deploy now2、创建好自己的实例，打开终端控制台如下图，输root账户,密码开放端口 80 22 88913、我这Secure crt工具连4、搭建vps服务器，命令如下 wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh chmod +x shadowsocks.sh ./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log 在输入第3条命令后 会要你选择加密方式，我直接按7回车，再回车，（为什么选7呢）因为客户端也有对应的解密方式，两者要对应出现下图才下载成功5、命令查看服务有没有启动 lsof -i:8891 如果提示命令找不到，就安装一下lsof命令 yum install lsof -y 6、先把服务干掉 kill -9 16375 （16375是进程id） 启动服务命令 ssserver -c /etc/shadowsocks.json &amp; （我用secure crt工具连服务器，每次断开后，vps服务就挂了，我添加自启动）先看看ssserver命令存放在用命令 which ssserver 我的存放在/usr/bin/ssserver下 vi /etc/rc.local 打rc.local文件在里面加这个内容 /usr/bin/ssserver -c/etc/shadowsocks.json -d start 执行下命令 chmod 777 /etc/rc.local reboot 7、最后一步，使用代理客户端shadowsocks-win-2.3（自行百度）8、打开这个工具，输入自己的服务器的ip地址，刚刚设置的端口号和密码，如果不记得了，去打开/etc/shadowsocks.json文件，里面有端口和密码9、最后访问google官网看看]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>vultr</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[springboot初识]]></title>
-    <url>%2F2019%2F03%2F02%2Fspringboot%2F</url>
+    <url>%2F2019%2F02%2F23%2Fspringboot%2F</url>
     <content type="text"><![CDATA[什么是Spring Boot随着动态语言的流行（Ruby、Groovy、Scala、Node.js），Java的开发显得格外的笨重：繁多的配置、低下的开发效率、复杂的部暑流程以及第三方技术集成难度大。 在这样的环境下，Spring Boot应运而生。它使用“习惯优于配置”（项目中存在大量的配置，此外还内置一个习惯性的配置，让你无须手动进行配置）的理念让你的项目快速运行起来。使用Spring Boot很容易创建一个独立（运行jar，内嵌Servlet容器）、准生产级别的基于Spring框架的项目，使用Spring Boot你可以不用或者只需要很少的Spring 配置。 Spring Boot优缺点优点（1）快速构建项目;（2）对主流开发框架的无配置集成;（3）项目可独立运行，无须外部依赖Servlet容器；（4）提供运行时的应用监控；（5）极大地提高了开发、部署效率；（6）与云计算的天然集成。缺点（1）书籍文档较少且不够深入（2）如果你不认同Spring框架，这也许是它的缺点 创建一个超级简单的的Springboot项目工具:ideamaven目录结构如下pom.xml文件内容 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt; &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;com.caozhongjue&lt;/groupId&gt; &lt;artifactId&gt;myblog&lt;/artifactId&gt; &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt; &lt;packaging&gt;jar&lt;/packaging&gt; &lt;parent&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt; &lt;version&gt;2.1.6.RELEASE&lt;/version&gt; &lt;/parent&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; &lt;/project&gt; 创建一个Controller类 package com.caozhongjue.controller; import org.springframework.stereotype.Controller; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.ResponseBody; /** * @author 曹忠爵 * @site * @create 2019-06-30 14:17 */ @Controller public class index { @RequestMapping(&quot;/&quot;) @ResponseBody public String index(){ return &quot;helloworld&quot;; } } 创建一个启动类 package com.caozhongjue; import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.EnableAutoConfiguration; import org.springframework.context.annotation.ComponentScan; /** * @author 曹忠爵 * @site * @create 2019-06-30 15:13 */ //@SpringBootApplication @EnableAutoConfiguration @ComponentScan(&quot;com.caozhongjue.controller&quot;) public class MBSpringBootApplication { public static void main(String[] args){ SpringApplication.run(MBSpringBootApplication.class); } } @SpringBootApplication这个注解相当于@EnableAutoConfiguration+@ComponentScan这两个注解两个注解都能启动SpringBoot项目]]></content>
       <categories>
         <category>spring boot</category>
@@ -35,7 +35,7 @@
   </entry>
   <entry>
     <title><![CDATA[linux centos]]></title>
-    <url>%2F2019%2F02%2F23%2Flinux%E5%AD%A6%E4%B9%A0%2F</url>
+    <url>%2F2019%2F02%2F16%2Flinux%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris redhat、centos下载地址(1)redhat(2)centos选择dvd是比较全面的，centos minital iso是字符界面的，没图形界面的 配置网络目录路径 /etc/sysconfig/network-scripts我的网卡是ifcfg-ens33用命令 vi ifcfg-ens33打开这个文件BOOTPROTO修改为dhcpONBOOT修改为yes重启网卡命令 service network restart 查看ip的命令 ip addr 或 ifconfigcentos7没有ifconfig命令得安装 yum install net-tools -y 配置DNS路径 /etc/ vi resolv.conf centos7 防火墙 firewalled关闭防火墙 systemctl stop firewalld开启防火墙 systemctl start firewalld重启防火墙 systemctl restart firewalld或关闭防火墙 service firewalld stop开启防火墙 service firewalld start重启防火墙 service firewalld restartcentos6 防火墙 iptables想直接执行最后一次命令直接!号加命令首写 如!ser 等于最后一次命令 service firewalld restart 查看firewall是否运行,下面两个命令都可以 systemctl status firewalld.service firewall-cmd --state 查看当前开了哪些端口其实一个服务对应一个端口，每个服务对应/usr/lib/firewalld/services下面一个xml文件。 firewall-cmd --list-services 查看所有打开的端口： firewall-cmd --zone=public --list-ports 添加开放端口 firewall-cmd --zone=public --add-port=80/tcp --permanent （--permanent永久生效，没有此参数重启后失效） 重新载入 firewall-cmd --reload 查看 firewall-cmd --zone= public --query-port=80/tcp 删除 firewall-cmd --zone= public --remove-port=80/tcp --permanent (命令如下图 注意是有两个-的) 常用命令1、linux文件目录linux根目录 /存放必要的命令 /bin存放内核以及启动所需要的文件 /boot存放硬件设备文件 /dev存放系统配置文件 /etc普通用户宿主目录 /home存放必要的运行库 /lib超级用户的主目录 /root存放系统管理程序 /sbin存放临时的映射文件系统,通常用来挂载使用 /mnt2、命令linux查看当前目录有哪些内容 ls linux查看当前目录有哪些内容详情 ls -l 查看当前位置 pwd去下一级目录 cd 下一级目录返回上一级目录 cd ..查看端口被哪个进程占用命令 netstat -lnp|grep 8080关机 shutdown 现在关机 shutdown now 重启 reboot]]></content>
       <categories>
         <category>linux</category>
@@ -46,7 +46,7 @@
   </entry>
   <entry>
     <title><![CDATA[maven的认识]]></title>
-    <url>%2F2019%2F02%2F16%2Fmaven%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <url>%2F2019%2F02%2F09%2Fmaven%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[普通项目存在的问题1、假如正在eclipse下开发两个java项目A、B,其中A项目中的一些功能依赖于B项目中的某些类，如何维系这种依赖关系呢？处理方法就是手动把B项目打包成jar包，然后在A项目中导入B的jar包，B项目有所改动，都得重新导2、假设正在开发一个web小demo，要用到ssm这几个框架，我们必须手动去官网下载这些jar包，然后导入 maven到底是什么maven是一种软件项目管理工具，是基于项目对象模型，可以通过一小段描述信息来管理项目的构建。Maven的核心功能便是合理叙述项目间的依赖关系，通俗点讲，就是通过pom.xml文件的配置获取jar包，而不用手动去添加jar包，而这里pom.xml文件对于学了一点maven的人来说，就有些熟悉了。 通过groupId、artifactId、version三个属性就能定位一个jar包groupId里面指的是这个jar的包名(文件夹)artifactId里面指的是这个jar文件的名(项目名)version指的是jar包的版本名 maven的安装1、来到maven官方网站 http://maven.apache.org/download.cgi 下载对应的版本 如apache-maven-3.6.1-bin.zip这个2、把这个文件解压放到某个位置，目录结构如下bin文件夹下有maven的命令conf文件夹下有配置文件,如settings.xml3、配置环境变量，cmd命令窗口才能使用maven命令，和配jdk环境变量相似 仓库通过pom.xml中的配置，就能够获取到想要的jar包(还没讲解如何配置先需要了解一下仓库的概念)，但是这些jar是在哪里呢？仓库分为：本地仓库、第三方仓库(私服)、中央仓库1、本地仓库：Maven会将工程中依赖的构件(Jar包)从远程下载到本机一个目录下管理，每个电脑默认的仓库是在C:/Users/Administrator/.m2/repository下修改本地库位置：在maven安装目录下的conf/setting.xml文件中修改如： &lt;localRepository&gt;D:\tomcat\Repository&lt;/localRepository&gt; D:\tomcat\Repository：就是我们自己创建的本地仓库，将网上下载的所有jar包，都丢到该目录下，我们就可以直接通过maven的pom.xml文件直接拿。2、第三方仓库第三方仓库，又称为内部中心仓库，也称为私服私服：一般是由公司自己设立的，只为本公司内部共享使用。它既可以作为公司内部构件协作和存档，也可作为公用类库镜像缓存，减少在外部访问和下载的频率。（使用私服为了减少对中央仓库的访问私服可以使用的是局域网，中央仓库必须使用外网也就是一般公司都会创建这种第三方仓库，保证项目开发时，项目所需用的jar都从该仓库中拿，每个人的版本就都一样。3、中央仓库Maven内置了远程公用仓库：http://repo1.maven.org/maven2这个公共仓库是由Maven自己维护，里面有大量的常用类库，并包含了世界上大部分流行的开源项目构件。国内访问这个网站很慢，一般改为阿里云的，在maven安装目录下的conf/setting.xml文件中修改，在标签里添加下面这些内容保存如： &lt;mirror&gt; &lt;id&gt;alimaven&lt;/id&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;/mirror&gt; maven命令1、maven web项目结构pom.xml 核心配置src/main/java java源码src/main/resources java配置src/main/webapp myeclipse web项目中 WebRoot目录 |– WEB-INF |– web.xmlsrc/test 测试target 输出目录2、命令操作maven java或web项目编译：mvn compile –src/main/java目录java源码编译生成class （target目录下）测试：mvn test –src/test/java 目录编译清理：mvn clean –删除target目录，也就是将class文件等删除打包：mvn package –生成压缩文件：java项目#jar包；web项目#war包，也是放在target目录下安装：mvn install –将压缩文件(jar或者war)上传到本地仓库部署|发布：mvn deploy –将压缩文件上传私服 eclipse中使用maven]]></content>
       <categories>
         <category>maven</category>
