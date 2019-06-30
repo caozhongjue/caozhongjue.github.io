@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="maven,">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="普通项目存在的问题1、假如正在eclipse下开发两个java项目A、B,其中A项目中的一些功能依赖于B项目中的某些类，如何维系这种依赖关系呢？处理方法就是手动把B项目打包成jar包，然后在A项目中导入B的jar包，B项目有所改动，都得重新导2、假设正在开发一个web小demo，要用到ssm这几个框架，我们必须手动去官网下载这些jar包，然后导入 maven到底是什么maven是一种软件项目管理工">
-<meta name="keywords" content="maven">
+<meta name="description" content="设计模式的分类设计模式分为三大类：创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。结构型模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、状态模式、访问模式、中介模式、解释器模式。其他类的有：并发型模式和线程池模式。 设计模式的六大原则设">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="maven的认识">
-<meta property="og:url" content="http://yoursite.com/2019/05/27/maven的使用/index.html">
+<meta property="og:title" content="java设计模式">
+<meta property="og:url" content="http://yoursite.com/2019/02/02/java设计模式/index.html">
 <meta property="og:site_name" content="czj&#39;blog">
-<meta property="og:description" content="普通项目存在的问题1、假如正在eclipse下开发两个java项目A、B,其中A项目中的一些功能依赖于B项目中的某些类，如何维系这种依赖关系呢？处理方法就是手动把B项目打包成jar包，然后在A项目中导入B的jar包，B项目有所改动，都得重新导2、假设正在开发一个web小demo，要用到ssm这几个框架，我们必须手动去官网下载这些jar包，然后导入 maven到底是什么maven是一种软件项目管理工">
+<meta property="og:description" content="设计模式的分类设计模式分为三大类：创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。结构型模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、状态模式、访问模式、中介模式、解释器模式。其他类的有：并发型模式和线程池模式。 设计模式的六大原则设">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VVL92T.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VVXBUs.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VVXWb4.png">
-<meta property="og:updated_time" content="2019-06-29T03:40:23.843Z">
+<meta property="og:updated_time" content="2019-06-30T08:34:50.993Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="maven的认识">
-<meta name="twitter:description" content="普通项目存在的问题1、假如正在eclipse下开发两个java项目A、B,其中A项目中的一些功能依赖于B项目中的某些类，如何维系这种依赖关系呢？处理方法就是手动把B项目打包成jar包，然后在A项目中导入B的jar包，B项目有所改动，都得重新导2、假设正在开发一个web小demo，要用到ssm这几个框架，我们必须手动去官网下载这些jar包，然后导入 maven到底是什么maven是一种软件项目管理工">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/05/27/VVL92T.png">
+<meta name="twitter:title" content="java设计模式">
+<meta name="twitter:description" content="设计模式的分类设计模式分为三大类：创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。结构型模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、状态模式、访问模式、中介模式、解释器模式。其他类的有：并发型模式和线程池模式。 设计模式的六大原则设">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/27/maven的使用/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/02/java设计模式/">
 
 
 
 
 
-  <title>maven的认识 | czj'blog</title>
+  <title>java设计模式 | czj'blog</title>
   
 
 
@@ -299,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/27/maven的使用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/02/java设计模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="czj">
@@ -316,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">maven的认识</h1>
+          <h1 class="post-title" itemprop="name headline">java设计模式</h1>
         
 
         <div class="post-meta">
@@ -328,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-27T10:15:33+08:00">
-                2019-05-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-02T10:15:33+08:00">
+                2019-02-02
               </time>
             
 
@@ -351,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/maven/" itemprop="url" rel="index">
-                    <span itemprop="name">maven</span>
+                  <a href="/categories/java-se/" itemprop="url" rel="index">
+                    <span itemprop="name">java se</span>
                   </a>
                 </span>
 
@@ -388,22 +384,132 @@
       
 
       
-        <h2 id="普通项目存在的问题"><a href="#普通项目存在的问题" class="headerlink" title="普通项目存在的问题"></a>普通项目存在的问题</h2><p>1、假如正在eclipse下开发两个java项目A、B,其中A项目中的一些功能依赖于B项目中的某些类，如何维系这种依赖关系呢？处理方法就是手动把B项目打包成jar包，然后在A项目中导入B的jar包，B项目有所改动，都得重新导<br>2、假设正在开发一个web小demo，要用到ssm这几个框架，我们必须手动去官网下载这些jar包，然后导入</p>
-<h2 id="maven到底是什么"><a href="#maven到底是什么" class="headerlink" title="maven到底是什么"></a>maven到底是什么</h2><p>maven是一种软件项目管理工具，是基于项目对象模型，可以通过一小段描述信息来管理项目的构建。Maven的核心功能便是合理叙述项目间的依赖关系，通俗点讲，就是通过pom.xml文件的配置获取jar包，而不用手动去添加jar包，而这里pom.xml文件对于学了一点maven的人来说，就有些熟悉了。</p>
-<p><img src="https://s2.ax1x.com/2019/05/27/VVL92T.png" alt="VVL92T.png"></p>
-<p>通过groupId、artifactId、version三个属性就能定位一个jar包<br>groupId里面指的是这个jar的包名(文件夹)<br>artifactId里面指的是这个jar文件的名(项目名)<br>version指的是jar包的版本名</p>
-<h2 id="maven的安装"><a href="#maven的安装" class="headerlink" title="maven的安装"></a>maven的安装</h2><p>1、来到maven官方网站 <a href="http://maven.apache.org/download.cgi" target="_blank" rel="noopener">http://maven.apache.org/download.cgi</a>  下载对应的版本 如apache-maven-3.6.1-bin.zip这个<br><img src="https://s2.ax1x.com/2019/05/27/VVXBUs.png" alt="VVXBUs.png"><br>2、把这个文件解压放到某个位置，目录结构如下<br><img src="https://s2.ax1x.com/2019/05/27/VVXWb4.png" alt="VVXWb4.png"><br>bin文件夹下有maven的命令<br>conf文件夹下有配置文件,如settings.xml<br>3、配置环境变量，cmd命令窗口才能使用maven命令，和配jdk环境变量相似</p>
-<h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p>通过pom.xml中的配置，就能够获取到想要的jar包(还没讲解如何配置先需要了解一下仓库的概念)，但是这些jar是在哪里呢？<br>仓库分为：本地仓库、第三方仓库(私服)、中央仓库<br>1、本地仓库：<br>Maven会将工程中依赖的构件(Jar包)从远程下载到本机一个目录下管理，每个电脑默认的仓库是在C:/Users/Administrator/.m2/repository下<br>修改本地库位置：在maven安装目录下的conf/setting.xml文件中修改<br>如：</p>
-<pre><code>&lt;localRepository&gt;D:\tomcat\Repository&lt;/localRepository&gt;
-</code></pre><p>D:\tomcat\Repository：就是我们自己创建的本地仓库，将网上下载的所有jar包，都丢到该目录下，我们就可以直接通过maven的pom.xml文件直接拿。<br>2、第三方仓库<br>第三方仓库，又称为内部中心仓库，也称为私服<br>私服：一般是由公司自己设立的，只为本公司内部共享使用。它既可以作为公司内部构件协作和存档，也可作为公用类库镜像缓存，减少在外部访问和下载的频率。（使用私服为了减少对中央仓库的访问<br>私服可以使用的是局域网，中央仓库必须使用外网<br>也就是一般公司都会创建这种第三方仓库，保证项目开发时，项目所需用的jar都从该仓库中拿，每个人的版本就都一样。<br>3、中央仓库<br>Maven内置了远程公用仓库：<a href="http://repo1.maven.org/maven2" target="_blank" rel="noopener">http://repo1.maven.org/maven2</a><br>这个公共仓库是由Maven自己维护，里面有大量的常用类库，并包含了世界上大部分流行的开源项目构件。<br>国内访问这个网站很慢，一般改为阿里云的，在maven安装目录下的conf/setting.xml文件中修改，在<mirrors></mirrors>标签里添加下面这些内容保存<br>如：</p>
-<pre><code>&lt;mirror&gt;
-      &lt;id&gt;alimaven&lt;/id&gt;
-      &lt;name&gt;aliyun maven&lt;/name&gt;
-  　　&lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
-      &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;        
-&lt;/mirror&gt;
-</code></pre><h2 id="maven命令"><a href="#maven命令" class="headerlink" title="maven命令"></a>maven命令</h2><p>1、maven web项目结构<br>pom.xml                 核心配置<br>src/main/java                java源码<br>src/main/resources            java配置<br>src/main/webapp            myeclipse web项目中 WebRoot目录<br>    |– WEB-INF<br>    |– web.xml<br>src/test                    测试<br>target                    输出目录<br>2、命令操作maven java或web项目<br>编译：mvn compile　　–src/main/java目录java源码编译生成class （target目录下）<br>测试：mvn test　　　　–src/test/java 目录编译<br>清理：mvn clean　　　 –删除target目录，也就是将class文件等删除<br>打包：mvn package　　–生成压缩文件：java项目#jar包；web项目#war包，也是放在target目录下<br>安装：mvn install　　　–将压缩文件(jar或者war)上传到本地仓库<br>部署|发布：mvn deploy　　–将压缩文件上传私服</p>
-<h2 id="eclipse中使用maven"><a href="#eclipse中使用maven" class="headerlink" title="eclipse中使用maven"></a>eclipse中使用maven</h2>
+        <h2 id="设计模式的分类"><a href="#设计模式的分类" class="headerlink" title="设计模式的分类"></a>设计模式的分类</h2><p>设计模式分为三大类：<br>创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。<br>结构型模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。<br>行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、状态模式、访问模式、中介模式、解释器模式。<br>其他类的有：并发型模式和线程池模式。</p>
+<h2 id="设计模式的六大原则"><a href="#设计模式的六大原则" class="headerlink" title="设计模式的六大原则"></a>设计模式的六大原则</h2><p>设计模式的六大原则<br>总原则：开闭原则<br>开闭原则就是说对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，而是要扩展原有代码，实现一个热插拔的效果。所以一句话概括就是：为了使程序的扩展好，易于维护和升级。想要达到这样的效果，我们需要使用接口和抽象类等。<br>1、    单一职责原则<br>不要存在多于一个导致类变更的原因，也就是说每个类应该实现单一的职责，如若不然，就应该把类折分<br>2、里氏替换原则（Liskov Substitution Principle）<br>里氏代换原则(Liskov Substitution Principle LSP)面向对象设计的基本原则之一。 里氏代换原则中说，任何基类可以出现的地方，子类一定可以出现。 LSP是继承复用的基石，只有当衍生类可以替换掉基类，软件单位的功能不受到影响时，基类才能真正被复用，而衍生类也能够在基类的基础上增加新的行为。里氏代换原则是对“开-闭”原则的补充。实现“开-闭”原则的关键步骤就是抽象化。而基类与子类的继承关系就是抽象化的具体实现<br>3、依赖倒转原则（Dependence Inversion Principle）<br>这个是开闭原则的基础，具体内容：面向接口编程，依赖于抽象而不依赖于具体。写代码时用到具体类时，不与具体类交互，而与具体类的上层接口交互。<br>4、接口隔离原则（Interface Segregation Principle）<br>这个原则的意思是：每个接口中不存在子类用不到却必须实现的方法，如果不然，就要将接口拆分。使用多个隔离的接口，比使用单个接口（多个接口方法集合到一个的接口）要好。<br>5、迪米特法则（Demeter Principle）<br>就是说：一个类对自己依赖的类知道的越少越好。也就是说无论被依赖的类多么复杂，都应该将逻辑封装在方法的内部，通过public方法提供给外部。这样当被依赖的类变化时，才能最小的影响该类。<br>最少知道原则的另一个表达方式是：只与直接的朋友通信。类之间只要有耦合关系，就叫朋友关系。耦合分为依赖、关联、聚合、组合等。我们称出现为成员变量、方法参数、方法返回值中的类为直接朋友。局部变量、临时变量则不是直接的朋友。我们要求陌生的类不要作为局部变量出现在类中。<br>6、合成复用原则（Composite Reuse Principle）<br>原则是尽量首先使用合成/聚合的方式，而不是使用继承。</p>
+<h2 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式"></a>单例设计模式</h2><p>单例模式，是一种常用的软件设计模式。在它的核心结构中只包含一个被称为单例的特殊类。通过单例模式可以保证系统中，应用该模式的类一个类只有一个实例。即一个类只有一个对象实例。<br>具体实现：<br>1、    将构造方法私有化，使其不能在类的外部通过new关键字实例化该类对象。<br>2、    在该类内部产生一个唯一的实例化对象，并且将其封装为private static类型。<br>3、    定义一个静态方法返回这个唯一对象。<br>饿汉模式</p>
+<pre><code>package com.group.demo2019526;
+public class Singleton1 {
+    //将自身实例化对象设置为一个属性，用static final修饰
+    private static final Singleton1 singleton1=new Singleton1();
+    //构造方法私有化
+    private Singleton1() {}
+    //静态方返回该实例
+    public static Singleton1 getInstance() {
+        return singleton1;
+    }
+}
+</code></pre><p>懒汉模式</p>
+<pre><code>package com.group.demo2019526;
+
+public class Singleton2 {
+    //将自身实例化对象设置为一个属性，用static修饰
+    private static Singleton2 singleton2;
+    //构造方法私有化
+    private Singleton2() {}
+    //静态方法返回该实例
+    public static Singleton2 getIntance() {
+        if(singleton2==null) {
+            singleton2=new Singleton2();
+        }
+        return singleton2;
+    }
+}
+</code></pre><p>这个是线程不安全的</p>
+<pre><code>package com.group.demo2019526;
+
+public class Singleton2 {
+    //将自身实例化对象设置为一个属性，用static修饰
+    private static Singleton2 singleton2;
+    //构造方法私有化
+    private Singleton2() {}
+    //静态方法返回该实例
+    public static Singleton2 getIntance() {
+        if(singleton2==null) {
+            synchronized (Singleton2.class) {
+                if(singleton2==null) {
+                    singleton2=new Singleton2();
+                }
+            }
+        }
+        return singleton2;
+    }
+}
+</code></pre><p>多线程情形下，synchronized方法通常效率低，上面使用DCL双检查锁机制</p>
+<h2 id="动态代理设计模式"><a href="#动态代理设计模式" class="headerlink" title="动态代理设计模式"></a>动态代理设计模式</h2><p>用的最广泛的，用的最多的是  动态代理模式。<br>动态代理：就是实现阶段不用关心代理是哪个，而在运行阶段指定具体哪个代理。</p>
+<p>抽象主题类或者接口</p>
+<pre><code>package com.group.demo2019526;
+public interface IGamePlayer {
+    public void login(String username,String password);
+    public void killBoss();
+    public void upGrade();
+}
+</code></pre><p>需要被代理类：</p>
+<pre><code>package com.group.demo2019526;
+public class GramePlayer implements IGamePlayer {
+    private String name=&quot;&quot;;
+    public GramePlayer(String name) {
+        this.name = name;
+    }
+    @Override
+    public void login(String username, String password) {
+        // TODO Auto-generated method stub
+        System.out.println(&quot;登录名为 &quot;+username+&quot; 进入游戏，&quot; + name + &quot; 登录成功！&quot;);
+    }
+    @Override
+    public void killBoss() {
+        // TODO Auto-generated method stub
+         System.out.println(this.name + &quot; 击杀了Boss！&quot;);
+    }
+    @Override
+    public void upGrade() {
+        // TODO Auto-generated method stub
+        System.out.println(this.name + &quot;升级了！&quot;);
+    }
+}
+</code></pre><p>动态代理处理器类：</p>
+<pre><code>package com.group.demo2019526;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+
+public class GamePlayerInvocationHandler implements InvocationHandler{
+    private Object obj;
+    public GamePlayerInvocationHandler(Object obj) {
+        this.obj=obj;
+    }
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        // TODO Auto-generated method stub
+        Object result =null;
+        if(&quot;login&quot;.equalsIgnoreCase(method.getName())) {
+            System.out.println(&quot;代理登录游戏&quot;);
+            result=method.invoke(this.obj, args);
+            return result;
+        }
+        result = method.invoke(this.obj, args);
+        return result;
+    }
+
+}
+</code></pre><p>动态代理场景类：</p>
+<pre><code>package com.group.demo2019526;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+
+public class Test {
+    public static void main(String[] args) {
+        IGamePlayer gp = new GramePlayer(&quot;张三&quot;);
+        InvocationHandler gpHander=new GamePlayerInvocationHandler(gp);
+        ClassLoader classLoader = gp.getClass().getClassLoader();
+        Class&lt;?&gt;[] cls = new Class[] {IGamePlayer.class};
+        IGamePlayer proxyGp =(IGamePlayer) Proxy.newProxyInstance(classLoader, cls, gpHander);
+        proxyGp.login(&quot;zhangsan&quot;, &quot;123456&quot;);
+        proxyGp.killBoss();
+        proxyGp.upGrade();
+    }
+}
+</code></pre>
       
     </div>
     
@@ -420,7 +526,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/maven/" rel="tag"># maven</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -433,8 +539,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/27/c++基础/" rel="next" title="初识c++">
-                <i class="fa fa-chevron-left"></i> 初识c++
+              <a href="/2019/01/26/java排序算法/" rel="next" title="java排序算法">
+                <i class="fa fa-chevron-left"></i> java排序算法
               </a>
             
           </div>
@@ -443,8 +549,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/19/vue学习/" rel="prev" title="认识vue">
-                认识vue <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/09/c++基础/" rel="prev" title="初识c++">
+                初识c++ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -579,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通项目存在的问题"><span class="nav-number">1.</span> <span class="nav-text">普通项目存在的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maven到底是什么"><span class="nav-number">2.</span> <span class="nav-text">maven到底是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maven的安装"><span class="nav-number">3.</span> <span class="nav-text">maven的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#仓库"><span class="nav-number">4.</span> <span class="nav-text">仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maven命令"><span class="nav-number">5.</span> <span class="nav-text">maven命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eclipse中使用maven"><span class="nav-number">6.</span> <span class="nav-text">eclipse中使用maven</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式的分类"><span class="nav-number">1.</span> <span class="nav-text">设计模式的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式的六大原则"><span class="nav-number">2.</span> <span class="nav-text">设计模式的六大原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例设计模式"><span class="nav-number">3.</span> <span class="nav-text">单例设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态代理设计模式"><span class="nav-number">4.</span> <span class="nav-text">动态代理设计模式</span></a></li></ol></div>
             
 
           </div>
