@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="centos,">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,25 +79,20 @@
 
 
 
-<meta name="description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
-<meta name="keywords" content="centos">
+<meta name="description" content="1、概念线程：比进程更小的执行单位。多线程是多任务的一种特别的形式进程：是程序的一次动态执行过程,一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束2、生命周期线程生命周期：  新建状态：使用new关键字和Thread类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux centos">
-<meta property="og:url" content="http://yoursite.com/2019/02/16/linux学习/index.html">
+<meta property="og:title" content="java多线程">
+<meta property="og:url" content="http://yoursite.com/2019/01/19/java多线程/index.html">
 <meta property="og:site_name" content="czj&#39;blog">
-<meta property="og:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
+<meta property="og:description" content="1、概念线程：比进程更小的执行单位。多线程是多任务的一种特别的形式进程：是程序的一次动态执行过程,一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束2、生命周期线程生命周期：  新建状态：使用new关键字和Thread类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQrLdg.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQsVY9.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQBaOU.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQxwut.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQjcdS.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQxp1s.png">
-<meta property="og:updated_time" content="2019-06-30T08:42:44.703Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/25/VkEm6I.jpg">
+<meta property="og:updated_time" content="2019-06-30T08:47:50.459Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux centos">
-<meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/06/29/ZQrLdg.png">
+<meta name="twitter:title" content="java多线程">
+<meta name="twitter:description" content="1、概念线程：比进程更小的执行单位。多线程是多任务的一种特别的形式进程：是程序的一次动态执行过程,一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束2、生命周期线程生命周期：  新建状态：使用new关键字和Thread类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/05/25/VkEm6I.jpg">
 
 
 
@@ -127,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/16/linux学习/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/19/java多线程/">
 
 
 
 
 
-  <title>linux centos | czj'blog</title>
+  <title>java多线程 | czj'blog</title>
   
 
 
@@ -302,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/linux学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/19/java多线程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="czj">
@@ -319,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux centos</h1>
+          <h1 class="post-title" itemprop="name headline">java多线程</h1>
         
 
         <div class="post-meta">
@@ -331,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T00:00:00+08:00">
-                2019-02-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-19T21:15:33+08:00">
+                2019-01-19
               </time>
             
 
@@ -354,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/java-se/" itemprop="url" rel="index">
+                    <span itemprop="name">java se</span>
                   </a>
                 </span>
 
@@ -391,41 +386,125 @@
       
 
       
-        <h4 id="linux各个版本"><a href="#linux各个版本" class="headerlink" title="linux各个版本"></a>linux各个版本</h4><p>根据用途不同可以做如下划分：<br>(1)家庭用途可选择版本有：Linux Mint、Ubuntu<br>(2)商业用途可选择版本有：Debian、RHEL、CentOS<br>(3)挑战用途可选择版本有：Gentoo、LFS<br>(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris </p>
-<h4 id="redhat、centos下载地址"><a href="#redhat、centos下载地址" class="headerlink" title="redhat、centos下载地址"></a>redhat、centos下载地址</h4><p>(1)<a href="https://developers.redhat.com/rhel8/" target="_blank" rel="noopener">redhat</a><br>(2)<a href="https://www.centos.org/download/" target="_blank" rel="noopener">centos</a><br>选择dvd是比较全面的，centos minital iso是字符界面的，没图形界面的</p>
-<h4 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h4><p>目录路径 /etc/sysconfig/network-scripts<br><img src="https://s2.ax1x.com/2019/06/29/ZQrLdg.png" alt="ZQrLdg.png"><br>我的网卡是ifcfg-ens33<br>用命令 vi ifcfg-ens33打开这个文件<br><img src="https://s2.ax1x.com/2019/06/29/ZQsVY9.png" alt="ZQsVY9.png"><br>BOOTPROTO修改为dhcp<br>ONBOOT修改为yes<br>重启网卡命令 </p>
-<pre><code>service network restart
-</code></pre><p>查看ip的命令 ip addr 或 ifconfig<br><img src="https://s2.ax1x.com/2019/06/29/ZQBaOU.png" alt="ZQBaOU.png"><br>centos7没有ifconfig命令<br>得安装 </p>
-<pre><code>yum install net-tools -y
-</code></pre><p>配置DNS<br>路径 /etc/</p>
-<pre><code>vi resolv.conf
-</code></pre><p>centos7 防火墙  firewalled<br>关闭防火墙 systemctl stop firewalld<br>开启防火墙 systemctl start firewalld<br>重启防火墙 systemctl restart firewalld<br>或<br>关闭防火墙 service firewalld stop<br>开启防火墙 service firewalld start<br>重启防火墙 service firewalld restart<br>centos6 防火墙  iptables<br>想直接执行最后一次命令直接!号加命令首写  如!ser  等于最后一次命令 service firewalld restart</p>
-<p>查看firewall是否运行,下面两个命令都可以</p>
-<pre><code>systemctl status firewalld.service
-firewall-cmd --state
-</code></pre><p>查看当前开了哪些端口<br>其实一个服务对应一个端口，每个服务对应/usr/lib/firewalld/services下面一个xml文件。</p>
-<pre><code>firewall-cmd --list-services
-</code></pre><p>查看所有打开的端口： </p>
-<pre><code>firewall-cmd --zone=public --list-ports
-</code></pre><p>添加开放端口</p>
-<pre><code>firewall-cmd --zone=public --add-port=80/tcp --permanent    （--permanent永久生效，没有此参数重启后失效）
-</code></pre><p>重新载入</p>
-<pre><code>firewall-cmd --reload
-</code></pre><p>查看</p>
-<pre><code>firewall-cmd --zone= public --query-port=80/tcp
-</code></pre><p>删除</p>
-<pre><code>firewall-cmd --zone= public --remove-port=80/tcp --permanent
-</code></pre><p>(命令如下图 注意是有两个-的)<br><img src="https://s2.ax1x.com/2019/06/29/ZQxwut.png" alt="ZQxwut.png"></p>
-<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><p>1、linux文件目录<br>linux根目录 /<br>存放必要的命令 /bin<br>存放内核以及启动所需要的文件 /boot<br>存放硬件设备文件 /dev<br>存放系统配置文件 /etc<br>普通用户宿主目录 /home<br>存放必要的运行库 /lib<br>超级用户的主目录 /root<br>存放系统管理程序 /sbin<br>存放临时的映射文件系统,通常用来挂载使用 /mnt<br>2、命令<br>linux查看当前目录有哪些内容  </p>
-<pre><code>ls 
-</code></pre><p>linux查看当前目录有哪些内容详情 </p>
-<pre><code>ls -l 
-</code></pre><p><img src="https://s2.ax1x.com/2019/06/29/ZQjcdS.png" alt="ZQjcdS.png"><br>查看当前位置 pwd<br>去下一级目录 cd 下一级目录<br>返回上一级目录 cd ..<br><img src="https://s2.ax1x.com/2019/06/29/ZQxp1s.png" alt="ZQxp1s.png"><br>查看端口被哪个进程占用命令  netstat -lnp|grep 8080<br>关机 </p>
-<pre><code>shutdown 
-</code></pre><p>现在关机 </p>
-<pre><code>shutdown now
-</code></pre><p>重启 </p>
-<pre><code>reboot
+        <p>1、概念<br>线程：比进程更小的执行单位。多线程是多任务的一种特别的形式<br>进程：是程序的一次动态执行过程,一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束<br>2、生命周期<br>线程生命周期：</p>
+<p><img src="https://s2.ax1x.com/2019/05/25/VkEm6I.jpg" alt="VkEm6I.jpg"></p>
+<p>新建状态：使用new关键字和Thread类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态直到程序start()这个线程<br>就绪状态：当线程对象调用了start()方法之后，该线程就进入就绪状态。就绪状态的线程处于就绪队列中，要等待JVM里线程调度器的调度。<br>运行状态：如果就绪状态的线程获取CPU资源，就可以执行run()，此时线程便处于运行状态。运行状态的线程最为复杂，它可以变为阻塞状态、就绪状态和死亡状态<br>阻塞状态：如果一个线程执行了sleep(睡眠)、suspend(挂起)等方法，失去所占用资源之后，该线程就从运行状态进入阻塞状态。在睡眠时间已到或获得设备资源后可以重新进入就绪状态。<br>可分为三种：<br>等待阻塞：运行状态中的线程执行wait()方法，使线程进入到等待阻塞状态<br>同步阻塞：线程在获取Synchronized同步锁失败（因为同步锁被其他线程占用）<br>其他阻塞：通过调用线程的sleep()或join()发出了I/O请求时，线程就会进入到阻塞状态。当sleep()状态超时，join()等待线程终止或超时，或者I/O处理完毕，线程重新转入就绪状态。<br>死亡状态:<br>一个运行状态的线程完成任务或者其他终止条件发生时，该线程就切换到终止状态。<br>3、线程的优先级<br>每一个java线程都有一个优先级，这样有助于操作系统确定线程的调度顺序。<br>Java线程的优先级是一个整数，取值范围是1-10默认情况下，每一个线程都会分配一个优先级NORM_PRIORITY(5).<br>具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。<br>创建一个线程<br>4、Java 提供了三种创建线程的方法：<br>通过实现 Runnable 接口；<br>通过继承 Thread 类本身；<br>通过 Callable 和 Future 创建线程。</p>
+<pre><code>//继承Thread类
+package com.group.demo2019525;
+public class MyThread extends Thread{
+    private String name;
+    public MyThread(String name) {
+        this.name=name;
+    }
+    @Override
+    public void run() {
+        // TODO Auto-generated method stub
+        for(int i = 10 ; i &gt;0 ; i --) {
+            System.out.println(name+&quot;执行&quot;+i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
+}
+//实现Runnable接口
+package com.group.demo2019525;
+public class MyThread2 implements Runnable{
+    private String name;
+    public MyThread2(String name) {
+        this.name = name;
+    }
+    @Override
+    public void run() {
+        // TODO Auto-generated method stub
+        for(int i =0; i &lt; 10; i++) {
+            System.out.println(name+&quot;执行了&quot;+i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+package com.group.demo2019525;
+public class MyTest {
+    public static void main(String[] args) {
+        MyThread mythread1 = new MyThread(&quot;A&quot;);
+        mythread1.start();
+        new Thread(new MyThread2(&quot;B&quot;)).start();;
+    }
+}
+</code></pre><p>5、Thread和Runnable的差别<br>实现Runable接口比继承Thread类所具有的优势：<br>1、适合多个同样的程序代码的线程去处理同一个资源<br>2、能够避免java中的单继承的限制<br>3、添加程序的健壮性，代码能够被多个线程共享，代码和数据独立<br>4、线程池仅仅能放入实现Runable或callable类线程，不能直接放入继承Thread的类</p>
+<p>6、多线程不安全例子</p>
+<pre><code>//吃苹果案例
+package com.group.demo2019525;
+
+public class ThreadProblem implements Runnable {
+    private int num = 10;
+    @Override
+    public void run() {
+        for (int i = 0; i &lt; 10; i++) {
+            if(num &gt; 0){
+                try {
+                    Thread.sleep(10);
+                    System.out.println(Thread.currentThread().getName()+&quot;吃了编号为&quot;+num+&quot;的苹果&quot;);
+                    num--;
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    }
+
+}
+
+
+package com.group.demo2019525;
+
+public class MyTest {
+    public static void main(String[] args) {
+        ThreadProblem tp = new ThreadProblem();
+        new Thread(tp,&quot;A&quot;).start();
+        new Thread(tp,&quot;B&quot;).start();
+    }
+}
+</code></pre><p>B吃了编号为20的苹果<br>A吃了编号为20的苹果<br>A吃了编号为18的苹果<br>B吃了编号为18的苹果<br>B吃了编号为16的苹果<br>A吃了编号为16的苹果<br>B吃了编号为14的苹果<br>A吃了编号为14的苹果<br>A吃了编号为12的苹果<br>B吃了编号为12的苹果<br>B吃了编号为10的苹果<br>A吃了编号为10的苹果<br>A吃了编号为8的苹果<br>B吃了编号为8的苹果<br>B吃了编号为6的苹果<br>A吃了编号为6的苹果<br>B吃了编号为4的苹果<br>A吃了编号为4的苹果<br>A吃了编号为2的苹果<br>B吃了编号为1的苹果<br>A吃了编号为0的苹果</p>
+<p>线程安全问题产生的原因：<br>1、多个线程在操作共享的数据。<br>2、操作共享数据的线程代码有多条。<br>3、当一个线程在执行操作共享数据的多条代码过程中，其他线程参与了运算。就会导致线程安全问题的产生。</p>
+<p>7、解决思路:<br>就是将多条操作共享数据的线程代码封装起来，当有线程在执行这些代码的时候，其他线程时不可以参与运算的。必须要当前线程把这些代码都执行完毕后，其他线程才可以参与运算。在java中，用同步代码块就可以解决这个问题。<br>同步代码块的格式</p>
+<pre><code>package com.group.demo2019525;
+
+public class ThreadProblem implements Runnable {
+    private int num = 20;
+    @Override
+    public void run() {
+        for (int i = 0; i &lt; 20; i++) {
+            synchronized (ThreadProblem.class) {
+                if(num &gt; 0){
+                    try {
+                        Thread.sleep(10);
+                        System.out.println(Thread.currentThread().getName()+&quot;吃了编号为&quot;+num+&quot;的苹果&quot;);
+                        --num;
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+}
 </code></pre>
       
     </div>
@@ -443,7 +522,7 @@ firewall-cmd --state
       
         <div class="post-tags">
           
-            <a href="/tags/centos/" rel="tag"># centos</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -456,8 +535,8 @@ firewall-cmd --state
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/09/maven的使用/" rel="next" title="maven的认识">
-                <i class="fa fa-chevron-left"></i> maven的认识
+              <a href="/2019/01/12/用hexo搭博客/" rel="next" title="hexo搭建博客">
+                <i class="fa fa-chevron-left"></i> hexo搭建博客
               </a>
             
           </div>
@@ -466,8 +545,8 @@ firewall-cmd --state
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/23/springboot/" rel="prev" title="springboot初识">
-                springboot初识 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/26/java排序算法/" rel="prev" title="java排序算法">
+                java排序算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -520,17 +599,8 @@ firewall-cmd --state
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -592,22 +662,6 @@ firewall-cmd --state
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#linux各个版本"><span class="nav-number">1.</span> <span class="nav-text">linux各个版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redhat、centos下载地址"><span class="nav-number">2.</span> <span class="nav-text">redhat、centos下载地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置网络"><span class="nav-number">3.</span> <span class="nav-text">配置网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
