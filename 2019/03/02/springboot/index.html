@@ -91,7 +91,8 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Z1dYlV.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Z3pbxe.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Z3F0ht.png">
-<meta property="og:updated_time" content="2019-06-30T13:08:09.827Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Z3Z7Tg.png">
+<meta property="og:updated_time" content="2019-06-30T14:12:18.881Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot初识">
 <meta name="twitter:description" content="什么是Spring Boot随着动态语言的流行（Ruby、Groovy、Scala、Node.js），Java的开发显得格外的笨重：繁多的配置、低下的开发效率、复杂的部暑流程以及第三方技术集成难度大。 在这样的环境下，Spring Boot应运而生。它使用“习惯优于配置”（项目中存在大量的配置，此外还内置一个习惯性的配置，让你无须手动进行配置）的理念让你的项目快速运行起来。使用Spring Boo">
@@ -486,6 +487,51 @@ public class MBSpringBootApplication {
 
 server:
   port: 8888
+</code></pre><p>创建Person类</p>
+<pre><code>package com.caozhongjue.entity;
+/**
+ * @author 曹忠爵
+ * @site
+ * @create 2019-06-30 17:14
+ */
+public class Person {
+    private Integer id;
+    private String name;
+    private String sex;
+    private Integer age;
+    private String des;
+
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public Integer getAge() {
+        return age;
+    }
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+    public String getDes() {
+        return des;
+    }
+    public void setDes(String des) {
+        this.des = des;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getSex() {
+        return sex;
+    }
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+}
 </code></pre><p>PersonController类</p>
 <pre><code>package com.caozhongjue.controller;
 
@@ -553,7 +599,157 @@ public class PersonServiceImpl implements PersonService {
 <p>共同点<br>@Resource和@Autowired都可以作为注入属性的修饰，在接口仅有单一实现类时，两个注解的修饰效果相同，可以互相替换，不影响使用。<br> 不同点</p>
 <p>@Resource是Java自己的注解，@Resource有两个属性是比较重要的，分是name和type；Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。所以如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用byType自动注入策略。如果既不指定name也不指定type属性，这时将通过反射机制使用byName自动注入策略。</p>
 <p>@Autowired是spring的注解，是spring2.5版本引入的，Autowired只根据type进行注入，不会去匹配name。如果涉及到type无法辨别注入对象时，那需要依赖@Qualifier或@Primary注解一起来修饰。</p>
-<h4 id="springboot整合spring-data-jpa"><a href="#springboot整合spring-data-jpa" class="headerlink" title="springboot整合spring data jpa"></a>springboot整合spring data jpa</h4>
+<h4 id="springboot整合spring-data-jpa"><a href="#springboot整合spring-data-jpa" class="headerlink" title="springboot整合spring data jpa"></a>springboot整合spring data jpa</h4><p>添加spring data jpa依赖</p>
+<pre><code>&lt;dependency&gt;
+     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+     &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><p>application.yml文件</p>
+<pre><code>spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=UTC
+    username: root
+    password: gznc865958
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8888
+</code></pre><p>创建Student类</p>
+<pre><code>package com.caozhongjue.entity;
+import javax.persistence.*;
+/**
+ * @author 曹忠爵
+ * @site
+ * @create 2019-06-30 21:12
+ */
+@Entity
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column
+    private String name;
+    @Column
+    private String sex;
+    @Column
+    private String age;
+    @Column
+    private String grade;
+
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getSex() {
+        return sex;
+    }
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+    public String getAge() {
+        return age;
+    }
+    public void setAge(String age) {
+        this.age = age;
+    }
+    public String getGrade() {
+        return grade;
+    }
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+}
+</code></pre><p>StudentController类</p>
+<pre><code>package com.caozhongjue.controller;
+import com.caozhongjue.entity.Student;
+import com.caozhongjue.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author 曹忠爵
+ * @site
+ * @create 2019-06-30 21:56
+ */
+@RestController
+@RequestMapping(&quot;/student&quot;)
+public class StudentController {
+    @Autowired
+    private StudentService studentService;
+
+    @RequestMapping(&quot;/add&quot;)
+    public String add(Student student){
+        return studentService.add(student);
+    }
+}
+</code></pre><p>StudentService接口</p>
+<pre><code>package com.caozhongjue.service;
+
+import com.caozhongjue.entity.Student;
+
+/**
+ * @author 曹忠爵
+ * @site
+ * @create 2019-06-30 21:51
+ */
+public interface StudentService {
+    public String add(Student student);
+}
+</code></pre><p>StudentServiceImpl类</p>
+<pre><code>package com.caozhongjue.service.impl;
+import com.caozhongjue.entity.Student;
+import com.caozhongjue.mapper.StudentMapper;
+import com.caozhongjue.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/**
+ * @author 曹忠爵
+ * @site
+ * @create 2019-06-30 21:52
+ */
+@Service
+public class StudentServiceImpl implements StudentService {
+    @Autowired
+    private StudentMapper studentMapper;
+
+    @Override
+    public String add(Student student) {
+
+        Student stu = studentMapper.save(student);
+        return null;
+    }
+}
+</code></pre><p>StudentMapper接口</p>
+<pre><code>package com.caozhongjue.mapper;
+
+import com.caozhongjue.entity.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+/**
+ * @author 曹忠爵
+ * @site
+ * @create 2019-06-30 21:50
+ */
+public interface StudentMapper extends JpaRepository&lt;Student,Integer&gt; {
+
+}
+</code></pre><p><img src="https://s2.ax1x.com/2019/06/30/Z3Z7Tg.png" alt="Z3Z7Tg.png"></p>
+
       
     </div>
     
