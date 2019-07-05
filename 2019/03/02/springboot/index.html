@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Z3pbxe.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Z3F0ht.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Z3Z7Tg.png">
-<meta property="og:updated_time" content="2019-06-30T14:12:18.881Z">
+<meta property="og:updated_time" content="2019-07-01T14:33:51.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot初识">
 <meta name="twitter:description" content="什么是Spring Boot随着动态语言的流行（Ruby、Groovy、Scala、Node.js），Java的开发显得格外的笨重：繁多的配置、低下的开发效率、复杂的部暑流程以及第三方技术集成难度大。 在这样的环境下，Spring Boot应运而生。它使用“习惯优于配置”（项目中存在大量的配置，此外还内置一个习惯性的配置，让你无须手动进行配置）的理念让你的项目快速运行起来。使用Spring Boo">
@@ -749,7 +749,13 @@ public interface StudentMapper extends JpaRepository&lt;Student,Integer&gt; {
 
 }
 </code></pre><p><img src="https://s2.ax1x.com/2019/06/30/Z3Z7Tg.png" alt="Z3Z7Tg.png"></p>
-
+<h4 id="spring-boot整合-mybatis"><a href="#spring-boot整合-mybatis" class="headerlink" title="spring boot整合 mybatis"></a>spring boot整合 mybatis</h4><p>添加依赖</p>
+<pre><code>dependency&gt;
+        &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
+        &lt;version&gt;1.1.1&lt;/version&gt;
+    &lt;/dependency&gt;
+</code></pre>
       
     </div>
     
@@ -925,7 +931,7 @@ public interface StudentMapper extends JpaRepository&lt;Student,Integer&gt; {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Spring-Boot"><span class="nav-number">1.</span> <span class="nav-text">什么是Spring Boot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring-Boot优缺点"><span class="nav-number">2.</span> <span class="nav-text">Spring Boot优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个超级简单的的Springboot项目"><span class="nav-number">3.</span> <span class="nav-text">创建一个超级简单的的Springboot项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#springboot整合jdbc"><span class="nav-number">4.</span> <span class="nav-text">springboot整合jdbc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#springboot整合spring-data-jpa"><span class="nav-number">5.</span> <span class="nav-text">springboot整合spring data jpa</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Spring-Boot"><span class="nav-number">1.</span> <span class="nav-text">什么是Spring Boot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring-Boot优缺点"><span class="nav-number">2.</span> <span class="nav-text">Spring Boot优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个超级简单的的Springboot项目"><span class="nav-number">3.</span> <span class="nav-text">创建一个超级简单的的Springboot项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#springboot整合jdbc"><span class="nav-number">4.</span> <span class="nav-text">springboot整合jdbc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#springboot整合spring-data-jpa"><span class="nav-number">5.</span> <span class="nav-text">springboot整合spring data jpa</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spring-boot整合-mybatis"><span class="nav-number">6.</span> <span class="nav-text">spring boot整合 mybatis</span></a></li></ol></div>
             
 
           </div>

@@ -93,7 +93,10 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQxwut.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQjcdS.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQxp1s.png">
-<meta property="og:updated_time" content="2019-06-30T08:50:46.956Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdO3N9.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdXMxP.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/05/Zdjcm8.png">
+<meta property="og:updated_time" content="2019-07-05T15:07:39.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux centos">
 <meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
@@ -426,7 +429,47 @@ firewall-cmd --state
 <pre><code>shutdown now
 </code></pre><p>重启 </p>
 <pre><code>reboot
-</code></pre>
+</code></pre><h4 id="secure-crt上传下载文件"><a href="#secure-crt上传下载文件" class="headerlink" title="secure crt上传下载文件"></a>secure crt上传下载文件</h4><p>一、rz sz方式</p>
+<p>1、linux服务器大多是通过ssh客户端来进行远程的登陆和管理的，使用ssh登陆linux主机以后，如何能够快速的和本地机器进行文件的交互呢，也就是上传和下载文件到服务器和本地；<br>与ssh有关的两个命令可以提供很方便的操作：<br>sz：将选定的文件发送（send）到本地机器<br>rz：运行该命令会弹出一个文件选择窗口，从本地选择文件上传到服务器(receive)<br>注意：<br>sz中的s意为send（发送），告诉客户端，我（服务器）要发送文件 send to cilent，就等同于客户端在下载。<br>rz中的r意为received（接收），告诉客户端，我（服务器）要接收文件 received by cilent，就等同于客户端在上传<br>2、如果linux上没有这两个命令工具，则需要先安装。可以使用yum安装。运行命令</p>
+<pre><code>yum install lrzsz。
+</code></pre><p>3、使用条件<br>普通Linux和Windows之间的文件共享方法，主要有建立nfs实现文件共享，和tftp之类的方法，但是都很麻烦，而如果只是小文件（几十 K，几百K），那么直接用rz/sz，就显得极其地方便了。<br>4、如何使用<br>从windows中拷贝/下载文件到Linux（开发板）：</p>
+<p>运行rz后，会自动弹出WIndows下的文件选择对话框，选择对应文件后，添加，然后确定，就开始传输，将windows中的文件，拷贝到Linux中了。</p>
+<p>将Linux中的文件拷贝到Windows中某个文件夹：</p>
+<p>执行sz file_name 就可以将Linux当前文件夹下的文件file_name拷贝到Windows的对应目录中了，其中，Windows目录是由你当前运行的工具中设定的。</p>
+<p>此处我用的是SecureCRT，具体的更改 rz上传/sz下载 的默认的路径的方法：</p>
+<p>右键点击当前会话session -&gt; Session Options -&gt; Terminal -&gt; Xmodem/Zmodem -&gt;Directories :</p>
+<p>Upload : 你要设置的路径<br>Download:你要设置的路径</p>
+<p>二、sftp</p>
+<p>1、为了数据和服务的安全, 很多生产环境中的Linux服务器不能使用外网环境. 在只有SSH连接的情况下, 传输文件变得很不方便.<br>如果Linux服务器未安装用于上传和下载的lrzsz软件, 又不能现场安装, 此时可考虑使用sftp完成相关操作.<br>SFTP是Secure File Transfer Protocol(安全文件传输协议)的缩写, 可以为传输文件提供一种安全的网络的加密方法.</p>
+<p>不需要单独安装或配置sftp —— 支持SSH连接的服务器, 也就默认开启了SFTP.</p>
+<p>2、SFTP与FTP的区别<br>FTP是一种方便数据共享的文件传输协议, 包括一个FTP服务器和多个FTP客户端. FTP客户端通过FTP协议从服务器上下载资源.<br>SFTP协议是在FTP的基础上, 对数据采取了加密/解密技术, 使数据传输更安全.<br>SFTP的传输效率比FTP的低很多.</p>
+<p>(1) 软件环境:<br>可以使用任意终端工具, 比如MacOS下的Terminal, 或iTerm(此处演示使用), 或SecureCRT.<br>(2) sftp建立连接:<br>在终端中进行操作, 若打开SecureCRT的sftp: 菜单栏的[File] –&gt; [Connect SFTP Session]即可.<br>在默认的SSH端口(22)下连接:<br>sftp username@remote_ip(or remote host name), 连接root用户, 则可省略”root@”.  </p>
+<pre><code>sftp root@119.23.17.96
+</code></pre><p>在其他端口下的连接</p>
+<pre><code>sftp -o port=1000 username@remote_ip
+</code></pre><p>如果出现验证, 填入正确的密码后即可实现远程连接. 连接成功后终端信息如图:</p>
+<p><img src="https://s2.ax1x.com/2019/07/05/ZdO3N9.png" alt="ZdO3N9.png"></p>
+<p>sftp - 上传文件<br>sftp与ftp有着几乎相同的语法和功能:</p>
+<p>① ls, rm, cd, mkdir, pwd 等指令是对当前连接的远程端服务器的操作;</p>
+<p>② lls, lrm, lcd, lmkdir, lpwd 等指令是对本地端服务器的操作 —— 在上述指令前加l(local)即可.</p>
+<p>上传操作示例:<br>默认连接的都是root目录, 查看本地和远端/root路径下的文件: </p>
+<pre><code>sftp&gt; lls               # 本地
+anaconda-ks.cfg  install.log  install.log.syslog  porc  remote.sh  test.sh
+sftp&gt; ls                # 远端
+anaconda-ks.cfg  install.log  install.log.syslog  myid  remote.sh  test.sh
+</code></pre><p>将本地的remote.sh文件上传至远端服务器的/home路径下: </p>
+<pre><code>sftp&gt; put -r &quot;F:\压缩包\apache-tomcat-7.0.90.tar.gz&quot;    
+Uploading apache-tomcat-7.0.90.tar.gz   to  /root/apache-tomcat-7.0.90.tar.gz
+
+sftp&gt; ls /root                  # 查看远端/root路径下的文件
+/root/apache-tomcat-7.0.90.tar.gz
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/05/ZdXMxP.png" alt="ZdXMxP.png"></p>
+<p>sftp - 下载文件<br>下载操作示例:<br>将远端/root路径下的myid文件下载至本地/home路径下: </p>
+<pre><code>sftp&gt; get -r /root/apache-tomcat-7.0.90.tar.gz        
+Fetching /root/apache-tomcat-7.0.90.tar.gz  to C:\Users\Administrator\Documents
+sftp&gt; lls                    # 查看本地路径下的文件
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/05/Zdjcm8.png" alt="Zdjcm8.png"></p>
+
       
     </div>
     
@@ -602,7 +645,7 @@ firewall-cmd --state
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#linux各个版本"><span class="nav-number">1.</span> <span class="nav-text">linux各个版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redhat、centos下载地址"><span class="nav-number">2.</span> <span class="nav-text">redhat、centos下载地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置网络"><span class="nav-number">3.</span> <span class="nav-text">配置网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#linux各个版本"><span class="nav-number">1.</span> <span class="nav-text">linux各个版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redhat、centos下载地址"><span class="nav-number">2.</span> <span class="nav-text">redhat、centos下载地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置网络"><span class="nav-number">3.</span> <span class="nav-text">配置网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#secure-crt上传下载文件"><span class="nav-number">5.</span> <span class="nav-text">secure crt上传下载文件</span></a></li></ol></div>
             
 
           </div>
