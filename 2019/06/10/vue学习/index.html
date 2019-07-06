@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="czj&#39;blog">
 <meta property="og:description" content="什么是vue1、vue是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用，Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。2、创建一个 .html 文件，然后通过如下方式引入 Vue： &amp;lt;!-- 开发环境版本，包含了有帮">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-06T04:05:12.028Z">
+<meta property="og:updated_time" content="2019-07-06T04:49:45.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="认识vue">
 <meta name="twitter:description" content="什么是vue1、vue是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用，Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。2、创建一个 .html 文件，然后通过如下方式引入 Vue： &amp;lt;!-- 开发环境版本，包含了有帮">
@@ -391,16 +391,19 @@
 <pre><code>&lt;!-- 生产环境版本，优化了尺寸和速度 --&gt;
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt;
 </code></pre><h4 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h4><pre><code>&lt;div id=&quot;app&quot;&gt;
-  {{msg}}
-  &lt;h4 v-text=&quot;msg&quot;&gt;&lt;/h4&gt;
+    {{msg}}
+    &lt;h4 v-text=&quot;msg&quot;&gt;aaaa&lt;/h4&gt;
+    &lt;span v-html=&quot;msg2&quot;&gt;&lt;/span&gt;
 &lt;/div&gt;
-
-var app = new Vue({
-  el: &apos;#app&apos;,
-  data: {
-    msg: &apos;Hello Vue!&apos;
-  }
-})
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var vue = new Vue({
+        el: &apos;#app&apos;,
+        data: {
+            msg: &quot;你好 vue&quot;,
+            msg2: &quot;&lt;h2&gt;helloworld&lt;/h2&gt;&quot;
+        }
+    })
+&lt;/script&gt;
 </code></pre><p>除了文本插值，我们还可以像这样来绑定元素特性：</p>
 <pre><code>&lt;div id=&quot;app-2&quot;&gt;
   &lt;span v-bind:title=&quot;message&quot;&gt;
@@ -415,7 +418,23 @@ var app2 = new Vue({
   }
 })
 </code></pre><p>v-bind 特性被称为指令。指令带有前缀 v-，以表示它们是 Vue 提供的特殊特性。</p>
-<h4 id="条件与循环"><a href="#条件与循环" class="headerlink" title="条件与循环"></a>条件与循环</h4><pre><code>&lt;div id=&quot;app-3&quot;&gt;
+<h4 id="事件机制"><a href="#事件机制" class="headerlink" title="事件机制"></a>事件机制</h4><pre><code>&lt;div id=&quot;app&quot;&gt;
+        &lt;button name=&quot;按钮&quot;  value=&quot;按钮&quot;  v-on:click=&quot;show&quot;&gt;你好&lt;/button&gt;
+&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var vue = new Vue({
+        el: &apos;#app&apos;,
+        data: {
+
+        },
+        methods: {
+            show: function () {
+                alert(&quot;你好啊&quot;)
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre><h4 id="条件与循环"><a href="#条件与循环" class="headerlink" title="条件与循环"></a>条件与循环</h4><pre><code>&lt;div id=&quot;app-3&quot;&gt;
   &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt;
 &lt;/div&gt;
 
@@ -644,7 +663,7 @@ Vue.component(&apos;todo-item&apos;, {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是vue"><span class="nav-number">1.</span> <span class="nav-text">什么是vue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明式渲染"><span class="nav-number">2.</span> <span class="nav-text">声明式渲染</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件与循环"><span class="nav-number">3.</span> <span class="nav-text">条件与循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理用户输入"><span class="nav-number">4.</span> <span class="nav-text">处理用户输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组件化应用构建"><span class="nav-number">5.</span> <span class="nav-text">组件化应用构建</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是vue"><span class="nav-number">1.</span> <span class="nav-text">什么是vue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明式渲染"><span class="nav-number">2.</span> <span class="nav-text">声明式渲染</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件机制"><span class="nav-number">3.</span> <span class="nav-text">事件机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件与循环"><span class="nav-number">4.</span> <span class="nav-text">条件与循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理用户输入"><span class="nav-number">5.</span> <span class="nav-text">处理用户输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组件化应用构建"><span class="nav-number">6.</span> <span class="nav-text">组件化应用构建</span></a></li></ol></div>
             
 
           </div>
