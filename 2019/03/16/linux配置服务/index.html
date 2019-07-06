@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/06/Z0cFHK.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/06/Z0cNgs.png">
-<meta property="og:updated_time" content="2019-07-06T15:13:57.383Z">
+<meta property="og:updated_time" content="2019-07-06T16:08:52.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux配置java环境">
 <meta name="twitter:description" content="centos安装jdk服务器阿里云 系统centos 连接工具secure crt上传文件 打开sftpsecure crt打开sftp，file–&amp;gt;Connect Sftp Session(快捷键 ctrl+p)上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf jdk-8u201-linux-x64.tar.gz 重命名解压后的文">
@@ -390,11 +390,11 @@
         <h4 id="centos安装jdk"><a href="#centos安装jdk" class="headerlink" title="centos安装jdk"></a>centos安装jdk</h4><p>服务器阿里云 系统centos 连接工具secure crt<br>上传文件 打开sftp<br>secure crt打开sftp，file–&gt;Connect Sftp Session(快捷键 ctrl+p)<br><img src="https://s2.ax1x.com/2019/07/06/Z0cFHK.png" alt="Z0cFHK.png"><br>上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全<br><img src="https://s2.ax1x.com/2019/07/06/Z0cNgs.png" alt="Z0cNgs.png"><br>用tar命令解压开文件</p>
 <pre><code>tar -zxvf jdk-8u201-linux-x64.tar.gz
 </code></pre><p>重命名解压后的文件夹</p>
-<pre><code>mv jdk-8u201-linux-x64 jdk
+<pre><code>mv jdk-8u201-linux-x64 jdk8
 </code></pre><p>配置环境变量,编辑profile文件</p>
 <pre><code>vi /etc/profile
-</code></pre><p>加入下面内容，/root/jdk8是jdk的路径<br>    export JAVA_HOME=/root/jdk8<br>    export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar<br>    export PATH=$JAVA_HOME/bin:$PATH</p>
-
+</code></pre><p>加入下面内容，/root/jdk8是jdk的安装路径<br>    export JAVA_HOME=/root/jdk8<br>    export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar<br>    export PATH=$JAVA_HOME/bin:$PATH</p>
+<h4 id="centos安装mysql"><a href="#centos安装mysql" class="headerlink" title="centos安装mysql"></a>centos安装mysql</h4><h4 id="centos安装tomcat"><a href="#centos安装tomcat" class="headerlink" title="centos安装tomcat"></a>centos安装tomcat</h4><h4 id="centos安装nginx"><a href="#centos安装nginx" class="headerlink" title="centos安装nginx"></a>centos安装nginx</h4>
       
     </div>
     
@@ -570,7 +570,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#centos安装jdk"><span class="nav-number">1.</span> <span class="nav-text">centos安装jdk</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#centos安装jdk"><span class="nav-number">1.</span> <span class="nav-text">centos安装jdk</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#centos安装mysql"><span class="nav-number">2.</span> <span class="nav-text">centos安装mysql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#centos安装tomcat"><span class="nav-number">3.</span> <span class="nav-text">centos安装tomcat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#centos安装nginx"><span class="nav-number">4.</span> <span class="nav-text">centos安装nginx</span></a></li></ol></div>
             
 
           </div>
