@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[linux配置java环境]]></title>
     <url>%2F2019%2F03%2F16%2Flinux%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%2F</url>
-    <content type="text"><![CDATA[centos安装jdk服务器阿里云 系统centos 连接工具secure crt上传文件 打开sftpsecure crt打开sftp，file–&gt;Connect Sftp Session(快捷键 ctrl+p)上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf jdk-8u201-linux-x64.tar.gz 重命名解压后的文件夹 mv jdk-8u201-linux-x64 jdk8 配置环境变量,编辑profile文件 vi /etc/profile 加入下面内容，/root/jdk8是jdk的安装路径 export JAVA_HOME=/root/jdk8 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar export PATH=$JAVA_HOME/bin:$PATH centos安装mysqlcentos安装tomcatcentos安装nginx]]></content>
+    <content type="text"><![CDATA[centos安装jdk服务器阿里云 系统centos 连接工具secure crt上传文件 打开sftpsecure crt打开sftp，file–&gt;Connect Sftp Session(快捷键 ctrl+p)上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf jdk-8u201-linux-x64.tar.gz 重命名解压后的文件夹 mv jdk-8u201-linux-x64 jdk8 配置环境变量,编辑profile文件 vi /etc/profile 加入下面内容，/root/jdk8是jdk的安装路径 export JAVA_HOME=/root/jdk8 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar export PATH=$JAVA_HOME/bin:$PATH执行命令,使配置文件生效 source /etc/profile 查看命令,如下图 java -version javac -version centos安装mysqlcentos安装tomcat上传tomcat,直接拖tomcat压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf apache-tomcat-7.0.90.tar.gz 重命名解压后的文件夹 mv apache-tomcat-7.0.90 tomcat centos安装nginx]]></content>
       <categories>
         <category>linux</category>
       </categories>

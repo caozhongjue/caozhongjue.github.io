@@ -89,7 +89,12 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/06/Z0cFHK.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/06/Z0cNgs.png">
-<meta property="og:updated_time" content="2019-07-06T16:08:52.267Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z05s1O.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z05RHA.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0544P.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z04vlD.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z05a7R.png">
+<meta property="og:updated_time" content="2019-07-06T16:36:57.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux配置java环境">
 <meta name="twitter:description" content="centos安装jdk服务器阿里云 系统centos 连接工具secure crt上传文件 打开sftpsecure crt打开sftp，file–&amp;gt;Connect Sftp Session(快捷键 ctrl+p)上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf jdk-8u201-linux-x64.tar.gz 重命名解压后的文">
@@ -391,10 +396,18 @@
 <pre><code>tar -zxvf jdk-8u201-linux-x64.tar.gz
 </code></pre><p>重命名解压后的文件夹</p>
 <pre><code>mv jdk-8u201-linux-x64 jdk8
-</code></pre><p>配置环境变量,编辑profile文件</p>
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z05s1O.png" alt="Z05s1O.png"><br>配置环境变量,编辑profile文件</p>
 <pre><code>vi /etc/profile
-</code></pre><p>加入下面内容，/root/jdk8是jdk的安装路径<br>    export JAVA_HOME=/root/jdk8<br>    export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar<br>    export PATH=$JAVA_HOME/bin:$PATH</p>
-<h4 id="centos安装mysql"><a href="#centos安装mysql" class="headerlink" title="centos安装mysql"></a>centos安装mysql</h4><h4 id="centos安装tomcat"><a href="#centos安装tomcat" class="headerlink" title="centos安装tomcat"></a>centos安装tomcat</h4><h4 id="centos安装nginx"><a href="#centos安装nginx" class="headerlink" title="centos安装nginx"></a>centos安装nginx</h4>
+</code></pre><p>加入下面内容，/root/jdk8是jdk的安装路径<br>    export JAVA_HOME=/root/jdk8<br>    export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar<br>    export PATH=$JAVA_HOME/bin:$PATH<br><img src="https://s2.ax1x.com/2019/07/07/Z05RHA.png" alt="Z05RHA.png"><br>执行命令,使配置文件生效</p>
+<pre><code>source /etc/profile
+</code></pre><p>查看命令,如下图<br>    java -version<br>    javac -version</p>
+<p><img src="https://s2.ax1x.com/2019/07/07/Z0544P.png" alt="Z0544P.png"></p>
+<h4 id="centos安装mysql"><a href="#centos安装mysql" class="headerlink" title="centos安装mysql"></a>centos安装mysql</h4><h4 id="centos安装tomcat"><a href="#centos安装tomcat" class="headerlink" title="centos安装tomcat"></a>centos安装tomcat</h4><p>上传tomcat,直接拖tomcat压缩包到sftp那个窗口就行了，等上传完全<br><img src="https://s2.ax1x.com/2019/07/07/Z04vlD.png" alt="Z04vlD.png"><br>用tar命令解压开文件</p>
+<pre><code>tar -zxvf apache-tomcat-7.0.90.tar.gz
+</code></pre><p>重命名解压后的文件夹</p>
+<pre><code>mv apache-tomcat-7.0.90 tomcat
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z05a7R.png" alt="Z05a7R.png"></p>
+<h4 id="centos安装nginx"><a href="#centos安装nginx" class="headerlink" title="centos安装nginx"></a>centos安装nginx</h4>
       
     </div>
     
