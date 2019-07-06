@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="czj&#39;blog">
 <meta property="og:description" content="什么是vue1、vue是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用，Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。2、创建一个 .html 文件，然后通过如下方式引入 Vue： &amp;lt;!-- 开发环境版本，包含了有帮">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-05T16:47:03.930Z">
+<meta property="og:updated_time" content="2019-07-06T04:05:12.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="认识vue">
 <meta name="twitter:description" content="什么是vue1、vue是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用，Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。2、创建一个 .html 文件，然后通过如下方式引入 Vue： &amp;lt;!-- 开发环境版本，包含了有帮">
@@ -391,13 +391,14 @@
 <pre><code>&lt;!-- 生产环境版本，优化了尺寸和速度 --&gt;
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt;
 </code></pre><h4 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h4><pre><code>&lt;div id=&quot;app&quot;&gt;
-  {{ message }}
+  {{msg}}
+  &lt;h4 v-text=&quot;msg&quot;&gt;&lt;/h4&gt;
 &lt;/div&gt;
 
 var app = new Vue({
   el: &apos;#app&apos;,
   data: {
-    message: &apos;Hello Vue!&apos;
+    msg: &apos;Hello Vue!&apos;
   }
 })
 </code></pre><p>除了文本插值，我们还可以像这样来绑定元素特性：</p>
