@@ -92,9 +92,21 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z05s1O.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z05RHA.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0544P.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0oAsg.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0oELQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0oKJ0.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0o8L4.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0otoR.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0odW6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0orOe.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0o56S.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0oOf0.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0ozXF.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0TikR.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0TFt1.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z04vlD.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z05a7R.png">
-<meta property="og:updated_time" content="2019-07-06T17:10:03.442Z">
+<meta property="og:updated_time" content="2019-07-06T17:29:11.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux配置java环境">
 <meta name="twitter:description" content="centos安装jdk服务器阿里云 系统centos 连接工具secure crt上传文件 打开sftpsecure crt打开sftp，file–&amp;gt;Connect Sftp Session(快捷键 ctrl+p)上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf jdk-8u201-linux-x64.tar.gz 重命名解压后的文">
@@ -404,24 +416,40 @@
 <p><img src="https://s2.ax1x.com/2019/07/07/Z0544P.png" alt="Z0544P.png"></p>
 <h4 id="centos安装mysql"><a href="#centos安装mysql" class="headerlink" title="centos安装mysql"></a>centos安装mysql</h4><p>下载并安装MySQL官方的 Yum Repository</p>
 <pre><code>wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
-</code></pre><p>使用上面的命令就直接下载了安装用的Yum Repository，大概25KB的样子，然后就可以直接yum安装了。</p>
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z0oAsg.png" alt="Z0oAsg.png"><br>使用上面的命令就直接下载了安装用的Yum Repository，大概25KB的样子，然后就可以直接yum安装了。</p>
 <pre><code>yum -y install mysql57-community-release-el7-10.noarch.rpm
-</code></pre><p>之后就开始安装MySQL服务器。</p>
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z0oELQ.png" alt="Z0oELQ.png"></p>
+<p>之后就开始安装MySQL服务器。</p>
 <pre><code>yum -y install mysql-community-server
-</code></pre><p>MySQL数据库设置<br>  首先启动MySQL</p>
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z0oKJ0.png" alt="Z0oKJ0.png"></p>
+<p>MySQL数据库设置<br>  首先启动MySQL</p>
 <pre><code>systemctl start  mysqld.service
 </code></pre><p>  查看MySQL运行状态，运行状态如图：</p>
 <pre><code>systemctl status mysqld.service
-</code></pre><p>此时MySQL已经开始正常运行，不过要想进入MySQL还得先找出此时root用户的密码，通过如下命令可以在日志文件中找出密码：</p>
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z0o8L4.png" alt="Z0o8L4.png"><br>此时MySQL已经开始正常运行，不过要想进入MySQL还得先找出此时root用户的密码，通过如下命令可以在日志文件中找出密码：</p>
 <pre><code>grep &quot;password&quot; /var/log/mysqld.log
-</code></pre><p>如下命令进入数据库：</p>
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z0otoR.png" alt="Z0otoR.png"></p>
+<p>如下命令进入数据库：</p>
 <pre><code>mysql -u root -p
-</code></pre><p>输入初始密码，此时不能做任何事情，因为MySQL默认必须修改密码之后才能操作数据库：</p>
+</code></pre><p>输入初始密码，此时不能做任何事情，因为MySQL默认必须修改密码之后才能操作数据库：<br><img src="https://s2.ax1x.com/2019/07/07/Z0odW6.png" alt="Z0odW6.png"></p>
 <pre><code>ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;new password&apos;;
-</code></pre><p>这里有个问题，新密码设置的时候如果设置的过于简单会报错：</p>
-<p>设置 MySQL 的字符集为 UTF-8：<br>打开 /etc 目录下的 my.cnf 文件（此文件是 MySQL 的主配置文件）：<br>    vim /etc/my.cnf<br>在 [mysqld] 前添加如下代码：<br>    [client]<br>    default-character-set=utf8<br>在 [mysqld] 后添加如下代码：<br>    character_set_server=utf8<br>重启mysql后 再登录，看看字符集，6个utf8就算OK</p>
+</code></pre><p>这里有个问题，新密码设置的时候如果设置的过于简单会报错：<br><img src="https://s2.ax1x.com/2019/07/07/Z0orOe.png" alt="Z0orOe.png"></p>
+<p>密码的长度是由validate_password_length决定的，而validate_password_length的计算公式是：</p>
+<pre><code>validate_password_length = validate_password_number_count + validate_password_special_char_count + (2 * validate_password_mixed_case_count)
+</code></pre><p>我的是已经修改过的，初始情况下第一个的值是ON，validate_password_length是8。可以通过如下命令修改：</p>
+<pre><code>set global validate_password_policy=0;
+set global validate_password_length=1;
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z0o56S.png" alt="Z0o56S.png"><br>设置 MySQL 的字符集为 UTF-8：<br><img src="https://s2.ax1x.com/2019/07/07/Z0oOf0.png" alt="Z0oOf0.png"><br>打开 /etc 目录下的 my.cnf 文件（此文件是 MySQL 的主配置文件）：</p>
+<pre><code>vim /etc/my.cnf
+</code></pre><p>在 [mysqld] 前添加如下代码：</p>
+<pre><code>[client]
+default-character-set=utf8
+</code></pre><p>在 [mysqld] 后添加如下代码：</p>
+<pre><code>character_set_server=utf8
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z0ozXF.png" alt="Z0ozXF.png"><br>重启mysql后 再登录，看看字符集，6个utf8就算OK<br><img src="https://s2.ax1x.com/2019/07/07/Z0TikR.png" alt="Z0TikR.png"></p>
 <pre><code>show variables like &apos;%character%&apos;;
-</code></pre><h4 id="centos安装tomcat"><a href="#centos安装tomcat" class="headerlink" title="centos安装tomcat"></a>centos安装tomcat</h4><p>上传tomcat,直接拖tomcat压缩包到sftp那个窗口就行了，等上传完全<br><img src="https://s2.ax1x.com/2019/07/07/Z04vlD.png" alt="Z04vlD.png"><br>用tar命令解压开文件</p>
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z0TFt1.png" alt="Z0TFt1.png"></p>
+<h4 id="centos安装tomcat"><a href="#centos安装tomcat" class="headerlink" title="centos安装tomcat"></a>centos安装tomcat</h4><p>上传tomcat,直接拖tomcat压缩包到sftp那个窗口就行了，等上传完全<br><img src="https://s2.ax1x.com/2019/07/07/Z04vlD.png" alt="Z04vlD.png"><br>用tar命令解压开文件</p>
 <pre><code>tar -zxvf apache-tomcat-7.0.90.tar.gz
 </code></pre><p>重命名解压后的文件夹</p>
 <pre><code>mv apache-tomcat-7.0.90 tomcat
