@@ -118,7 +118,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBE15n.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBEwVJ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBEfVH.png">
-<meta property="og:updated_time" content="2019-07-07T03:33:20.335Z">
+<meta property="og:updated_time" content="2019-07-07T03:46:54.732Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux配置java环境">
 <meta name="twitter:description" content="centos安装jdk服务器阿里云 系统centos 连接工具secure crt上传文件 打开sftpsecure crt打开sftp，file–&amp;gt;Connect Sftp Session(快捷键 alt+p)上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf jdk-8u201-linux-x64.tar.gz 重命名解压后的文件">
@@ -422,10 +422,16 @@
 <pre><code>mv jdk-8u201-linux-x64 jdk8
 </code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z05s1O.png" alt="Z05s1O.png"><br>配置环境变量,编辑profile文件</p>
 <pre><code>vi /etc/profile
-</code></pre><p>加入下面内容，/root/jdk8是jdk的安装路径<br>    export JAVA_HOME=/root/jdk8<br>    export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar<br>    export PATH=$JAVA_HOME/bin:$PATH<br><img src="https://s2.ax1x.com/2019/07/07/Z05RHA.png" alt="Z05RHA.png"><br>执行命令,使配置文件生效</p>
+</code></pre><p>加入下面内容，/root/jdk8是jdk的安装路径</p>
+<pre><code>export JAVA_HOME=/root/jdk8
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$JAVA_HOME/bin:$PATH
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z05RHA.png" alt="Z05RHA.png"><br>执行命令,使配置文件生效</p>
 <pre><code>source /etc/profile
-</code></pre><p>查看命令,如下图<br>    java -version<br>    javac -version</p>
-<p><img src="https://s2.ax1x.com/2019/07/07/Z0544P.png" alt="Z0544P.png"></p>
+</code></pre><p>查看命令,如下图</p>
+<pre><code>java -version
+javac -version
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z0544P.png" alt="Z0544P.png"></p>
 <h4 id="centos安装mysql"><a href="#centos安装mysql" class="headerlink" title="centos安装mysql"></a>centos安装mysql</h4><p>下载并安装MySQL官方的 Yum Repository</p>
 <pre><code>wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
 </code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z0oAsg.png" alt="Z0oAsg.png"><br>使用上面的命令就直接下载了安装用的Yum Repository，大概25KB的样子，然后就可以直接yum安装了。</p>
@@ -444,8 +450,8 @@
 <p>如下命令进入数据库：</p>
 <pre><code>mysql -u root -p
 </code></pre><p>输入初始密码，此时不能做任何事情，因为MySQL默认必须修改密码之后才能操作数据库：<br><img src="https://s2.ax1x.com/2019/07/07/Z0odW6.png" alt="Z0odW6.png"></p>
-<pre><code>ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;new password&apos;;
-</code></pre><p>这里有个问题，新密码设置的时候如果设置的过于简单会报错：<br><img src="https://s2.ax1x.com/2019/07/07/Z0orOe.png" alt="Z0orOe.png"></p>
+<pre><code>ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;gznc865958&apos;;
+</code></pre><p>(gznc865958是自己设置的)<br>这里有个问题，新密码设置的时候如果设置的过于简单会报错：<br><img src="https://s2.ax1x.com/2019/07/07/Z0orOe.png" alt="Z0orOe.png"></p>
 <p>密码的长度是由validate_password_length决定的，而validate_password_length的计算公式是：</p>
 <pre><code>validate_password_length = validate_password_number_count + validate_password_special_char_count + (2 * validate_password_mixed_case_count)
 </code></pre><p>我的是已经修改过的，初始情况下第一个的值是ON，validate_password_length是8。可以通过如下命令修改：</p>
