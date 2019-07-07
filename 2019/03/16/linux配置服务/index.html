@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="centos安装jdk服务器阿里云 系统centos 连接工具secure crt上传文件 打开sftpsecure crt打开sftp，file–&amp;gt;Connect Sftp Session(快捷键 ctrl+p)上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf jdk-8u201-linux-x64.tar.gz 重命名解压后的文">
+<meta name="description" content="centos安装jdk服务器阿里云 系统centos 连接工具secure crt上传文件 打开sftpsecure crt打开sftp，file–&amp;gt;Connect Sftp Session(快捷键 alt+p)上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf jdk-8u201-linux-x64.tar.gz 重命名解压后的文件">
 <meta name="keywords" content="centos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux配置java环境">
 <meta property="og:url" content="http://yoursite.com/2019/03/16/linux配置服务/index.html">
 <meta property="og:site_name" content="czj&#39;blog">
-<meta property="og:description" content="centos安装jdk服务器阿里云 系统centos 连接工具secure crt上传文件 打开sftpsecure crt打开sftp，file–&amp;gt;Connect Sftp Session(快捷键 ctrl+p)上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf jdk-8u201-linux-x64.tar.gz 重命名解压后的文">
+<meta property="og:description" content="centos安装jdk服务器阿里云 系统centos 连接工具secure crt上传文件 打开sftpsecure crt打开sftp，file–&amp;gt;Connect Sftp Session(快捷键 alt+p)上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf jdk-8u201-linux-x64.tar.gz 重命名解压后的文件">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/06/Z0cFHK.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/06/Z0cNgs.png">
@@ -106,10 +106,22 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z0TFt1.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z04vlD.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/07/Z05a7R.png">
-<meta property="og:updated_time" content="2019-07-06T17:29:11.101Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZB92AP.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZB9OhT.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBCiAx.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBPwsH.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBPgW8.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBiDcF.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBizjg.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBiHHA.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBFZgU.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBE15n.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBEwVJ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/07/ZBEfVH.png">
+<meta property="og:updated_time" content="2019-07-07T03:33:20.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux配置java环境">
-<meta name="twitter:description" content="centos安装jdk服务器阿里云 系统centos 连接工具secure crt上传文件 打开sftpsecure crt打开sftp，file–&amp;gt;Connect Sftp Session(快捷键 ctrl+p)上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf jdk-8u201-linux-x64.tar.gz 重命名解压后的文">
+<meta name="twitter:description" content="centos安装jdk服务器阿里云 系统centos 连接工具secure crt上传文件 打开sftpsecure crt打开sftp，file–&amp;gt;Connect Sftp Session(快捷键 alt+p)上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全用tar命令解压开文件 tar -zxvf jdk-8u201-linux-x64.tar.gz 重命名解压后的文件">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/07/06/Z0cFHK.png">
 
 
@@ -404,7 +416,7 @@
       
 
       
-        <h4 id="centos安装jdk"><a href="#centos安装jdk" class="headerlink" title="centos安装jdk"></a>centos安装jdk</h4><p>服务器阿里云 系统centos 连接工具secure crt<br>上传文件 打开sftp<br>secure crt打开sftp，file–&gt;Connect Sftp Session(快捷键 ctrl+p)<br><img src="https://s2.ax1x.com/2019/07/06/Z0cFHK.png" alt="Z0cFHK.png"><br>上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全<br><img src="https://s2.ax1x.com/2019/07/06/Z0cNgs.png" alt="Z0cNgs.png"><br>用tar命令解压开文件</p>
+        <h4 id="centos安装jdk"><a href="#centos安装jdk" class="headerlink" title="centos安装jdk"></a>centos安装jdk</h4><p>服务器阿里云 系统centos 连接工具secure crt<br>上传文件 打开sftp<br>secure crt打开sftp，file–&gt;Connect Sftp Session(快捷键 alt+p)<br><img src="https://s2.ax1x.com/2019/07/06/Z0cFHK.png" alt="Z0cFHK.png"><br>上传jdk,直接拖jdk压缩包到sftp那个窗口就行了，等上传完全<br><img src="https://s2.ax1x.com/2019/07/06/Z0cNgs.png" alt="Z0cNgs.png"><br>用tar命令解压开文件</p>
 <pre><code>tar -zxvf jdk-8u201-linux-x64.tar.gz
 </code></pre><p>重命名解压后的文件夹</p>
 <pre><code>mv jdk-8u201-linux-x64 jdk8
@@ -454,7 +466,80 @@ default-character-set=utf8
 </code></pre><p>重命名解压后的文件夹</p>
 <pre><code>mv apache-tomcat-7.0.90 tomcat
 </code></pre><p><img src="https://s2.ax1x.com/2019/07/07/Z05a7R.png" alt="Z05a7R.png"></p>
-<h4 id="centos安装nginx"><a href="#centos安装nginx" class="headerlink" title="centos安装nginx"></a>centos安装nginx</h4>
+<h4 id="centos安装nginx"><a href="#centos安装nginx" class="headerlink" title="centos安装nginx"></a>centos安装nginx</h4><p>1、需要安装gcc的环境。</p>
+<pre><code>yum install gcc-c++
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/ZB92AP.png" alt="ZB92AP.png"><br>2、第三方的开发包。 </p>
+<pre><code>yum install -y pcre pcre-devel
+yum install -y zlib zlib-devel
+yum install -y openssl openssl-devel
+</code></pre><p>第一步：把nginx的源码包上传到linux系统<br><img src="https://s2.ax1x.com/2019/07/07/ZB9OhT.png" alt="ZB9OhT.png"><br>第二步：解压缩，改文件夹名</p>
+<pre><code>tar zxf nginx-1.8.0.tar.gz
+mv nginx-1.8.0 nginx1.8
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/ZBCiAx.png" alt="ZBCiAx.png"><br>第三步：进入到nginx1.8文件中  使用configure命令创建一makeFile文件。</p>
+<pre><code>./configure \
+--prefix=/usr/local/nginx \
+--pid-path=/var/run/nginx/nginx.pid \
+--lock-path=/var/lock/nginx.lock \
+--error-log-path=/var/log/nginx/error.log \
+--http-log-path=/var/log/nginx/access.log \
+--with-http_gzip_static_module \
+--http-client-body-temp-path=/var/temp/nginx/client \
+--http-proxy-temp-path=/var/temp/nginx/proxy \
+--http-fastcgi-temp-path=/var/temp/nginx/fastcgi \
+--http-uwsgi-temp-path=/var/temp/nginx/uwsgi \
+--http-scgi-temp-path=/var/temp/nginx/scgi 
+</code></pre><p>注意：启动nginx之前，上边将临时文件目录指定为/var/temp/nginx，需要在/var下创建temp及nginx目录</p>
+<pre><code>mkdir /var/temp/nginx/client -p
+</code></pre><p>第四步：</p>
+<pre><code>make
+</code></pre><p>第五步：</p>
+<pre><code>make install
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/ZBPwsH.png" alt="ZBPwsH.png"><br><img src="https://s2.ax1x.com/2019/07/07/ZBPgW8.png" alt="ZBPgW8.png"><br>启动nginx<br><img src="https://s2.ax1x.com/2019/07/07/ZBiDcF.png" alt="ZBiDcF.png"><br>进入nginx下面的sbin目录</p>
+<pre><code>./nginx 
+</code></pre><p>查看进程</p>
+<pre><code>netstat -ano|grep 80
+ps -ef|grep nginx
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/ZBizjg.png" alt="ZBizjg.png"></p>
+<p>在浏览器输入主机ip加端口80,如下图<br><img src="https://s2.ax1x.com/2019/07/07/ZBiHHA.png" alt="ZBiHHA.png"><br>关闭nginx：</p>
+<pre><code>./nginx -s stop
+</code></pre><p>推荐使用：</p>
+<pre><code>./nginx -s quit
+</code></pre><p>重启nginx：</p>
+<p>1、先关闭后启动。</p>
+<p>2、刷新配置文件：</p>
+<pre><code>./nginx -s reload
+</code></pre><p>配置nginx反向代理</p>
+<p>进入nginx下的conf目录下，</p>
+<pre><code>vi nginx.conf  
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/ZBFZgU.png" alt="ZBFZgU.png"> </p>
+<pre><code>upstream tomcatserver1{
+  server 119.23.17.96:8080;
+}
+
+server {
+    listen       80;
+    server_name  blog.caozhongjue.top;
+
+    location / {
+        proxy_pass   http://tomcatserver1;
+        index  index.html index.htm;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
+
+}
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/ZBE15n.png" alt="ZBE15n.png"></p>
+<p>启动tomcat<br>进入到tomcat的bin目录中<br><img src="https://s2.ax1x.com/2019/07/07/ZBEwVJ.png" alt="ZBEwVJ.png"><br>    ./startup.sh<br>关闭tomcat</p>
+<pre><code>./shutdown.sh
+</code></pre><p>查看日志</p>
+<pre><code>cd ..
+cd logs
+tail -f catalina.out
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/07/ZBEfVH.png" alt="ZBEfVH.png"></p>
+
       
     </div>
     
