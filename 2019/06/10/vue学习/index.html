@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="czj&#39;blog">
 <meta property="og:description" content="什么是vue1、vue是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用，Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。2、创建一个 .html 文件，然后通过如下方式引入 Vue： &amp;lt;!-- 开发环境版本，包含了有帮">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-07T11:14:10.099Z">
+<meta property="og:updated_time" content="2019-07-07T11:16:43.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="认识vue">
 <meta name="twitter:description" content="什么是vue1、vue是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用，Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。2、创建一个 .html 文件，然后通过如下方式引入 Vue： &amp;lt;!-- 开发环境版本，包含了有帮">
@@ -417,8 +417,20 @@ var app2 = new Vue({
     message: &apos;页面加载于 &apos; + new Date().toLocaleString()
   }
 })
-</code></pre><p>v-bind 没法实现双向绑定，v-model可以<br>    <div id="app"><br>        <p></p><br>        <input type="text" style="width: 100%;" v-model="msg5"><br>    </div><br>    <script type="text/javascript"><br>        var vue = new Vue({<br>            el: ‘#app’,<br>            data: {<br>                msg5: “大家都是好学生，爱代码，爱学习”<br>            },<br>            methods: {</p>
-<pre><code>        }
+</code></pre><p>v-bind 没法实现双向绑定，v-model可以</p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;p&gt;{{msg5}}&lt;/p&gt;
+    &lt;input type=&quot;text&quot; style=&quot;width: 100%;&quot; v-model=&quot;msg5&quot;&gt;
+&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var vue = new Vue({
+        el: &apos;#app&apos;,
+        data: {
+            msg5: &quot;大家都是好学生，爱代码，爱学习&quot;
+        },
+        methods: {
+
+        }
     })
 &lt;/script&gt;
 </code></pre><p>v-bind 特性被称为指令。指令带有前缀 v-，以表示它们是 Vue 提供的特殊特性。</p>
@@ -529,7 +541,7 @@ Vue.component(&apos;todo-item&apos;, {
   &lt;!-- 创建一个 todo-item 组件的实例 --&gt;
   &lt;todo-item&gt;&lt;/todo-item&gt;
 &lt;/ol&gt;
-</code></pre></script></p>
+</code></pre>
       
     </div>
     
@@ -701,7 +713,7 @@ Vue.component(&apos;todo-item&apos;, {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是vue"><span class="nav-number">1.</span> <span class="nav-text">什么是vue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明式渲染"><span class="nav-number">2.</span> <span class="nav-text">声明式渲染</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是vue"><span class="nav-number">1.</span> <span class="nav-text">什么是vue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明式渲染"><span class="nav-number">2.</span> <span class="nav-text">声明式渲染</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件机制"><span class="nav-number">3.</span> <span class="nav-text">事件机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#案例"><span class="nav-number">4.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件与循环"><span class="nav-number">5.</span> <span class="nav-text">条件与循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理用户输入"><span class="nav-number">6.</span> <span class="nav-text">处理用户输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组件化应用构建"><span class="nav-number">7.</span> <span class="nav-text">组件化应用构建</span></a></li></ol></div>
             
 
           </div>
