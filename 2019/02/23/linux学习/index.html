@@ -96,7 +96,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdO3N9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdXMxP.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/Zdjcm8.png">
-<meta property="og:updated_time" content="2019-07-05T15:07:39.113Z">
+<meta property="og:updated_time" content="2019-07-07T15:10:14.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux centos">
 <meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
@@ -423,7 +423,14 @@ firewall-cmd --state
 <pre><code>ls 
 </code></pre><p>linux查看当前目录有哪些内容详情 </p>
 <pre><code>ls -l 
-</code></pre><p><img src="https://s2.ax1x.com/2019/06/29/ZQjcdS.png" alt="ZQjcdS.png"><br>查看当前位置 pwd<br>去下一级目录 cd 下一级目录<br>返回上一级目录 cd ..<br><img src="https://s2.ax1x.com/2019/06/29/ZQxp1s.png" alt="ZQxp1s.png"><br>查看端口被哪个进程占用命令  netstat -lnp|grep 8080<br>关机 </p>
+</code></pre><p><img src="https://s2.ax1x.com/2019/06/29/ZQjcdS.png" alt="ZQjcdS.png"><br>查看当前位置 pwd<br>去下一级目录 cd 下一级目录<br>返回上一级目录 cd ..<br><img src="https://s2.ax1x.com/2019/06/29/ZQxp1s.png" alt="ZQxp1s.png"><br>查看端口被哪个进程占用命令 netstat、ps、lsof</p>
+<pre><code>netstat -lnp|grep 8080 或netstat -ano|grep 8080
+</code></pre><p>netstat命令选项：<br>-a all 默认不显示LISTEN相关<br>-t tcp<br>-u udp<br>-n number 不显示别名，能显示数字的都用数字显示。由于不需要把数字转换成别名，所以显示的快一些<br>-l listen 仅列出正在监听的服务状态<br>-p program 显示建立连接的程序名<br>-r route 路由信息<br>-e extention 扩展信息，比如uid等<br>-s statistic 按各个协议进行统计<br>-c cycle 每隔一段时间周期执行netstat命令</p>
+<pre><code>ps -ef|grep java或ps -aux|grep java
+</code></pre><p>lsof命令常用选项：</p>
+<p>lsof  filename 显示打开指定文件的所有进程<br>lsof -a 表示两个参数都必须满足时才显示结果<br>lsof -c string   显示COMMAND列中包含指定字符的进程所有打开的文件<br>lsof -u username  显示所属user进程打开的文件<br>lsof -g gid 显示归属gid的进程情况<br>lsof +d /DIR/ 显示目录下被进程打开的文件<br>lsof +D /DIR/ 同上，但是会搜索目录下的所有目录，时间相对较长<br>lsof -d FD 显示指定文件描述符的进程<br>lsof -n 不将IP转换为hostname，缺省是不加上-n参数<br>lsof -i 用以显示符合条件的进程情况</p>
+<pre><code>lsof -i:8080
+</code></pre><p>关机 </p>
 <pre><code>shutdown 
 </code></pre><p>现在关机 </p>
 <pre><code>shutdown now
@@ -590,7 +597,7 @@ sftp&gt; lls                    # 查看本地路径下的文件
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -601,7 +608,7 @@ sftp&gt; lls                    # 查看本地路径下的文件
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
