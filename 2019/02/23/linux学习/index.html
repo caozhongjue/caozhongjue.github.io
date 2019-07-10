@@ -93,10 +93,13 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQxwut.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQjcdS.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQxp1s.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/10/Zgs4xO.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/10/ZgsHZd.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/10/ZgsjRf.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdO3N9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdXMxP.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/Zdjcm8.png">
-<meta property="og:updated_time" content="2019-07-08T11:55:47.595Z">
+<meta property="og:updated_time" content="2019-07-10T15:39:53.333Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux centos">
 <meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
@@ -432,7 +435,16 @@ firewall-cmd --state
 <pre><code>lsof -i:8080
 </code></pre><p>lsof命令常用选项：</p>
 <p>lsof  filename 显示打开指定文件的所有进程<br>lsof -a 表示两个参数都必须满足时才显示结果<br>lsof -c string   显示COMMAND列中包含指定字符的进程所有打开的文件<br>lsof -u username  显示所属user进程打开的文件<br>lsof -g gid 显示归属gid的进程情况<br>lsof +d /DIR/ 显示目录下被进程打开的文件<br>lsof +D /DIR/ 同上，但是会搜索目录下的所有目录，时间相对较长<br>lsof -d FD 显示指定文件描述符的进程<br>lsof -n 不将IP转换为hostname，缺省是不加上-n参数<br>lsof -i 用以显示符合条件的进程情况</p>
-<p>关机 </p>
+<p>window系统查看进程</p>
+<pre><code>netstat -ano
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/10/Zgs4xO.png" alt="Zgs4xO.png"></p>
+<p>查看被占用端口对应的PID<br>语法格式：<br>netstat -ano | findstr “端口号”</p>
+<pre><code>netstat -ano | findstr &quot;8080&quot;
+</code></pre><p>最后一位数字就是PID，这里是9736<br><img src="https://s2.ax1x.com/2019/07/10/ZgsHZd.png" alt="ZgsHZd.png"><br>taskkill（结束进程）<br>强制（/F参数）杀死pid为8112的所有进程包括子进程（/T参数）</p>
+<pre><code>taskkill /T /F /PID 9736
+</code></pre><p>也可小写</p>
+<pre><code>taskkill /f /t /PID 9736
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/10/ZgsjRf.png" alt="ZgsjRf.png"><br>关机 </p>
 <pre><code>shutdown 
 </code></pre><p>现在关机 </p>
 <pre><code>shutdown now
