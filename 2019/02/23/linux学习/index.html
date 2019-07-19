@@ -93,13 +93,25 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQxwut.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQjcdS.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQxp1s.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxZCAH.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxZrgx.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxeSx0.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxnkC9.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/Zxumzn.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxuGi4.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxKTHK.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxQAIO.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxQ1df.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxluhF.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/Zxlvv9.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/Zx11PS.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/10/Zgs4xO.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/10/ZgsHZd.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/10/ZgsjRf.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdO3N9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdXMxP.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/Zdjcm8.png">
-<meta property="og:updated_time" content="2019-07-10T15:39:53.333Z">
+<meta property="og:updated_time" content="2019-07-19T13:38:30.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux centos">
 <meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
@@ -422,11 +434,44 @@ firewall-cmd --state
 </code></pre><p>删除</p>
 <pre><code>firewall-cmd --zone= public --remove-port=80/tcp --permanent
 </code></pre><p>(命令如下图 注意是有两个-的)<br><img src="https://s2.ax1x.com/2019/06/29/ZQxwut.png" alt="ZQxwut.png"></p>
-<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><p>1、linux文件目录<br>linux根目录 /<br>存放必要的命令 /bin<br>存放内核以及启动所需要的文件 /boot<br>存放硬件设备文件 /dev<br>存放系统配置文件 /etc<br>普通用户宿主目录 /home<br>存放必要的运行库 /lib<br>超级用户的主目录 /root<br>存放系统管理程序 /sbin<br>存放临时的映射文件系统,通常用来挂载使用 /mnt<br>2、命令<br>linux查看当前目录有哪些内容  </p>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><p>1、linux文件目录<br>linux根目录 /<br>存放必要的命令 /bin<br>存放内核以及启动所需要的文件 /boot<br>存放硬件设备文件 /dev<br><strong>存放系统配置文件 /etc </strong><br>普通用户宿主目录 /home<br>存放必要的运行库 /lib<br>超级用户的主目录 /root<br>存放系统管理程序 /sbin<br>存放临时的映射文件系统,通常用来挂载使用 /mnt<br>存放临时文件  /tmp<br>存放应用程序  /usr</p>
+<p>命令行中# 代表是管理员身份<br>命令行中$ 代表是普通用户身份</p>
+<p>2、命令<br>linux查看当前目录有哪些内容  </p>
 <pre><code>ls 
 </code></pre><p>linux查看当前目录有哪些内容详情 </p>
 <pre><code>ls -l 
-</code></pre><p><img src="https://s2.ax1x.com/2019/06/29/ZQjcdS.png" alt="ZQjcdS.png"><br>查看当前位置 pwd<br>去下一级目录 cd 下一级目录<br>返回上一级目录 cd ..<br><img src="https://s2.ax1x.com/2019/06/29/ZQxp1s.png" alt="ZQxp1s.png"><br>查看端口被哪个进程占用命令 netstat、ps、lsof</p>
+</code></pre><p><img src="https://s2.ax1x.com/2019/06/29/ZQjcdS.png" alt="ZQjcdS.png"><br>查看当前位置 </p>
+<pre><code>pwd
+</code></pre><p>去下一级目录 </p>
+<pre><code>cd 下一级目录
+</code></pre><p>返回上一级目录 </p>
+<pre><code>cd ..
+</code></pre><p><img src="https://s2.ax1x.com/2019/06/29/ZQxp1s.png" alt="ZQxp1s.png"><br>清屏</p>
+<pre><code>clear
+</code></pre><p>创建文件命令 </p>
+<pre><code>touch a.txt    
+</code></pre><p>创建目录</p>
+<pre><code>mkdir
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxZCAH.png" alt="ZxZCAH.png"><br>直接同时创建文夹件里再创文件夹</p>
+<pre><code>mkdir -p
+</code></pre><p>如下图<br><img src="https://s2.ax1x.com/2019/07/19/ZxZrgx.png" alt="ZxZrgx.png"><br>删除目录,只能删除为空的一个目录，rmdir 后面跟要删的文件夹名</p>
+<pre><code>rmdir 
+</code></pre><p>这个能删除一个文件夹里面的文件夹，上下级一起删，如下图，如果abc下有多个文件夹，则删不了全部</p>
+<pre><code>rmdir -p 
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxeSx0.png" alt="ZxeSx0.png"><br>删除命令</p>
+<pre><code>rm
+rm -r -f 
+</code></pre><p>删除某个文件或文件夹，不管文件夹有没有东西，参数 r 表示递归， f 表示强制删<br><img src="https://s2.ax1x.com/2019/07/19/ZxnkC9.png" alt="ZxnkC9.png"></p>
+<p>移动命令</p>
+<pre><code>mv
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/Zxumzn.png" alt="Zxumzn.png"><br>mv命令,也可以用来重命名文件，如</p>
+<pre><code>mv a.txt b.txt
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxuGi4.png" alt="ZxuGi4.png"><br><img src="https://s2.ax1x.com/2019/07/19/ZxKTHK.png" alt="ZxKTHK.png"></p>
+<p>复制命令,有覆盖内容的作用</p>
+<pre><code>cp abcd/a.txt  abcde/b.txt
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxQAIO.png" alt="ZxQAIO.png"><br>cp命令 要复制目录得 用参数 r<br><img src="https://s2.ax1x.com/2019/07/19/ZxQ1df.png" alt="ZxQ1df.png"></p>
+<p>查看文件内容命令<br>cat直接查看全部内容<br>    cat<br><img src="https://s2.ax1x.com/2019/07/19/ZxluhF.png" alt="ZxluhF.png"><br>head查看文件内容头10行<br>    head<br>tail查看文件内容尾10行，tail -f 表示实时显示<br>    tail<br><img src="https://s2.ax1x.com/2019/07/19/Zxlvv9.png" alt="Zxlvv9.png"><br>more查看百分几，回车继续显示<br>    more<br><img src="https://s2.ax1x.com/2019/07/19/Zx11PS.png" alt="Zx11PS.png"><br>less按屏幕大小显示，按上下键继续显示<br>    less</p>
+<p>查看端口被哪个进程占用命令 netstat、ps、lsof</p>
 <pre><code>netstat -lnp|grep 8080 或netstat -ano|grep 8080
 </code></pre><p>netstat命令选项：<br>-a all 默认不显示LISTEN相关<br>-t tcp<br>-u udp<br>-n number 不显示别名，能显示数字的都用数字显示。由于不需要把数字转换成别名，所以显示的快一些<br>-l listen 仅列出正在监听的服务状态<br>-p program 显示建立连接的程序名<br>-r route 路由信息<br>-e extention 扩展信息，比如uid等<br>-s statistic 按各个协议进行统计<br>-c cycle 每隔一段时间周期执行netstat命令</p>
 <pre><code>ps -ef|grep java或ps -aux|grep java
