@@ -116,7 +116,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdO3N9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdXMxP.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/Zdjcm8.png">
-<meta property="og:updated_time" content="2019-07-19T14:26:46.302Z">
+<meta property="og:updated_time" content="2019-07-19T14:36:59.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux centos">
 <meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
@@ -518,9 +518,13 @@ echo &quot;bbb&quot; &gt;&gt; b.txt
 <pre><code>chmod u=rwx b.txt 或chmod g=rwx b.txt 只能同时对一个对象加权限
 </code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxNa6S.png" alt="ZxNa6S.png"><br>也可以这样修改权限  </p>
 <pre><code>chmod 732 b.txt
-</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxUSAA.png" alt="ZxUSAA.png"><br>添加用户</p>
-<p>删除用户</p>
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxUSAA.png" alt="ZxUSAA.png"><br>修改文件所属用户</p>
+<pre><code>chown 用户名 文件名
+</code></pre><p>修改文件所属组</p>
+<pre><code>chgrp 组名 文件名
+</code></pre><p>添加用户</p>
 <p>修改用户</p>
+<p>删除用户</p>
 <p>添加组</p>
 <p>删除组</p>
 <h4 id="vi编辑器"><a href="#vi编辑器" class="headerlink" title="vi编辑器"></a>vi编辑器</h4><p>用vi 打开文件,后有三种模式，命令行模式，插入模式，末行模式，刚打开文件进入命令行模式，按 a i等键进入插入模式，按esc键进入末行模式，在末行模式中用:wq保存文件并退出，：q！不保存强制退出</p>
