@@ -110,11 +110,13 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/10/ZgsHZd.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/10/ZgsjRf.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxteKg.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxNa6S.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxUSAA.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxY8nH.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdO3N9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdXMxP.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/Zdjcm8.png">
-<meta property="og:updated_time" content="2019-07-19T14:10:09.949Z">
+<meta property="og:updated_time" content="2019-07-19T14:26:46.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux centos">
 <meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
@@ -510,7 +512,13 @@ echo &quot;bbb&quot; &gt;&gt; b.txt
 <pre><code>shutdown now
 </code></pre><p>重启 </p>
 <pre><code>reboot
-</code></pre><h4 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h4><p>修改文件的权限,r读 w写 x执行<br><img src="https://s2.ax1x.com/2019/07/19/ZxteKg.png" alt="ZxteKg.png"><br>添加用户</p>
+</code></pre><h4 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h4><p>查看权限</p>
+<pre><code>ll
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxteKg.png" alt="ZxteKg.png"><br>修改文件的权限,r读 w写 x执行，rwx可以用421来表示</p>
+<pre><code>chmod u=rwx b.txt 或chmod g=rwx b.txt 只能同时对一个对象加权限
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxNa6S.png" alt="ZxNa6S.png"><br>也可以这样修改权限  </p>
+<pre><code>chmod 732 b.txt
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxUSAA.png" alt="ZxUSAA.png"><br>添加用户</p>
 <p>删除用户</p>
 <p>修改用户</p>
 <p>添加组</p>
