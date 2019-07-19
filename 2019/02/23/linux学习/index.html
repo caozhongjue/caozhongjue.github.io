@@ -105,13 +105,14 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/19/ZxluhF.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/19/Zxlvv9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/19/Zx11PS.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/19/Zx8sBR.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/10/Zgs4xO.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/10/ZgsHZd.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/10/ZgsjRf.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdO3N9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdXMxP.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/Zdjcm8.png">
-<meta property="og:updated_time" content="2019-07-19T13:38:30.707Z">
+<meta property="og:updated_time" content="2019-07-19T13:50:35.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux centos">
 <meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
@@ -470,8 +471,20 @@ rm -r -f
 <p>复制命令,有覆盖内容的作用</p>
 <pre><code>cp abcd/a.txt  abcde/b.txt
 </code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxQAIO.png" alt="ZxQAIO.png"><br>cp命令 要复制目录得 用参数 r<br><img src="https://s2.ax1x.com/2019/07/19/ZxQ1df.png" alt="ZxQ1df.png"></p>
-<p>查看文件内容命令<br>cat直接查看全部内容<br>    cat<br><img src="https://s2.ax1x.com/2019/07/19/ZxluhF.png" alt="ZxluhF.png"><br>head查看文件内容头10行<br>    head<br>tail查看文件内容尾10行，tail -f 表示实时显示<br>    tail<br><img src="https://s2.ax1x.com/2019/07/19/Zxlvv9.png" alt="Zxlvv9.png"><br>more查看百分几，回车继续显示<br>    more<br><img src="https://s2.ax1x.com/2019/07/19/Zx11PS.png" alt="Zx11PS.png"><br>less按屏幕大小显示，按上下键继续显示<br>    less</p>
-<p>查看端口被哪个进程占用命令 netstat、ps、lsof</p>
+<p>查看文件内容命令<br>cat直接查看全部内容，参数n显示行号</p>
+<pre><code>cat
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxluhF.png" alt="ZxluhF.png"><br>head查看文件内容头10行</p>
+<pre><code>head
+</code></pre><p>tail查看文件内容尾10行，tail -f 表示实时显示， tail -fn -10 表示查看实时行数</p>
+<pre><code>tail 
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/Zxlvv9.png" alt="Zxlvv9.png"><br>more查看百分几，回车继续显示</p>
+<pre><code>more 
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/Zx11PS.png" alt="Zx11PS.png"><br>less按屏幕大小显示，按上下键继续显示</p>
+<pre><code>less
+</code></pre><p>echo命令<br>一个 &gt; 表示覆盖<br>二个 &gt; 表示追加</p>
+<pre><code>echo &quot;aaa&quot; &gt; b.txt
+echo &quot;bbb&quot; &gt;&gt; b.txt
+</code></pre><p><img src="https://s2.ax1x.com/2019/07/19/Zx8sBR.png" alt="Zx8sBR.png"><br>查看端口被哪个进程占用命令 netstat、ps、lsof</p>
 <pre><code>netstat -lnp|grep 8080 或netstat -ano|grep 8080
 </code></pre><p>netstat命令选项：<br>-a all 默认不显示LISTEN相关<br>-t tcp<br>-u udp<br>-n number 不显示别名，能显示数字的都用数字显示。由于不需要把数字转换成别名，所以显示的快一些<br>-l listen 仅列出正在监听的服务状态<br>-p program 显示建立连接的程序名<br>-r route 路由信息<br>-e extention 扩展信息，比如uid等<br>-s statistic 按各个协议进行统计<br>-c cycle 每隔一段时间周期执行netstat命令</p>
 <pre><code>ps -ef|grep java或ps -aux|grep java
@@ -495,7 +508,7 @@ rm -r -f
 <pre><code>shutdown now
 </code></pre><p>重启 </p>
 <pre><code>reboot
-</code></pre><h4 id="secure-crt上传下载文件"><a href="#secure-crt上传下载文件" class="headerlink" title="secure crt上传下载文件"></a>secure crt上传下载文件</h4><p>一、rz sz方式</p>
+</code></pre><h4 id="rpm-安装软件"><a href="#rpm-安装软件" class="headerlink" title="rpm 安装软件"></a>rpm 安装软件</h4><h4 id="yum-安装软件"><a href="#yum-安装软件" class="headerlink" title="yum 安装软件"></a>yum 安装软件</h4><h4 id="secure-crt上传下载文件"><a href="#secure-crt上传下载文件" class="headerlink" title="secure crt上传下载文件"></a>secure crt上传下载文件</h4><p>一、rz sz方式</p>
 <p>1、linux服务器大多是通过ssh客户端来进行远程的登陆和管理的，使用ssh登陆linux主机以后，如何能够快速的和本地机器进行文件的交互呢，也就是上传和下载文件到服务器和本地；<br>与ssh有关的两个命令可以提供很方便的操作：<br>sz：将选定的文件发送（send）到本地机器<br>rz：运行该命令会弹出一个文件选择窗口，从本地选择文件上传到服务器(receive)<br>注意：<br>sz中的s意为send（发送），告诉客户端，我（服务器）要发送文件 send to cilent，就等同于客户端在下载。<br>rz中的r意为received（接收），告诉客户端，我（服务器）要接收文件 received by cilent，就等同于客户端在上传<br>2、如果linux上没有这两个命令工具，则需要先安装。可以使用yum安装。运行命令</p>
 <pre><code>yum install lrzsz。
 </code></pre><p>3、使用条件<br>普通Linux和Windows之间的文件共享方法，主要有建立nfs实现文件共享，和tftp之类的方法，但是都很麻烦，而如果只是小文件（几十 K，几百K），那么直接用rz/sz，就显得极其地方便了。<br>4、如何使用<br>从windows中拷贝/下载文件到Linux（开发板）：</p>
@@ -711,7 +724,7 @@ sftp&gt; lls                    # 查看本地路径下的文件
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#linux各个版本"><span class="nav-number">1.</span> <span class="nav-text">linux各个版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redhat、centos下载地址"><span class="nav-number">2.</span> <span class="nav-text">redhat、centos下载地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置网络"><span class="nav-number">3.</span> <span class="nav-text">配置网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#secure-crt上传下载文件"><span class="nav-number">5.</span> <span class="nav-text">secure crt上传下载文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#linux各个版本"><span class="nav-number">1.</span> <span class="nav-text">linux各个版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redhat、centos下载地址"><span class="nav-number">2.</span> <span class="nav-text">redhat、centos下载地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置网络"><span class="nav-number">3.</span> <span class="nav-text">配置网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rpm-安装软件"><span class="nav-number">5.</span> <span class="nav-text">rpm 安装软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yum-安装软件"><span class="nav-number">6.</span> <span class="nav-text">yum 安装软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#secure-crt上传下载文件"><span class="nav-number">7.</span> <span class="nav-text">secure crt上传下载文件</span></a></li></ol></div>
             
 
           </div>
