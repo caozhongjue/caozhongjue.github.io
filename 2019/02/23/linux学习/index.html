@@ -116,7 +116,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdO3N9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdXMxP.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/Zdjcm8.png">
-<meta property="og:updated_time" content="2019-07-22T15:20:47.177Z">
+<meta property="og:updated_time" content="2019-07-22T15:34:36.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux centos">
 <meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
@@ -539,6 +539,19 @@ echo &quot;bbb&quot; &gt;&gt; b.txt
 </code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxY8nH.png" alt="ZxY8nH.png"></p>
 <h4 id="rpm-安装软件"><a href="#rpm-安装软件" class="headerlink" title="rpm 安装软件"></a>rpm 安装软件</h4><p>1.rpm 红帽包管理工具，它适合的os(centos,redhat,fedora,suse)<br>检查软件是否安装</p>
 <pre><code>rpm -q 软件名
+</code></pre><p>安装软件包<br>i=install v显示安装进度 h=显示的hash</p>
+<pre><code>rpm -ivh 软件名称
+</code></pre><p>强制安装，不一定能用</p>
+<pre><code>rpm -ivh --nodeps 软件名称 
+</code></pre><p>查看软件安装的目录</p>
+<pre><code>rpm -ql 软件名称
+</code></pre><p>查看软件安装的版本信息</p>
+<pre><code>rpm -qi 软件名称
+</code></pre><p>软件升级</p>
+<pre><code>rpm -Uvh 软件名称
+</code></pre><p>软件卸载</p>
+<pre><code>rpm -e 软件名称
+rpm -e nodeps 软件名称 强制卸载
 </code></pre><h4 id="yum-安装软件"><a href="#yum-安装软件" class="headerlink" title="yum 安装软件"></a>yum 安装软件</h4><h4 id="secure-crt上传下载文件"><a href="#secure-crt上传下载文件" class="headerlink" title="secure crt上传下载文件"></a>secure crt上传下载文件</h4><p>一、rz sz方式</p>
 <p>1、linux服务器大多是通过ssh客户端来进行远程的登陆和管理的，使用ssh登陆linux主机以后，如何能够快速的和本地机器进行文件的交互呢，也就是上传和下载文件到服务器和本地；<br>与ssh有关的两个命令可以提供很方便的操作：<br>sz：将选定的文件发送（send）到本地机器<br>rz：运行该命令会弹出一个文件选择窗口，从本地选择文件上传到服务器(receive)<br>注意：<br>sz中的s意为send（发送），告诉客户端，我（服务器）要发送文件 send to cilent，就等同于客户端在下载。<br>rz中的r意为received（接收），告诉客户端，我（服务器）要接收文件 received by cilent，就等同于客户端在上传<br>2、如果linux上没有这两个命令工具，则需要先安装。可以使用yum安装。运行命令</p>
 <pre><code>yum install lrzsz。
