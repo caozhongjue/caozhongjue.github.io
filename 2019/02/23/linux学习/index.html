@@ -116,7 +116,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdO3N9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdXMxP.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/Zdjcm8.png">
-<meta property="og:updated_time" content="2019-07-19T14:50:09.118Z">
+<meta property="og:updated_time" content="2019-07-22T15:20:47.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux centos">
 <meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
@@ -524,6 +524,8 @@ echo &quot;bbb&quot; &gt;&gt; b.txt
 <pre><code>chgrp 组名 文件名
 </code></pre><p>添加用户</p>
 <pre><code>useradd 用户名
+</code></pre><p>修改用户</p>
+<pre><code>usermod -L -u -l 
 </code></pre><p>修改密码</p>
 <pre><code>passwd 密码
 </code></pre><p>删除用户</p>
@@ -535,7 +537,9 @@ echo &quot;bbb&quot; &gt;&gt; b.txt
 </code></pre><h4 id="vi编辑器"><a href="#vi编辑器" class="headerlink" title="vi编辑器"></a>vi编辑器</h4><p>用vi 打开文件,后有三种模式，命令行模式，插入模式，末行模式，刚打开文件进入命令行模式，按 a i等键进入插入模式，按esc键进入末行模式，在末行模式中用:wq保存文件并退出，：q！不保存强制退出</p>
 <pre><code>vi b.txt
 </code></pre><p><img src="https://s2.ax1x.com/2019/07/19/ZxY8nH.png" alt="ZxY8nH.png"></p>
-<h4 id="rpm-安装软件"><a href="#rpm-安装软件" class="headerlink" title="rpm 安装软件"></a>rpm 安装软件</h4><h4 id="yum-安装软件"><a href="#yum-安装软件" class="headerlink" title="yum 安装软件"></a>yum 安装软件</h4><h4 id="secure-crt上传下载文件"><a href="#secure-crt上传下载文件" class="headerlink" title="secure crt上传下载文件"></a>secure crt上传下载文件</h4><p>一、rz sz方式</p>
+<h4 id="rpm-安装软件"><a href="#rpm-安装软件" class="headerlink" title="rpm 安装软件"></a>rpm 安装软件</h4><p>1.rpm 红帽包管理工具，它适合的os(centos,redhat,fedora,suse)<br>检查软件是否安装</p>
+<pre><code>rpm -q 软件名
+</code></pre><h4 id="yum-安装软件"><a href="#yum-安装软件" class="headerlink" title="yum 安装软件"></a>yum 安装软件</h4><h4 id="secure-crt上传下载文件"><a href="#secure-crt上传下载文件" class="headerlink" title="secure crt上传下载文件"></a>secure crt上传下载文件</h4><p>一、rz sz方式</p>
 <p>1、linux服务器大多是通过ssh客户端来进行远程的登陆和管理的，使用ssh登陆linux主机以后，如何能够快速的和本地机器进行文件的交互呢，也就是上传和下载文件到服务器和本地；<br>与ssh有关的两个命令可以提供很方便的操作：<br>sz：将选定的文件发送（send）到本地机器<br>rz：运行该命令会弹出一个文件选择窗口，从本地选择文件上传到服务器(receive)<br>注意：<br>sz中的s意为send（发送），告诉客户端，我（服务器）要发送文件 send to cilent，就等同于客户端在下载。<br>rz中的r意为received（接收），告诉客户端，我（服务器）要接收文件 received by cilent，就等同于客户端在上传<br>2、如果linux上没有这两个命令工具，则需要先安装。可以使用yum安装。运行命令</p>
 <pre><code>yum install lrzsz。
 </code></pre><p>3、使用条件<br>普通Linux和Windows之间的文件共享方法，主要有建立nfs实现文件共享，和tftp之类的方法，但是都很麻烦，而如果只是小文件（几十 K，几百K），那么直接用rz/sz，就显得极其地方便了。<br>4、如何使用<br>从windows中拷贝/下载文件到Linux（开发板）：</p>
