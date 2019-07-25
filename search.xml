@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[php入门]]></title>
+    <url>%2F2019%2F07%2F20%2Fphp%2F</url>
+    <content type="text"><![CDATA[php环境搭建apache官网下载windows版本的点击 Download —-&gt; Files for Microsoft Windows点击ApacheHaus下载对应版本]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[认识vue]]></title>
     <url>%2F2019%2F06%2F10%2Fvue%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[什么是vue1、vue是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用，Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。2、创建一个 .html 文件，然后通过如下方式引入 Vue： &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt; &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt; 或者： &lt;!-- 生产环境版本，优化了尺寸和速度 --&gt; &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt; 声明式渲染&lt;div id=&quot;app&quot;&gt; {{msg}} &lt;h4 v-text=&quot;msg&quot;&gt;aaaa&lt;/h4&gt; &lt;span v-html=&quot;msg2&quot;&gt;&lt;/span&gt; &lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; var vue = new Vue({ el: &apos;#app&apos;, data: { msg: &quot;你好 vue&quot;, msg2: &quot;&lt;h2&gt;helloworld&lt;/h2&gt;&quot; } }) &lt;/script&gt; 除了文本插值，我们还可以像这样来绑定元素特性： &lt;div id=&quot;app-2&quot;&gt; &lt;span v-bind:title=&quot;message&quot;&gt; 鼠标悬停几秒钟查看此处动态绑定的提示信息！ &lt;/span&gt; &lt;/div&gt; var app2 = new Vue({ el: &apos;#app-2&apos;, data: { message: &apos;页面加载于 &apos; + new Date().toLocaleString() } }) v-bind 没法实现双向绑定，v-model可以 &lt;div id=&quot;app&quot;&gt; &lt;p&gt;{{msg5}}&lt;/p&gt; &lt;input type=&quot;text&quot; style=&quot;width: 100%;&quot; v-model=&quot;msg5&quot;&gt; &lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; var vue = new Vue({ el: &apos;#app&apos;, data: { msg5: &quot;大家都是好学生，爱代码，爱学习&quot; }, methods: { } }) &lt;/script&gt; v-bind 特性被称为指令。指令带有前缀 v-，以表示它们是 Vue 提供的特殊特性。 事件机制&lt;div id=&quot;app&quot;&gt; &lt;button name=&quot;按钮&quot; value=&quot;按钮&quot; v-on:click=&quot;show&quot;&gt;你好&lt;/button&gt; &lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; var vue = new Vue({ el: &apos;#app&apos;, data: { }, methods: { show: function () { alert(&quot;你好啊&quot;) } } }) &lt;/script&gt; 案例&lt;div id=&quot;app&quot;&gt; &lt;input type=&quot;button&quot; value=&quot;浪起来&quot; @click=&quot;lang&quot;&gt; &lt;input type=&quot;button&quot; value=&quot;别浪&quot; @click=&quot;stop&quot;&gt; &lt;p&gt;{{msg4}}&lt;/p&gt; &lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; var vue = new Vue({ el: &apos;#app&apos;, data: { msg4: &quot;猥琐发育别浪&quot;, intervalId: null }, methods: { lang: function () { var _this = this; if(this.intervalId !=null){ return ; }else{ } this.intervalId = setInterval(function () { var start = _this.msg4.substring(0,1); var end = _this.msg4.substring(1); _this.msg4 = end+start; },400) }, stop: function () { clearInterval(this.intervalId); this.intervalId =null; } } }) &lt;/script&gt; 条件与循环&lt;div id=&quot;app-3&quot;&gt; &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt; &lt;/div&gt; var app3 = new Vue({ el: &apos;#app-3&apos;, data: { seen: true } }) 还有其它很多指令，每个都有特殊的功能。例如，v-for 指令可以绑定数组的数据来渲染一个项目列表： &lt;div id=&quot;app-4&quot;&gt; &lt;ol&gt; &lt;li v-for=&quot;todo in todos&quot;&gt; {{ todo.text }} &lt;/li&gt; &lt;/ol&gt; &lt;/div&gt; var app4 = new Vue({ el: &apos;#app-4&apos;, data: { todos: [ { text: &apos;学习 JavaScript&apos; }, { text: &apos;学习 Vue&apos; }, { text: &apos;整个牛项目&apos; } ] } }) 处理用户输入为了让用户和你的应用进行交互，我们可以用 v-on 指令添加一个事件监听器，通过它调用在 Vue 实例中定义的方法： &lt;div id=&quot;app-5&quot;&gt; &lt;p&gt;{{ message }}&lt;/p&gt; &lt;button v-on:click=&quot;reverseMessage&quot;&gt;逆转消息&lt;/button&gt; &lt;/div&gt; var app5 = new Vue({ el: &apos;#app-5&apos;, data: { message: &apos;Hello Vue.js!&apos; }, methods: { reverseMessage: function () { this.message = this.message.split(&apos;&apos;).reverse().join(&apos;&apos;) } } }) 组件化应用构建组件系统是 Vue 的另一个重要概念，因为它是一种抽象，允许我们使用小型、独立和通常可复用的组件构建大型应用。在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例。在 Vue 中注册组件很简单： // 定义名为 todo-item 的新组件 Vue.component(&apos;todo-item&apos;, { template: &apos;&lt;li&gt;这是个待办项&lt;/li&gt;&apos; }) 现在你可以用它构建另一个组件模板： &lt;ol&gt; &lt;!-- 创建一个 todo-item 组件的实例 --&gt; &lt;todo-item&gt;&lt;/todo-item&gt; &lt;/ol&gt;]]></content>
@@ -111,17 +122,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[hexo搭建博客]]></title>
-    <url>%2F2019%2F01%2F12%2F%E7%94%A8hexo%E6%90%AD%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[配置本地环境1、下载安装这两个软件 Git-2.21.0-64-bit.exe node-v10.15.3-x64.msi 如下图 2、在自己电脑某个盘里新建一个文件夹(自定义名称) 我的文件夹名称为 czjblog 3、然后在文件夹里，右键—&gt;选择Git Bash Here 就打开另一个窗口了，如下图 4、安装hexo 用命令 npm install hexo –g 如果网络好的话很快就行了 5、检查一下是否安装成功 用命令 hexo –v 出现以下图说明成功了 6、初始化自己创建的文件夹 用命令 hexo init 7、生成静态页面 用命令 hexo g 8、启动项目 用命令 hexo s 出现如下图说明启动成功 去浏览器输入 http://localhost:4000 来访问了. 配置github环境1、 首先得去github官网上面去注册一个账号 2、 然后新建一个仓库依赖，如下图 3、 然后来到这页面，如下图 https://github.com/caozhongjue/caozhongjue.github.io.git git@github.com:caozhongjue/caozhongjue.github.io.git 4、然后修改本地博客目录的配置： 修改本次博客根目录下的_config.yml文件，修改deploy下的配置如下： type: git repository: git@github.com:caozhongjue/caozhongjue.github.io.git //caozhongjue换为自己的 branch: master 5、控制台命令：npm install –save hexo-deployer-git //安装部署插件 6、由于我是用ssh 与github关联的，所以得操作这步，输入命令 ssh-keygen -t rsa -C “2857113935@qq.com” 连续回车三下生成密钥，最后得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）如下图 7、经过上面的步骤，在C:\Users\Administrator.ssh下面生成了一个id_rsa.pub文件，把里面的内容复制到 github ssh安全那里，如下面 标题随便填，键是id_rsa.pub文件里面的内容。 8、可以使用hexo d 发布项目到github上面去了 如下图 更改默认主题样式Next主题的使用说明 http://theme-next.iissnan.com/getting-started.html 1、 使用命令 git clone https://github.com/iissnan/hexo-theme-next 2、 修改项目目录下_config.yml文件内容，把theme：后面的内容换为next theme: hexo-theme-next #修改网站主题样式 title: czj’blog # author: czj #修改作者 language: zh-Hans #修改网站的显示语言，这里是中文 3、 修改项目目录下hexo-theme-next 主题下的_config.yml文件内容， menu: home: / || home about: /about/ || user tags: /tags/ || tags categories: /categories/ || th archives: /archives/ || archive上面这几个就是下面的 1、添加分类模块 命令如下 hexo new page categories 你会发现你的source文件夹下有了categorcies/index.md，打开index.md文件将title设置为 title: 分类 3、打开 主题配置文件 找到menu，将categorcies取消注释 4、把文章归入分类只需在文章的顶部标题下方添加categories字段，即可自动创建分类名并加入对应的分类中举个栗子： title: 分类测试文章标题 categories: 分类名 添加标签模块 命令hexo new page tags 同上 添加关于模块 命令hexo new page about 同上 highlight_theme: night bright #代码的样式 avatar: https://s2.ax1x.com/2019/05/23/VPZiAe.png #设置头像 4、 添加搜索功能 4.1、安装 hexo-generator-searchdb 插件 npm install hexo-generator-searchdb –save 4.2、打开 站点配置文件 找到Extensions在下面添加 search: path: search.xml field: post format: html limit: 100004.3、打开 主题配置文件 找到Local search，将enable设置为true 5、修改文章内链接文本样式 打开文件 themes/next/source/css/_common/components/post/post.styl，在末尾添加 6、首页的文章只显示一半用文本编辑器打开 themes/next 目录下的 _config.yml 文件，找到这段代码： auto_excerpt: enable: false length: 150把 enable 的 false 改成 true 就行了，然后 length 是设定文章预览的文本长度。 修改后重启 hexo 就ok了。 项目的目录结构 source 文件夹存放着用markdown编辑器写的章 每次添加文章都是用markdown编辑器写好保存，放到source下面的_post文件夹下面去themes 这里存放着样式_config.yml 主站点配置文件 ，themes样式文件夹下面的文件夹里也有个样式配置文件可以使用MarkdownPad2编辑器写文章，写完后，把那个.md文章放到source下的_post文件夹下，然后右键打开窗口， 依次使用命令 hexo clean , hexo g ,hexo d]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[java基础]]></title>
     <url>%2F2019%2F01%2F12%2Fjava%E5%9F%BA%E7%A1%80%2F</url>
     <content type="text"><![CDATA[####]]></content>
@@ -130,6 +130,17 @@
       </categories>
       <tags>
         <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo搭建博客]]></title>
+    <url>%2F2019%2F01%2F12%2F%E7%94%A8hexo%E6%90%AD%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[配置本地环境1、下载安装这两个软件 Git-2.21.0-64-bit.exe node-v10.15.3-x64.msi 如下图 2、在自己电脑某个盘里新建一个文件夹(自定义名称) 我的文件夹名称为 czjblog 3、然后在文件夹里，右键—&gt;选择Git Bash Here 就打开另一个窗口了，如下图 4、安装hexo 用命令 npm install hexo –g 如果网络好的话很快就行了 5、检查一下是否安装成功 用命令 hexo –v 出现以下图说明成功了 6、初始化自己创建的文件夹 用命令 hexo init 7、生成静态页面 用命令 hexo g 8、启动项目 用命令 hexo s 出现如下图说明启动成功 去浏览器输入 http://localhost:4000 来访问了. 配置github环境1、 首先得去github官网上面去注册一个账号 2、 然后新建一个仓库依赖，如下图 3、 然后来到这页面，如下图 https://github.com/caozhongjue/caozhongjue.github.io.git git@github.com:caozhongjue/caozhongjue.github.io.git 4、然后修改本地博客目录的配置： 修改本次博客根目录下的_config.yml文件，修改deploy下的配置如下： type: git repository: git@github.com:caozhongjue/caozhongjue.github.io.git //caozhongjue换为自己的 branch: master 5、控制台命令：npm install –save hexo-deployer-git //安装部署插件 6、由于我是用ssh 与github关联的，所以得操作这步，输入命令 ssh-keygen -t rsa -C “2857113935@qq.com” 连续回车三下生成密钥，最后得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）如下图 7、经过上面的步骤，在C:\Users\Administrator.ssh下面生成了一个id_rsa.pub文件，把里面的内容复制到 github ssh安全那里，如下面 标题随便填，键是id_rsa.pub文件里面的内容。 8、可以使用hexo d 发布项目到github上面去了 如下图 更改默认主题样式Next主题的使用说明 http://theme-next.iissnan.com/getting-started.html 1、 使用命令 git clone https://github.com/iissnan/hexo-theme-next 2、 修改项目目录下_config.yml文件内容，把theme：后面的内容换为next theme: hexo-theme-next #修改网站主题样式 title: czj’blog # author: czj #修改作者 language: zh-Hans #修改网站的显示语言，这里是中文 3、 修改项目目录下hexo-theme-next 主题下的_config.yml文件内容， menu: home: / || home about: /about/ || user tags: /tags/ || tags categories: /categories/ || th archives: /archives/ || archive上面这几个就是下面的 1、添加分类模块 命令如下 hexo new page categories 你会发现你的source文件夹下有了categorcies/index.md，打开index.md文件将title设置为 title: 分类 3、打开 主题配置文件 找到menu，将categorcies取消注释 4、把文章归入分类只需在文章的顶部标题下方添加categories字段，即可自动创建分类名并加入对应的分类中举个栗子： title: 分类测试文章标题 categories: 分类名 添加标签模块 命令hexo new page tags 同上 添加关于模块 命令hexo new page about 同上 highlight_theme: night bright #代码的样式 avatar: https://s2.ax1x.com/2019/05/23/VPZiAe.png #设置头像 4、 添加搜索功能 4.1、安装 hexo-generator-searchdb 插件 npm install hexo-generator-searchdb –save 4.2、打开 站点配置文件 找到Extensions在下面添加 search: path: search.xml field: post format: html limit: 100004.3、打开 主题配置文件 找到Local search，将enable设置为true 5、修改文章内链接文本样式 打开文件 themes/next/source/css/_common/components/post/post.styl，在末尾添加 6、首页的文章只显示一半用文本编辑器打开 themes/next 目录下的 _config.yml 文件，找到这段代码： auto_excerpt: enable: false length: 150把 enable 的 false 改成 true 就行了，然后 length 是设定文章预览的文本长度。 修改后重启 hexo 就ok了。 项目的目录结构 source 文件夹存放着用markdown编辑器写的章 每次添加文章都是用markdown编辑器写好保存，放到source下面的_post文件夹下面去themes 这里存放着样式_config.yml 主站点配置文件 ，themes样式文件夹下面的文件夹里也有个样式配置文件可以使用MarkdownPad2编辑器写文章，写完后，把那个.md文章放到source下的_post文件夹下，然后右键打开窗口， 依次使用命令 hexo clean , hexo g ,hexo d]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
