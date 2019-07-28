@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[js]]></title>
     <url>%2F2019%2F07%2F13%2Fjs%2F</url>
-    <content type="text"><![CDATA[js事件js的事件机制：当行为动作满足了一定的条件后，会触发某类事务的执行。内容： 1、单双击事件单击：当鼠单击的时候会触发 onclick 双击：当鼠双击的时候会触发 ondblclick 2、鼠标事件当鼠标悬停在某个HTML元素上会触发 onmouseover 当鼠标移出某个HTML元素会触发 onmouseout 当鼠标在某个HTML元素上移动 onmousemove 3、键盘事件当键盘在某个HTML元素上弹起时触发 onkeyup 当键盘在某个HTML元素下压时触发 onkeydown 4、焦点事件获取焦点： onfocus 失去焦点： onblurs 5、页面加载事件 页面加载事件： onload]]></content>
+    <content type="text"><![CDATA[js事件js事件js的事件机制：当行为动作满足了一定的条件后，会触发某类事务的执行。内容： 1、单双击事件单击：当鼠单击的时候会触发 onclick 双击：当鼠双击的时候会触发 ondblclick 2、鼠标事件当鼠标悬停在某个HTML元素上会触发 onmouseover 当鼠标移出某个HTML元素会触发 onmouseout 当鼠标在某个HTML元素上移动 onmousemove 3、键盘事件当键盘在某个HTML元素上弹起时触发 onkeyup 当键盘在某个HTML元素下压时触发 onkeydown 4、焦点事件获取焦点： onfocus 失去焦点： onblurs 5、页面加载事件 页面加载事件： onload js注意事项1.给合适的元素添加合适的事件2.事件冲突，如单击和双击事件3.事件的阻断 当事件所监听的函数的返回值给事件时: false:则会阻断当前事件所在的HTML标签的功能 true:则会继续执行当前事件所在的HTML标签的功能4.超链接调用js函数]]></content>
       <categories>
         <category>js</category>
       </categories>
