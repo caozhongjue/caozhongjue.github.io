@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="czj&#39;blog">
 <meta property="og:description" content="js事件js事件js的事件机制：当行为动作满足了一定的条件后，会触发某类事务的执行。内容： 1、单双击事件单击：当鼠单击的时候会触发  onclick 双击：当鼠双击的时候会触发  ondblclick  2、鼠标事件当鼠标悬停在某个HTML元素上会触发  onmouseover 当鼠标移出某个HTML元素会触发  onmouseout 当鼠标在某个HTML元素上移动  onmousemove">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-28T14:26:44.632Z">
+<meta property="og:updated_time" content="2019-07-29T13:09:31.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js">
 <meta name="twitter:description" content="js事件js事件js的事件机制：当行为动作满足了一定的条件后，会触发某类事务的执行。内容： 1、单双击事件单击：当鼠单击的时候会触发  onclick 双击：当鼠双击的时候会触发  ondblclick  2、鼠标事件当鼠标悬停在某个HTML元素上会触发  onmouseover 当鼠标移出某个HTML元素会触发  onmouseout 当鼠标在某个HTML元素上移动  onmousemove">
@@ -411,9 +411,25 @@
 window.confirm(&quot;你确定要删除吗&quot;); //确认框 ,有返回值 true/false
 window.prompt(&quot;请输入昵称&quot;); //提示框
 </code></pre><p>3.定时和间隔方法<br>定时器</p>
-<pre><code>window.setTimeout(function(){},3000);
-</code></pre><p>4.子窗口方法</p>
-<h6 id="windows对象的常用属性"><a href="#windows对象的常用属性" class="headerlink" title="windows对象的常用属性"></a>windows对象的常用属性</h6>
+<pre><code>window.setTimeout(function(){},3000); //指定时间后执行指定函数
+window.setInterval(function(){},4000)  //每间隔指定的时间执行指定的函数
+window.clearTimeout(id);  //清除指定的定时器
+window.clearInterval(id); //清除每间隔指定时间的定时器
+</code></pre><p>4.子窗口方法<br>子窗口方法</p>
+<pre><code>window.open(&apos;page.html&apos;,&apos;newwindow&apos;,&apos;width=100,height=100,toolbar=no ,menubar=no&apos;);//弹出一个窗口
+window.close();//只能打开window.open()打开的页面
+window.opener.testFather();
+</code></pre><h6 id="windows对象的常用属性"><a href="#windows对象的常用属性" class="headerlink" title="windows对象的常用属性"></a>windows对象的常用属性</h6><p>地址栏属性:location</p>
+<pre><code>window.location.href=&quot;&quot;;
+window.location.reload=();
+</code></pre><p>历史记录属性</p>
+<pre><code>window.history.forward();//页面资源前进
+window.history.back();//页面资源源后退
+window.history.go(index);
+</code></pre><p>屏幕属性</p>
+<pre><code>window.screen.width;
+window.screen.height;
+</code></pre>
       
     </div>
     
