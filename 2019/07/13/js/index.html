@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="czj&#39;blog">
 <meta property="og:description" content="js事件js事件js的事件机制：当行为动作满足了一定的条件后，会触发某类事务的执行。内容： 1、单双击事件单击：当鼠单击的时候会触发  onclick 双击：当鼠双击的时候会触发  ondblclick  2、鼠标事件当鼠标悬停在某个HTML元素上会触发  onmouseover 当鼠标移出某个HTML元素会触发  onmouseout 当鼠标在某个HTML元素上移动  onmousemove">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-29T13:48:29.435Z">
+<meta property="og:updated_time" content="2019-07-30T14:30:00.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js">
 <meta name="twitter:description" content="js事件js事件js的事件机制：当行为动作满足了一定的条件后，会触发某类事务的执行。内容： 1、单双击事件单击：当鼠单击的时候会触发  onclick 双击：当鼠双击的时候会触发  ondblclick  2、鼠标事件当鼠标悬停在某个HTML元素上会触发  onmouseover 当鼠标移出某个HTML元素会触发  onmouseout 当鼠标在某个HTML元素上移动  onmousemove">
@@ -437,6 +437,20 @@ window.screen.height;
 </code></pre><p>兄弟关系</p>
 <pre><code>document.getElementById(&quot;&quot;).previousSibling;
 document.getElementById(&quot;&quot;).nextSibling;
+</code></pre><p>获取属性值</p>
+<pre><code>&lt;input type=&quot;text&quot; name=&quot;uname&quot; id=&quot;uname&quot; value=&quot;&quot;&gt;
+document.getElementById(&quot;&quot;).type;
+document.getElementById(&quot;&quot;).name;
+document.getElementById(&quot;&quot;).id;
+</code></pre><p>修改属性值<br>元素对象名.属性名=属性值<br>元素对象名.getAttribute(“属性名”);<br>元素对象名.setAttribute(“属性名”,”属性值”);</p>
+<p>操作元素的内容<br>获取内容    </p>
+<pre><code>document.getElementById(&quot;&quot;).innerHTML;
+document.getElementById(&quot;&quot;).innerText;
+</code></pre><p>修改内容</p>
+<pre><code>元素对象名.innerHtml=&quot;&quot;;
+</code></pre><p>js给元素添加样式</p>
+<pre><code>document.getElementById(&quot;&quot;).style=&quot;&quot;;
+document.getElementById(&quot;&quot;).style.backgroundColor=&quot;&quot;;
 </code></pre>
       
     </div>
