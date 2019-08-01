@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="czj&#39;blog">
 <meta property="og:description" content="js事件js事件js的事件机制：当行为动作满足了一定的条件后，会触发某类事务的执行。内容： 1、单双击事件单击：当鼠单击的时候会触发  onclick 双击：当鼠双击的时候会触发  ondblclick  2、鼠标事件当鼠标悬停在某个HTML元素上会触发  onmouseover 当鼠标移出某个HTML元素会触发  onmouseout 当鼠标在某个HTML元素上移动  onmousemove">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-30T14:30:00.693Z">
+<meta property="og:updated_time" content="2019-07-31T15:55:08.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js">
 <meta name="twitter:description" content="js事件js事件js的事件机制：当行为动作满足了一定的条件后，会触发某类事务的执行。内容： 1、单双击事件单击：当鼠单击的时候会触发  onclick 双击：当鼠双击的时候会触发  ondblclick  2、鼠标事件当鼠标悬停在某个HTML元素上会触发  onmouseover 当鼠标移出某个HTML元素会触发  onmouseout 当鼠标在某个HTML元素上移动  onmousemove">
@@ -451,7 +451,12 @@ document.getElementById(&quot;&quot;).innerText;
 </code></pre><p>js给元素添加样式</p>
 <pre><code>document.getElementById(&quot;&quot;).style=&quot;&quot;;
 document.getElementById(&quot;&quot;).style.backgroundColor=&quot;&quot;;
-</code></pre>
+document.getElementById(&quot;&quot;).style.border=&quot;&quot;
+</code></pre><p>js操作HTML文档结构<br>增加节点</p>
+<pre><code>document.getElementById(&quot;&quot;).innerHTML+&quot;&lt;div&gt;&lt;input &gt;&lt;/div&gt;&quot;
+</code></pre><p>删除节点</p>
+<h5 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h5><p>1、什么是jquery<br>jquery全称Javascript Query 是js的一个框架,支持各种主流的浏览器。<br>2、使用jquery</p>
+
       
     </div>
     
@@ -572,7 +577,7 @@ document.getElementById(&quot;&quot;).style.backgroundColor=&quot;&quot;;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -583,7 +588,7 @@ document.getElementById(&quot;&quot;).style.backgroundColor=&quot;&quot;;
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -594,7 +599,7 @@ document.getElementById(&quot;&quot;).style.backgroundColor=&quot;&quot;;
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -627,7 +632,7 @@ document.getElementById(&quot;&quot;).style.backgroundColor=&quot;&quot;;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#js事件"><span class="nav-number">1.</span> <span class="nav-text">js事件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#js事件-1"><span class="nav-number">1.1.</span> <span class="nav-text">js事件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#js注意事项"><span class="nav-number">1.2.</span> <span class="nav-text">js注意事项</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BOM浏览器对象模型"><span class="nav-number">2.</span> <span class="nav-text">BOM浏览器对象模型</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#windows对象的常用方法"><span class="nav-number">2.1.</span> <span class="nav-text">windows对象的常用方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#windows对象的常用属性"><span class="nav-number">2.2.</span> <span class="nav-text">windows对象的常用属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM文档对象模型"><span class="nav-number">3.</span> <span class="nav-text">DOM文档对象模型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#js事件"><span class="nav-number">1.</span> <span class="nav-text">js事件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#js事件-1"><span class="nav-number">1.1.</span> <span class="nav-text">js事件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#js注意事项"><span class="nav-number">1.2.</span> <span class="nav-text">js注意事项</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BOM浏览器对象模型"><span class="nav-number">2.</span> <span class="nav-text">BOM浏览器对象模型</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#windows对象的常用方法"><span class="nav-number">2.1.</span> <span class="nav-text">windows对象的常用方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#windows对象的常用属性"><span class="nav-number">2.2.</span> <span class="nav-text">windows对象的常用属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM文档对象模型"><span class="nav-number">3.</span> <span class="nav-text">DOM文档对象模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jquery"><span class="nav-number">4.</span> <span class="nav-text">jquery</span></a></li></ol></div>
             
 
           </div>
