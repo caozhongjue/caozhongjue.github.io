@@ -88,7 +88,8 @@
 <meta property="og:description" content="目录结构  1.pom.xml 文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-ins">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/03/eBG4Xt.png">
-<meta property="og:updated_time" content="2019-08-02T16:25:13.726Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/03/eBYJG4.png">
+<meta property="og:updated_time" content="2019-08-02T16:36:53.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot实战">
 <meta name="twitter:description" content="目录结构  1.pom.xml 文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-ins">
@@ -451,12 +452,15 @@ spring:
 <pre><code>package top.caozhongjue.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Index {
     @RequestMapping(&quot;/&quot;)
-    public String index() {
+    public String index(@RequestParam(name = &quot;name&quot; )String name , Model model) {
+        model.addAttribute(&quot;name&quot;,name);
         return &quot;index&quot;;
     }
 
@@ -470,10 +474,10 @@ public class Index {
 &lt;/head&gt;
 
 &lt;body&gt;
-helloworld,您好啊，好坑啊你
+helloworld,您好啊，好坑啊你 asdfdasdf&lt;p th:text=&quot;&apos;hello&apos;+${name}+&apos;!&apos;&quot;&gt;&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;    
-</code></pre><p>刚开始学各种奇葩问题<br>问题1 编译器乱码导致<br>Failed to load property source from location ‘classpath:/application.yml’<br>问题2 加web依赖<br>No active profile set, falling back to default profiles: default<br>问题3<br>找不到或无法加载主类 com.caozhongjue.myblog.MyblogApplication<br>问题4  thymeleaf要想用HTML5模板要指定版本<br>Template Mode ‘HTML5’ is deprecated. Using Template Mode ‘HTML’ instead.<br>问题5  内存溢出<br>D:\java\jdk\bin\java.exe<br>java.lang.OutOfMemoryError<br> at java.util.zip.ZipFile.open(Native Method)<br>问题6  找不到模板<br>org.thymeleaf.exceptions.TemplateInputException: Error resolving template [index], template might not exist or might not be accessible by any of the configured Template Resolvers\</p>
+&lt;/html&gt;
+</code></pre><p><img src="https://s2.ax1x.com/2019/08/03/eBYJG4.png" alt="eBYJG4.png"><br>刚开始学各种奇葩问题<br>问题1 编译器乱码导致<br>Failed to load property source from location ‘classpath:/application.yml’<br>问题2 加web依赖<br>No active profile set, falling back to default profiles: default<br>问题3<br>找不到或无法加载主类 com.caozhongjue.myblog.MyblogApplication<br>问题4  thymeleaf要想用HTML5模板要指定版本<br>Template Mode ‘HTML5’ is deprecated. Using Template Mode ‘HTML’ instead.<br>问题5  内存溢出<br>D:\java\jdk\bin\java.exe<br>java.lang.OutOfMemoryError<br> at java.util.zip.ZipFile.open(Native Method)<br>问题6  找不到模板<br>org.thymeleaf.exceptions.TemplateInputException: Error resolving template [index], template might not exist or might not be accessible by any of the configured Template Resolvers\</p>
 
       
     </div>
