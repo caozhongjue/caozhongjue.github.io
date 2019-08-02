@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="问题1 编译器乱码导致Failed to load property source from location ‘classpath:/application.yml’问题2 加web依赖No active profile set, falling back to default profiles: default问题3找不到或无法加载主类 com.caozhongjue.myblog.Myblo">
+<meta name="description" content="目录结构  1.pom.xml 文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-ins">
 <meta name="keywords" content="springboot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springboot实战">
 <meta property="og:url" content="http://yoursite.com/2019/08/03/springboot实战/index.html">
 <meta property="og:site_name" content="czj&#39;blog">
-<meta property="og:description" content="问题1 编译器乱码导致Failed to load property source from location ‘classpath:/application.yml’问题2 加web依赖No active profile set, falling back to default profiles: default问题3找不到或无法加载主类 com.caozhongjue.myblog.Myblo">
+<meta property="og:description" content="目录结构  1.pom.xml 文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-ins">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-01T13:35:00.624Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/03/eBG4Xt.png">
+<meta property="og:updated_time" content="2019-08-02T16:25:13.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot实战">
-<meta name="twitter:description" content="问题1 编译器乱码导致Failed to load property source from location ‘classpath:/application.yml’问题2 加web依赖No active profile set, falling back to default profiles: default问题3找不到或无法加载主类 com.caozhongjue.myblog.Myblo">
+<meta name="twitter:description" content="目录结构  1.pom.xml 文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-ins">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/03/eBG4Xt.png">
 
 
 
@@ -384,7 +386,94 @@
       
 
       
-        <p>问题1 编译器乱码导致<br>Failed to load property source from location ‘classpath:/application.yml’<br>问题2 加web依赖<br>No active profile set, falling back to default profiles: default<br>问题3<br>找不到或无法加载主类 com.caozhongjue.myblog.MyblogApplication<br>问题4  thymeleaf要想用HTML5模板要指定版本<br>Template Mode ‘HTML5’ is deprecated. Using Template Mode ‘HTML’ instead.<br>问题5  内存溢出<br>D:\java\jdk\bin\java.exe<br>java.lang.OutOfMemoryError<br> at java.util.zip.ZipFile.open(Native Method)<br>问题6  找不到模板<br>org.thymeleaf.exceptions.TemplateInputException: Error resolving template [index], template might not exist or might not be accessible by any of the configured Template Resolvers\</p>
+        <p>目录结构</p>
+<p><img src="https://s2.ax1x.com/2019/08/03/eBG4Xt.png" alt="eBG4Xt.png"></p>
+<p>1.pom.xml 文件</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;2.1.6.RELEASE&lt;/version&gt;
+        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+    &lt;/parent&gt;
+    &lt;groupId&gt;top.caozhongjue&lt;/groupId&gt;
+    &lt;artifactId&gt;myblog&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+    &lt;name&gt;myblog&lt;/name&gt;
+    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencies&gt;
+        &lt;!--springboot web--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;!--引入thymeleaf模板引擎--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+    &lt;/dependencies&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+&lt;/project&gt;
+</code></pre><p>application.yml文件</p>
+<pre><code>#整合thymeleaf
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    encoding: UTF-8
+    mode: HTML    
+</code></pre><p>index.java文件</p>
+<pre><code>package top.caozhongjue.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class Index {
+    @RequestMapping(&quot;/&quot;)
+    public String index() {
+        return &quot;index&quot;;
+    }
+
+}
+</code></pre><p>index.html文件</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;springboot-thymeleaf demo&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+helloworld,您好啊，好坑啊你
+&lt;/body&gt;
+&lt;/html&gt;    
+</code></pre><p>刚开始学各种奇葩问题<br>问题1 编译器乱码导致<br>Failed to load property source from location ‘classpath:/application.yml’<br>问题2 加web依赖<br>No active profile set, falling back to default profiles: default<br>问题3<br>找不到或无法加载主类 com.caozhongjue.myblog.MyblogApplication<br>问题4  thymeleaf要想用HTML5模板要指定版本<br>Template Mode ‘HTML5’ is deprecated. Using Template Mode ‘HTML’ instead.<br>问题5  内存溢出<br>D:\java\jdk\bin\java.exe<br>java.lang.OutOfMemoryError<br> at java.util.zip.ZipFile.open(Native Method)<br>问题6  找不到模板<br>org.thymeleaf.exceptions.TemplateInputException: Error resolving template [index], template might not exist or might not be accessible by any of the configured Template Resolvers\</p>
 
       
     </div>

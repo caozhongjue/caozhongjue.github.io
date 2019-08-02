@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[springboot实战]]></title>
     <url>%2F2019%2F08%2F03%2Fspringboot%E5%AE%9E%E6%88%98%2F</url>
-    <content type="text"><![CDATA[问题1 编译器乱码导致Failed to load property source from location ‘classpath:/application.yml’问题2 加web依赖No active profile set, falling back to default profiles: default问题3找不到或无法加载主类 com.caozhongjue.myblog.MyblogApplication问题4 thymeleaf要想用HTML5模板要指定版本Template Mode ‘HTML5’ is deprecated. Using Template Mode ‘HTML’ instead.问题5 内存溢出D:\java\jdk\bin\java.exejava.lang.OutOfMemoryError at java.util.zip.ZipFile.open(Native Method)问题6 找不到模板org.thymeleaf.exceptions.TemplateInputException: Error resolving template [index], template might not exist or might not be accessible by any of the configured Template Resolvers\]]></content>
+    <content type="text"><![CDATA[目录结构 1.pom.xml 文件 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt; &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;parent&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt; &lt;version&gt;2.1.6.RELEASE&lt;/version&gt; &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt; &lt;/parent&gt; &lt;groupId&gt;top.caozhongjue&lt;/groupId&gt; &lt;artifactId&gt;myblog&lt;/artifactId&gt; &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt; &lt;name&gt;myblog&lt;/name&gt; &lt;description&gt;Demo project for Spring Boot&lt;/description&gt; &lt;properties&gt; &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt; &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt; &lt;java.version&gt;1.8&lt;/java.version&gt; &lt;/properties&gt; &lt;dependencies&gt; &lt;!--springboot web--&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; &lt;!--引入thymeleaf模板引擎--&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; &lt;/project&gt; application.yml文件 #整合thymeleaf spring: thymeleaf: prefix: classpath:/templates/ suffix: .html cache: false encoding: UTF-8 mode: HTML index.java文件 package top.caozhongjue.controller; import org.springframework.stereotype.Controller; import org.springframework.web.bind.annotation.RequestMapping; @Controller public class Index { @RequestMapping(&quot;/&quot;) public String index() { return &quot;index&quot;; } } index.html文件 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;springboot-thymeleaf demo&lt;/title&gt; &lt;/head&gt; &lt;body&gt; helloworld,您好啊，好坑啊你 &lt;/body&gt; &lt;/html&gt; 刚开始学各种奇葩问题问题1 编译器乱码导致Failed to load property source from location ‘classpath:/application.yml’问题2 加web依赖No active profile set, falling back to default profiles: default问题3找不到或无法加载主类 com.caozhongjue.myblog.MyblogApplication问题4 thymeleaf要想用HTML5模板要指定版本Template Mode ‘HTML5’ is deprecated. Using Template Mode ‘HTML’ instead.问题5 内存溢出D:\java\jdk\bin\java.exejava.lang.OutOfMemoryError at java.util.zip.ZipFile.open(Native Method)问题6 找不到模板org.thymeleaf.exceptions.TemplateInputException: Error resolving template [index], template might not exist or might not be accessible by any of the configured Template Resolvers\]]></content>
       <categories>
         <category>springboot</category>
       </categories>
@@ -144,17 +144,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[java基础]]></title>
-    <url>%2F2019%2F01%2F12%2Fjava%E5%9F%BA%E7%A1%80%2F</url>
-    <content type="text"><![CDATA[####]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[hexo搭建博客]]></title>
     <url>%2F2019%2F01%2F12%2F%E7%94%A8hexo%E6%90%AD%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[配置本地环境1、下载安装这两个软件 Git-2.21.0-64-bit.exe node-v10.15.3-x64.msi 如下图 2、在自己电脑某个盘里新建一个文件夹(自定义名称) 我的文件夹名称为 czjblog 3、然后在文件夹里，右键—&gt;选择Git Bash Here 就打开另一个窗口了，如下图 4、安装hexo 用命令 npm install hexo –g 如果网络好的话很快就行了 5、检查一下是否安装成功 用命令 hexo –v 出现以下图说明成功了 6、初始化自己创建的文件夹 用命令 hexo init 7、生成静态页面 用命令 hexo g 8、启动项目 用命令 hexo s 出现如下图说明启动成功 去浏览器输入 http://localhost:4000 来访问了. 配置github环境1、 首先得去github官网上面去注册一个账号 2、 然后新建一个仓库依赖，如下图 3、 然后来到这页面，如下图 https://github.com/caozhongjue/caozhongjue.github.io.git git@github.com:caozhongjue/caozhongjue.github.io.git 4、然后修改本地博客目录的配置： 修改本次博客根目录下的_config.yml文件，修改deploy下的配置如下： type: git repository: git@github.com:caozhongjue/caozhongjue.github.io.git //caozhongjue换为自己的 branch: master 5、控制台命令：npm install –save hexo-deployer-git //安装部署插件 6、由于我是用ssh 与github关联的，所以得操作这步，输入命令 ssh-keygen -t rsa -C “2857113935@qq.com” 连续回车三下生成密钥，最后得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）如下图 7、经过上面的步骤，在C:\Users\Administrator.ssh下面生成了一个id_rsa.pub文件，把里面的内容复制到 github ssh安全那里，如下面 标题随便填，键是id_rsa.pub文件里面的内容。 8、可以使用hexo d 发布项目到github上面去了 如下图 更改默认主题样式Next主题的使用说明 http://theme-next.iissnan.com/getting-started.html 1、 使用命令 git clone https://github.com/iissnan/hexo-theme-next 2、 修改项目目录下_config.yml文件内容，把theme：后面的内容换为next theme: hexo-theme-next #修改网站主题样式 title: czj’blog # author: czj #修改作者 language: zh-Hans #修改网站的显示语言，这里是中文 3、 修改项目目录下hexo-theme-next 主题下的_config.yml文件内容， menu: home: / || home about: /about/ || user tags: /tags/ || tags categories: /categories/ || th archives: /archives/ || archive上面这几个就是下面的 1、添加分类模块 命令如下 hexo new page categories 你会发现你的source文件夹下有了categorcies/index.md，打开index.md文件将title设置为 title: 分类 3、打开 主题配置文件 找到menu，将categorcies取消注释 4、把文章归入分类只需在文章的顶部标题下方添加categories字段，即可自动创建分类名并加入对应的分类中举个栗子： title: 分类测试文章标题 categories: 分类名 添加标签模块 命令hexo new page tags 同上 添加关于模块 命令hexo new page about 同上 highlight_theme: night bright #代码的样式 avatar: https://s2.ax1x.com/2019/05/23/VPZiAe.png #设置头像 4、 添加搜索功能 4.1、安装 hexo-generator-searchdb 插件 npm install hexo-generator-searchdb –save 4.2、打开 站点配置文件 找到Extensions在下面添加 search: path: search.xml field: post format: html limit: 100004.3、打开 主题配置文件 找到Local search，将enable设置为true 5、修改文章内链接文本样式 打开文件 themes/next/source/css/_common/components/post/post.styl，在末尾添加 6、首页的文章只显示一半用文本编辑器打开 themes/next 目录下的 _config.yml 文件，找到这段代码： auto_excerpt: enable: false length: 150把 enable 的 false 改成 true 就行了，然后 length 是设定文章预览的文本长度。 修改后重启 hexo 就ok了。 项目的目录结构 source 文件夹存放着用markdown编辑器写的章 每次添加文章都是用markdown编辑器写好保存，放到source下面的_post文件夹下面去themes 这里存放着样式_config.yml 主站点配置文件 ，themes样式文件夹下面的文件夹里也有个样式配置文件可以使用MarkdownPad2编辑器写文章，写完后，把那个.md文章放到source下的_post文件夹下，然后右键打开窗口， 依次使用命令 hexo clean , hexo g ,hexo d]]></content>
@@ -163,6 +152,17 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[java基础]]></title>
+    <url>%2F2019%2F01%2F12%2Fjava%E5%9F%BA%E7%A1%80%2F</url>
+    <content type="text"><![CDATA[####]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
       </tags>
   </entry>
 </search>
