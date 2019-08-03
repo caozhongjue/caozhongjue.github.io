@@ -94,7 +94,11 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/03/eBthc9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/03/eBtqhD.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/03/eBUDoV.png">
-<meta property="og:updated_time" content="2019-08-02T17:12:50.188Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/03/erzl7T.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/03/erz8NF.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/03/erzt39.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/03/erzOuq.png">
+<meta property="og:updated_time" content="2019-08-03T13:52:05.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot实战">
 <meta name="twitter:description" content="目录结构  1.pom.xml 文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-ins">
@@ -483,16 +487,227 @@ helloworld,您好啊，好坑啊你 asdfdasdf&lt;p th:text=&quot;&apos;hello&apo
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre><p><img src="https://s2.ax1x.com/2019/08/03/eBYJG4.png" alt="eBYJG4.png"><br>刚开始学各种奇葩问题<br>问题1 编译器乱码导致<br>Failed to load property source from location ‘classpath:/application.yml’<br>问题2 加web依赖<br>No active profile set, falling back to default profiles: default<br>问题3<br>找不到或无法加载主类 com.caozhongjue.myblog.MyblogApplication<br>问题4  thymeleaf要想用HTML5模板要指定版本<br>Template Mode ‘HTML5’ is deprecated. Using Template Mode ‘HTML’ instead.<br>问题5  内存溢出<br>D:\java\jdk\bin\java.exe<br>java.lang.OutOfMemoryError<br> at java.util.zip.ZipFile.open(Native Method)<br>问题6  找不到模板<br>org.thymeleaf.exceptions.TemplateInputException: Error resolving template [index], template might not exist or might not be accessible by any of the configured Template Resolvers\</p>
-<p>提交代码到github</p>
+<p>提交代码到github<br>前提得下载安装git软件</p>
 <pre><code>git init
 git add
 git commit
 git remote add origin https://github.com/caozhongjue/myblog.git
 git push -u origin master
-</code></pre><p>idea上传代码（github上面没有这个仓库，会自动创建）<br><img src="https://s2.ax1x.com/2019/08/03/eBtO9e.png" alt="eBtO9e.png"><br><img src="https://s2.ax1x.com/2019/08/03/eBNCAf.png" alt="eBNCAf.png"><br>idea下载代码</p>
-<p>idea上传修改过的代码<br><img src="https://s2.ax1x.com/2019/08/03/eBthc9.png" alt="eBthc9.png"><br>先点1更新代码，再点2提交代码，push到远程<br><img src="https://s2.ax1x.com/2019/08/03/eBtqhD.png" alt="eBtqhD.png"><br><img src="https://s2.ax1x.com/2019/08/03/eBUDoV.png" alt="eBUDoV.png"></p>
+</code></pre><p>在idea上加入git软件<br>idea上传代码（github上面没有这个仓库，会自动创建）<br><img src="https://s2.ax1x.com/2019/08/03/eBtO9e.png" alt="eBtO9e.png"><br><img src="https://s2.ax1x.com/2019/08/03/eBNCAf.png" alt="eBNCAf.png"><br>idea下载代码</p>
+<p>idea上传修改过的代码<br><img src="https://s2.ax1x.com/2019/08/03/eBthc9.png" alt="eBthc9.png"><br>先点1更新代码，再点2提交代码，push到远程<br><img src="https://s2.ax1x.com/2019/08/03/eBtqhD.png" alt="eBtqhD.png"></p>
+<p><img src="https://s2.ax1x.com/2019/08/03/eBUDoV.png" alt="eBUDoV.png"></p>
 <p>idea快捷键</p>
 <pre><code>ctrl+shift+n 快速查找某个文件
+alt+insert 快速生成set get方法
+alt+enter 快速导入包
+ctrl+D 快速复制一行
+ctrl+X 复制一行
+</code></pre><p>实现github授权登录功能<br>创建一个github应用程序<br><img src="https://s2.ax1x.com/2019/08/03/erzl7T.png" alt="erzl7T.png"></p>
+<p><img src="https://s2.ax1x.com/2019/08/03/erz8NF.png" alt="erz8NF.png"></p>
+<p><img src="https://s2.ax1x.com/2019/08/03/erzt39.png" alt="erzt39.png"></p>
+<p><img src="https://s2.ax1x.com/2019/08/03/erzOuq.png" alt="erzOuq.png"></p>
+<p><a href="https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/" target="_blank" rel="noopener">操作文档说明</a></p>
+<p>引入依赖</p>
+<pre><code>&lt;!-- okhttp 依赖--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.squareup.okhttp3&lt;/groupId&gt;
+    &lt;artifactId&gt;okhttp&lt;/artifactId&gt;
+    &lt;version&gt;4.0.0&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- fastjson 依赖 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+    &lt;version&gt;1.2.56&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><p>前端请求地址</p>
+<pre><code>https://github.com/login/oauth/authorize?client_id=Iv1.e73e751aed387889&amp;state=1&amp;redirect_uri=http://localhost:8080/callback&amp;scope=user    
+</code></pre><p>AuthorizenController类</p>
+<pre><code>package top.caozhongjue.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import top.caozhongjue.pojo.Access_token;
+import top.caozhongjue.pojo.GithubUser;
+import top.caozhongjue.provider.GitHubProvider;
+
+import javax.servlet.http.HttpServletRequest;
+
+@Controller
+public class AuthorizenController {
+    @Autowired
+    private GitHubProvider gitHubProvider;
+    @Value(&quot;${github.client.id}&quot;)
+    private String clientid;
+    @Value(&quot;${github.client.secret}&quot;)
+    private String clientsecret;
+    @Value(&quot;${github.redirect.uri}&quot;)
+    private String redirecturi;
+
+    @RequestMapping(&quot;/callback&quot;)
+    public String callback(@RequestParam(name = &quot;code&quot;) String code,
+                           @RequestParam(name=&quot;state&quot;)String state,
+                           HttpServletRequest request){
+        Access_token access_token = new Access_token();//封装一个token实体类，存值
+        access_token.setCode(code);
+        access_token.setState(state);
+        access_token.setRedirect_uri(redirecturi);
+        access_token.setClient_id(clientid);
+        access_token.setClient_secret(clientsecret);
+        String stoken = gitHubProvider.getAccess_token(access_token);//获取stoken方法，返回stoken
+        GithubUser githubUser = gitHubProvider.getGithubUser(stoken);//获取user信息方法，返回GithubUser
+        //System.out.println(githubUser.getLogin()+&quot;====&quot;+githubUser.getId());
+        if(githubUser != null){
+            request.getSession().setAttribute(&quot;user&quot;,githubUser);
+            return &quot;redirect:/&quot;; //redirect重定向到哪个路径
+        }else{
+            return &quot;redirect:/&quot;;
+        }
+    }
+}
+</code></pre><p>GitHubProvider类</p>
+<pre><code>package top.caozhongjue.provider;
+
+import com.alibaba.fastjson.JSON;
+import okhttp3.*;
+import org.springframework.stereotype.Component;
+import top.caozhongjue.pojo.Access_token;
+import top.caozhongjue.pojo.GithubUser;
+import java.io.IOException;
+
+@Component
+public class GitHubProvider {
+    //通过回调url携带code，获取token
+    public String getAccess_token(Access_token access_token){
+        final MediaType json = MediaType.get(&quot;application/json; charset=utf-8&quot;);
+        OkHttpClient client = new OkHttpClient();
+
+        RequestBody body = RequestBody.create(json, JSON.toJSONString(access_token));
+        Request request = new Request.Builder()
+                .url(&quot;https://github.com/login/oauth/access_token&quot;)
+                .post(body)
+                .build();
+        try (Response response = client.newCall(request).execute()) {
+            String string = response.body().string();
+            String[] split =string.split(&quot;&amp;&quot;);
+            String stoken = split[0];
+            String[] splitstoken =stoken.split(&quot;=&quot;);
+            String token = splitstoken[1];
+            //System.out.println(token);
+            return token;
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    //携带token，获取用户信息
+    public GithubUser getGithubUser(String accesstoken){
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(&quot;https://api.github.com/user?access_token=&quot;+accesstoken)
+                .build();
+        try (Response response = client.newCall(request).execute()) {
+            String string = response.body().string();
+            GithubUser githubUser = JSON.parseObject(string,GithubUser.class);
+            return githubUser;
+        }catch (IOException e){
+        }
+        return  null;
+    }
+
+}
+</code></pre><p>GithubUser类</p>
+<pre><code>package top.caozhongjue.pojo;
+
+public class GithubUser {
+    private String login;
+    private Long id;
+    private String bio;
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+}
+</code></pre><p>Access_token类</p>
+<pre><code>package top.caozhongjue.pojo;
+
+public class Access_token {
+    private String client_id;
+    private String client_secret;
+    private String code;
+    private String redirect_uri;
+    private String state;
+
+    public String getClient_id() {
+        return client_id;
+    }
+
+    public void setClient_id(String client_id) {
+        this.client_id = client_id;
+    }
+
+    public String getClient_secret() {
+        return client_secret;
+    }
+
+    public void setClient_secret(String client_secret) {
+        this.client_secret = client_secret;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getRedirect_uri() {
+        return redirect_uri;
+    }
+
+    public void setRedirect_uri(String redirect_uri) {
+        this.redirect_uri = redirect_uri;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+}
+</code></pre><p>application.yml文件<br>自定义属性值  @Value(“${}”)取值</p>
+<pre><code>github:
+  client:
+    id: Iv1.e73e751aed387889
+    secret: a047b90c7d5b6de3bbd035c4af962482bae0177c
+  redirect:
+    uri: http://localhost:8080/callback
 </code></pre>
       
     </div>
