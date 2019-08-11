@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/03/erz8NF.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/03/erzt39.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/03/erzOuq.png">
-<meta property="og:updated_time" content="2019-08-03T15:44:55.495Z">
+<meta property="og:updated_time" content="2019-08-11T03:42:37.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot实战">
 <meta name="twitter:description" content="目录结构 1.pom.xml 文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-inst">
@@ -707,6 +707,479 @@ public class Access_token {
     secret: a047b90c7d5b6de3bbd035c4af962482bae0177c
   redirect:
     uri: http://localhost:8080/callback
+</code></pre><h6 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h6><p>PublishIndex类</p>
+<pre><code>package top.caozhongjue.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import top.caozhongjue.dao.QuestionMapper;
+import top.caozhongjue.dao.UserMapper;
+import top.caozhongjue.pojo.Question;
+import top.caozhongjue.pojo.User;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
+/**
+ * 发布文章控制器
+ */
+@Controller
+public class PublishController {
+    @Autowired
+    private QuestionMapper questionMapper;
+    @Autowired
+    private UserMapper userMapper;
+    @RequestMapping(&quot;/publish&quot;)
+    public String publish(){
+        return &quot;publish&quot;;
+    }
+    @PostMapping(&quot;/dopublish&quot;)
+    public String doPublish(
+            @RequestParam(&quot;title&quot;)String title,
+            @RequestParam(&quot;description&quot;)String description,
+            @RequestParam(&quot;tags&quot;)String tags,
+            HttpServletRequest request,
+            Model model){
+        Question question = new Question();
+        User user = null;
+        Cookie[] cookies = request.getCookies();
+        if(cookies !=null){
+            for (Cookie cookie : cookies){
+                if(cookie.getName().equals(&quot;token&quot;)){
+                    String token = cookie.getValue();
+                    user = userMapper.findByToken(token);
+                    if(user != null){
+                        request.getSession().setAttribute(&quot;user&quot;,user);
+                    }
+                    break;
+                }
+            }
+        }
+        if(user== null){
+           model.addAttribute(&quot;error&quot;,&quot;发表文章，请登录&quot;);
+           return &quot;publish&quot;;
+        }
+        question.setTitle(title);
+        question.setDescription(description);
+        question.setTags(tags);
+        question.setCreator(user.getId());
+        question.setGmtCreate(System.currentTimeMillis());
+        question.setGmtModified(question.getGmtCreate());
+        questionMapper.create(question);
+        return &quot;redirect:/&quot;;
+    }
+
+}
+</code></pre><p>QuestionMapper接口</p>
+<pre><code>package top.caozhongjue.dao;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import top.caozhongjue.pojo.Question;
+
+import java.util.List;
+
+@Mapper
+public interface QuestionMapper {
+    @Insert(&quot;insert into question (title,description,gmt_create,gmt_modified,creator,comment_count,view_count,like_count,tags) &quot; +
+            &quot;values(#{title},#{description},#{gmtCreate},#{gmtModified},#{creator},#{commentCount},#{viewCount},#{likeCount},#{tags})&quot;)
+    public void create(Question question);
+    @Select(&quot;select * from user where token = #{token}&quot;)
+    User findByToken(@Param(&quot;token&quot;) String token);
+}
+</code></pre><p>publish页面</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;czj&apos;blog&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
+&lt;!--&lt;script type=&quot;text/javascript&quot; src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;--&gt;
+&lt;!--&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;--&gt;
+&lt;!--&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;css/bootstrap-theme.min.css&quot;&gt;--&gt;
+&lt;!--最新版本的 Bootstrap 核心 CSS 文件 --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css&quot;
+      integrity=&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;!--可选的 Bootstrap 主题文件（一般不用引入） --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css&quot;
+      integrity=&quot;sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;!--最新的 Bootstrap 核心 JavaScript 文件 --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js&quot;
+        integrity=&quot;sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa&quot;
+        crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+
+
+&lt;body style=&quot;background-color: #efefef&quot;&gt;
+&lt;div style=&quot;width: 1000px;margin: auto;&quot;&gt;
+    &lt;nav class=&quot;navbar navbar-default&quot;&gt;
+        &lt;div class=&quot;container-fluid&quot;&gt;
+            &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
+            &lt;div class=&quot;navbar-header&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot;
+                        data-target=&quot;#bs-example-navbar-collapse-1&quot; aria-expanded=&quot;false&quot;&gt;
+                    &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
+                    &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;czj 论坛&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
+            &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;bs-example-navbar-collapse-1&quot;&gt;
+                &lt;form class=&quot;navbar-form navbar-left&quot;&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;搜索...&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;搜索&lt;/button&gt;
+                &lt;/form&gt;
+                &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+                    &lt;li th:if=&quot;${session.user != null}&quot;&gt;
+                        &lt;a href=&quot;/publish&quot; &gt;发布&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;dropdown&quot; th:if=&quot;${session.user != null}&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; role=&quot;button&quot; aria-haspopup=&quot;true&quot;
+                           aria-expanded=&quot;false&quot; th:text=&quot;${session.user.getName()}&quot;&gt;&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+                        &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;消息中心&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;个人中心&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;退出登录&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li th:if=&quot;${session.user==null}&quot;&gt;
+                        &lt;a href=&quot;https://github.com/login/oauth/authorize?client_id=Iv1.e73e751aed387889&amp;state=1&amp;redirect_uri=http://localhost:8080/callback&amp;scope=user&quot;&gt;登录&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;&lt;!-- /.navbar-collapse --&gt;
+        &lt;/div&gt;&lt;!-- /.container-fluid --&gt;
+    &lt;/nav&gt;
+    &lt;div class=&quot;container-fluid&quot; style=&quot;background-color: white&quot;&gt;
+        &lt;div class=&quot;row&quot; style=&quot;height: 100%;&quot;&gt;
+            &lt;div class=&quot;col-lg-9 col-md-12 col-sm-12 col-xs-12&quot;&gt;
+                &lt;h2&gt;&lt;span class=&quot;glyphicon glyphicon-plus&quot;&gt;&lt;/span&gt;发表提问&lt;/h2&gt;
+                &lt;hr&gt;
+                &lt;form action=&quot;/dopublish&quot; method=&quot;post&quot;&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label for=&quot;title&quot;&gt;问题标题(概要简述):&lt;/label&gt;
+                        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;title&quot; id=&quot;title&quot; placeholder=&quot;标题&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label for=&quot;title&quot;&gt;问题内容(详细问题内容):&lt;/label&gt;
+                        &lt;textarea name=&quot;description&quot; id=&quot;description&quot; class=&quot;form-control&quot; cols=&quot;30&quot; rows=&quot;10&quot;
+                                  placeholder=&quot;内容&quot;&gt;
+                                &lt;/textarea&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label for=&quot;title&quot;&gt;添加标签:&lt;/label&gt;
+                        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;tags&quot; name=&quot;tags&quot; placeholder=&quot;添加标签以,隔开&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;span class=&quot;alert alert-danger&quot; th:if=&quot;${error != null}&quot; th:text=&quot;${error}&quot; role=&quot;alert&quot;&gt;&lt;/span&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;btn btn-success&quot; style=&quot;float: right; margin-bottom: 15px&quot;&gt;发布&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;col-lg-3 col-md-12 col-sm-12 col-xs-12&quot;&gt;
+                &lt;h3&gt;问题发起指南&lt;/h3&gt;
+                问题标题:请用精简的语言描述您发布的问题,不超过25字,问题补充:详细补充您的问题内容,并确保问题描述清析直观.ok
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h6 id="首页发布的文章显示"><a href="#首页发布的文章显示" class="headerlink" title="首页发布的文章显示"></a>首页发布的文章显示</h6><p>IndexController类</p>
+<pre><code>package top.caozhongjue.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import top.caozhongjue.dao.QuestionMapper;
+import top.caozhongjue.dao.UserMapper;
+import top.caozhongjue.dto.PaginationDTO;
+import top.caozhongjue.dto.QuestionDTO;
+import top.caozhongjue.pojo.Question;
+import top.caozhongjue.pojo.User;
+import top.caozhongjue.services.QuestionService;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+
+/**
+ * 首页访问路径控制器
+ */
+@Controller
+public class IndexController {
+    @Autowired
+    private UserMapper userMapper;
+
+    @Autowired
+    private QuestionMapper questionMapper;
+    @Autowired
+    private QuestionService questionService;
+
+    @RequestMapping(&quot;/&quot;)
+    public String index(HttpServletRequest request,
+                        Model model,@RequestParam(value = &quot;page&quot;,defaultValue = &quot;1&quot;)Integer page,
+                        @RequestParam(value = &quot;size&quot;,defaultValue = &quot;2&quot;)Integer size) {
+        Cookie[] cookies = request.getCookies();
+        if(cookies!=null){
+            for(Cookie cookie :cookies){
+                if(cookie.getName().equals(&quot;token&quot;)){
+                    String token = cookie.getValue();
+                    User user = userMapper.findByToken(token);
+                    if(user!=null){
+                        request.getSession().setAttribute(&quot;user&quot;,user);
+                    }
+                    break;
+                }
+            }
+        }
+//      List&lt;QuestionDTO&gt; listQuestions = questionService.listQuestionDTO(page,size);
+        PaginationDTO paginationDTO = questionService.listQuestionDTO(page,size);
+        model.addAttribute(&quot;paginationDTO&quot;,paginationDTO);
+        return &quot;index&quot;;
+    }
+}
+</code></pre><p>QuestionServices类</p>
+<pre><code>package top.caozhongjue.services;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import top.caozhongjue.dao.QuestionMapper;
+import top.caozhongjue.dao.UserMapper;
+import top.caozhongjue.dto.PaginationDTO;
+import top.caozhongjue.dto.QuestionDTO;
+import top.caozhongjue.pojo.Question;
+import top.caozhongjue.pojo.User;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+public class QuestionService {
+    @Autowired
+    private QuestionMapper questionMapper;
+    @Autowired
+    private UserMapper userMapper;
+
+
+    public PaginationDTO listQuestionDTO(Integer page, Integer size) {
+        List&lt;QuestionDTO&gt; questionDTOList = new ArrayList&lt;&gt;();
+        PaginationDTO paginationDTOS = new PaginationDTO();
+        Integer totalCount = questionMapper.count();
+        paginationDTOS.setPagination(totalCount,page,size);
+        //防止超过页数据还显示
+        if (page&lt;1){
+            page=1;
+        }
+        if(page&gt;paginationDTOS.getTotalPages()){
+            page=paginationDTOS.getTotalPages();
+        }
+        // mysql 分页 limit 0,5 从第0条数据开始，查出5条,第一页0-5 ，第二页5-10 ,第三页10-15
+        Integer offset = (page-1)*size;
+        List&lt;Question&gt; questions = questionMapper.listQuestin(offset,size);
+        for(Question question:questions){
+            User user = userMapper.findById(question.getCreator());
+            QuestionDTO questionDTO = new QuestionDTO();
+            BeanUtils.copyProperties(question,questionDTO);
+            questionDTO.setUser(user);
+            questionDTOList.add(questionDTO);
+        }
+        paginationDTOS.setQuestions(questionDTOList);
+
+        //return questionDTOList;
+        return paginationDTOS;
+    }
+}
+</code></pre><p>QuestinDTO类</p>
+<pre><code>package top.caozhongjue.dto;
+
+import lombok.Data;
+import top.caozhongjue.pojo.User;
+
+@Data
+public class QuestionDTO {
+    private Integer id;
+    private String title;
+    private String description;
+    private String tags;
+    private Long gmtCreate;
+    private Long gmtModified;
+    private Integer creator;
+    private Integer viewCount;
+    private Integer commentCount;
+    private Integer likeCount;
+    private User user;
+}
+</code></pre><p>PaginationDTO类</p>
+<pre><code>package top.caozhongjue.dto;
+
+import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
+@Data
+public class PaginationDTO {
+    private List&lt;QuestionDTO&gt; questions;//存放数据
+    private boolean hasPrevious;//上一页
+    private boolean hasNexts;//下一页
+    private boolean hasFirstPage;//第一页
+    private boolean hasEndPage;//最后一页
+
+    private Integer currentPage;//当前页
+    private List&lt;Integer&gt; pages = new ArrayList&lt;&gt;();//
+    private Integer totalPages;
+    public void setPagination(Integer totalCount, Integer page, Integer size) {
+        //查总共多少页
+        if(totalCount % size ==0){
+            totalPages = totalCount / size;
+        }else{
+            totalPages = totalCount / size +1;
+        }
+        //防止超过页数据还显示
+        if (page&lt;1){
+            page=1;
+        }
+        if(page&gt;totalPages){
+            page=totalPages;
+        }
+        this.currentPage=page;
+        pages.add(page);
+        for(int i = 1; i &lt;= 3 ; i ++){
+            if(page-i&gt;0){
+                pages.add(0,page-i);
+            }
+            if(page+i&lt;=totalPages){
+                pages.add(page+i);
+            }
+        }
+        //是否展示上一页
+        if(page == 1){
+            hasPrevious =false;
+        }else{
+            hasPrevious = true;
+        }
+        //是否展示下一页
+        if(page == totalPages){
+            hasNexts = false;
+        }else{
+            hasNexts = true;
+        }
+        //是否展示第一页
+        if(pages.contains(1)){
+            hasFirstPage = false;
+        }else{
+            hasFirstPage = true;
+        }
+        //是否展示最后一页
+        if(pages.contains(totalPages)){
+            hasEndPage = false;
+        }else{
+            hasEndPage = true;
+        }
+    }
+}
+</code></pre><p>QuestionMapper接口</p>
+<pre><code>package top.caozhongjue.dao;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import top.caozhongjue.pojo.Question;
+
+import java.util.List;
+
+@Mapper
+public interface QuestionMapper {
+
+    @Select(&quot;select * from question limit #{offset},#{size}&quot;)
+    List&lt;Question&gt; listQuestin(@Param(&quot;offset&quot;) Integer offset, @Param(&quot;size&quot;) Integer size);
+    @Select(&quot;select count(1) from question&quot;)
+    Integer count();
+}
+</code></pre><p>UserMapper接口</p>
+<pre><code>package top.caozhongjue.dao;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import top.caozhongjue.pojo.User;
+
+@Mapper
+public interface UserMapper {
+
+    @Select(&quot;select * from user where id = #{id}&quot;)
+    User findById(@Param(&quot;id&quot;) Integer id);
+
+}
+</code></pre><p>页面html</p>
+<pre><code>&lt;div class=&quot;container-fluid&quot; style=&quot;background-color: white&quot; &gt;
+                &lt;div class=&quot;row&quot; style=&quot;height: 100%;&quot;&gt;
+                    &lt;div class=&quot;col-lg-9 col-md-12 col-sm-12 col-xs-12&quot;&gt;
+                        &lt;span class=&quot;glyphicon glyphicon-list&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;hr style=&quot;margin-bottom: 15px;margin-top: 15px&quot;&gt;
+                        &lt;div class=&quot;media&quot; th:each=&quot;listQuestion:${paginationDTO.questions}&quot;&gt;
+                            &lt;div class=&quot;media-left&quot;&gt;
+                                &lt;a href=&quot;#&quot;&gt;
+                                    &lt;img class=&quot;media-object img-rounded&quot; th:src=&quot;${listQuestion.user.avatarUrl}&quot; style=&quot;width: 45px&quot;/&gt;
+                                &lt;/a&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;media-body&quot;&gt;
+                                &lt;h4 class=&quot;media-heading&quot; th:text=&quot;${listQuestion.title}&quot;&gt;&lt;/h4&gt;
+                                &lt;span th:text=&quot;${listQuestion.description}&quot;&gt;&lt;/span&gt;&lt;br&gt;
+                                &lt;span class=&quot;text_des&quot; &gt;
+                                    &lt;span th:text=&quot;${listQuestion.commentCount}&quot;&gt;&lt;/span&gt; 个回复 • &lt;span th:text=&quot;${listQuestion.viewCount}&quot;&gt;&lt;/span&gt; 次浏览 • &lt;span th:text=&quot;${#dates.format(listQuestion.gmtCreate,&apos;yyyy-dd-MM HH:MM&apos;)}&quot;&gt;&lt;/span&gt;  &lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;nav aria-label=&quot;Page navigation&quot;&gt;
+                            &lt;ul class=&quot;pagination&quot;&gt;
+                                &lt;!--第一页--&gt;
+                                &lt;li th:if=&quot;${paginationDTO.hasFirstPage}&quot;&gt;
+                                    &lt;a href=&quot;/?page=1&quot; aria-label=&quot;Previous&quot; &gt;
+                                        &lt;span aria-hidden=&quot;true&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;!--上一页--&gt;
+                                &lt;li th:if=&quot;${paginationDTO.hasPrevious}&quot;&gt;
+                                    &lt;a th:href=&quot;@{/(page=${(paginationDTO.currentPage)-1})}&quot; aria-label=&quot;Previous&quot;&gt;
+                                        &lt;span aria-hidden=&quot;true&quot;&gt;&amp;lt;&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li th:each=&quot;page : ${paginationDTO.pages}&quot;  th:class=&quot;${paginationDTO.currentPage==page}?&apos;active&apos;:&apos;&apos; &quot; &gt;
+                                    &lt;a th:href=&quot;@{/(page=${page})}&quot; th:text=&quot;${page}&quot;&gt;&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;!--下一页--&gt;
+                                &lt;li th:if=&quot;${paginationDTO.hasNexts}&quot;&gt;
+                                    &lt;a th:href=&quot;@{/(page=${(paginationDTO.currentPage)+1})}&quot; aria-label=&quot;Next&quot;&gt;
+                                        &lt;span aria-hidden=&quot;true&quot;&gt;&amp;gt;&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;!--最后一页--&gt;
+                                &lt;li th:if=&quot;${paginationDTO.hasEndPage}&quot;&gt;
+                                    &lt;a th:href=&quot;@{/(page=${paginationDTO.totalPages})}&quot; aria-label=&quot;Next&quot;&gt;
+                                        &lt;span aria-hidden=&quot;true&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col-lg-3 col-md-12 col-sm-12 col-xs-12&quot; &gt;
+                        热门话题
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
 </code></pre>
       
     </div>
@@ -879,7 +1352,7 @@ public class Access_token {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#目录结构"><span class="nav-number">1.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#实现github授权登录功能"><span class="nav-number">2.</span> <span class="nav-text">实现github授权登录功能</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#目录结构"><span class="nav-number">1.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#实现github授权登录功能"><span class="nav-number">2.</span> <span class="nav-text">实现github授权登录功能</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#发布文章"><span class="nav-number">3.</span> <span class="nav-text">发布文章</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#首页发布的文章显示"><span class="nav-number">4.</span> <span class="nav-text">首页发布的文章显示</span></a></li></ol></div>
             
 
           </div>
