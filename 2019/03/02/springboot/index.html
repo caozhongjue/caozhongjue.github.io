@@ -92,7 +92,8 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Z3pbxe.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Z3F0ht.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Z3Z7Tg.png">
-<meta property="og:updated_time" content="2019-07-01T14:33:51.759Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/14/mASAUA.png">
+<meta property="og:updated_time" content="2019-08-14T15:20:32.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot初识">
 <meta name="twitter:description" content="什么是Spring Boot随着动态语言的流行（Ruby、Groovy、Scala、Node.js），Java的开发显得格外的笨重：繁多的配置、低下的开发效率、复杂的部暑流程以及第三方技术集成难度大。 在这样的环境下，Spring Boot应运而生。它使用“习惯优于配置”（项目中存在大量的配置，此外还内置一个习惯性的配置，让你无须手动进行配置）的理念让你的项目快速运行起来。使用Spring Boo">
@@ -755,6 +756,98 @@ public interface StudentMapper extends JpaRepository&lt;Student,Integer&gt; {
         &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
         &lt;version&gt;1.1.1&lt;/version&gt;
     &lt;/dependency&gt;
+</code></pre><h4 id="spring-boot整合freemarker"><a href="#spring-boot整合freemarker" class="headerlink" title="spring boot整合freemarker"></a>spring boot整合freemarker</h4><p><img src="https://s2.ax1x.com/2019/08/14/mASAUA.png" alt="mASAUA.png"></p>
+<p>引入freemarker依赖</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-freemarker&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><p>application.properties文件</p>
+<pre><code># 设定ftl文件路径
+spring.freemarker.tempalte-loader-path=classpath:/templates
+#  关闭缓存，及时刷新，上线生产环境需要修改为true
+spring.freemarker.cache=false
+spring.freemarker.charset=UTF-8
+spring.freemarker.check-template-location=true
+spring.freemarker.content-type=text/html
+spring.freemarker.expose-request-attributes=true
+spring.freemarker.expose-session-attributes=true
+spring.freemarker.request-context-attribute=request
+spring.freemarker.suffix=.ftl
+</code></pre><p>Index类</p>
+<pre><code>package com.example.demo.controller;
+
+import com.example.demo.util.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+@Controller
+public class index {
+    @Autowired
+    private Resource resource;
+
+    @RequestMapping(value = &quot;index&quot;)
+    public String index(ModelMap map){
+        map.addAttribute(&quot;resource&quot;,resource);
+        return &quot;index&quot;;
+    }
+
+}
+</code></pre><p>Resource类</p>
+<pre><code>package com.example.demo.util;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+//表示这个类是一个读取配置文件的类
+@Configuration
+//指定配置的一些属性,其中的prefix表示前缀
+@ConfigurationProperties(prefix = &quot;com.haozz.opensource&quot;)
+//指定所读取的配置文件的路径
+@PropertySource(value = &quot;classpath:resources.properties&quot;)
+public class Resource {
+    private String name;
+    private String website;
+    private String language;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getWebsite() {
+        return website;
+    }
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+    public String getLanguage() {
+        return language;
+    }
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+}
+</code></pre><p>Resources.properties文件</p>
+<pre><code>com.haozz.opensource.name=wangshu
+com.haozz.opensource.website=www.haozz.top:18158/
+com.haozz.opensource.language=chinese
+</code></pre><p>index.ftl文件</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+    &lt;meta charset=&quot;UTF-8&quot;/&gt;
+    &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    FreeMarker模板引擎
+    &lt;h1&gt;${resource.name}&lt;/h1&gt;
+    &lt;h1&gt;${resource.website}&lt;/h1&gt;
+    &lt;h1&gt;${resource.language}&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
       
     </div>
@@ -931,7 +1024,7 @@ public interface StudentMapper extends JpaRepository&lt;Student,Integer&gt; {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Spring-Boot"><span class="nav-number">1.</span> <span class="nav-text">什么是Spring Boot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring-Boot优缺点"><span class="nav-number">2.</span> <span class="nav-text">Spring Boot优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个超级简单的的Springboot项目"><span class="nav-number">3.</span> <span class="nav-text">创建一个超级简单的的Springboot项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#springboot整合jdbc"><span class="nav-number">4.</span> <span class="nav-text">springboot整合jdbc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#springboot整合spring-data-jpa"><span class="nav-number">5.</span> <span class="nav-text">springboot整合spring data jpa</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spring-boot整合-mybatis"><span class="nav-number">6.</span> <span class="nav-text">spring boot整合 mybatis</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Spring-Boot"><span class="nav-number">1.</span> <span class="nav-text">什么是Spring Boot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring-Boot优缺点"><span class="nav-number">2.</span> <span class="nav-text">Spring Boot优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个超级简单的的Springboot项目"><span class="nav-number">3.</span> <span class="nav-text">创建一个超级简单的的Springboot项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#springboot整合jdbc"><span class="nav-number">4.</span> <span class="nav-text">springboot整合jdbc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#springboot整合spring-data-jpa"><span class="nav-number">5.</span> <span class="nav-text">springboot整合spring data jpa</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spring-boot整合-mybatis"><span class="nav-number">6.</span> <span class="nav-text">spring boot整合 mybatis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spring-boot整合freemarker"><span class="nav-number">7.</span> <span class="nav-text">spring boot整合freemarker</span></a></li></ol></div>
             
 
           </div>
