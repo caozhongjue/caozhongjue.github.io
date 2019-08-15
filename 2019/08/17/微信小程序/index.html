@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/15/mVJwef.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/15/mVYrB6.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/15/mVfCdS.png">
-<meta property="og:updated_time" content="2019-08-15T15:48:00.145Z">
+<meta property="og:updated_time" content="2019-08-15T16:19:09.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序">
 <meta name="twitter:description" content="微信公众平台官网微信公众平台官方网站  开发者工具  打开开发者工具，新建一个项目 编码器大概作用区域 1、获取微信的头像index.wxml文件 &amp;lt;!--index.wxml--&amp;gt; &amp;lt;view class=&amp;quot;container&amp;quot;&amp;gt;   &amp;lt;!-- &amp;lt;view class=&amp;quot;userinfo&amp;quot;&amp;gt;     &amp;lt;but">
@@ -408,11 +408,75 @@
       &lt;text class=&quot;userinfo-nickname&quot;&gt;{{userInfo.nickName}}&lt;/text&gt;
     &lt;/block&gt;
   &lt;/view&gt; --&gt;
-  &lt;image class=&quot;userinfo-avatar&quot; src=&quot;/images/0.png&quot;&gt;&lt;/image&gt;
-  &lt;text class=&quot;userinfo-nickname&quot;&gt;获取头像&lt;/text&gt;
-  &lt;button class=&quot;btn&quot; type=&quot;primary&quot; &gt;点击&lt;/button&gt;
+  &lt;image class=&quot;userinfo-avatar&quot; src=&quot;{{imagesrc}}&quot;&gt;&lt;/image&gt;
+  &lt;text class=&quot;userinfo-nickname&quot;&gt;{{textattr}}&lt;/text&gt;
+  &lt;button class=&quot;btn&quot; type=&quot;primary&quot; open-type=&quot;getUserInfo&quot; bindgetuserinfo=&quot;getMyInfo&quot; &gt;点击&lt;/button&gt;
 
 &lt;/view&gt;
+</code></pre><p>index.wxjs文件</p>
+<pre><code>//index.js
+//获取应用实例
+const app = getApp()
+
+Page({
+  data: {
+    motto: &apos;按钮&apos;,
+    //userInfo: {},
+    imagesrc:&apos;/images/0.png&apos;,
+    textattr:&apos;获取头像&apos;,
+    hasUserInfo: false,
+    canIUse: wx.canIUse(&apos;button.open-type.getUserInfo&apos;)
+  },
+  //事件处理函数
+  bindViewTap: function() {
+    wx.navigateTo({
+      url: &apos;../logs/logs&apos;
+    })
+  },
+  getMyInfo:function(e){
+    console.log(e.detail.userInfo)//打印e
+    this.setData({
+      imagesrc:e.detail.userInfo.avatarUrl,
+      textattr: e.detail.userInfo.nickName
+    })
+  },
+  onLoad: function () {
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse){
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res =&gt; {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res =&gt; {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
+  },
+  // getUserInfo: function(e) {
+  //   console.log(e)
+  //   app.globalData.userInfo = e.detail.userInfo
+  //   this.setData({
+  //     userInfo: e.detail.userInfo,
+  //     hasUserInfo: true
+  //   })
+  // }
+})
 </code></pre><p>index.css文件</p>
 <pre><code>/**index.wxss**/
 .container{
