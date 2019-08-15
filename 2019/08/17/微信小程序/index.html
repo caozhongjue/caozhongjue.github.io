@@ -79,22 +79,23 @@
 
 
 
-<meta name="description" content="微信公众平台官网微信公众平台官方网站  开发者工具  打开开发者工具，新建一个项目 编码器大概作用区域">
+<meta name="description" content="微信公众平台官网微信公众平台官方网站  开发者工具  打开开发者工具，新建一个项目 编码器大概作用区域 1、获取微信的头像index.wxml文件 &amp;lt;!--index.wxml--&amp;gt; &amp;lt;view class=&amp;quot;container&amp;quot;&amp;gt;   &amp;lt;!-- &amp;lt;view class=&amp;quot;userinfo&amp;quot;&amp;gt;     &amp;lt;but">
 <meta name="keywords" content="微信小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信小程序">
 <meta property="og:url" content="http://yoursite.com/2019/08/17/微信小程序/index.html">
 <meta property="og:site_name" content="czj&#39;blog">
-<meta property="og:description" content="微信公众平台官网微信公众平台官方网站  开发者工具  打开开发者工具，新建一个项目 编码器大概作用区域">
+<meta property="og:description" content="微信公众平台官网微信公众平台官方网站  开发者工具  打开开发者工具，新建一个项目 编码器大概作用区域 1、获取微信的头像index.wxml文件 &amp;lt;!--index.wxml--&amp;gt; &amp;lt;view class=&amp;quot;container&amp;quot;&amp;gt;   &amp;lt;!-- &amp;lt;view class=&amp;quot;userinfo&amp;quot;&amp;gt;     &amp;lt;but">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/15/mV3sY9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/15/mVJEi4.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/15/mVJwef.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/15/mVYrB6.png">
-<meta property="og:updated_time" content="2019-08-15T13:32:23.115Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/15/mVfCdS.png">
+<meta property="og:updated_time" content="2019-08-15T15:48:00.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序">
-<meta name="twitter:description" content="微信公众平台官网微信公众平台官方网站  开发者工具  打开开发者工具，新建一个项目 编码器大概作用区域">
+<meta name="twitter:description" content="微信公众平台官网微信公众平台官方网站  开发者工具  打开开发者工具，新建一个项目 编码器大概作用区域 1、获取微信的头像index.wxml文件 &amp;lt;!--index.wxml--&amp;gt; &amp;lt;view class=&amp;quot;container&amp;quot;&amp;gt;   &amp;lt;!-- &amp;lt;view class=&amp;quot;userinfo&amp;quot;&amp;gt;     &amp;lt;but">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/08/15/mV3sY9.png">
 
 
@@ -395,7 +396,57 @@
 <p><img src="https://s2.ax1x.com/2019/08/15/mVJEi4.png" alt="mVJEi4.png"></p>
 <p>打开开发者工具，新建一个项目</p>
 <p><img src="https://s2.ax1x.com/2019/08/15/mVJwef.png" alt="mVJwef.png"><br>编码器大概作用区域<br><img src="https://s2.ax1x.com/2019/08/15/mVYrB6.png" alt="mVYrB6.png"></p>
+<p>1、获取微信的头像<br><img src="https://s2.ax1x.com/2019/08/15/mVfCdS.png" alt="mVfCdS.png"><br>index.wxml文件</p>
+<pre><code>&lt;!--index.wxml--&gt;
+&lt;view class=&quot;container&quot;&gt;
+  &lt;!-- &lt;view class=&quot;userinfo&quot;&gt;
+    &lt;button wx:if=&quot;{{!hasUserInfo && canIUse}}&quot; 
+      open-type=&quot;getUserInfo&quot; bindgetuserinfo=&quot;getUserInfo&quot;&gt; 获取头像昵称 
+    &lt;/button&gt;
+    &lt;block wx:else&gt;
+      &lt;image bindtap=&quot;bindViewTap&quot; class=&quot;userinfo-avatar&quot; src=&quot;{{userInfo.avatarUrl}}&quot; mode=&quot;cover&quot;&gt;&lt;/image&gt;
+      &lt;text class=&quot;userinfo-nickname&quot;&gt;{{userInfo.nickName}}&lt;/text&gt;
+    &lt;/block&gt;
+  &lt;/view&gt; --&gt;
+  &lt;image class=&quot;userinfo-avatar&quot; src=&quot;/images/0.png&quot;&gt;&lt;/image&gt;
+  &lt;text class=&quot;userinfo-nickname&quot;&gt;获取头像&lt;/text&gt;
+  &lt;button class=&quot;btn&quot; type=&quot;primary&quot; &gt;点击&lt;/button&gt;
 
+&lt;/view&gt;
+</code></pre><p>index.css文件</p>
+<pre><code>/**index.wxss**/
+.container{
+  width: 100%;
+  text-align: center; /*文本居中*/
+  flex-direction: column;/*垂直布局*/
+  justify-content: space-around;/*垂直方向散布居中*/
+}
+/*.userinfo {
+  display: flex;flex布局*/
+ /* flex-direction: column;垂直布局*/
+ /* align-items: center;水平方向居中*/
+ /* justify-content: space-around;垂直方向散布居中
+}*/
+
+.userinfo-avatar {
+  width: 128rpx;/*宽度128rpx*/
+  height: 128rpx;/*高度128rpx*/
+  margin: 20rpx;/*外边距*/
+  border-radius: 50%; /*边框圆形*/
+}
+
+.userinfo-nickname {
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  color: #aaa;
+}
+
+.btn{
+  margin-top: 20rpx;
+  width: 150rpx;
+  height: 100rpx;
+}
+</code></pre>
       
     </div>
     
