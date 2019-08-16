@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="czj&#39;blog">
 <meta property="og:description" content="js事件js的事件机制：当行为动作满足了一定的条件后，会触发某类事务的执行。内容： 1、单双击事件单击：当鼠单击的时候会触发  onclick 双击：当鼠双击的时候会触发  ondblclick  2、鼠标事件当鼠标悬停在某个HTML元素上会触发  onmouseover 当鼠标移出某个HTML元素会触发  onmouseout 当鼠标在某个HTML元素上移动  onmousemove  3、键盘">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-16T14:44:12.829Z">
+<meta property="og:updated_time" content="2019-08-16T14:52:14.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js">
 <meta name="twitter:description" content="js事件js的事件机制：当行为动作满足了一定的条件后，会触发某类事务的执行。内容： 1、单双击事件单击：当鼠单击的时候会触发  onclick 双击：当鼠双击的时候会触发  ondblclick  2、鼠标事件当鼠标悬停在某个HTML元素上会触发  onmouseover 当鼠标移出某个HTML元素会触发  onmouseout 当鼠标在某个HTML元素上移动  onmousemove  3、键盘">
@@ -405,8 +405,9 @@
 </code></pre><p> 5、页面加载事件</p>
 <p>页面加载事件：</p>
 <pre><code>onload
-</code></pre><h6 id="js注意事项"><a href="#js注意事项" class="headerlink" title="js注意事项"></a>js注意事项</h6><p>1.给合适的元素添加合适的事件<br>2.事件冲突，如单击和双击事件<br>3.事件的阻断<br>  当事件所监听的函数的返回值给事件时:<br>  false:则会阻断当前事件所在的HTML标签的功能<br>  true:则会继续执行当前事件所在的HTML标签的功能<br>4.超链接调用js函数<br>    <a href="javascript:函数名()" target="_blank" rel="noopener"></a></p>
-<h5 id="BOM浏览器对象模型"><a href="#BOM浏览器对象模型" class="headerlink" title="BOM浏览器对象模型"></a>BOM浏览器对象模型</h5><h6 id="windows对象的常用方法"><a href="#windows对象的常用方法" class="headerlink" title="windows对象的常用方法"></a>windows对象的常用方法</h6><p>1.windows对象不用new,直接进行使用即可.<br>2.框体方法</p>
+</code></pre><h6 id="js注意事项"><a href="#js注意事项" class="headerlink" title="js注意事项"></a>js注意事项</h6><p>1.给合适的元素添加合适的事件<br>2.事件冲突，如单击和双击事件<br>3.事件的阻断<br>  当事件所监听的函数的返回值给事件时:<br>  false:则会阻断当前事件所在的HTML标签的功能<br>  true:则会继续执行当前事件所在的HTML标签的功能<br>4.超链接调用js函数</p>
+<pre><code>&lt;a href=&quot;javascript:函数名()&quot;&gt;&lt;/a&gt;
+</code></pre><h5 id="BOM浏览器对象模型"><a href="#BOM浏览器对象模型" class="headerlink" title="BOM浏览器对象模型"></a>BOM浏览器对象模型</h5><h6 id="windows对象的常用方法"><a href="#windows对象的常用方法" class="headerlink" title="windows对象的常用方法"></a>windows对象的常用方法</h6><p>1.windows对象不用new,直接进行使用即可.<br>2.框体方法</p>
 <pre><code>window.alert(&quot;&quot;); //警告框,没有返回值
 window.confirm(&quot;你确定要删除吗&quot;); //确认框 ,有返回值 true/false
 window.prompt(&quot;请输入昵称&quot;); //提示框
@@ -429,8 +430,12 @@ window.history.go(index);
 </code></pre><p>屏幕属性</p>
 <pre><code>window.screen.width;
 window.screen.height;
-</code></pre><h5 id="DOM文档对象模型"><a href="#DOM文档对象模型" class="headerlink" title="DOM文档对象模型"></a>DOM文档对象模型</h5><p>1、document对象的概念<br>浏览器对外提供的支持js的用来操作HTML文档一个对象<br>2、使用document<br>获取HTML元素对象<br>直接获取，通过id class name 标签名<br>    document.getElementById(“”);//通过id<br>    document.getElementByClass(“”);//通过class<br>    document.getElementByName(“”);//通过name<br>    document.getElementByTagName(“”);//通过标签        </p>
-<p>间接获取<br>父子关系</p>
+</code></pre><h5 id="DOM文档对象模型"><a href="#DOM文档对象模型" class="headerlink" title="DOM文档对象模型"></a>DOM文档对象模型</h5><p>1、document对象的概念<br>浏览器对外提供的支持js的用来操作HTML文档一个对象<br>2、使用document<br>获取HTML元素对象<br>直接获取，通过id class name 标签名</p>
+<pre><code>document.getElementById(&quot;&quot;);//通过id
+document.getElementByClass(&quot;&quot;);//通过class
+document.getElementByName(&quot;&quot;);//通过name
+document.getElementByTagName(&quot;&quot;);//通过标签        
+</code></pre><p>间接获取<br>父子关系</p>
 <pre><code>document.getElementById(&quot;&quot;).childNodes;
 </code></pre><p>子父关系</p>
 <pre><code>document.getElementById(&quot;&quot;).parentNodes;
