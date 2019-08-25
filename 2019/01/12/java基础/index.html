@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="####">
+<meta name="description" content="历史Java 是由Sun Microsystems公司于1995年5月推出的高级程序设计语言。Java可运行于多个平台，如Windows, Mac OS，及其他多种UNIX版本的系统。简单的实例来展示 Java 编程，创建文件 HelloWorld.java(文件名需与类名一致), 代码如下： public class HelloWorld {     public static void mai">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java基础">
 <meta property="og:url" content="http://yoursite.com/2019/01/12/java基础/index.html">
 <meta property="og:site_name" content="czj&#39;blog">
-<meta property="og:description" content="####">
+<meta property="og:description" content="历史Java 是由Sun Microsystems公司于1995年5月推出的高级程序设计语言。Java可运行于多个平台，如Windows, Mac OS，及其他多种UNIX版本的系统。简单的实例来展示 Java 编程，创建文件 HelloWorld.java(文件名需与类名一致), 代码如下： public class HelloWorld {     public static void mai">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-07T15:10:14.067Z">
+<meta property="og:updated_time" content="2019-08-25T09:20:08.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础">
-<meta name="twitter:description" content="####">
+<meta name="twitter:description" content="历史Java 是由Sun Microsystems公司于1995年5月推出的高级程序设计语言。Java可运行于多个平台，如Windows, Mac OS，及其他多种UNIX版本的系统。简单的实例来展示 Java 编程，创建文件 HelloWorld.java(文件名需与类名一致), 代码如下： public class HelloWorld {     public static void mai">
 
 
 
@@ -384,7 +384,20 @@
       
 
       
-        <p>#### </p>
+        <h4 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h4><p>Java 是由Sun Microsystems公司于1995年5月推出的高级程序设计语言。<br>Java可运行于多个平台，如Windows, Mac OS，及其他多种UNIX版本的系统。<br>简单的实例来展示 Java 编程，创建文件 HelloWorld.java(文件名需与类名一致), 代码如下：</p>
+<pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println(&quot;Hello World&quot;);
+    }
+}
+</code></pre><p>运行以上实例，输出结果如下：<br>这是命令行下操作</p>
+<pre><code>$ javac HelloWorld.java
+$ java HelloWorld
+
+结果如下
+Hello World
+</code></pre><p>执行命令解析：<br>以上我们使用了两个命令 javac 和 java。<br>javac 后面跟着的是java文件的文件名，例如 HelloWorld.java。 该命令用于将 java 源文件编译为 class 字节码文件，如： javac HelloWorld.java。<br>运行javac命令后，如果成功编译没有错误的话，会出现一个 HelloWorld.class 的文件。<br>java 后面跟着的是java文件中的类名,例如 HelloWorld 就是类名，如: java HelloWorld。</p>
+<p>注意：java命令后面不要加.class。</p>
 
       
     </div>
@@ -415,7 +428,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/12/用hexo搭博客/" rel="next" title="hexo搭建博客">
+              <a href="/2019/01/05/用hexo搭博客/" rel="next" title="hexo搭建博客">
                 <i class="fa fa-chevron-left"></i> hexo搭建博客
               </a>
             
@@ -479,8 +492,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -497,7 +519,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -508,7 +530,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -519,7 +541,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -542,6 +564,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#历史"><span class="nav-number">1.</span> <span class="nav-text">历史</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
