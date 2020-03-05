@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[分享翻墙技巧]]></title>
+    <url>%2F2020%2F03%2F05%2F%E5%88%86%E4%BA%AB%E7%BF%BB%E5%A2%99%E6%8A%80%E5%B7%A7%2F</url>
+    <content type="text"><![CDATA[1、下载Shadowsocks.exe客户端双击启动服务器地址 172.104.99.75服务器端口 8099密码 eIW0Dnk69454e6nSwuspv9DmS201tQ0D加密方式选 aes-256-cfb最后点确定ps:这个是免费的，网络很慢，但总比不没有强，如果想网络好就自己掏钱自己搭个 2、可以在google浏览器安装SetupVPN插件，这个插件线下安装好像很麻烦，可以通过第一种方式翻出去在google浏览器应用商店直接在线安装，网络比Shadowsocks快点，不过只能在google上使用]]></content>
+      <categories>
+        <category>翻墙</category>
+      </categories>
+      <tags>
+        <tag>翻墙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[springboot实战]]></title>
     <url>%2F2019%2F08%2F29%2Fspringboot%E5%AE%9E%E6%88%982%2F</url>
     <content type="text"><![CDATA[博客后台管理系统技术栈:springboot jpa shirofreemarker layui html jquery js 第一天创建项目，我选择创建springboot模板项目，建好自带springboot依赖 &lt;!--springboot web模块--&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; 搭建环境，整合技术1.整合freemarker &lt;!--整合freemarker模板--&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-freemarker&lt;/artifactId&gt; &lt;/dependency&gt; application.yml文件添加如下 spring: freemarker: template-loader-path: classpath:/templates cache: false charset: utf-8 check-template-location: true content-type: text/html expose-request-attributes: true expose-session-attributes: true request-context-attribute: request suffix: .html 在controller文件夹下新建类 IndexController package top.caozhongjue.controller; import org.springframework.stereotype.Controller; import org.springframework.web.bind.annotation.RequestMapping; @Controller public class IndexController { @RequestMapping(&quot;/adminIndex&quot;) public String index(){ return &quot;index&quot;; } } 在templates文件夹下新建index.html文件 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Title&lt;/title&gt; &lt;/head&gt; &lt;body&gt; aaaaaa &lt;/body&gt; &lt;/html&gt; 启动springboot项目，通过启动类MyblogmanagementApplication启动 在浏览器输入 localhost:8080/adminIndex 浏览器显示 aaaaa]]></content>
@@ -75,6 +86,17 @@
       </categories>
       <tags>
         <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[scp传文件]]></title>
+    <url>%2F2019%2F06%2F10%2Fscp%E4%BC%A0%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[本地window电脑上传文件到linux服务器上去 本地服务器：A 远程服务器：B1.在 A 上运行 ssh-keygen -t rsa 在C:\Users\Administrator.ssh 下生成id_rsa 和 id_rsa.pub 两个文件（在这个步骤会出现输入的提示，和密码相似）如图所示2、 在 B 上也同样运行 ssh-keygen -t rsa （步骤和上面的一样）3、 在 B 的 /root/.ssh 下创建authorized_keys文件 把A 中 id_rsa.pub.A 文件 传到 B /root/.ssh 下通过 cat 命令把id_rsa.pub.A 写到 authorized_keys 文件中（我直接打开window电脑下的id_rsa.pub.A内容放到linux服务器的authorized_keys文件里面去）4、配置完毕上传文件将本地文件拷贝到远程scp 文件名 用户名@计算机IP:远程路径（我的文件是I盘里面的文件） 从远程将文件拷回本地scp 用户名@计算机IP:文件名 本地路径 复制目录：将本地目录拷贝到远程scp -r 目录名 用户名@计算机IP:远程路径从远程将目录拷回本地scp -r 用户名@计算机IP:目录名 本地路径]]></content>
+      <categories>
+        <category>scp</category>
+      </categories>
+      <tags>
+        <tag>scp</tag>
       </tags>
   </entry>
   <entry>
