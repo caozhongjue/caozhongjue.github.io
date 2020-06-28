@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="python解释器python.exe(windows版) python.exe(mac版) 下载安装，配置环境变量 ctrl+r打开cmd黑窗口 , cd切换到（python.exe目录下）C:\Users\Administrator\AppData\Local\Programs\Python\Python38\ 输入命令 print(&amp;quot;hello python&amp;quot;) 输出结果">
+<meta name="description" content="python解释器python.exe(windows版) python.exe(mac版) 下载安装，配置环境变量 ctrl+r打开cmd黑窗口 , cd切换到（python.exe所在目录下）C:\Users\Administrator\AppData\Local\Programs\Python\Python38\ 输入命令 print(&amp;quot;hello python&amp;quot;) 输出">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python">
 <meta property="og:url" content="http://yoursite.com/2020/06/25/初识python/index.html">
 <meta property="og:site_name" content="czj&#39;blog">
-<meta property="og:description" content="python解释器python.exe(windows版) python.exe(mac版) 下载安装，配置环境变量 ctrl+r打开cmd黑窗口 , cd切换到（python.exe目录下）C:\Users\Administrator\AppData\Local\Programs\Python\Python38\ 输入命令 print(&amp;quot;hello python&amp;quot;) 输出结果">
+<meta property="og:description" content="python解释器python.exe(windows版) python.exe(mac版) 下载安装，配置环境变量 ctrl+r打开cmd黑窗口 , cd切换到（python.exe所在目录下）C:\Users\Administrator\AppData\Local\Programs\Python\Python38\ 输入命令 print(&amp;quot;hello python&amp;quot;) 输出">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-28T03:00:03.285Z">
+<meta property="og:updated_time" content="2020-06-28T05:10:33.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python">
-<meta name="twitter:description" content="python解释器python.exe(windows版) python.exe(mac版) 下载安装，配置环境变量 ctrl+r打开cmd黑窗口 , cd切换到（python.exe目录下）C:\Users\Administrator\AppData\Local\Programs\Python\Python38\ 输入命令 print(&amp;quot;hello python&amp;quot;) 输出结果">
+<meta name="twitter:description" content="python解释器python.exe(windows版) python.exe(mac版) 下载安装，配置环境变量 ctrl+r打开cmd黑窗口 , cd切换到（python.exe所在目录下）C:\Users\Administrator\AppData\Local\Programs\Python\Python38\ 输入命令 print(&amp;quot;hello python&amp;quot;) 输出">
 
 
 
@@ -387,12 +387,11 @@
         <h1 id="python解释器"><a href="#python解释器" class="headerlink" title="python解释器"></a>python解释器</h1><p><a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener">python.exe(windows版)</a></p>
 <p><a href="https://www.python.org/downloads/mac-osx/" target="_blank" rel="noopener">python.exe(mac版)</a></p>
 <p>下载安装，配置环境变量</p>
-<p>ctrl+r打开cmd黑窗口 , cd切换到（python.exe目录下）C:\Users\Administrator\AppData\Local\Programs\Python\Python38\</p>
+<p>ctrl+r打开cmd黑窗口 , cd切换到（python.exe所在目录下）C:\Users\Administrator\AppData\Local\Programs\Python\Python38\</p>
 <p>输入命令</p>
 <pre><code>print(&quot;hello python&quot;)
 </code></pre><p>输出结果 hello python</p>
-<p>python语言注释</p>
-<p>单行注释如下</p>
+<h1 id="python语言注释"><a href="#python语言注释" class="headerlink" title="python语言注释"></a>python语言注释</h1><p>单行注释如下</p>
 <pre><code>#
 </code></pre><p>或</p>
 <pre><code>&apos;&apos;&apos;
@@ -426,6 +425,97 @@ print(9%2)
 <pre><code>4.5 
 4
 1
+</code></pre><h1 id="python缩进"><a href="#python缩进" class="headerlink" title="python缩进"></a>python缩进</h1><p>缩进指的是代码行开头的空格。</p>
+<p>在其他编程语言中，代码缩进仅出于可读性的考虑，而 Python 中的缩进非常重要。</p>
+<p>Python 使用缩进来指示代码块。</p>
+<pre><code>if 5 &gt; 2:
+      print(&quot;Five is greater than two!&quot;)
+</code></pre><p>如果省略缩进，Python 会出错：<br>语法错误：</p>
+<pre><code>if 5 &gt; 2:
+print(&quot;Five is greater than two!&quot;)
+</code></pre><p>空格数取决于程序员，但至少需要一个。</p>
+<p>您必须在同一代码块中使用相同数量的空格，否则 Python 会出错：</p>
+<pre><code>if 5 &gt; 2:
+   print(&quot;Five is greater than two!&quot;)  
+if 5 &gt; 2:
+    print(&quot;Five is greater than two!&quot;) 
+</code></pre><p>语法错误：</p>
+<pre><code>if 5 &gt; 2:
+   print(&quot;Five is greater than two!&quot;) 
+    print(&quot;Five is greater than two!&quot;)
+</code></pre><h1 id="python变量"><a href="#python变量" class="headerlink" title="python变量"></a>python变量</h1><p>变量是存放数据值的容器</p>
+<p>与其他编程语言不同，python没有声明变量的命令</p>
+<p>首次为其赋值时，才会创建变量</p>
+<pre><code>x = 10
+y = &quot;Bill&quot;
+print(x)
+print(y)
+</code></pre><p>变量不需要使用任何特定类型声明，甚至可以在设置后更改其类型。</p>
+<p>向多个变量赋值<br>Python 允许您在一行中为多个变量赋值：</p>
+<p>实例</p>
+<pre><code>x, y, z = &quot;Orange&quot;, &quot;Banana&quot;, &quot;Cherry&quot;
+print(x)
+print(y)
+print(z)
+</code></pre><p>输出变量<br>Python 的 print 语句通常用于输出变量。</p>
+<p>如需结合文本和变量，Python 使用 + 字符：</p>
+<p>实例</p>
+<pre><code>x = &quot;awesome&quot;
+print(&quot;Python is &quot; + x)
+</code></pre><p>全局变量<br>在函数外部创建的变量（如上述所有实例所示）称为全局变量。</p>
+<p>全局变量可以被函数内部和外部的每个人使用。</p>
+<p>实例<br>在函数外部创建变量，并在函数内部使用它：</p>
+<pre><code>x = &quot;awesome&quot;
+
+def myfunc():
+      print(&quot;Python is &quot; + x)
+
+myfunc()
+</code></pre><p>global 关键字<br>通常，在函数内部创建变量时，该变量是局部变量，只能在该函数内部使用。</p>
+<p>要在函数内部创建全局变量，您可以使用 global 关键字。</p>
+<p>实例<br>如果您用了 global 关键字，则该变量属于全局范围：</p>
+<pre><code>def myfunc():
+      global x
+      x = &quot;fantastic&quot;
+
+myfunc()
+
+print(&quot;Python is &quot; + x)
+</code></pre><p>python数据类型</p>
+<p>在编程中，数据类型是一个重要的概念。</p>
+<p>变量可以存储不同类型的数据，并且不同类型可以执行不同的操作。</p>
+<p>在这些类别中，Python 默认拥有以下内置数据类型：</p>
+<pre><code>文本类型：    str
+数值类型：    int, float, complex
+序列类型：    list, tuple, range
+映射类型：    dict
+集合类型：    set, frozenset
+布尔类型：    bool
+二进制类型：    bytes, bytearray, memoryview
+</code></pre><p>获取数据类型<br>您可以使用 type() 函数获取任何对象的数据类型：</p>
+<p>实例</p>
+<p>打印变量 x 的数据类型：</p>
+<pre><code>x = 10
+print(type(x))
+</code></pre><p>Python 数字<br>Python 中有三种数字类型：</p>
+<pre><code>int
+float
+complex
+</code></pre><p>为变量赋值时，将创建数值类型的变量：</p>
+<p>实例</p>
+<pre><code>x = 10    # int
+y = 6.3  # float
+z = 2j   # complex
+</code></pre><p>如需验证 Python 中任何对象的类型，请使用 type() 函数：</p>
+<p>实例</p>
+<pre><code>print(type(x))
+print(type(y))
+print(type(z))
+</code></pre><p>随机数<br>Python 没有 random() 函数来创建随机数，但 Python 有一个名为 random 的内置模块，可用于生成随机数：</p>
+<p>实例<br>导入 random 模块，并显示 1 到 9 之间的随机数：</p>
+<pre><code>import random
+
+print(random.randrange(1,10))
 </code></pre>
       
     </div>
@@ -598,7 +688,7 @@ print(9%2)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python解释器"><span class="nav-number">1.</span> <span class="nav-text">python解释器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python解释器"><span class="nav-number">1.</span> <span class="nav-text">python解释器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python语言注释"><span class="nav-number">2.</span> <span class="nav-text">python语言注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python缩进"><span class="nav-number">3.</span> <span class="nav-text">python缩进</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python变量"><span class="nav-number">4.</span> <span class="nav-text">python变量</span></a></li></ol></div>
             
 
           </div>
