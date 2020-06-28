@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="czj&#39;blog">
 <meta property="og:description" content="软件和软件测试软件的分类按层次分   系统软件 支持软件 应用软件 按结构划分  单机软件 分布式软件     c/s软件     b/s软件 按组织划分  开源软件 闭源（商业）软件 缺陷的由来和定义bug defect 定义  软件未实现产品说明书要求的功能 软件出现了产品说明书指明不应该出现的功能 软件实现了产品说明书未提到的功能 软件未实现产品说明书虽未明确提及但应该实现的目标 软件难以理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-26T10:04:43.995Z">
+<meta property="og:updated_time" content="2020-06-27T13:48:50.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软件测试">
 <meta name="twitter:description" content="软件和软件测试软件的分类按层次分   系统软件 支持软件 应用软件 按结构划分  单机软件 分布式软件     c/s软件     b/s软件 按组织划分  开源软件 闭源（商业）软件 缺陷的由来和定义bug defect 定义  软件未实现产品说明书要求的功能 软件出现了产品说明书指明不应该出现的功能 软件实现了产品说明书未提到的功能 软件未实现产品说明书虽未明确提及但应该实现的目标 软件难以理">
@@ -478,22 +478,65 @@ Windows 2000漏洞（2000）
 </code></pre><p>软件工程</p>
 <pre><code>软件工程：包括两方面的内容：软件开发技术和软件项目管理。其中，软件开发技术包括软件开发方法学、软件工具和软件工程环境。软件项目管理包括软件质量、项目估算、进度控制、人员组织、配置管理、项目计划等
 </code></pre><h1 id="软件开发过程模型"><a href="#软件开发过程模型" class="headerlink" title="软件开发过程模型"></a>软件开发过程模型</h1><pre><code>瀑布模型
-
+优点：为项目提供了按阶段划分的检瀑布模型查点
+     当前一阶段完成后，只需要去关注后续阶段
+缺点：各个阶段的划分完全固定，阶段之间产生大量的文档，极大地增加工作量。
+     由于开发模型是线性的，用户只有等到整个过程的末期才能见到开发成果，从而增加了开发风险
+     瀑布模型不适应用户需求的变化
 快速原型模型
-
+     这种模型适合预先不能确切定义需求的软件系统的开发
+优点：克服瀑布模型的缺点，减少由于软件需求不明确带来的开发风险
+缺点：所选用的开发技术和工具不一定符合主流的发展；快速建立起来的系统结构加上连续的修改可能会导致产品质量低下；
 增量模型
-
+     增量模型是把待开发的软件系统模块化，将每个模块作为一个增量组件，从而分批次地分析、设计、编码和测试这些增量组件
+优点：可以分批次地提交软件产品；
+     以组件为单位进行开发降低了软件开发的风险；
+     开发顺序灵活；
+限制：要求项目管理人员把握全局的水平较高
 迭代模型
-
+优点：降低了在一个增量上的开支风险。
+     降低了产品无法按照既定进度进入市场的风险。
+     加快了整个开发工作的进度。
+     迭代过程这种模式使适应需求的变化会更容易此。
 螺旋模型
+优点：螺旋模型最大的特点在于引入了其他模型不具备的风险分析，使软件在无法排除重大风险时有机会停止，以减小损失。
+     螺旋模型更适合大型的昂贵的系统级的软件应用
 </code></pre><h1 id="软件测试过程模型"><a href="#软件测试过程模型" class="headerlink" title="软件测试过程模型"></a>软件测试过程模型</h1><pre><code>V模型
-
+揭示了开发过程与测试过程中各阶段的对应关系
+缺点与不足
+    v模型仅仅把测试过程作为在需求分析、系统设计及编码之后的一个阶段，忽视了测试对需求分析、系统设计的验证
+    需求的满足一直到后期的验收测试才被验证；
+    没有体现出“尽早地和不断进行软件测试”的原则。
 W模型
-
+    测试与开发的并行关系
+优点：
+    测试的活动与软件开发同步进行
+    测试对象不仅仅是程序，包括需求和设计
+    尽早发现软件缺可降低软件开发的成本
+局限性：
+    在W模型中，需求、设计、编码等活动被视为串行的，这样无法支持迭代的开发模型
 H、X模型
 
 测试过程理念
-</code></pre>
+</code></pre><h1 id="评审概述"><a href="#评审概述" class="headerlink" title="评审概述"></a>评审概述</h1><p>评审的定义</p>
+<pre><code>在正式的会议上将软件项目的成果（包括各阶段的文档、产生的代码等）提交给用户、客户或有关部门人员对软件产品进行评价和批准
+需求评审
+    《软件需求》
+    《测试需求》
+设计评审
+    《概要设计》
+    《详细设计》
+代码评审
+    《代码规范》
+测试评审
+    《测试计例》
+    《测试用例规范》
+    《缺陷报告规范》
+</code></pre><p>评审的目的</p>
+<p>评审的目标</p>
+<p>评审的分类</p>
+<p>评审的步骤：制定评审计划—-评审准备—–评审会议举行—-对评审结果采取行动—-评审结果被跟踪直至完成—-提交和归档</p>
+
       
     </div>
     
@@ -665,7 +708,7 @@ H、X模型
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#软件和软件测试"><span class="nav-number">1.</span> <span class="nav-text">软件和软件测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件的分类"><span class="nav-number">1.1.</span> <span class="nav-text">软件的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺陷的由来和定义"><span class="nav-number">1.2.</span> <span class="nav-text">缺陷的由来和定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件测试的由来和发展"><span class="nav-number">1.3.</span> <span class="nav-text">软件测试的由来和发展</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件测试的定义"><span class="nav-number">2.</span> <span class="nav-text">软件测试的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件的典型错误"><span class="nav-number">3.</span> <span class="nav-text">软件的典型错误</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对软件测试的误解和职业要求"><span class="nav-number">4.</span> <span class="nav-text">对软件测试的误解和职业要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件生命周期和软件工程"><span class="nav-number">5.</span> <span class="nav-text">软件生命周期和软件工程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件开发过程模型"><span class="nav-number">6.</span> <span class="nav-text">软件开发过程模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件测试过程模型"><span class="nav-number">7.</span> <span class="nav-text">软件测试过程模型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#软件和软件测试"><span class="nav-number">1.</span> <span class="nav-text">软件和软件测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件的分类"><span class="nav-number">1.1.</span> <span class="nav-text">软件的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺陷的由来和定义"><span class="nav-number">1.2.</span> <span class="nav-text">缺陷的由来和定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件测试的由来和发展"><span class="nav-number">1.3.</span> <span class="nav-text">软件测试的由来和发展</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件测试的定义"><span class="nav-number">2.</span> <span class="nav-text">软件测试的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件的典型错误"><span class="nav-number">3.</span> <span class="nav-text">软件的典型错误</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对软件测试的误解和职业要求"><span class="nav-number">4.</span> <span class="nav-text">对软件测试的误解和职业要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件生命周期和软件工程"><span class="nav-number">5.</span> <span class="nav-text">软件生命周期和软件工程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件开发过程模型"><span class="nav-number">6.</span> <span class="nav-text">软件开发过程模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件测试过程模型"><span class="nav-number">7.</span> <span class="nav-text">软件测试过程模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评审概述"><span class="nav-number">8.</span> <span class="nav-text">评审概述</span></a></li></ol></div>
             
 
           </div>
