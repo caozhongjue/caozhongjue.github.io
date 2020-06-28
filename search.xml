@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[python]]></title>
     <url>%2F2020%2F06%2F25%2F%E5%88%9D%E8%AF%86python%2F</url>
-    <content type="text"><![CDATA[python解释器python.exe(windows版) python.exe(mac版) 下载安装，配置环境变量 ctrl+r打开cmd黑窗口 , cd切换到（python.exe目录下）C:\Users\Administrator\AppData\Local\Programs\Python\Python38\ 输入命令 print(&quot;hello python&quot;) python语言注释 单行注释如下 # 或 &apos;&apos;&apos; &apos;&apos;&apos; 多行注释如下 &quot;&quot;&quot; &quot;&quot;&quot; 代码 # 单行注释 &apos;&apos;&apos; 也是单行注释 &apos;&apos;&apos; &quot;&quot;&quot; 多行注释 &quot;&quot;&quot; print(&quot;aaa22&quot;) 运算符 + - * / // 取整除 返回整数 % 取余数 返回余数 ** 幂 又称次方、乘方 代码 print(9/2) print(9//2) print(9%2)]]></content>
+    <content type="text"><![CDATA[python解释器python.exe(windows版) python.exe(mac版) 下载安装，配置环境变量 ctrl+r打开cmd黑窗口 , cd切换到（python.exe目录下）C:\Users\Administrator\AppData\Local\Programs\Python\Python38\ 输入命令 print(&quot;hello python&quot;) 输出结果 hello python python语言注释 单行注释如下 # 或 &apos;&apos;&apos; &apos;&apos;&apos; 多行注释如下 &quot;&quot;&quot; &quot;&quot;&quot; 代码 # 单行注释 &apos;&apos;&apos; 也是单行注释 &apos;&apos;&apos; &quot;&quot;&quot; 多行注释 &quot;&quot;&quot; print(&quot;aaa22&quot;) 运算符 + - * / // 取整除 返回整数 % 取余数 返回余数 ** 幂 又称次方、乘方 代码 print(9/2) print(9//2) print(9%2) 输出结果 4.5 4 1]]></content>
       <categories>
         <category>python</category>
       </categories>
