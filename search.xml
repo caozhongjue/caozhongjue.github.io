@@ -25,7 +25,7 @@
   <entry>
     <title><![CDATA[ps操作技巧]]></title>
     <url>%2F2020%2F03%2F07%2Fps%E6%93%8D%E4%BD%9C%E6%8A%80%E5%B7%A7%2F</url>
-    <content type="text"><![CDATA[快捷键ctrl+鼠标滚轮 图像左右滚动shit+鼠标滚轮 图像上下滚动alt+鼠标滚轮 图像放大缩小]]></content>
+    <content type="text"><![CDATA[快捷键ctrl+鼠标滚轮 图像左右滚动 shit+鼠标滚轮 图像上下滚动 alt+鼠标滚轮 图像放大缩小 空格键+鼠标左键 拖动画布 ctrl+r 标尺显示隐藏 ctrl+t 缩放图层 ctrl+D 取消选区 ctrl+M 曲线 ctrl+L 色阶 ctrl+J 复制图层 ctrl+alt+z 撤消 ctrl+n 新建 位图：像素图，由一个个像素点组成矢量图 F键:全屏与正常屏切换 ctrl+tab 窗口切换 rgb模式，网络，屏幕显示 ctrl+shift+s 存储为 jpg格式图片透明默认白色 png格式图片透明在图片为透明 图像大小 alt+ctrl+i 画布大小 alt+ctrl+c 存储可调品质，改变内容大小 存储为web格式，可调参数 矢量图：由一个点链接在一起组成，图片放大不会失真，区别：位图空间大，矢量图空间小 ps钢笔工具：1、点完第一个点，再点第二个点后不松手，可调线成曲线，2、按alt可调线成曲线，3、按ctrl也可调线成曲线或拖动线点位置]]></content>
       <categories>
         <category>ps</category>
       </categories>
