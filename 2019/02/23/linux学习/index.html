@@ -116,7 +116,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdO3N9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/ZdXMxP.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/05/Zdjcm8.png">
-<meta property="og:updated_time" content="2020-07-11T03:15:49.397Z">
+<meta property="og:updated_time" content="2020-07-11T03:25:12.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux centos">
 <meta name="twitter:description" content="linux各个版本根据用途不同可以做如下划分：(1)家庭用途可选择版本有：Linux Mint、Ubuntu(2)商业用途可选择版本有：Debian、RHEL、CentOS(3)挑战用途可选择版本有：Gentoo、LFS(4)理想用途可选择版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris  redhat、centos下载地址(1)redhat(2)centos选择dv">
@@ -592,75 +592,78 @@ sftp&gt; ls /root                  # 查看远端/root路径下的文件
 Fetching /root/apache-tomcat-7.0.90.tar.gz  to C:\Users\Administrator\Documents
 sftp&gt; lls                    # 查看本地路径下的文件
 </code></pre><p><img src="https://s2.ax1x.com/2019/07/05/Zdjcm8.png" alt="Zdjcm8.png"></p>
-<h2 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h2><p> [root@localhost ~]#   ‘root’表示用户名叫root; ‘localhost’主机名<br>                   ‘~’表示当前登录的该用户在自己的目录，<br>            ‘#’表示管理员用户</p>
-<h2 id="chen-localhost-‘chen’-表示用户名叫chen-’-’表普通用户"><a href="#chen-localhost-‘chen’-表示用户名叫chen-’-’表普通用户" class="headerlink" title="[chen@localhost ~]$   ‘chen’ 表示用户名叫chen ;’$’表普通用户"></a>[chen@localhost ~]$   ‘chen’ 表示用户名叫chen ;’$’表普通用户</h2><p>常用命令</p>
-<p>clear  或 ctrl键+l   #清屏<br>pwd   #查看路径<br>ls  #简单查看目录下的内容<br>mkdir 目录名1 目录2   #创建目录1和目录2<br>mkdir -p 目录1/目录名2/目录名2   #创建层级文件夹目录1/目录2/目录3</p>
-<p>tree  #树状图查看目录内容（不要用tree查看根目录）</p>
-<p>cd  #切换路径</p>
-<p>/   #表示根目录<br>./   #当前目录</p>
-<h2 id="上一级目录"><a href="#上一级目录" class="headerlink" title="..   #上一级目录"></a>..   #上一级目录</h2><p>绝对路径：永远从根目录出发（/） 例：cd /</p>
+<h2 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h2><pre><code>[root@localhost ~]#   &apos;root&apos;表示用户名叫root; &apos;localhost&apos;主机名 
+                  ‘~’表示当前登录的该用户在自己的目录，
+           ‘#’表示管理员用户
+
+[chen@localhost ~]$   &apos;chen&apos; 表示用户名叫chen ;&apos;$&apos;表普通用户
+</code></pre><hr>
+<p>常用命令</p>
+<p>clear  或 ctrl键+l   清屏<br>pwd   查看路径<br>ls  简单查看目录下的内容<br>mkdir 目录名1 目录2   创建目录1和目录2<br>mkdir -p 目录1/目录名2/目录名2   创建层级文件夹目录1/目录2/目录3</p>
+<p>tree  树状图查看目录内容（不要用tree查看根目录）</p>
+<p>cd  切换路径</p>
+<p>/   表示根目录<br>./   当前目录</p>
+<h2 id="上一级目录"><a href="#上一级目录" class="headerlink" title="..   上一级目录"></a>..   上一级目录</h2><p>绝对路径：永远从根目录出发（/） 例：cd /</p>
 <h2 id="相对路径：永远从当前路径出发，例：-cd-或-cd"><a href="#相对路径：永远从当前路径出发，例：-cd-或-cd" class="headerlink" title="相对路径：永远从当前路径出发，例： cd ./  或 cd ../"></a>相对路径：永远从当前路径出发，例： cd ./  或 cd ../</h2><p>练习：<br>①在root目录下创建目录a1和a2<br>②在root目录下创建层级目录a3/a4<br>③在root目录下向home目录中创建层级目录b1/b2<br>④从root目录用相对路径切换到b2</p>
-<h2 id="⑥从b2用绝对路径切换到a4"><a href="#⑥从b2用绝对路径切换到a4" class="headerlink" title="⑥从b2用绝对路径切换到a4"></a>⑥从b2用绝对路径切换到a4</h2><p>ifconfig    #查看ip信息   （windows上用ipconfig）<br>ping ip地址 #测ip是否联通</p>
-<p>ctrl键 + c  #终止命令<br>ctrl键 + z  #撤回命令</p>
-<p>service network restart  #网络服务重启  restart:重启  start:启动              stop:停止</p>
-<p>uname -r  #查看linux内核版本<br>netstat -an #查找linux下所有端口（window 下也可用）</p>
+<h2 id="⑥从b2用绝对路径切换到a4"><a href="#⑥从b2用绝对路径切换到a4" class="headerlink" title="⑥从b2用绝对路径切换到a4"></a>⑥从b2用绝对路径切换到a4</h2><p>ifconfig    查看ip信息   （windows上用ipconfig）<br>ping ip地址 测ip是否联通</p>
+<p>ctrl键 + c  终止命令<br>ctrl键 + z  撤回命令</p>
+<p>service network restart  网络服务重启  restart:重启  start:启动              stop:停止</p>
+<p>uname -r  查看linux内核版本<br>netstat -an 查找linux下所有端口（window 下也可用）</p>
 <hr>
-<p>ls -l 或ll  #详细查看目录下内容<br>ls -la    #-a：表显示隐藏内容</p>
-<pre><code>    #-l:表示显示详细内容
-#-h:表单位    
+<p>ls -l 或ll  详细查看目录下内容<br>ls -la    -a：表显示隐藏内容<br>          -l:表示显示详细内容</p>
+<pre><code>-h:表单位    
 </code></pre><hr>
 <p>drwxr-xr-x 3 root root  4096 07-09 21:36 a3<br>-rw——- 1 root root  1267 07-09 18:27 anaconda-ks.cfg</p>
-<p>①d  #表目录；- #表文件<br>②rwxr-xr-x   #权限<br>③3 #表该目录下有三个子文件或目录<br>④root root  #第一个root：文件或目录的属主；第二个root：文件或目录的属组<br>⑤4096 #表文件大小 单位b<br>⑥07-09 21:36   #文件或目录的最后修改时间</p>
-<h2 id="⑦a3-文件或目录名"><a href="#⑦a3-文件或目录名" class="headerlink" title="⑦a3   文件或目录名"></a>⑦a3   文件或目录名</h2><p>tab键   #补全路径<br>date  #查看linux系统时间<br>date -s “2020-06-01 14:20:20”  #修改系统时间</p>
-<h2 id="cal-日历形式查看系统日期"><a href="#cal-日历形式查看系统日期" class="headerlink" title="cal #日历形式查看系统日期"></a>cal #日历形式查看系统日期</h2><p>touch 路径/文件1 路径/文件2  #同时创建文件1和文件2</p>
-<h2 id="touch-旧文件1-更新文件1最后修改时间"><a href="#touch-旧文件1-更新文件1最后修改时间" class="headerlink" title="touch 旧文件1   #更新文件1最后修改时间"></a>touch 旧文件1   #更新文件1最后修改时间</h2><p>rmdir 目录名1 目录名2  #同时删除空目录1和空目录2<br>rm -rf 目录名1 文件名1  #强制删除目录1和文件1 （谨慎使用）</p>
-<pre><code>            #-r:表删除该目录及子目录文件
-#-f:表示强制删除
+<p>①d  表目录；- 表文件<br>②rwxr-xr-x   权限<br>③3 表该目录下有三个子文件或目录<br>④root root  第一个root：文件或目录的属主；第二个root：文件或目录的属组<br>⑤4096 表文件大小 单位b<br>⑥07-09 21:36   文件或目录的最后修改时间</p>
+<h2 id="⑦a3-文件或目录名"><a href="#⑦a3-文件或目录名" class="headerlink" title="⑦a3   文件或目录名"></a>⑦a3   文件或目录名</h2><p>tab键  补全路径<br>date  查看linux系统时间<br>date -s “2020-06-01 14:20:20”  修改系统时间</p>
+<h2 id="cal-日历形式查看系统日期"><a href="#cal-日历形式查看系统日期" class="headerlink" title="cal 日历形式查看系统日期"></a>cal 日历形式查看系统日期</h2><p>touch 路径/文件1 路径/文件2  同时创建文件1和文件2</p>
+<h2 id="touch-旧文件1-更新文件1最后修改时间"><a href="#touch-旧文件1-更新文件1最后修改时间" class="headerlink" title="touch 旧文件1   更新文件1最后修改时间"></a>touch 旧文件1   更新文件1最后修改时间</h2><p>rmdir 目录名1 目录名2  同时删除空目录1和空目录2<br>rm -rf 目录名1 文件名1  强制删除目录1和文件1 （谨慎使用）<br>                        -r:表删除该目录及子目录文件</p>
+<pre><code>-f:表示强制删除
 </code></pre><hr>
-<h2 id="↑↓键-复制上一条或下一条命令"><a href="#↑↓键-复制上一条或下一条命令" class="headerlink" title="↑↓键   #复制上一条或下一条命令"></a>↑↓键   #复制上一条或下一条命令</h2><p>①修改系统时间为当前时间<br>②删除上节课新建的内容<br>③在root目录下新建文件1.txt 文件2.txt和在home目录下新建文件3.txt<br>④更新1.txt的最后修改时间</p>
+<h2 id="↑↓键-复制上一条或下一条命令"><a href="#↑↓键-复制上一条或下一条命令" class="headerlink" title="↑↓键   复制上一条或下一条命令"></a>↑↓键   复制上一条或下一条命令</h2><p>①修改系统时间为当前时间<br>②删除上节课新建的内容<br>③在root目录下新建文件1.txt 文件2.txt和在home目录下新建文件3.txt<br>④更新1.txt的最后修改时间</p>
 <hr>
-<p>cp 源文件路径/源文件名1 目标路径   #复制文件1到指定路径下</p>
-<p>cp -R 源文件路径/源目录名1 目标路径 #复制目录及里面的内容到目标路径</p>
+<p>cp 源文件路径/源文件名1 目标路径   复制文件1到指定路径下</p>
+<p>cp -R 源文件路径/源目录名1 目标路径 复制目录及里面的内容到目标路径</p>
 <hr>
 <p>#移动/剪切；重命名</p>
-<p>mv 源文件路径/源文件（目录）名1 目标路径  #剪切文件（目录）1到目标路径</p>
-<p>mv 源文件路径/源文件名1 源文件路径/新名 #重命名某文件</p>
-<p>mv 源文件路径/源文件（目录）名1 目标路径/新文件名 #移动该文件并重命名</p>
+<p>mv 源文件路径/源文件（目录）名1 目标路径  剪切文件（目录）1到目标路径</p>
+<p>mv 源文件路径/源文件名1 源文件路径/新名 重命名某文件</p>
+<p>mv 源文件路径/源文件（目录）名1 目标路径/新文件名 移动该文件并重命名</p>
 <hr>
 <p>练习：<br>①删了之前操作的内容<br>②在root下新建目录aa1,复制aa1到home目录下<br>③修改home目录下的aa1为bb1<br>④在root下的aa1下新建文件1.txt，复制1.txt到bb1下</p>
 <p>⑤在bb1下新建文件2.txt，剪切到aa1目录下<br>⑥在bb1下新建文件3.txt，剪切到aa1目录下并改名4.txt</p>
-<h2 id="⑦重命名4-txt为5-txt"><a href="#⑦重命名4-txt为5-txt" class="headerlink" title="⑦重命名4.txt为5.txt"></a>⑦重命名4.txt为5.txt</h2><p>常用查看文件命令<br>cat 文件名  #查看文件内容    （适合看内容少的文件）</p>
-<p>cat -n 文件名 #查看文件内容并显示行数</p>
-<p>more 文件名 #查看文件并显示阅读进度（回车：下一行； 空格键：下一页 q:退出 ctrl+c:退出）</p>
-<p>less 文件名 #查看文件（回车：下一行； 空格键：下一页 ↑↓键：翻行  q:退出 ctrl+c:终止）</p>
-<p>head -n 文件名  #查看文件的前n行（n是数字）</p>
-<p>tail -n 文件名  #查看文件的后n行（n是数字）</p>
-<p>tail -f 文件名 #查看动态文件 （-f：循环读取  ctrl+c:终止查看）</p>
-<h2 id="wc-l-文件名-统计文件的行数"><a href="#wc-l-文件名-统计文件的行数" class="headerlink" title="wc -l 文件名  #统计文件的行数"></a>wc -l 文件名  #统计文件的行数</h2><p>编辑文件内容<br>①vi 文件名 #进入文件的命令模式（可用来查看文件）<br>②i  #从命令模式进入编辑模式<br>③各种编辑<br>④esc键  #从编辑模式回到命令模式</p>
-<h2 id="⑤-wq-表进入底行模式-w表示保存-q表退出-表强制"><a href="#⑤-wq-表进入底行模式-w表示保存-q表退出-表强制" class="headerlink" title="⑤:wq!   # : 表进入底行模式   w表示保存 q表退出  !表强制"></a>⑤:wq!   # : 表进入底行模式   w表示保存 q表退出  !表强制</h2><p>练习：</p>
+<h2 id="⑦重命名4-txt为5-txt"><a href="#⑦重命名4-txt为5-txt" class="headerlink" title="⑦重命名4.txt为5.txt"></a>⑦重命名4.txt为5.txt</h2><p>常用查看文件命令<br>cat 文件名  查看文件内容    （适合看内容少的文件）</p>
+<p>cat -n 文件名 查看文件内容并显示行数</p>
+<p>more 文件名  查看文件并显示阅读进度（回车：下一行； 空格键：下一页 q:退出 ctrl+c:退出）</p>
+<p>less 文件名 查看文件（回车：下一行； 空格键：下一页 ↑↓键：翻行  q:退出 ctrl+c:终止）</p>
+<p>head -n 文件名  查看文件的前n行（n是数字）</p>
+<p>tail -n 文件名  查看文件的后n行（n是数字）</p>
+<p>tail -f 文件名 查看动态文件 （-f：循环读取  ctrl+c:终止查看）</p>
+<h2 id="wc-l-文件名-统计文件的行数"><a href="#wc-l-文件名-统计文件的行数" class="headerlink" title="wc -l 文件名  统计文件的行数"></a>wc -l 文件名  统计文件的行数</h2><p>编辑文件内容<br>①vi 文件名 进入文件的命令模式（可用来查看文件）<br>②i  从命令模式进入编辑模式<br>③各种编辑<br>④esc键  从编辑模式回到命令模式</p>
+<h2 id="⑤-wq-表进入底行模式-w表示保存-q表退出-表强制"><a href="#⑤-wq-表进入底行模式-w表示保存-q表退出-表强制" class="headerlink" title="⑤:wq!   : 表进入底行模式   w表示保存 q表退出  !表强制"></a>⑤:wq!   : 表进入底行模式   w表示保存 q表退出  !表强制</h2><p>练习：</p>
 <h2 id="①编辑某个文件，保存退出后查看"><a href="#①编辑某个文件，保存退出后查看" class="headerlink" title="①编辑某个文件，保存退出后查看"></a>①编辑某个文件，保存退出后查看</h2><blockquote>
-<p>(复制文件1内容导入到另一文件2，并覆盖)<br>例： cat 1.txt &gt; 2.txt  #把1.txt的内容覆盖到2.txt</p>
+<p>(复制文件1内容导入到另一文件2，并覆盖)<br>例： cat 1.txt &gt; 2.txt  把1.txt的内容覆盖到2.txt</p>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>（复制文件1内容导入到另一文件2，并追加）<br>例： cat 1.txt &gt;&gt; 2.txt  #把1.txt的内容复制到2.txt里，并追加在2.txt内容的后面</p>
+<p>（复制文件1内容导入到另一文件2，并追加）<br>例： cat 1.txt &gt;&gt; 2.txt  把1.txt的内容复制到2.txt里，并追加在2.txt内容的后面</p>
 </blockquote>
 </blockquote>
 <hr>
-<p>查找文件中指定内容，用‘|’和‘grep’命令<br>|  #将前一条命令的输出内容，作为下一条命令的输入<br>grep  #查找指定字符</p>
-<p>①例：cat 1.txt | grep “木兰”  #查看1.txt的内容，在里面找到包含“木兰”的内容</p>
-<p>②grep “木兰” 要找的内容的文件的路径 #结果同①，找某文件中跟木兰相关的内容</p>
-<p>③netstat -an | grep 80 #查找系统中80端口的信息</p>
-<p>查找文件:find<br>find 路径 参数 参数值<br>例：find ./ -name 1.txt    #在当前目录下找到所有名字为1.txt的文件</p>
-<p>例：find ./aa1/ -name ‘<em>txt</em>‘   #在aa1目录下找到所有名字带txt的文件，“*”表模糊匹配</p>
+<p>查找文件中指定内容，用‘|’和‘grep’命令<br>|  将前一条命令的输出内容，作为下一条命令的输入<br>grep  查找指定字符</p>
+<p>①例：cat 1.txt | grep “木兰”  查看1.txt的内容，在里面找到包含“木兰”的内容</p>
+<p>②grep “木兰” 要找的内容的文件的路径 结果同①，找某文件中跟木兰相关的内容</p>
+<p>③netstat -an | grep 80 查找系统中80端口的信息</p>
+<p>查找文件:find<br>find 路径 参数 参数值<br>例：find ./ -name 1.txt    在当前目录下找到所有名字为1.txt的文件</p>
+<p>例：find ./aa1/ -name ‘<em>txt</em>‘   在aa1目录下找到所有名字带txt的文件，“*”表模糊匹配</p>
 <hr>
 <p>压缩和解压   后缀:压缩文件（.gz）  压缩包（tar.gz 或 .tgz）</p>
-<p>①压缩文件命令：gzip   #只能压缩文件，不能压缩目录，源文件直接变成压缩文件<br>gzip 路径/文件名1  #压缩文件1为文件1.gz </p>
-<p>②解压命令<br>gzip -d 路径/压缩文件名或压缩包名<br>gunzip  路径/压缩文件名或压缩包名   #源压缩文件或源压缩包直接变成解压文件，可一次性解压多个</p>
+<p>①压缩文件命令：gzip   只能压缩文件，不能压缩目录，源文件直接变成压缩文件<br>gzip 路径/文件名1  压缩文件1为文件1.gz </p>
+<p>②解压命令<br>gzip -d 路径/压缩文件名或压缩包名<br>gunzip  路径/压缩文件名或压缩包名   源压缩文件或源压缩包直接变成解压文件，可一次性解压多个</p>
 <hr>
 <p>练习：<br>①压缩四个文件</p>
-<h2 id="②分别用两个解压命令解压两次"><a href="#②分别用两个解压命令解压两次" class="headerlink" title="②分别用两个解压命令解压两次"></a>②分别用两个解压命令解压两次</h2><p>③对多个文件和目录进行打包并压缩   #打包压缩后，源文件或目录仍存在<br>tar -czvf 目标路径/新压缩包名.tar.gz 源文件或目录路径/源文件名    </p>
-<p>④解压<br>tar -xzvf 压缩文件名.gz   #解压单个压缩文件到当前目录下</p>
+<h2 id="②分别用两个解压命令解压两次"><a href="#②分别用两个解压命令解压两次" class="headerlink" title="②分别用两个解压命令解压两次"></a>②分别用两个解压命令解压两次</h2><p>③对多个文件和目录进行打包并压缩   打包压缩后，源文件或目录仍存在<br>tar -czvf 目标路径/新压缩包名.tar.gz 源文件或目录路径/源文件名    </p>
+<p>④解压<br>tar -xzvf 压缩文件名.gz   解压单个压缩文件到当前目录下</p>
 <p>tar -xzvf 源压缩包路径/压缩包名 -C 目标路径  </p>
 <p>例：tar -xzvf  /root/aa1.tar.gz -C /root/</p>
 <p>练习：<br>①在root下压缩一个目录和一个文件<br>②将该压缩包解压到home目录下</p>
@@ -670,8 +673,8 @@ sftp&gt; lls                    # 查看本地路径下的文件
 <p>练习：<br>①在windows上新建压缩包，上传到linux</p>
 <h2 id="②下载linux的文件到本地"><a href="#②下载linux的文件到本地" class="headerlink" title="②下载linux的文件到本地"></a>②下载linux的文件到本地</h2><p>3.FTP工具（界面形式传输linux和windows间的文件）</p>
 <hr>
-<p>4.windows上传到linux的zip压缩包如何解压<br>unzip -d 目标路径 待解压文件路径/压缩包名  #把压缩文件解压到目标路径</p>
-<p>unzip 待解押文件  #把压缩文件解压到当前路径</p>
+<p>4.windows上传到linux的zip压缩包如何解压<br>unzip -d 目标路径 待解压文件路径/压缩包名  把压缩文件解压到目标路径</p>
+<p>unzip 待解押文件  把压缩文件解压到当前路径</p>
 <hr>
 <p>练习：</p>
 <h2 id="①将上传到linux的zip压缩包解压到-home目录下"><a href="#①将上传到linux的zip压缩包解压到-home目录下" class="headerlink" title="①将上传到linux的zip压缩包解压到/home目录下"></a>①将上传到linux的zip压缩包解压到/home目录下</h2><p>linux间的远程访问</p>
@@ -682,41 +685,41 @@ sftp&gt; lls                    # 查看本地路径下的文件
 <p>②远程操作—远程本地复制文件（夹）到他人的linux</p>
 <p>scp -r  被复制文件的路径和名字 被访问的机器的用户名@被访问机器的ip:/目标路径</p>
 <hr>
-<p>其它<br>①df -h  #查看磁盘信息 -h表单位<br>②free -m  #查看可用内存  -m表示单位（mb）<br>③top  #动态查看系统资源 （默认每5秒刷新一次） ctrl+c退出<br>④who #查看哪些用户登录了该系统<br>⑤ps -ef #查看正在进行的所有进程 -e表显示所有进程 -f显示uid和pid(进程号)<br>  ps -ef | grep tomcat #在所有运行中的进程中找到tomcat（有结果表示tomcat正在运行，没有表示被关闭）</p>
-<p>⑥kill -9 pid号 #强制终止进程 -9表强制（配合ps -ef 使用）<br>⑦echo xxx   #在屏幕上显示xxx;echo可将输入的字符串输出在显示器上，一般起到提升作用<br>⑧设置自定义变量  变量名=变量的值<br>  显示该变量 echo $变量名</p>
+<p>其它<br>①df -h  查看磁盘信息 -h表单位<br>②free -m  查看可用内存  -m表示单位（mb）<br>③top  动态查看系统资源 （默认每5秒刷新一次） ctrl+c退出<br>④who 查看哪些用户登录了该系统<br>⑤ps -ef 查看正在进行的所有进程 -e表显示所有进程 -f显示uid和pid(进程号)<br>  ps -ef | grep tomcat 在所有运行中的进程中找到tomcat（有结果表示tomcat正在运行，没有表示被关闭）</p>
+<p>⑥kill -9 pid号  强制终止进程 -9表强制（配合ps -ef 使用）<br>⑦echo xxx   在屏幕上显示xxx;echo可将输入的字符串输出在显示器上，一般起到提升作用<br>⑧设置自定义变量  变量名=变量的值<br>  显示该变量 echo $变量名</p>
 <hr>
-<p>vi编辑器编辑文件<br>①vi 文件名 #进入文件的命令模式（可用来查看文件）<br>②i  #从命令模式进入编辑模式<br>③各种编辑<br>④esc键  #从编辑模式回到命令模式</p>
-<h2 id="⑤-wq-表进入底行模式-w表示保存-q表退出-表强制-1"><a href="#⑤-wq-表进入底行模式-w表示保存-q表退出-表强制-1" class="headerlink" title="⑤:wq!   # : 表进入底行模式   w表示保存 q表退出  !表强制"></a>⑤:wq!   # : 表进入底行模式   w表示保存 q表退出  !表强制</h2><p>命令模式：定位，复制，粘贴，删除；<br>编辑模式：编辑文本内容；<br>末行模式：读写，退出，替换，显示行号；</p>
-<p>①:1,10s/女/男/g   #把文件中的1到10行里的字符“女”替换成“男”<br>            “$”符号可表示最后一行<br>②u  #撤销操作</p>
-<p>③:w 文件名 #另存为<br>   :w   &gt;  文件名   #将编辑的内容覆盖到某文件<br>④dd    #删除光标所在行<br>  ndd   #从光标所在行开始向下删除n行 （n是数字）</p>
-<p>⑤x    #删除光标所在字符</p>
-<p>⑥复制粘贴<br>yy   #复制光标所在行<br>nyy   ##从光标所在行开始向下复制n行 （n是数字）</p>
-<p>⑦/女     #搜索字符“女”，按n向下查找，按N向上查找</p>
-<p>⑧从命令模式进入编辑模式<br>i   #光标在前<br>a    #光标在后<br>o    #向下新增一行</p>
-<h2 id="O-向上新增一行"><a href="#O-向上新增一行" class="headerlink" title="O     #向上新增一行"></a>O     #向上新增一行</h2><p>rpm -ivh 安装文件名    #安装某文件</p>
-<p>p    #粘贴<br>———————————————————-·<br>-rw-r–r– 1 root root     0 07-10 18:24 55.txt</p>
+<p>vi编辑器编辑文件<br>①vi 文件名 进入文件的命令模式（可用来查看文件）<br>②i  从命令模式进入编辑模式<br>③各种编辑<br>④esc键  从编辑模式回到命令模式</p>
+<h2 id="⑤-wq-表进入底行模式-w表示保存-q表退出-表强制-1"><a href="#⑤-wq-表进入底行模式-w表示保存-q表退出-表强制-1" class="headerlink" title="⑤:wq!   : 表进入底行模式   w表示保存 q表退出  !表强制"></a>⑤:wq!   : 表进入底行模式   w表示保存 q表退出  !表强制</h2><p>命令模式：定位，复制，粘贴，删除；<br>编辑模式：编辑文本内容；<br>末行模式：读写，退出，替换，显示行号；</p>
+<p>①:1,10s/女/男/g   把文件中的1到10行里的字符“女”替换成“男”<br>            “$”符号可表示最后一行<br>②u  撤销操作</p>
+<p>③:w 文件名 另存为<br>   :w   &gt;  文件名   将编辑的内容覆盖到某文件<br>④dd    删除光标所在行<br>  ndd   从光标所在行开始向下删除n行 （n是数字）</p>
+<p>⑤x    删除光标所在字符</p>
+<p>⑥复制粘贴<br>yy   复制光标所在行<br>nyy   从光标所在行开始向下复制n行 （n是数字）</p>
+<p>⑦/女     搜索字符“女”，按n向下查找，按N向上查找</p>
+<p>⑧从命令模式进入编辑模式<br>i    光标在前<br>a    光标在后<br>o    向下新增一行</p>
+<h2 id="O-向上新增一行"><a href="#O-向上新增一行" class="headerlink" title="O    向上新增一行"></a>O    向上新增一行</h2><p>rpm -ivh 安装文件名    安装某文件</p>
+<p>p    粘贴<br>———————————————————-·<br>-rw-r–r– 1 root root     0 07-10 18:24 55.txt</p>
 <p>当用户创建文件，文件的属主是该用户，文件的属组是该用户所属的组<br>用户通过属于某组来拥有对该文件的一些权限</p>
 <p>一个用户可以属于多个组，主组和附加组</p>
-<p>cat /etc/passwd   #查看用户的信息 </p>
+<p>cat /etc/passwd   查看用户的信息 </p>
 <p>chen:x:500:500::/home/chen:/bin/bash<br>①用户名<br>②密码的占位符<br>③uid(用户id)<br>④gid（组id）<br>⑤用户的描述信息<br>⑥用户自己的目录<br>⑦登录shell的权限</p>
-<h2 id="cat-etc-group-查看组的信息"><a href="#cat-etc-group-查看组的信息" class="headerlink" title="cat /etc/group   #查看组的信息"></a>cat /etc/group   #查看组的信息</h2><p>useradd 用户名  #添加新用户，默认属于自己组</p>
-<p>useradd -g 组名 用户名 #添加新用户并分配到某组 </p>
+<h2 id="cat-etc-group-查看组的信息"><a href="#cat-etc-group-查看组的信息" class="headerlink" title="cat /etc/group   查看组的信息"></a>cat /etc/group   查看组的信息</h2><p>useradd 用户名  添加新用户，默认属于自己组</p>
+<p>useradd -g 组名 用户名 添加新用户并分配到某组 </p>
 <hr>
-<p>su - 用户名 #切换用户（root切换到普通用户不用输密码，普通用户切换管理员用户需输入密码 ）</p>
-<p>passwd    #更改当前用户密码（root不需输入旧密码，普通用户需输入旧密码）</p>
-<h2 id="passwd-用户名-更改指定用户密码（管理员用户可更改普通用户密码，普通用户不可更改管理员用户密码）"><a href="#passwd-用户名-更改指定用户密码（管理员用户可更改普通用户密码，普通用户不可更改管理员用户密码）" class="headerlink" title="passwd 用户名   # 更改指定用户密码（管理员用户可更改普通用户密码，普通用户不可更改管理员用户密码）"></a>passwd 用户名   # 更改指定用户密码（管理员用户可更改普通用户密码，普通用户不可更改管理员用户密码）</h2><p>exit 或 ctrl+d #切换回上一个用户</p>
+<p>su - 用户名 切换用户（root切换到普通用户不用输密码，普通用户切换管理员用户需输入密码 ）</p>
+<p>passwd    更改当前用户密码（root不需输入旧密码，普通用户需输入旧密码）</p>
+<h2 id="passwd-用户名-更改指定用户密码（管理员用户可更改普通用户密码，普通用户不可更改管理员用户密码）"><a href="#passwd-用户名-更改指定用户密码（管理员用户可更改普通用户密码，普通用户不可更改管理员用户密码）" class="headerlink" title="passwd 用户名    更改指定用户密码（管理员用户可更改普通用户密码，普通用户不可更改管理员用户密码）"></a>passwd 用户名    更改指定用户密码（管理员用户可更改普通用户密码，普通用户不可更改管理员用户密码）</h2><p>exit 或 ctrl+d 切换回上一个用户</p>
 <p>练习：<br>①创建一个新用户1并切换至该用户<br>②输入exit切回到上一个用户<br>③创建另一新用户2并分配到上一个新用户1所属的小组<br>④切换至新用户2创建一个文件，查看该文件的属组</p>
 <h2 id="⑤修改新用户1的密码"><a href="#⑤修改新用户1的密码" class="headerlink" title="⑤修改新用户1的密码"></a>⑤修改新用户1的密码</h2><p>-rw-r–r– 1 root root     0 07-10 18:24 55.txt<br>每个文或目录的权限都针对三类用户进行设置</p>
-<p>用户类型：u  #文件（夹）所属用户<br>用户类型：g  #文件（夹）所属的组里的其它用户—组员<br>用户类型：o  #文件（夹）所属组外的其它用户</p>
+<p>用户类型：u  文件（夹）所属用户<br>用户类型：g  文件（夹）所属的组里的其它用户—组员<br>用户类型：o  文件（夹）所属组外的其它用户</p>
 <p>-rw-r–r–<br>①-  表文件<br>②rw-  u用户针对该文件的权限<br>③r–  g用户针对该文件的权限</p>
-<h2 id="④r–-o用户针对该文件的权限"><a href="#④r–-o用户针对该文件的权限" class="headerlink" title="④r–  o用户针对该文件的权限"></a>④r–  o用户针对该文件的权限</h2><p>权限类型<br>r     #可读取（可用4来表示）<br>w     #可写入（可用2表示）</p>
-<h2 id="x-①表可执行文件；②可进入目录（可用1表示）"><a href="#x-①表可执行文件；②可进入目录（可用1表示）" class="headerlink" title="x     #①表可执行文件；②可进入目录（可用1表示）"></a>x     #①表可执行文件；②可进入目录（可用1表示）</h2><p>修改文件/目录权限</p>
-<p>①chmod 具体权限 路径/文件名    #修改某文件权限<br>例：chmod u+x,g-r,o=x 55.txt</p>
-<p>②chmod -R 具体权限 路径/目录名   #修改某目前及其下所属所有子文件的权限</p>
+<h2 id="④r–-o用户针对该文件的权限"><a href="#④r–-o用户针对该文件的权限" class="headerlink" title="④r–  o用户针对该文件的权限"></a>④r–  o用户针对该文件的权限</h2><p>权限类型<br>r     可读取（可用4来表示）<br>w     可写入（可用2表示）</p>
+<h2 id="x-①表可执行文件；②可进入目录（可用1表示）"><a href="#x-①表可执行文件；②可进入目录（可用1表示）" class="headerlink" title="x     ①表可执行文件；②可进入目录（可用1表示）"></a>x     ①表可执行文件；②可进入目录（可用1表示）</h2><p>修改文件/目录权限</p>
+<p>①chmod 具体权限 路径/文件名    修改某文件权限<br>例：chmod u+x,g-r,o=x 55.txt</p>
+<p>②chmod -R 具体权限 路径/目录名   修改某目前及其下所属所有子文件的权限</p>
 <p>③chmod u+r+w+x,g+r+w+x,o+r+w+x 55.txt<br>  chmod   777 55.txt   （最大777，最小000）<br>  chmod   a=rwx 55.txt</p>
 <p>练习：               u      r     g       w     x       o     r   w<br>①修改某文件的权限为属主只可读，组内用户可写可执行，其他用户可读可写<br>②修改某目录的权限属主拥有全部权限，组内用户没有权限，其它用户只可以执行<br>③修改某文件权限为全部人拥有全部权限</p>
 <hr>
-<p>rpm - ivh  安装文件名   #安装软件</p>
+<p>rpm - ivh  安装文件名   安装软件</p>
 
       
     </div>
@@ -893,7 +896,7 @@ sftp&gt; lls                    # 查看本地路径下的文件
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#linux各个版本"><span class="nav-number">1.</span> <span class="nav-text">linux各个版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redhat、centos下载地址"><span class="nav-number">2.</span> <span class="nav-text">redhat、centos下载地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置网络"><span class="nav-number">3.</span> <span class="nav-text">配置网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户组"><span class="nav-number">5.</span> <span class="nav-text">用户组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vi编辑器"><span class="nav-number">6.</span> <span class="nav-text">vi编辑器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rpm-安装软件"><span class="nav-number">7.</span> <span class="nav-text">rpm 安装软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yum-安装软件"><span class="nav-number">8.</span> <span class="nav-text">yum 安装软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#secure-crt上传下载文件"><span class="nav-number">9.</span> <span class="nav-text">secure crt上传下载文件</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#第二部分"><span class="nav-number"></span> <span class="nav-text">第二部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chen-localhost-‘chen’-表示用户名叫chen-’-’表普通用户"><span class="nav-number"></span> <span class="nav-text">[chen@localhost ~]$   ‘chen’ 表示用户名叫chen ;’$’表普通用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上一级目录"><span class="nav-number"></span> <span class="nav-text">..   #上一级目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对路径：永远从当前路径出发，例：-cd-或-cd"><span class="nav-number"></span> <span class="nav-text">相对路径：永远从当前路径出发，例： cd ./  或 cd ../</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⑥从b2用绝对路径切换到a4"><span class="nav-number"></span> <span class="nav-text">⑥从b2用绝对路径切换到a4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⑦a3-文件或目录名"><span class="nav-number"></span> <span class="nav-text">⑦a3   文件或目录名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cal-日历形式查看系统日期"><span class="nav-number"></span> <span class="nav-text">cal #日历形式查看系统日期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch-旧文件1-更新文件1最后修改时间"><span class="nav-number"></span> <span class="nav-text">touch 旧文件1   #更新文件1最后修改时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#↑↓键-复制上一条或下一条命令"><span class="nav-number"></span> <span class="nav-text">↑↓键   #复制上一条或下一条命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⑦重命名4-txt为5-txt"><span class="nav-number"></span> <span class="nav-text">⑦重命名4.txt为5.txt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wc-l-文件名-统计文件的行数"><span class="nav-number"></span> <span class="nav-text">wc -l 文件名  #统计文件的行数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⑤-wq-表进入底行模式-w表示保存-q表退出-表强制"><span class="nav-number"></span> <span class="nav-text">⑤:wq!   # : 表进入底行模式   w表示保存 q表退出  !表强制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#①编辑某个文件，保存退出后查看"><span class="nav-number"></span> <span class="nav-text">①编辑某个文件，保存退出后查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#②分别用两个解压命令解压两次"><span class="nav-number"></span> <span class="nav-text">②分别用两个解压命令解压两次</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#②下载linux的文件到本地"><span class="nav-number"></span> <span class="nav-text">②下载linux的文件到本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#①将上传到linux的zip压缩包解压到-home目录下"><span class="nav-number"></span> <span class="nav-text">①将上传到linux的zip压缩包解压到/home目录下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⑤-wq-表进入底行模式-w表示保存-q表退出-表强制-1"><span class="nav-number"></span> <span class="nav-text">⑤:wq!   # : 表进入底行模式   w表示保存 q表退出  !表强制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#O-向上新增一行"><span class="nav-number"></span> <span class="nav-text">O     #向上新增一行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cat-etc-group-查看组的信息"><span class="nav-number"></span> <span class="nav-text">cat /etc/group   #查看组的信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#passwd-用户名-更改指定用户密码（管理员用户可更改普通用户密码，普通用户不可更改管理员用户密码）"><span class="nav-number"></span> <span class="nav-text">passwd 用户名   # 更改指定用户密码（管理员用户可更改普通用户密码，普通用户不可更改管理员用户密码）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⑤修改新用户1的密码"><span class="nav-number"></span> <span class="nav-text">⑤修改新用户1的密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#④r–-o用户针对该文件的权限"><span class="nav-number"></span> <span class="nav-text">④r–  o用户针对该文件的权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x-①表可执行文件；②可进入目录（可用1表示）"><span class="nav-number"></span> <span class="nav-text">x     #①表可执行文件；②可进入目录（可用1表示）</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#linux各个版本"><span class="nav-number">1.</span> <span class="nav-text">linux各个版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redhat、centos下载地址"><span class="nav-number">2.</span> <span class="nav-text">redhat、centos下载地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置网络"><span class="nav-number">3.</span> <span class="nav-text">配置网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户组"><span class="nav-number">5.</span> <span class="nav-text">用户组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vi编辑器"><span class="nav-number">6.</span> <span class="nav-text">vi编辑器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rpm-安装软件"><span class="nav-number">7.</span> <span class="nav-text">rpm 安装软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yum-安装软件"><span class="nav-number">8.</span> <span class="nav-text">yum 安装软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#secure-crt上传下载文件"><span class="nav-number">9.</span> <span class="nav-text">secure crt上传下载文件</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#第二部分"><span class="nav-number"></span> <span class="nav-text">第二部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上一级目录"><span class="nav-number"></span> <span class="nav-text">..   上一级目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对路径：永远从当前路径出发，例：-cd-或-cd"><span class="nav-number"></span> <span class="nav-text">相对路径：永远从当前路径出发，例： cd ./  或 cd ../</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⑥从b2用绝对路径切换到a4"><span class="nav-number"></span> <span class="nav-text">⑥从b2用绝对路径切换到a4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⑦a3-文件或目录名"><span class="nav-number"></span> <span class="nav-text">⑦a3   文件或目录名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cal-日历形式查看系统日期"><span class="nav-number"></span> <span class="nav-text">cal 日历形式查看系统日期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch-旧文件1-更新文件1最后修改时间"><span class="nav-number"></span> <span class="nav-text">touch 旧文件1   更新文件1最后修改时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#↑↓键-复制上一条或下一条命令"><span class="nav-number"></span> <span class="nav-text">↑↓键   复制上一条或下一条命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⑦重命名4-txt为5-txt"><span class="nav-number"></span> <span class="nav-text">⑦重命名4.txt为5.txt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wc-l-文件名-统计文件的行数"><span class="nav-number"></span> <span class="nav-text">wc -l 文件名  统计文件的行数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⑤-wq-表进入底行模式-w表示保存-q表退出-表强制"><span class="nav-number"></span> <span class="nav-text">⑤:wq!   : 表进入底行模式   w表示保存 q表退出  !表强制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#①编辑某个文件，保存退出后查看"><span class="nav-number"></span> <span class="nav-text">①编辑某个文件，保存退出后查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#②分别用两个解压命令解压两次"><span class="nav-number"></span> <span class="nav-text">②分别用两个解压命令解压两次</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#②下载linux的文件到本地"><span class="nav-number"></span> <span class="nav-text">②下载linux的文件到本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#①将上传到linux的zip压缩包解压到-home目录下"><span class="nav-number"></span> <span class="nav-text">①将上传到linux的zip压缩包解压到/home目录下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⑤-wq-表进入底行模式-w表示保存-q表退出-表强制-1"><span class="nav-number"></span> <span class="nav-text">⑤:wq!   : 表进入底行模式   w表示保存 q表退出  !表强制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#O-向上新增一行"><span class="nav-number"></span> <span class="nav-text">O    向上新增一行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cat-etc-group-查看组的信息"><span class="nav-number"></span> <span class="nav-text">cat /etc/group   查看组的信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#passwd-用户名-更改指定用户密码（管理员用户可更改普通用户密码，普通用户不可更改管理员用户密码）"><span class="nav-number"></span> <span class="nav-text">passwd 用户名    更改指定用户密码（管理员用户可更改普通用户密码，普通用户不可更改管理员用户密码）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⑤修改新用户1的密码"><span class="nav-number"></span> <span class="nav-text">⑤修改新用户1的密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#④r–-o用户针对该文件的权限"><span class="nav-number"></span> <span class="nav-text">④r–  o用户针对该文件的权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x-①表可执行文件；②可进入目录（可用1表示）"><span class="nav-number"></span> <span class="nav-text">x     ①表可执行文件；②可进入目录（可用1表示）</span></a></li></div>
             
 
           </div>
