@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="czj&#39;blog">
 <meta property="og:description" content="/*安装Oracle数据库服务端(选择性掌握)： 数据库分类主流数据库：微软sql server 2008 R2,access瑞典mysql美国oracle 10g 11g 12c小型数据库 access中型数据库mysql,sql sever大型数据库 负载级别sysbase&amp;lt;oracle&amp;lt;db2 安全性高 昂贵 oracle数据库官网下载 (两个文件都要下载，oracle把一个数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-08T10:05:09.800Z">
+<meta property="og:updated_time" content="2020-07-12T03:03:07.953Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="oracle">
 <meta name="twitter:description" content="/*安装Oracle数据库服务端(选择性掌握)： 数据库分类主流数据库：微软sql server 2008 R2,access瑞典mysql美国oracle 10g 11g 12c小型数据库 access中型数据库mysql,sql sever大型数据库 负载级别sysbase&amp;lt;oracle&amp;lt;db2 安全性高 昂贵 oracle数据库官网下载 (两个文件都要下载，oracle把一个数">
@@ -474,6 +474,39 @@ drop column score;
 
 alter table t_student
 drop column addr;
+</code></pre><p>例子</p>
+<p>创建student表</p>
+<pre><code>create table student(
+  id number primary key not null,
+  name varchar(20) not null,
+  age number not null,
+  sex char(4) default &apos;男&apos; check (sex=&apos;男&apos; or sex=&apos;女&apos;),
+  addr varchar(20) not null,
+  classid varchar(20) unique
+)
+</code></pre><p>创建class表</p>
+<pre><code>create table class (
+  c_id number primary key not null ,
+  c_name varchar(20) unique not null,
+  c_teacher varchar(20) not null,
+  c_num number
+)
+</code></pre><p>修改表修改列</p>
+<pre><code>alter table student modify classid number references class(c_id)
+</code></pre><p>修改表添加列</p>
+<pre><code>alter table student add phone varchar(20) not null
+</code></pre><p>修改表添加备注信息</p>
+<pre><code>comment on column student.phone is  &apos;手机电话号码&apos;
+comment on column student.id is &apos;学生id&apos;;
+comment on column student.name is &apos;学生姓名&apos;;
+comment on column student.age is &apos;学生年龄&apos;;
+comment on column student.sex is &apos;学生性别&apos;;
+comment on column student.addr is &apos;学生地址&apos;;
+comment on column student.classid is &apos;学生班级id&apos;;
+</code></pre><p>修改表修改列名</p>
+<p>alter table student rename column addr to address<br>修改表重命名表名</p>
+<pre><code>rename  student to students
+alter table students rename to  student
 </code></pre><p><strong><strong><strong><strong>*</strong></strong></strong></strong>表的删除<strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong><br>删除表结构：drop table 表名<br>例：删除student_tmp2表</p>
 <pre><code>drop table student_tmp2;
 </code></pre><p>——————<strong><strong><strong><strong>**</strong></strong></strong></strong>华丽的分割线(第一天完)<strong><strong><strong><strong>**</strong></strong></strong></strong>———————</p>
@@ -742,8 +775,8 @@ create unique index i_studnet_name on t_student(name);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/25/初识python/" rel="next" title="python">
-                <i class="fa fa-chevron-left"></i> python
+              <a href="/2020/06/25/软件测试/" rel="next" title="软件测试">
+                <i class="fa fa-chevron-left"></i> 软件测试
               </a>
             
           </div>
