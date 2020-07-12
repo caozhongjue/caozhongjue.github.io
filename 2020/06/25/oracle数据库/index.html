@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="czj&#39;blog">
 <meta property="og:description" content="/*安装Oracle数据库服务端(选择性掌握)： 数据库分类主流数据库：微软sql server 2008 R2,access瑞典mysql美国oracle 10g 11g 12c小型数据库 access中型数据库mysql,sql sever大型数据库 负载级别sysbase&amp;lt;oracle&amp;lt;db2 安全性高 昂贵 oracle数据库官网下载 (两个文件都要下载，oracle把一个数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-12T03:03:07.953Z">
+<meta property="og:updated_time" content="2020-07-12T03:07:16.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="oracle">
 <meta name="twitter:description" content="/*安装Oracle数据库服务端(选择性掌握)： 数据库分类主流数据库：微软sql server 2008 R2,access瑞典mysql美国oracle 10g 11g 12c小型数据库 access中型数据库mysql,sql sever大型数据库 负载级别sysbase&amp;lt;oracle&amp;lt;db2 安全性高 昂贵 oracle数据库官网下载 (两个文件都要下载，oracle把一个数">
@@ -509,8 +509,7 @@ comment on column student.classid is &apos;学生班级id&apos;;
 alter table students rename to  student
 </code></pre><p><strong><strong><strong><strong>*</strong></strong></strong></strong>表的删除<strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong><br>删除表结构：drop table 表名<br>例：删除student_tmp2表</p>
 <pre><code>drop table student_tmp2;
-</code></pre><p>——————<strong><strong><strong><strong>**</strong></strong></strong></strong>华丽的分割线(第一天完)<strong><strong><strong><strong>**</strong></strong></strong></strong>———————</p>
-<p>emp 员工信息表，包含字段：empno 雇员编号(工号), ename 员工姓名, job 工种,mgr 员工上级的编号, hiredate 入职日期，<br>sal 薪水， comm 奖金， deptno 部门号</p>
+</code></pre><p>emp 员工信息表，包含字段：empno 雇员编号(工号), ename 员工姓名, job 工种,mgr 员工上级的编号, hiredate 入职日期，<br>sal 薪水， comm 奖金， deptno 部门号</p>
 <p>dept 部门表，包含的字段： dname 部门名称， loc工作地址</p>
 <p>二、Oracle数据库数据操作(DML:data manipulation language)<br>/*dml：数据库操作语句，常见的增、删、改、查(最重要)</p>
 <p>1、查询  — 注意：后面的查询案例，如无特殊说明，均以系统中存在的emp和dept两个表为例<br>/<em>查询的总语句<br>select 列1,列2,列3…列N 或 </em><br>from 表名/(表达式) – 数据池<br>[where 过滤条件]<br>[group by 分组内容]<br>[having 组内条件]<br>[order by 排序方式]<br>*/</p>
@@ -570,7 +569,6 @@ order by 12*(sal+comm) DESC;
 <p>练习：<br>1、查找出工资高于1000元的职工的姓名、工种、工资和部门号，并按部门号由小到大排序显示</p>
 <p>2、查找出奖金超过本人基本工资3%的职工的姓名，工资，奖金，奖金与工资的比例，并按其比例由高到低显示</p>
 <p>3、按工种升序，而同工种按工资降序排列显示全部职工的姓名，工种，工资。</p>
-<p>—————————<strong><strong><strong><strong>**</strong></strong></strong></strong>华丽的分割线(第二天上午)<strong><strong><strong><strong>**</strong></strong></strong></strong>—————————-</p>
 <p>2、向数据库中插入数据<br>/*新增数据</p>
 <pre><code>insert into 表名(列1,列2...列N) values(值1,值2...值N);
 commit | rollback;
@@ -652,8 +650,7 @@ having count(*)&gt;2;
 <p>练习2：查询出所有经理和销售人员的年平均工资，并按年平均工资降序排序。</p>
 <p>—-总结：如果select语句后面包含了字段和统计函数，则一定要用到group by分组，并且group by后面接</p>
 <pre><code>select语句后面的所有字段。
-</code></pre><p>————<strong><strong><strong><strong>**</strong></strong></strong></strong>华丽的分割线(第二天下午完)<strong><strong><strong><strong>**</strong></strong></strong></strong>———</p>
-<p>四、多表查询<br>1、等值连接<br>select 表别名1.列名1,表别名1.列名2….  或 表别名1.<em>,表别名2.</em><br>from 表名1 表别名1,表名2 表别名2,…表名n,表别名n<br>where 表名1或表别名1.列名=表名2或表别名2.列名 and 表名(n-1)或表别名(n-1).列名=表名n或表别名n.列名</p>
+</code></pre><p>四、多表查询<br>1、等值连接<br>select 表别名1.列名1,表别名1.列名2….  或 表别名1.<em>,表别名2.</em><br>from 表名1 表别名1,表名2 表别名2,…表名n,表别名n<br>where 表名1或表别名1.列名=表名2或表别名2.列名 and 表名(n-1)或表别名(n-1).列名=表名n或表别名n.列名</p>
 <p>例：查找名字为”ALLEN”的职工所在的部门号、部门名和部门所在地</p>
 <pre><code>select e.ename,e.deptno,d.dname,d.loc from emp e,dept d
 where e.deptno=d.deptno and e.ename=&apos;ALLEN&apos;;
@@ -775,8 +772,8 @@ create unique index i_studnet_name on t_student(name);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/25/软件测试/" rel="next" title="软件测试">
-                <i class="fa fa-chevron-left"></i> 软件测试
+              <a href="/2020/06/25/初识python/" rel="next" title="python">
+                <i class="fa fa-chevron-left"></i> python
               </a>
             
           </div>
