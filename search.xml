@@ -133,17 +133,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[scp传文件]]></title>
-    <url>%2F2019%2F06%2F10%2Fscp%E4%BC%A0%E6%96%87%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[本地window电脑上传文件到linux服务器上去 本地服务器：A 远程服务器：B1.在 A 上运行 ssh-keygen -t rsa 在C:\Users\Administrator.ssh 下生成id_rsa 和 id_rsa.pub 两个文件（在这个步骤会出现输入的提示，和密码相似）如图所示2、 在 B 上也同样运行 ssh-keygen -t rsa （步骤和上面的一样）3、 在 B 的 /root/.ssh 下创建authorized_keys文件 把A 中 id_rsa.pub.A 文件 传到 B /root/.ssh 下通过 cat 命令把id_rsa.pub.A 写到 authorized_keys 文件中（我直接打开window电脑下的id_rsa.pub.A内容放到linux服务器的authorized_keys文件里面去）4、配置完毕上传文件将本地文件拷贝到远程scp 文件名 用户名@计算机IP:远程路径（我的文件是I盘里面的文件） 从远程将文件拷回本地scp 用户名@计算机IP:文件名 本地路径 复制目录：将本地目录拷贝到远程scp -r 目录名 用户名@计算机IP:远程路径从远程将目录拷回本地scp -r 用户名@计算机IP:目录名 本地路径]]></content>
-      <categories>
-        <category>scp</category>
-      </categories>
-      <tags>
-        <tag>scp</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[认识vue]]></title>
     <url>%2F2019%2F06%2F10%2Fvue%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[什么是vue1、vue是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用，Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。2、创建一个 .html 文件，然后通过如下方式引入 Vue： &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt; &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt; 或者： &lt;!-- 生产环境版本，优化了尺寸和速度 --&gt; &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt; 声明式渲染&lt;div id=&quot;app&quot;&gt; {{msg}} &lt;h4 v-text=&quot;msg&quot;&gt;aaaa&lt;/h4&gt; &lt;span v-html=&quot;msg2&quot;&gt;&lt;/span&gt; &lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; var vue = new Vue({ el: &apos;#app&apos;, data: { msg: &quot;你好 vue&quot;, msg2: &quot;&lt;h2&gt;helloworld&lt;/h2&gt;&quot; } }) &lt;/script&gt; 除了文本插值，我们还可以像这样来绑定元素特性： &lt;div id=&quot;app-2&quot;&gt; &lt;span v-bind:title=&quot;message&quot;&gt; 鼠标悬停几秒钟查看此处动态绑定的提示信息！ &lt;/span&gt; &lt;/div&gt; var app2 = new Vue({ el: &apos;#app-2&apos;, data: { message: &apos;页面加载于 &apos; + new Date().toLocaleString() } }) v-bind 没法实现双向绑定，v-model可以 &lt;div id=&quot;app&quot;&gt; &lt;p&gt;{{msg5}}&lt;/p&gt; &lt;input type=&quot;text&quot; style=&quot;width: 100%;&quot; v-model=&quot;msg5&quot;&gt; &lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; var vue = new Vue({ el: &apos;#app&apos;, data: { msg5: &quot;大家都是好学生，爱代码，爱学习&quot; }, methods: { } }) &lt;/script&gt; v-bind 特性被称为指令。指令带有前缀 v-，以表示它们是 Vue 提供的特殊特性。 事件机制&lt;div id=&quot;app&quot;&gt; &lt;button name=&quot;按钮&quot; value=&quot;按钮&quot; v-on:click=&quot;show&quot;&gt;你好&lt;/button&gt; &lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; var vue = new Vue({ el: &apos;#app&apos;, data: { }, methods: { show: function () { alert(&quot;你好啊&quot;) } } }) &lt;/script&gt; 案例&lt;div id=&quot;app&quot;&gt; &lt;input type=&quot;button&quot; value=&quot;浪起来&quot; @click=&quot;lang&quot;&gt; &lt;input type=&quot;button&quot; value=&quot;别浪&quot; @click=&quot;stop&quot;&gt; &lt;p&gt;{{msg4}}&lt;/p&gt; &lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; var vue = new Vue({ el: &apos;#app&apos;, data: { msg4: &quot;猥琐发育别浪&quot;, intervalId: null }, methods: { lang: function () { var _this = this; if(this.intervalId !=null){ return ; }else{ } this.intervalId = setInterval(function () { var start = _this.msg4.substring(0,1); var end = _this.msg4.substring(1); _this.msg4 = end+start; },400) }, stop: function () { clearInterval(this.intervalId); this.intervalId =null; } } }) &lt;/script&gt; 条件与循环&lt;div id=&quot;app-3&quot;&gt; &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt; &lt;/div&gt; var app3 = new Vue({ el: &apos;#app-3&apos;, data: { seen: true } }) 还有其它很多指令，每个都有特殊的功能。例如，v-for 指令可以绑定数组的数据来渲染一个项目列表： &lt;div id=&quot;app-4&quot;&gt; &lt;ol&gt; &lt;li v-for=&quot;todo in todos&quot;&gt; {{ todo.text }} &lt;/li&gt; &lt;/ol&gt; &lt;/div&gt; var app4 = new Vue({ el: &apos;#app-4&apos;, data: { todos: [ { text: &apos;学习 JavaScript&apos; }, { text: &apos;学习 Vue&apos; }, { text: &apos;整个牛项目&apos; } ] } }) 处理用户输入为了让用户和你的应用进行交互，我们可以用 v-on 指令添加一个事件监听器，通过它调用在 Vue 实例中定义的方法： &lt;div id=&quot;app-5&quot;&gt; &lt;p&gt;{{ message }}&lt;/p&gt; &lt;button v-on:click=&quot;reverseMessage&quot;&gt;逆转消息&lt;/button&gt; &lt;/div&gt; var app5 = new Vue({ el: &apos;#app-5&apos;, data: { message: &apos;Hello Vue.js!&apos; }, methods: { reverseMessage: function () { this.message = this.message.split(&apos;&apos;).reverse().join(&apos;&apos;) } } }) 组件化应用构建组件系统是 Vue 的另一个重要概念，因为它是一种抽象，允许我们使用小型、独立和通常可复用的组件构建大型应用。在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例。在 Vue 中注册组件很简单： // 定义名为 todo-item 的新组件 Vue.component(&apos;todo-item&apos;, { template: &apos;&lt;li&gt;这是个待办项&lt;/li&gt;&apos; }) 现在你可以用它构建另一个组件模板： &lt;ol&gt; &lt;!-- 创建一个 todo-item 组件的实例 --&gt; &lt;todo-item&gt;&lt;/todo-item&gt; &lt;/ol&gt;]]></content>
@@ -152,6 +141,17 @@
       </categories>
       <tags>
         <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[scp传文件]]></title>
+    <url>%2F2019%2F06%2F10%2Fscp%E4%BC%A0%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[本地window电脑上传文件到linux服务器上去 本地服务器：A 远程服务器：B1.在 A 上运行 ssh-keygen -t rsa 在C:\Users\Administrator.ssh 下生成id_rsa 和 id_rsa.pub 两个文件（在这个步骤会出现输入的提示，和密码相似）如图所示2、 在 B 上也同样运行 ssh-keygen -t rsa （步骤和上面的一样）3、 在 B 的 /root/.ssh 下创建authorized_keys文件 把A 中 id_rsa.pub.A 文件 传到 B /root/.ssh 下通过 cat 命令把id_rsa.pub.A 写到 authorized_keys 文件中（我直接打开window电脑下的id_rsa.pub.A内容放到linux服务器的authorized_keys文件里面去）4、配置完毕上传文件将本地文件拷贝到远程scp 文件名 用户名@计算机IP:远程路径（我的文件是I盘里面的文件） 从远程将文件拷回本地scp 用户名@计算机IP:文件名 本地路径 复制目录：将本地目录拷贝到远程scp -r 目录名 用户名@计算机IP:远程路径从远程将目录拷回本地scp -r 用户名@计算机IP:目录名 本地路径]]></content>
+      <categories>
+        <category>scp</category>
+      </categories>
+      <tags>
+        <tag>scp</tag>
       </tags>
   </entry>
   <entry>
@@ -196,6 +196,17 @@
       </categories>
       <tags>
         <tag>centos</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[性能测试，自动化测试，接口测试，app测试]]></title>
+    <url>%2F2019%2F02%2F23%2F%E6%80%A7%E8%83%BD%E3%80%81%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[app测试一、app测试点功能测试、用户体验、兼容性测试、ui测试、交叉事件、安装卸载升级、性能测试、安全测试二、app兼容性测试要考虑哪方面1、主流手机型号2、不同的操作系统和版本（ios考虑10版本以上，android 6-10）3、不同的手机分辨率和手机尺寸、屏幕4、不同的手机配置三、兼容可能存在哪些问题1、ui界面问题2、部分功能不能使用四、app和web测试的区别1、系统架构方面： web项目是b/s架构的基于浏览器，app项目是c/s架构，必须要安装客户端，web只要更新服务端，客户端会同步更新，app项目则客户端和服务端都要更新2、性能方面： web页面主要关注响应时间，app则需要关注流量，电量,cpu,memory，这些3、兼容性方面： web是基于浏览器，所以更倾向于浏览器和电脑硬件，电脑系统的兼容，app测试则要看分辨率，屏幕尺寸，还要看设备系统。web测试是基于浏览器的所以不必考虑安装卸载。app是客户端，则必须测试安装、更新、卸载、除了常规的安装更新、卸载还要考虑到异常场景包括安装的中断、弱网、安装后删除文件]]></content>
+      <categories>
+        <category>性能测试</category>
+      </categories>
+      <tags>
+        <tag>接口测试，自动化测试</tag>
       </tags>
   </entry>
   <entry>
