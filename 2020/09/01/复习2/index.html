@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="测试,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="–常见的抓包工具有哪些fiddler ，charles–fiddler的原理类似一个代理服务器，在客户端和服务端中间去获取双方的信息，只有火狐浏览器要设置代理才能使用抓包–什么时候用fiddler比如：协助开发定位问题，之前公司没有给我数据库权限，有个用户账号有问题，我需要拿到他的userid(uid)我就登录用户的账号，然后用fiddler去抓包，获取他的userid提交给开发…–重点：fidd">
+<meta name="keywords" content="测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复习2">
+<meta property="og:url" content="http://yoursite.com/2020/09/01/复习2/index.html">
+<meta property="og:site_name" content="czj&#39;blog">
+<meta property="og:description" content="–常见的抓包工具有哪些fiddler ，charles–fiddler的原理类似一个代理服务器，在客户端和服务端中间去获取双方的信息，只有火狐浏览器要设置代理才能使用抓包–什么时候用fiddler比如：协助开发定位问题，之前公司没有给我数据库权限，有个用户账号有问题，我需要拿到他的userid(uid)我就登录用户的账号，然后用fiddler去抓包，获取他的userid提交给开发…–重点：fidd">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-09-06T09:13:09.623Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="复习2">
+<meta name="twitter:description" content="–常见的抓包工具有哪些fiddler ，charles–fiddler的原理类似一个代理服务器，在客户端和服务端中间去获取双方的信息，只有火狐浏览器要设置代理才能使用抓包–什么时候用fiddler比如：协助开发定位问题，之前公司没有给我数据库权限，有个用户账号有问题，我需要拿到他的userid(uid)我就登录用户的账号，然后用fiddler去抓包，获取他的userid提交给开发…–重点：fidd">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/09/01/复习2/">
+
+
+
+
+
+  <title>复习2 | czj'blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">czj'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/01/复习2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="czj">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s2.ax1x.com/2019/05/23/VPZiAe.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="czj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">复习2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-01T13:15:33+08:00">
+                2020-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/测试/" itemprop="url" rel="index">
+                    <span itemprop="name">测试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>–常见的抓包工具有哪些<br>fiddler ，charles<br>–fiddler的原理<br>类似一个代理服务器，在客户端和服务端中间去获取双方的信息，只有火狐浏览器要设置代理才能使用抓包<br>–什么时候用fiddler<br>比如：协助开发定位问题，之前公司没有给我数据库权限，有个用户账号有问题，我需要拿到他的userid(uid)<br>我就登录用户的账号，然后用fiddler去抓包，获取他的userid提交给开发…<br>–重点：fiddler的作用<br>1.可以做简单的安全测试，查看敏感信息在网络传输中是否加密，拦截数据篡改（步骤熟记）<br>2.连接手机代理抓APP的包，模拟弱网测试（步骤熟记）<br>3.定位前后端的问题<br>4.统计单个请求的响应时间<br>–重点：点击一个按钮没反应如何定位问题<br>1.可以在浏览器上按F12，检查控制台，前端的js代码是否报错<br>2.有可能是网络不稳定问题<br>3.网页兼容性问题，app兼容性问题<br>4.用抓包工具查看，点击按钮是否发送请求，没发送就是前端问题，或者发送请求是错误的；<br>5.服务器无响应，或者服务器返回的信息是错误的，后端问题<br>6.返回的是正确的，前端人员没有根据服务器返回的信息做页面跳转逻辑<br>–举个实际的例子，定位问题<br>比如之前我注册账号选择的性别是男，然后我去个人中心页面查看信息，性别是女<br>最后定位问题，发现注册发送的请求响应都没问题，数据库也是正确的<br>后面才定位，在个人信息页面，前端人员代码错误，因为我们数据库性别男是用0代表<br>前端人员取0的数据，在页面展示写成了女，前端人员失误<br>–fiddler能抓HTTPS的包吗<br>可以，在工具-选项-HTTPS,勾选捕获HTTPS连接-勾选解密HTTPS流量，选择动作，在选择信任根证书，点击ok就可以了<br>特殊情况：有的需要导出fiddler的证书，再次导入浏览器中才可以<br>如果手机抓的话，还要在手机上输入fiddler的地址，进入fiddler主页，下载证书安装<br>–fiddler如何模拟http响应码404<br>百度一下<br>–弱网情况下关注的内容<br>1.弱网情况下多次点击按钮，是否发送多个请求<br>2.弱网情况下页面的渲染情况</p>
+<p>–接口测试<br>–什么时候做接口测试<br>后端开发提供接口文档，我们编写接口测试用例，后端开发接口做好了，就可以测试<br>–为什么要做接口测试<br>1、可以发现很多在页面上操作发现不了的bug<br>2、检查系统的异常处理能力<br>3、检查系统的安全性、稳定性<br>4、前端随便变，接口测好了，后端不用变<br>5、是在开发阶段进行，越早进行测试就能越早发现系统的底层缺陷<br>–接口组成<br>服务器地址，端口号，接口url，请求方式，请求参数，响应报文<br>–http协议请求头包含哪些内容<br>Accept，Content-Type，Cookie，Host，Date<br>–接口数据常用的数据格式？<br>Content-Type：application/x-www-form-urlencoded（原生form表单，jmeter默认支持，参数放在Parameters内传）<br>Content-Type：application/json（json，jmeter需要添加信息管理头，参数放Body Data内传）<br>还有：txt（文本格式），xml<br>–json数据格式响应报文的字段有哪些？<br>code：状态码<br>msg：信息<br>data:数据<br>–为什么要写接口用例<br>1）理清思路，避免漏测<br>2）提高测试效率<br>3）跟进测试进度<br>4）告诉领导做过<br>5）跟进重复性工作<br>–如何编写接口测试用例·？<br>1.先跑通正常的接口，然后：<br>功能：一般取重要的请求参数，把它数据进行有效无效等价类划分<br>逻辑业务：登录的情况下，未登录的情况下，下单：goodsnum的值大于库存数量，goodsid输入不存在，下架…<br>异常：关键字参数，参数为空，多，少参数，错误参数<br>都需要对应不同的响应报文，去做断言<br>–用什么工具做接口测试<br>jmeter4.0（Apeche公司的工具），postman（谷歌浏览器的插件），python+requests（脚本完成，用的是requests库）<br>–jmeter环境如何搭建（部署）windows/linux<br>1.因为jmeter是java语言开发，首先装JKD，版本1.8.0_60，并配置环境变量，查看java版本：java -version<br>2.然后去官网下载jmeter的压缩包，然后解压，进入bin文件夹下，点击jmeter.bat就可以使用<br>–jmeter有哪些组件？<br>线程组，配置元件，定时器，前置处理器，后置处理器，监听器，断言…<br>–jmeter接口测试流程<br>…<br>–下单，加入购物车如何做接口测试<br>重点就是：登录状态，获取token，使用正则关联到下一个接口<br>–接口怎么关联<br>…<br>–多个接口如何测试<br>也是用正则关联<br>–怎么验证接口通过<br>1.看响应报文是否正确<br>2.检查接口返回的数据，去数据库校验数据准确性，看功能是否实现<br> –接口的断言如何做<br>1.一般取的是code码<br>2.有时候回到data内的数据<br>–是否可以用http状态码做断言？.<br>不行，因为登录成功或者失败，http状态码都是200：意思服务器都接收到请求并且处理（http状态码在响应头）<br>我们需要用code码去判断，这个是开发人员自己定义的，在响应体内<br>–jmeter如何参数化<br>….<br>–如何解决jmeter内存溢出<br>百度<br>–如何对加密数据（md5）的接口进行请求<br>1.可以找一个在线转义的网站，输入密码转义成md5形式再传递<br>2.要拿到开发jar包，然后添加一个前置处理器的插件…<br>3.jmeter自带的函数助手，选择MD5函数传输<br>–接口自动化怎么做<br>目的为了做回归测试，大部分只做主流程的，有两种方式<br>1.Ant+jmeter+jenkins（工具）<br>2.python+requests+unittest+jenkins(脚本)<br>一般都是版本迭代了，就跑一下，或之前的接口有没有问题<br>–没有接口文档如何进行接口测试？<br>1.找开发要<br>2.抓包</p>
+<p>–其他的知识结合面试宝典–接口篇查看</p>
+<p>–性能篇<br>–性能工具有哪些<br>jmeter，Loadrunner<br>–什么时候做性能测试<br>功能系统稳定的情况下<br>–什么需求环境下需要性能测试<br>1.客户要求，比如：要求多少人能同时在线<br>2.将进行大型活动的时候（类似双11，春节抢红包），用户量突然剧增<br>3.产品上线了一段时间，跟据运营数据，考虑半年用户增多是否现在的服务器能够支持<br>–并发用户数怎么来的？<br>这里首先理解并发用户数：相对并发，比如：2000个并发用户数，测试登录事务（不是同时登录！！！）<br>1.客户要求下，取最大在线用户数的10%<br>2.实施人员和客户沟通，取到线上的运营数据，然后带回公司计算出来的<br>3.测试组长和开发产品讨论出来的<br>–并发用户数如何计算？<br>1.最大在线用户数的10%<br>2.注册用户数的10%<br>3.平均并发用户数（C = NL/T）   峰值并发用户数（C~ = C + 根号C）<br>–常见的性能指标有哪些？<br>事务通过率，事务的90%响应时间，事务的平均响应时间，TPS，网络占用率，服务器的Cup，内存，io使用率…<br>–性能测试的流程<br>参考面试宝典-jmeter性能篇   loadrunner性能篇<br>–如何完成jmeter接口请求脚本？<br>1.按照接口文档填写<br>2.使用jmeter自带的代理服务录制，然后过滤（流程记一下）<br>3.使用badboy录制（不推荐，很多问题）<br>–jmeter性能测试的一些相关知识<br>1.并发用户数：其实就是线程组-线程数，填写多少就是多少个并发用户数<br>2.启动时间：1s启动10个并发用户数，根据电脑配置来决定启动时间，选取并发用户数的10%<br>3.循环次数：意思把接口循环执行几次，一般做性能是时长，所以勾选永远<br>4.持续时间：在规定时间内，一直循环执行接口请求，直到时间结束<br>–如何使用代理录制<br>1.打开jmeter，直接在测试计划添加-非测试元件-HTTP代理服务器，再添加一个线程组<br>2.在HTTP代理服务器页面进行一些设置，比如：目标控制器选择录制到哪里，设置录制的端口号<br>3.打开浏览器，选择设置-连接-局域网设置-勾选自动检测，勾选代理服务器，输入服务器地址：127.0.0.1，端口号输入刚刚在jmeter内输入的端口号，点击保存<br>4.点击jmeterHTTP代理服务器页面的启动，然后打开浏览器就开始录制了<br>5.录制完成之后，点击HTTP代理服务器页面的停止，并且取消浏览器的代理<br>–如何用jmeter监控服务器的资源<br>1.首先下载好监控资源相关插件，JMeterPlugins-Standard-1.4.0，ServerAgent-2.2.1；<br>2.解压Standard这个压缩包，把里面的Standard.jar包复制到jmeter安装目录下的\lib\ext下；<br>3.重启jmeter，就可以添加监听器-PerfMon Metrics Collector查看服务器资源的图表（填入服务器地址，cpu，内存，io）<br>4.将Server-Agent上传到服务器，解压，然后启动监控，命令：./startAgent.sh<br>–如何进行分布式环境（分压）<br>1.首先要有控制机和多台压力机<br>2.必须处于同一个网络下，版本需要一致<br>3.控制机需要修改jmeter.properties文件，remote_hosts后面加上代理机的ip<br>4.启动压力机上的jmeter-server.bat文件<br>5.jmeter脚本文件和数据结果放在同一个路径（控制机和代理都要有）<br>6.打开控制机的jmeter，运行-远程全部启动<br>备注：如果分压机启动jmeter-server.bat文件，提示：找不到系统文件，<br>就需要修改分压机目录下的文件jmeter.properties文件，添加server.rmi.ssl.disable=true<br>–为什么要分压<br>因为加载虚拟用户数需要耗费windwos的一些资源，一般的电脑只能加载300-400左右<br>所以模拟大量的用户数，需要多几台电脑完成，如果并发用户数是1500，<br>控制机和压力机一起加载，如果是5台，那么线程数就设置300<br>–如何做绝对并发<br>需要添加集合点，一般用的是定时器-syn…，放在接口请求上面，设置多少用户集合再释放，等待时间一般是30000ms<br>–事务控制器是什么意思<br>因为一个事务有可能不是一个http请求，所以我们把一个事务的所有请求归类在一个事务控制器下<br>线程组右键-逻辑控制器-事务控制器<br>–如何分析性能测试结果<br>添加聚合报告，服务器的监控图表，TPS<br>首先我会先关注有没有大量的error数，有的话检查自己的接口请求有没有错误，很有可能路径多了一个空格<br>如果error数没超过3%，我就查看90%的响应时间，TPS，服务器的cpu，内存，io占用率…<br>–遇到性能瓶颈如何处理<br>如果出现了性能瓶颈，比如响应时间，或者CPU使用率不达标，我们会从服务器上导出日志，分析是哪个地方导致响应时间过长，<br>如果分析不出来，就叫上开发一起讨论，确定问题后，就提单给开发修复，修复好了就进行回归测试。<br>–分析响应时间过长的原因<br>1.cpu过高（导出日志提交开发定位问题，增加配置）<br>2.内存过高（导出日志提交开发定位问题，增加配置）<br>3.io过高（磁盘的读写能力，input，output，同步阻塞，异步阻塞）<br>4.网络占用率过高（增加服务器带宽，或者对数据进行压缩处理）<br>5.代码优化（开发自己解决）<br>6.慢查询（sql执行过长，我们用的是阿里云或者腾讯云，它们有自带的监控sql语句执行速度，开发优化）<br>7.mysql连接池超过最大数（…）<br>8.服务器架构不合理<br>–性能测试报告包含哪些东西<br>测试背景，测试目的，测试内容（事务，页面），测试资源（工具，服务器客户端相关配置）<br>测试人员，测试时长，结果分析（响应时间，cpu，内存，tps），测试发现的问题，建议和优化，总结<br>–如何判断系统的性能变好了<br>TPS有没有增加，增加就是变好了<br>–如何确定系统的最大用户数，系统处理瓶颈<br>采用的是负载策略，逐步的增加并发用户数，如果突然响应时间变大或者服务器资源占用变高，就是极限…<br>–性能瓶颈有哪些？<br> 1.硬件瓶颈（cpu，内存，io等使用率过高）<br>2.服务器操作系统(Linux系统的虚拟内存参数设置不合理）<br>3.应用软件的性能瓶颈（web服务器（查看日志），数据库相关配置问题）<br>4.应用程序的性能瓶颈（开发的代码问题，sql语句执行太慢）<br>5.网络性能瓶颈（占用率过高，服务器带宽过低，提升服务器带宽，把数据压缩处理，面试不建议讲网络瓶颈，因为我们在内网做，不可能存在网络瓶颈）</p>
+<p>建议：面试问到瓶颈就说应用程序的性能瓶颈导致，响应时间过长，原因是开发写的sql语句存在慢查询，我们买的阿里云服务器可以自动监控慢查询语句（或者mysql开启慢查询日志查看），然后让开发优化（给相应的字段加上索引）<br>–其他的定位思路？<br>1.查看系统日志，比如系统日志会打印，执行哪些方法时，抛出内存溢出的的错误，我们可以顺藤摸瓜，找到导致内存溢出的问题在哪<br>2.利用性能监控工具：比如Jmeter自带的监控服务器占用资源，或者nmon工具等，或者java开发的web系统，可以用JDK自带的Jconsole，JProfiler，来监控服务器的性能等<br>–做性能测试遇到哪些问题？<br>1.在高并发过多的时候，产生的处理失败请求（数据库连接池过低，web服务连接数超过上限，数据库锁控制考虑不足）<br>2.内存泄漏（比如：在长时间的运行下，内存没有正常释放，web服务器直接宕机）<br>3.日志打印过多，导致磁盘爆满（并发3小时期间，发现linux系统的cpu下降，内存下降，TPS也下降，响应时间反而变长，最后定位问题：是打印日志过多，导致磁盘满了）<br>–如何自动清理日志文件？<br>编写shell脚本自动清理(具体步骤百度)</p>
+<p>–LR的三大模块<br>1.脚本录制和优化 2.场景设计 3.结果分析<br>–LR的相关函数<br>1.关联函数：web_reg_save_param<br>2.检查点：web_reg_find<br>3.思考时间lr_think_time()</p>
+<p>–LR的脚本优化要优化哪些地方？<br>关联，参数化，插入事务，插入检查点，插入集合点，优化思考时间<br>–LR的场景设计要设置哪些？<br>运行时设置，并发用户数和加载状态，集合点策略，添加压力机，使用nmon工具监控服务器资源<br>–LR的如何分析性能测试结果？<br>首先查看结果概况，查看有没有大面积失败的事务，有没有大量Error的数，虚拟用户数有没有正常加载，点击率和HTTP响应曲率是否一致，如果都正常，表明测试结果可信，可以继续分析其他性能指标，比如，确认响应时间，事务通过率，CPU，TPS等指标是否满足需求；如果测试结果不可信，要分析异常的原因，修改后重新测试。<br>–LR性能结果响应时间过长定位思路？<br>添加“网页细分图”，选中要细分的事务，选择”第一次缓冲时间”，查看事务所消耗的时间主要在网络传输还是服务器，如果是网络，就结合Throughput(网络吞吐量)图，计算带宽是否存在瓶颈，如果存在瓶颈，就要考虑增加带宽，或对数据的传输进行压缩处理；如果不存在瓶颈，那么，可能是网路不稳定导致。如果主要时间是消耗在服务器上，就要分别查看web服务器和数据库服务器的CPU，内存的使用率是否过高，因为过高的CPU，内存必定会造成响应时间过长，如果是web服务器的问题，就把web服务器对应上对应的用户操作日志取下来，发给开发定位；如果是数据库的问题，就把数据库服务器对应上对应的日志取下来，发给开发定位。<br>–性能测试遇到验证码，如何设计脚本？<br>设置一个万能验证码就可以了<br>–性能测试做的是web端还是app？<br>web端用lr录制，或者jmeter填写接口请求都可以完成<br>app的话，12版本的lr可以代理录制，建议用jmeter完成，拿到app的接口文档填入jmeter完成（备注：app性能测试分手机端和服务端，手机端用itest监控，monkey完成，这里讲的服务端）<br>–小程序和H5页面（公众号)如何完成性能测试？<br>也是拿到接口文档，在jmeter填入接口请求去完成..(指的是服务端）</p>
+<p>–APP<br>–APP的测试流程<br>我负责的app项目叫“xxxxxx”<br>主要模块有xx,xx,xx,xx,xx，主要的业务流程是xxxxxx。<br>测试前，先熟悉app的原型图和业务需求，确定测试点，app开发好后，先做一个冒烟测试，看看软件的基本功能是否可用，<br>如果正常，我们再做功能测试，UI测试，兼容性测试，交叉事件测试，安装卸载测试等。<br>–app从哪些方面考虑测试<br>八大点…参考课件记住每个点内的测试点<br>–app与web区别<br>采考面试宝典<br>–app兼容测试怎么做<br>品牌，型号，分辨率，尺寸，系统版本…<br>主流分辨率，为18:9、19:9、19.5:9屏幕比例的720P与1080P分辨率，换算后为：<br>①.1440x720 ②.1520x720 ③.1560x720<br>④.2160x1080 ⑤.2280x1080 ⑥.2340x1080<br>–app的4大组件<br>activity，service，content provider，broadcast receiver<br>–app的热启动，冷启动<br>热启动：已经打开放在后台重新打开<br>冷启动：之前没有运行过，直接打开<br>–安卓的环境搭建<br>第一套：<br>1.首先先装JDK，配置环境变量<br>2.安装ADT工具，包含（eclipse：安卓开发工具，安卓sdk：软件开发工具包【adb就在这个里面】）<br>sdk解释：<a href="https://www.jianshu.com/p/ffe7d8a51632" target="_blank" rel="noopener">https://www.jianshu.com/p/ffe7d8a51632</a><br>第二套：<br>1.首先先装JDK，配置环境变量<br>2.安装Android stidio，还有安卓SDK就可以了<br>–如何查看APP内存泄<br>1.用GT工具，监控内存，查看结果<br>查看表格，Native/Dalvik ：主要看这项，它分别给出的是JNI层和Java层的内存分配情况，<br>如果发现这个值一直增长，则代表程序可能出现了内存泄漏。<br>2.用DDMS可以监控堆内存是否存在内存泄漏<br><a href="https://www.cnblogs.com/kevinqinan/p/3755328.html" target="_blank" rel="noopener">https://www.cnblogs.com/kevinqinan/p/3755328.html</a><br>–埋点测试<br>其实就是开发在APP的页面做了一个标识，用于来统计用户浏览次数，主要目的是为了获取运营数据<br><a href="https://www.jianshu.com/p/e3d987750f2b" target="_blank" rel="noopener">https://www.jianshu.com/p/e3d987750f2b</a><br>–ADB的相关命令<br>最少记得7个以上<br>–app性能测试，监控工具有哪些，监控哪些指标<br>GT,ITEST<br>手机的CPU,APP占用的内存，流量，电量<br>性能测试为了查看app的一些使用指标<br>–monkey手机端稳定性测试<br>参考面试宝典<br>稳定性测试是为了模拟用户行为，看app在使用过程中是否崩溃，闪退，无响应<br>–MONKEY什么情况下会停止，如何定位问题<br>参考面试宝典，<br>ANR无响应：内存不足，cpu不足，空指针<br>nullpoint崩溃：1、空值指针2、数组越界3、内存不足4、CPU满负荷<br>详情：<a href="http://www.jianshu.com/p/f7006ab64da7" target="_blank" rel="noopener">http://www.jianshu.com/p/f7006ab64da7</a><br>–APP服务端性能测试<br>拿到APP接口文档，用jmeter…<br>–MONKEY正在跑如何停止<br>1.abd shell进入shell模式下<br>2.ps | grep monkey 查看进程号<br>3.kill pid 杀死进程就行了<br>–MONKEY如果让它跑十万次，停顿时间为1s<br>adb shell monkey -p 包名 –throttle 1000 -v 100000<br>–MONKEY出现了崩溃，超时如何让它继续跑下去<br>–ignore-crashes  –ignore-timeouts<br>语法：adb shell monkey -p 包名 –ignore-crashes  –ignore-timeouts -v 次数</p>
+<p>–monkey需要root权限吗？gt需要root权限吗<br>需要！<br>–app自动化<br>使用的是python+appium，没有用过，但是了解过，具体跟selenium原理差不多，都是元素定位…<br>–H5测试过没？<br>手机端的网页，测试跟APP差不多，除了安装卸载升级还有手机端稳定性测试<br>–小程序有测试过吗？<br>没有，但是了解过，跟APP的八大点差不多<br>–app分哪几种app<br>1.原生APP 2.混合APP（框架是原生，页面是H5） 3.web app（H5）<br>–ios和安卓系统的区别</p>
+<p>参考复习资料文件夹内<br>–APP崩溃的原因有哪些？<br>1.内存管理错误：可能是可用内存过低，app 所需的内存超过设备的限制，app跑不起来导致 App crash。或是内存泄漏，程序运行的时间越长，所占用的内存越大，最终用尽全部内存，导致整个系统崩溃。亦或非授权的内存位置的使用也可能会导致 App crash。</p>
+<p>2.程序逻辑错误：数组越界、堆栈溢出、并发操作、逻辑错误。e.g. app 新添加一个未经测试的新功能，调用了一个已释放的指针，运行的时候就会 crash。</p>
+<p>3.设备兼容：由于设备多样性，app 在不同的设备上可能会有不同的表现。</p>
+<p>4.网络因素：可能是网速欠佳，无法达到 app 所需的快速响应时间，导致 app crash。或者是不同网络的切换也可能会影响 app 的稳定性。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/测试/" rel="tag"># 测试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/25/复习1/" rel="next" title="复习1">
+                <i class="fa fa-chevron-left"></i> 复习1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/05/复习3/" rel="prev" title="复习3">
+                复习3 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s2.ax1x.com/2019/05/23/VPZiAe.png" alt="czj">
+            
+              <p class="site-author-name" itemprop="name">czj</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">czj</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

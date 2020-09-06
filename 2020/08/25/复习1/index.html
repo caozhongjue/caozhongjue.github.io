@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="测试,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="–数据库：mysql 5.7，oracle 11g –连接工具：Navicat，PLsql –DML：select update delete insert ；测试工程师经常用到，一定要拿实例–语法：去重（distinct） 模糊查询（like） 多少之间（between） 包含（in） 不包含（not in）–查询：如何查询今天一天的订单数量（to_date:讲字符串转换为时间类型）select">
+<meta name="keywords" content="测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复习1">
+<meta property="og:url" content="http://yoursite.com/2020/08/25/复习1/index.html">
+<meta property="og:site_name" content="czj&#39;blog">
+<meta property="og:description" content="–数据库：mysql 5.7，oracle 11g –连接工具：Navicat，PLsql –DML：select update delete insert ；测试工程师经常用到，一定要拿实例–语法：去重（distinct） 模糊查询（like） 多少之间（between） 包含（in） 不包含（not in）–查询：如何查询今天一天的订单数量（to_date:讲字符串转换为时间类型）select">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-09-06T09:12:54.113Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="复习1">
+<meta name="twitter:description" content="–数据库：mysql 5.7，oracle 11g –连接工具：Navicat，PLsql –DML：select update delete insert ；测试工程师经常用到，一定要拿实例–语法：去重（distinct） 模糊查询（like） 多少之间（between） 包含（in） 不包含（not in）–查询：如何查询今天一天的订单数量（to_date:讲字符串转换为时间类型）select">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/08/25/复习1/">
+
+
+
+
+
+  <title>复习1 | czj'blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">czj'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/25/复习1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="czj">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s2.ax1x.com/2019/05/23/VPZiAe.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="czj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">复习1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-25T13:15:33+08:00">
+                2020-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/测试/" itemprop="url" rel="index">
+                    <span itemprop="name">测试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>–数据库：mysql 5.7，oracle 11g</p>
+<p>–连接工具：Navicat，PLsql</p>
+<p>–DML：select update delete insert ；测试工程师经常用到，一定要拿实例<br>–语法：去重（distinct） 模糊查询（like） 多少之间（between） 包含（in） 不包含（not in）<br>–查询：如何查询今天一天的订单数量（to_date:讲字符串转换为时间类型）<br>select count(<em>) from ecs_order where to_char(order_time,’yyyy-mm-dd’)=’2019-08-07’<br>–如何查询这个月的订单数量（to_char:讲时间类型转换为字符类型）<br>oracle:<br>select count(</em>) from ecs_order where to_char(order_time,’yyyy-mm’)=’2019-04’; </p>
+<p>mysql:<br>select count(*) from ecs_order where order_time between ‘2019-01-01 00:00:00’ and ‘2019-01-01 11:59:59’<br>备注：mysql不能用to_date和to_char</p>
+<p>–查询出emp表中入职时间为1981月份的所有员工信息<br>select <em> from emp where to_char(hiredate,’yyyy’)=’1981’;<br>–分组查询.<br>–如何查询订单表内相同商品的数据<br>select </em> from goods where goodsid =(select goodsid from order_s group by gooodsid having count(*)&gt;=2)</p>
+<p>–练习1：查询出至少有两名秘书的所有部门的部门号，并按人数降序排序。<br>select deptno from emp where job =’CLERK’ group by deptno having count(<em>)&gt;=2 order by count(</em>) desc;<br>select deptno from emp group by job,deptno having job=’CLERK’ and count(<em>)&gt;=2 order by count(</em>) desc;<br>–sql执行顺序：from-where-group by-having-select-order by<br>–多表查询<br>  1.分析题目涉及哪几张表；<br>  2.如果查询的数据来自于多张表，找到这些表的相同字段，在where后面，把这些字段用等于号连接起来；<br>  3.如果需要对单条记录进行过滤，就把过滤条件追加到where子句后面，用and连接起来；<br>–多表查询(内连接，外连接，全连接)<br>–内连接：inner join （等值查询）,连接条件的字段，双方都有相同的数据才展示<br>select e.<em> , d.</em> from emp e ,dept d where e.deptno = d.deptno;<br>select e.<em> , d.</em> from emp e inner join  dept d on e.deptno = d.deptno;<br>–外连接(左连接left join，右连接right join)<br>–左连接：连接条件的字段，左表数据都要显示，以及右边和左边相同的数据才展示<br>select e.<em> , d.</em> from emp e ,dept d where d.deptno = e.deptno(+);<br>select e.<em> , d.</em> from dept d left join emp e on e.deptno = d.deptno;<br>–右连接：连接条件的字段，右表数据都要显示，以及左表和右表相同的数据才展示<br>select e.<em> , d.</em> from emp e ,dept d where e.deptno(+) = d.deptno;<br>select e.<em> , d.</em> from emp e right join dept d on e.deptno = d.deptno;<br>–全连接(full join）连接条件的字段，双方只要有的数据都显示<br>–oracle写法：<br>–rownum：伪行，只有在查询时候才出现<br>select e.<em>,rownum from emp e ;<br>–查询emp前五行的数据<br>select </em> from emp where rownum &lt;= 5;<br>–查询emp6-10行的数据(分页查询)<br>select <em> from (select e.</em>,rownum t from emp e where rownum &lt;=10) x where x.t&gt;=6<br>–查询最后5行的数据(最新5行)<br>select <em> from (select </em> from emp order by rownum desc) where rownum &lt;=5;</p>
+<p>–mysql写法：<br>–查询emp前五行的数据<br>select <em> from emp limit 0,5;<br>–查询emp6-10行的数据(分页查询)<br>select </em> from emp limit 5,5;<br>–查询最后5行的数据(最新5行)<br>select * from zt_bug order by id desc limit 0,5;</p>
+<p>–三种删除的区别<br>delete:删除数据，可以接where指定删除一行记录，会发起事务<br>truncate:删除整张表的数据，表结构还在，不会发起事务<br>drop：删除整张表<br>–新增数据<br>insert into 表名 values (值1，值2….)<br>–修改数据<br>update 表名 set 列名=值,列名=值 where 过滤条件<br>–删除数据<br>delete 表名 where 过滤条件<br>–提交事务<br>commit;<br>–回滚事务<br>rollback;</p>
+<p>–查找出部门总工资是最少的那个部门号<br>select deptno from emp group by deptno having sum(sal) = (select min(sum(sal)) from emp group by deptno);<br>select deptno from (select sum(sal),deptno from emp group by deptno order by sum(sal)) where rownum=1;<br>–数据库的索引作用是什么？<br>“索引”就是一本书的目录，提升查询数据的效率<br>create index i_student_name on t_student(name);</p>
+<p>–数据库如何导入导出<br>Navicat自带导入导出这些功能</p>
+<p>–linux<br>–搭建项目环境<br>连接工具：crt，xshell<br>–Apache服务器的日志路径在哪里？<br>/var/log/httpd     tail -f access_log<br>–Tomcat服务器的日志路径在哪里？<br>在tomcat安装路径下的logs下，tail -f  catalina.out</p>
+<p>都在linux的补充资料文件夹：<br>linux+Apeche+mysql+PHP（按照ecshop搭建步骤去记）<br>linux+Tomcat+mysql+java （按照jspxcms搭建步骤去记）<br>linux&lt;必须记住的20个命令&gt;</p>
+<p>Linux系统：CentOS 6.8   连接工具：crt，Xshell  SSH协议默认端口：22<br>liunx和windows传输工具：FTP</p>
+<p>–为什么要用到Linux：<br>查看日志定位问题，性能测试监控资源，搭建环境,维护测试环境</p>
+<p>–1.查看系统日志，定位问题<br>（Apache日志一般存放在/var/log/httpd，日志文件名access_log）<br>（Tomcat日志一般存放在tomcat目录的logs文件夹下，日志文件名catalina.out）<br>–2.做性能测试要用到:<br>（比如jmeter监控linux资源，我们需要把ServerAgent.zip上传liunx解压开启监控）<br>(比如用LR做性能测试，要上次nmon工具监控服务器资源)<br>–3.维护测试服务器：<br>之前公司测试环境非常卡，登录要好几秒，然后定位问题，发现是服务器linux系统磁盘满了，然后清理一下就可以（清空日志文件：echo ‘’ &gt; catalina.out ）<br>查看一下可能内存：free -m<br>查看cpu资源：top<br>–4.搭建测试环境用到：<br>（linux+apache+mysql+php，流程参考ecshop搭建流程）<br>（linux+tomcat+mysql+java，流程参考java环境搭建流程,配置环境变量文件在 /etc/profile）</p>
+<p>–你搭建测试环境有遇到什么问题吗？<br>（tomcat）<br>答：我搭建完成之后，无法启动tomcat服务，发现是tomcat端口号被占用，tomcat默认8080，进入tomcat的conf文件夹下，修改文件server.xml，修改默认端口号，保存并退出</p>
+<p>(Apache)<br>答：我搭建完成之后，在网页输入项目的地址，然后报错显示http状态码403，服务器拒绝访问，因为项目某些文件没有权限，然后定位发现，/var/www/html文件下项目文件夹，当时只用了chmod 777 项目文件名，只给文件夹加了所有权限，没有给文件夹内所有文件加权限，解决：chmod 777 -R 项目文件名</p>
+<p>–测试环境有过什么问题吗？<br>答:磁盘满了，导致服务器访问卡顿或者无法访问，解决：登录linux系统查看磁盘信息，然后清理磁盘（一般回答前要说明，清理前和上级已经说明这个情况，要不然面试官会认为你没有安全意识，随意清理服务器的文件）</p>
+<p>–理论<br>svn：代码管理工具<br>Git：代码管理工具<br>osi七层模型：物理层，数据链路层，网络层，传输层，会话层，表示层，应用层<br>tcp:建立连接再传输数据，传输性可靠，效率低；建立连接需要3次，断开连接4次       （打电话）<br>udp:不需要建立连接，传输数据带目的地址，不可靠，效率高                         （发短信）<br>hosts文件:C:\Windows\System32\drivers\etc\hosts<br>web基础架构：页面布局，代码，数据库，服务平台，BS架构<br>服务器操作系统：linux<br>web服务器：Apeche，tomcat，Nginx<br>关系型数据库：mysql，oracle，db2<br>前端代码：html，css，JavaScript<br>后端代码：java，php<br>服务平台：阿里云，腾讯云<br>HTTP协议：在应用层，超文本传输协议，由请求和响应构成的，http是无状态<br>HTTP常见的请求方式有哪些：get和post，put，delete<br>get和post区别：get的请求参数在url里，一般用于获取数据，没有请求body，有请求头<br>               post请求参数在请求body，一般用于提交数据，什么都有<br>HTTP响应状态码：在响应行内<br>1：服务器收到请求，需求请求者执行操作<br>2：请求成功并且处理<br>3：重定向，需要进一步操作完成<br>4：客户端错误<br>5：服务器错误<br>常见的状态码有哪些：<br>200：请求成功<br>301: 永久移动<br>302：临时移动<br>404：无法根据客户端的请求找到资源<br>500：服务器内部错误<br>503：服务器超载或者维护<br>–研发模式<br>瀑布开发，W模型，敏捷开发<br>–测试理论<br>软件测试定义：在规定的条件下，对程序进行操作，以发现程序的缺陷，并且对程序评估，提高软件的质量</p>
+<p>软件测试目的：软件测试不仅仅是为了发现软件缺陷与错误，而且也是对软件质量进行度量和评估，以提高软件的质量</p>
+<p>软件测试的具备条件：良好的表达沟通能力，编辑文档能力，思维逻辑能力，耐心，细心，抗压能力，有责任心，技术不错，独立解决问题，具有怀疑精神</p>
+<p>你的优势在哪里：耐心，细心，有责任心，以及能够独立完成一个项目的测试，有过带实习生的经验，能够独立，主动解决问题，学习能力非常好；</p>
+<p>你的缺点有什么？我有时候后会比较健忘，所以有什么重要的事我会写下来提醒自己，固执，bug没改完不下班，<br>–测试类型<br>按阶段划分：单元测试，集成测试，系统测试，验收测试<br>按技术划分：白盒测试，黑盒测试<br>其他测试：回归测试，冒烟测试，探索性测试，灰度测试<br>单元测试   SIT（集成测试）  UAT(验收测试)</p>
+<p>–质量六大特性<br>1.功能性 2.可靠性 3.易用性 4.效率 5.可维护性 6.可移植性<br>重点：电梯测试点，桌子测试点，杯子测试点，笔，鼠标，花盆<br>下单整个流程的测试点（注册，登录，购物车，结算，下单，支付，上传，搜索）<br>–需求评审<br>对需求进行查漏补缺，如何实现这个需求，有疑问的，错误的，模糊，遗漏给产品提出相关意见，然后修改<br>举例：你在需求评审上提过什么意见？<br>比如：我们当时做了一个优惠卷功能，产品讲完后，我发现没有说使用优惠券再取消订单，是否返回优惠卷</p>
+<p>–测试计划<br>自己独立写过测试计划<br>测试计划的内容：项目背景，项目测试范围，测试方法/策略,测试资源（测试工具），开始和结束条件，进度安排，组织架构<br>测试风险（人员风险，进度风险，质量风险，需求变更）</p>
+<p>–测试需求分析<br>使用x-mind思维导图将每个功能点进行细分，提起测试点，避免遗漏</p>
+<p>–编写测试用例<br>测试用例要素：编号，名称，优先级，前置条件，操作步骤，预期结果….</p>
+<p>测试用例采用的方法：等价类，边界值，错误推测法，判定表，场景法（举实例）   我们没讲的（因果图，正交表）</p>
+<p>如何保持测试用例覆盖率：1.我会对需求进行充分的理解和熟悉，然后用x-mind对需求进行分析细化 ，构造思维导图提取测试点2.我写完用例会自己检查一次 3.我们会进行用例评审会议</p>
+<p>如何写好测试用例：1.覆盖所有需求 2.考虑正常异常场景 3.颗粒度要均匀 4.操作步骤要足够详细，要素齐全 5.用例评审，及时更新测试用例</p>
+<p>–用例评审<br>对着用例，把一条条的用例读出来，参加人员:开发，产品，测试<br>但是某些公司，是直接发给测试老大看下<br>还有是发给产品看下，让他们找出问题</p>
+<p>–准备数据<br>我们写完测试用例后，并且评审，开发还没有提交新的测试版本，我会准备一些测试数据</p>
+<p>–执行测试<br>1.执行冒烟测试，如果不通过，打回让开发重新修复，自测完再给我们<br>2.开发认为不是bug，你认为是bug，如何处理？<br>3.开发不修复bug，如何处理？<br>4.如何看待开发和测试的关系？<br>5.产品修改了需求，没有告诉你，怎么处理？<br>6.开发压缩了测试的时间，怎么处理？<br>7.开发做出来的产品和需求不一致，怎么处理？<br>8.如果有一个严重bug没处理，是否能上线？<br>9.如果遇到解决不了bug，如何处理？<br>10.测试时间不够，如何完成测试？<br>11.难以复现的bug如何处理？<br>12.如何跟踪bug的修复状态？<br>13.bug的等级分类？有哪些要素（属性）？<br>14.环境怎么搭建的？<br>15.如何回归测试？<br>16.什么时候停止测试？<br>17.管理bug的工具？</p>
+<p>–测试报告<br>包含内容：数据统计（bug，用例，人力），遗留bug情况，测试风险（测试中发现的问题）<br>测试对象评估（功能，ui，用户体验，兼容），测试结论，测试总结</p>
+<p>–测试流程<br>需求评审-测试计划-需求分析-测试用例-用例评审-搭建环境-执行测试-回归测试-测试报告-验收-上线<br>面试题：<br>1.你觉得这个流程可以优化吗？（上线进度盘点）<br>2.好的经验和技巧分享？（未发现的bug清单）<br>3.如果你来当测试组长，如何管理团队？<br>4.属下和开发存在争吵，你如何处理？<br>5.组长任务分配不平均，你任何处理？<br>6.项目的研发时长？<br>7.项目的测试类型占比？<br>8.测试的总用例数?各种用例的占比？<br>9.项目的功能数?<br>10.项目bug的总数？每个版本的数量？<br>11.项目有多少个版本，最后三个版本迭代的功能？<br>12.你在之前的工作中犯过哪些错误？<br>13.印象深刻的bug有哪些?<br>14.你对这个项目的贡献有哪些？<br>15.你工作了三年，最大的收获是什么？<br>16.没有需求文档，如何进行测试?<br>17.每次迭代新增多少个功能点？<br>18.工作中的任务划分？</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/测试/" rel="tag"># 测试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/01/性能、自动化测试/" rel="next" title="性能测试，自动化测试，接口测试，app测试">
+                <i class="fa fa-chevron-left"></i> 性能测试，自动化测试，接口测试，app测试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/01/复习2/" rel="prev" title="复习2">
+                复习2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s2.ax1x.com/2019/05/23/VPZiAe.png" alt="czj">
+            
+              <p class="site-author-name" itemprop="name">czj</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">czj</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
